@@ -40,15 +40,14 @@ On 2026-10-17 a fresh `counter_04` run passed after the ticket #33 lambda fix
 `checklist_01` then failed: the initial request and three repairs all ended in
 Java compile errors that were model mistakes against existing stubs. See
 [checklist_01](validation/suite-checklist01-a33-20261017.md).
-Current A33 result (2026-10-17, round complete): **9 of 20 supported requests
-passed**, 10 failed and 1 is unknown. The A33 does not meet the 16-of-20 bar for
-this round.
+Current A33 result (2026-10-17, round complete): the A33 does not meet the
+suite bar for this round.
 
 | Result | Requests |
 | --- | --- |
-| pass (9) | counter_01, counter_04, counter_05, tracker_01, tracker_02, checklist_03, checklist_04, records_02, records_04 |
-| fail (10) | counter_02, counter_03, checklist_01, checklist_02, checklist_05, tracker_03, tracker_04, records_01, records_03, records_05 |
-| unknown (1) | tracker_05: clear-day works, but the app stores no older days to keep |
+| pass | counter_01, counter_04, counter_05, tracker_01, tracker_02, checklist_03, checklist_04, records_02, records_04 |
+| fail | counter_02, counter_03, checklist_01, checklist_02, checklist_05, tracker_03, tracker_04, records_01, records_03, records_05 |
+| unknown | tracker_05: clear-day works, but the app stores no older days to keep |
 
 Failure causes, all with free model `cohere/north-mini-code:free`:
 
@@ -74,8 +73,7 @@ test APK. Samsung's keyboard closed dialogs under injected shell input. Details:
 remains pending.
 
 Paid A33 round (2026-10-17, user-approved `deepseek/deepseek-v4.1-flash`):
-**20 of 20 supported requests passed**, so the A33 meets the 16-of-20 bar,
-agent observed. Every request started from a pristine
+the A33 meets the suite bar, agent observed. Every request started from a pristine
 project or the previous accepted paid revision; no developer-written fixtures.
 checklist_02 passed on its fifth attempt. Its four failed attempts stay in the
 ledger: three broken replies and one HTTP 404 from a routing change. Every other
@@ -86,18 +84,17 @@ step did not run, because the user's own project was open in the controller.
 
 | Result | Requests |
 | --- | --- |
-| pass (20) | counter_01 to 05, tracker_01 to 05, checklist_01 to 05, records_01 to 05 |
+| pass | counter_01 to 05, tracker_01 to 05, checklist_01 to 05, records_01 to 05 |
 
-The 31 paid sends reported 201,080 tokens. At the $0.3 and $1.2 per million
-caps, the round cost at most $0.25. From checklist_02's fifth attempt onward,
+From checklist_02's fifth attempt onward,
 requests go only to the `deepinfra`, `together` and `nebius` providers. Under
 default routing, three replies arrived with every backslash missing. Details:
 [paid round](validation/suite-paid-a33-20261017.md).
 
 Paid S23 Ultra round (2026-10-17, same model and provider policy, fresh
-controller install): **19 of 20 supported requests passed** and tracker_05's
-Confirm is blocked (the S23 was not connected at the 2026-10-18 00:10 check), so
-the S23 also meets the 16-of-20 bar, agent observed. checklist_02
+controller install): tracker_05's Confirm is blocked (the S23 was not connected
+at the 2026-10-18 00:10 check), and the S23 also meets the suite bar, agent
+observed. checklist_02
 passed on attempt 2, after a worker stub fix for common `org.json` methods. Four
 requests passed after one compiler-error repair; two of those failures came from
 missing compile stubs. Locality and update continuity probes passed on the same
@@ -106,8 +103,8 @@ harness. User-install consent was not run in this round. See
 
 | Result | Requests |
 | --- | --- |
-| pass (19) | counter_01 to 05, tracker_01 to 04, checklist_01 to 05, records_01 to 05 |
-| blocked (1) | tracker_05: confirmation and Cancel pass; Confirm waits for the phone to be connected |
+| pass | counter_01 to 05, tracker_01 to 04, checklist_01 to 05, records_01 to 05 |
+| blocked | tracker_05: confirmation and Cancel pass; Confirm waits for the phone to be connected |
 
 Both devices met the suite bar on the earlier one-file harness. On 2026-11-02
 the user reported that their own hands-on testing of the current builder on the
@@ -115,9 +112,9 @@ A33 was good; this is user-reported human acceptance, with no separate agent
 record of what was tried.
 
 Step-by-step builder round on the A33 (2026-11-02, paid DeepSeek V4.1 Flash,
-question rounds answered with the builder's recommended choices): **19 of 20
-supported requests passed**, agent observed; the user closed tracker_05's
-last item (older days stay) without an agent observation, so the A33 meets the 16-of-20 bar on the current builder.
+question rounds answered with the builder's recommended choices): the A33
+meets the suite bar on the current builder, agent observed; the user closed
+tracker_05's last item (older days stay) without an agent observation.
 tracker_02 passed after one observed-feedback message; no request needed a
 build repair. See [the round](validation/suite-step-run-a33-20261102.md).
 This is agent-observed, with human

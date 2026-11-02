@@ -29,12 +29,6 @@ Updated 2026-11-02 Dubai. The full history up to 2026-10-25 is in
 
 ## Latest verification
 
-- 2026-11-02, fixed 20-request suite on the step-by-step builder, A33, paid
-  DeepSeek V4.1 Flash (images by Gemini 3.1 Flash Lite Image, approved for this
-  round): **19 of 20 pass**; the user closed tracker_05's last check ("older
-  days stay") as done without an agent observation. One request needed one feedback message
-  (tracker_02, the goal was not editable); none needed a build repair. About
-  $0.27 reported for 28 runs. [Record](validation/suite-step-run-a33-20261102.md).
 - 2026-11-02, recovery on the A33: an idle app evicted, a background run killed
   with `kill -9` after a build, and a run killed during a build all reopened
   correctly; a full disk ends a run with a plain storage message, a restart

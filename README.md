@@ -5,8 +5,7 @@ chat; a cloud model writes plain Java and XML; the phone compiles, signs and
 installs it. Only the model runs in the cloud. Source files, the compiler,
 builds and the finished apps stay on the phone.
 
-Alpha. Tested on one phone, a Samsung Galaxy A33 5G on Android 16, where it
-passed 19 of a fixed set of 20 app requests.
+Alpha. Tested on one phone, a Samsung Galaxy A33 5G on Android 16.
 
 ## How it works
 

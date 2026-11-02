@@ -1,0 +1,910 @@
+{
+  "status": "verified_source_graph_inventory_not_license_clearance",
+  "source_tag": "android-16.0.0_r2",
+  "base_source_commit": "99b01a65cc4c104933788b3143285ab6bae65827",
+  "license_module_definitions": [
+    {
+      "name": "libcore_license",
+      "repo": "platform/libcore",
+      "path": "Android.bp",
+      "commit": "fff4fcc0cf7f080cf2511cbb57561482b13b218f",
+      "license_kinds": [
+        "SPDX-license-identifier-Apache-2.0",
+        "SPDX-license-identifier-BSD",
+        "SPDX-license-identifier-GPL-2.0-with-classpath-exception",
+        "SPDX-license-identifier-MIT",
+        "SPDX-license-identifier-OpenSSL",
+        "SPDX-license-identifier-Unicode-DFS",
+        "SPDX-license-identifier-W3C",
+        "legacy_unencumbered"
+      ],
+      "license_text_paths": [
+        "LICENSE",
+        "NOTICE",
+        "ojluni/src/main/NOTICE"
+      ],
+      "defining_bp_sha256": "85afd51f556c4e2235da08870385a843ae33a53b21da9d1fef54230b8d8c48a6"
+    },
+    {
+      "name": "external_icu_license",
+      "repo": "platform/external/icu",
+      "path": "Android.bp",
+      "commit": "f17caeafcf20bd38074a9963c31df3629b70b5f5",
+      "license_kinds": [
+        "SPDX-license-identifier-Apache-2.0",
+        "SPDX-license-identifier-BSD",
+        "SPDX-license-identifier-EPL",
+        "SPDX-license-identifier-ICU",
+        "SPDX-license-identifier-ISC",
+        "SPDX-license-identifier-MIT",
+        "SPDX-license-identifier-Unicode-3.0",
+        "legacy_unencumbered"
+      ],
+      "license_text_paths": [
+        "LICENSE"
+      ],
+      "defining_bp_sha256": "07e845ee0ed5660e0e89e64021143856ed9b069ae0a9a97f8acd55a6136f8266"
+    },
+    {
+      "name": "frameworks_base_license",
+      "repo": "platform/frameworks/base",
+      "path": "Android.bp",
+      "commit": "99b01a65cc4c104933788b3143285ab6bae65827",
+      "license_kinds": [
+        "SPDX-license-identifier-Apache-2.0",
+        "SPDX-license-identifier-BSD",
+        "SPDX-license-identifier-CC-BY",
+        "SPDX-license-identifier-MIT",
+        "SPDX-license-identifier-Unicode-DFS",
+        "legacy_unencumbered"
+      ],
+      "license_text_paths": [
+        "NOTICE"
+      ],
+      "defining_bp_sha256": "66e418a71da9eeb993c71938cb89297e401fb5ebdb1c692b4e294b2590d04e79"
+    }
+  ],
+  "modules": [
+    {
+      "module": "android.net.ipsec.ike",
+      "repo": "platform/packages/modules/IPsec",
+      "commit": "fb5af75126a170f44c074d0cbd4eb7e2ac7ddfe0",
+      "module_declaration_bp": "Android.bp",
+      "module_declaration_verified": true,
+      "api_paths": [
+        {
+          "path": "api/current.txt",
+          "exists": true,
+          "sha256": "620323adcc535ff7950256936d744a1ba4b97000f70bc40269f4d48c64acdd8d",
+          "first_line": "// Signature format: 2.0",
+          "nearest_android_bp": "Android.bp",
+          "nearest_bp_default_applicable_licenses": [
+            "Android-Apache-2.0"
+          ],
+          "header_license_references": []
+        }
+      ],
+      "legal_root_paths": []
+    },
+    {
+      "module": "art.module.public.api",
+      "repo": "platform/libcore",
+      "commit": "fff4fcc0cf7f080cf2511cbb57561482b13b218f",
+      "module_declaration_bp": "JavaLibrary.bp",
+      "module_declaration_verified": true,
+      "api_paths": [
+        {
+          "path": "api/current.txt",
+          "exists": true,
+          "sha256": "5fdbc5046294287f39d030a948c28fb2da2619546da893224c2333f32bae7c39",
+          "first_line": "// Signature format: 2.0",
+          "nearest_android_bp": "Android.bp",
+          "nearest_bp_default_applicable_licenses": [
+            "libcore_license"
+          ],
+          "header_license_references": []
+        }
+      ],
+      "legal_root_paths": [
+        "LICENSE",
+        "NOTICE"
+      ]
+    },
+    {
+      "module": "conscrypt.module.public.api",
+      "repo": "platform/external/conscrypt",
+      "commit": "156a72a6cf2c27ff27ca526942258af8ae6b13fd",
+      "module_declaration_bp": "Android.bp",
+      "module_declaration_verified": true,
+      "api_paths": [
+        {
+          "path": "api/public/current.txt",
+          "exists": true,
+          "sha256": "9c8ab62c5de5c0607fc0faf0b23599646569b11242d05a61e8befa06b0e9fda9",
+          "first_line": "// Signature format: 2.0",
+          "nearest_android_bp": "Android.bp",
+          "nearest_bp_default_applicable_licenses": [
+            "external_conscrypt_license"
+          ],
+          "header_license_references": []
+        }
+      ],
+      "legal_root_paths": [
+        "LICENSE",
+        "NOTICE"
+      ]
+    },
+    {
+      "module": "framework-adservices",
+      "repo": "platform/packages/modules/AdServices",
+      "commit": "a6ee8245f54f1719a899809cc8727f7fcce9ca35",
+      "module_declaration_bp": "adservices/framework/Android.bp",
+      "module_declaration_verified": true,
+      "api_paths": [
+        {
+          "path": "adservices/framework/api/current.txt",
+          "exists": true,
+          "sha256": "ea33ca733939997418c3ec28572d5b05acf1cc3e54f3a1e63bb9f954e94debcd",
+          "first_line": "// Signature format: 2.0",
+          "nearest_android_bp": "adservices/framework/Android.bp",
+          "nearest_bp_default_applicable_licenses": [
+            "Android-Apache-2.0"
+          ],
+          "header_license_references": []
+        }
+      ],
+      "legal_root_paths": [
+        "NOTICE"
+      ]
+    },
+    {
+      "module": "framework-appsearch",
+      "repo": "platform/packages/modules/AppSearch",
+      "commit": "19febf99bc7e9e654d140dfadbfb426fc5227940",
+      "module_declaration_bp": "framework/Android.bp",
+      "module_declaration_verified": true,
+      "api_paths": [
+        {
+          "path": "framework/api/current.txt",
+          "exists": true,
+          "sha256": "6726a4c4db12f7265ea7aa6eea00fcdaf43b3a12207f1dc650655e2f2a006700",
+          "first_line": "// Signature format: 2.0",
+          "nearest_android_bp": "framework/Android.bp",
+          "nearest_bp_default_applicable_licenses": [
+            "packages_modules_appsearch_license"
+          ],
+          "header_license_references": []
+        }
+      ],
+      "legal_root_paths": [
+        "NOTICE"
+      ]
+    },
+    {
+      "module": "framework-bluetooth",
+      "repo": "platform/packages/modules/Bluetooth",
+      "commit": "4b73ee6039271ffbf71ebdc8c109fc98eac8e137",
+      "module_declaration_bp": "framework/Android.bp",
+      "module_declaration_verified": true,
+      "api_paths": [
+        {
+          "path": "framework/api/current.txt",
+          "exists": true,
+          "sha256": "1bcee9a35f669e079b032c1fb9e4ec710a6321e337a4f8ca6243782c1e82c5f9",
+          "first_line": "// Signature format: 2.0",
+          "nearest_android_bp": "framework/Android.bp",
+          "nearest_bp_default_applicable_licenses": [
+            "Android-Apache-2.0"
+          ],
+          "header_license_references": []
+        }
+      ],
+      "legal_root_paths": [
+        "NOTICE"
+      ]
+    },
+    {
+      "module": "framework-configinfrastructure",
+      "repo": "platform/packages/modules/ConfigInfrastructure",
+      "commit": "7ef2e61de22de800fec8a734bc4019a26448e8b1",
+      "module_declaration_bp": "framework/Android.bp",
+      "module_declaration_verified": true,
+      "api_paths": [
+        {
+          "path": "framework/api/current.txt",
+          "exists": true,
+          "sha256": "70af7a893fec671a21e73d9e4a9a919ba9b835381ad5f0185cf7fbfa3a750e62",
+          "first_line": "// Signature format: 2.0",
+          "nearest_android_bp": "framework/Android.bp",
+          "nearest_bp_default_applicable_licenses": [
+            "Android-Apache-2.0"
+          ],
+          "header_license_references": []
+        }
+      ],
+      "legal_root_paths": []
+    },
+    {
+      "module": "framework-connectivity",
+      "repo": "platform/packages/modules/Connectivity",
+      "commit": "627eb3c63e7c7cb3cb9f8ea319e4bb1676079c3a",
+      "module_declaration_bp": "framework/Android.bp",
+      "module_declaration_verified": true,
+      "api_paths": [
+        {
+          "path": "framework/api/current.txt",
+          "exists": true,
+          "sha256": "d5a8d26c8172e43258b709ca7b63ad3ed7bcb2d2c81fb188a1a6011c61d9c1a7",
+          "first_line": "// Signature format: 2.0",
+          "nearest_android_bp": "framework/Android.bp",
+          "nearest_bp_default_applicable_licenses": [
+            "Android-Apache-2.0"
+          ],
+          "header_license_references": []
+        }
+      ],
+      "legal_root_paths": []
+    },
+    {
+      "module": "framework-connectivity-b",
+      "repo": "platform/frameworks/base",
+      "commit": "99b01a65cc4c104933788b3143285ab6bae65827",
+      "module_declaration_bp": "packages/Vcn/framework-b/Android.bp",
+      "module_declaration_verified": true,
+      "api_paths": [
+        {
+          "path": "packages/Vcn/framework-b/api/current.txt",
+          "exists": true,
+          "sha256": "0bcbd22011cea080a84794f61d0280e1c24629f5887b711d24ceef2801f61541",
+          "first_line": "// Signature format: 2.0",
+          "nearest_android_bp": "packages/Vcn/framework-b/Android.bp",
+          "nearest_bp_default_applicable_licenses": [
+            "Android-Apache-2.0"
+          ],
+          "header_license_references": []
+        }
+      ],
+      "legal_root_paths": [
+        "NOTICE"
+      ]
+    },
+    {
+      "module": "framework-connectivity-t",
+      "repo": "platform/packages/modules/Connectivity",
+      "commit": "627eb3c63e7c7cb3cb9f8ea319e4bb1676079c3a",
+      "module_declaration_bp": "framework-t/Android.bp",
+      "module_declaration_verified": true,
+      "api_paths": [
+        {
+          "path": "framework-t/api/current.txt",
+          "exists": true,
+          "sha256": "4ef1b5fc6d86440616475d04c331fa067046bcc15fa590dfe1cb7f44b6a3bd77",
+          "first_line": "// Signature format: 2.0",
+          "nearest_android_bp": "framework-t/Android.bp",
+          "nearest_bp_default_applicable_licenses": [
+            "Android-Apache-2.0"
+          ],
+          "header_license_references": []
+        }
+      ],
+      "legal_root_paths": []
+    },
+    {
+      "module": "framework-devicelock",
+      "repo": "platform/packages/modules/DeviceLock",
+      "commit": "952de0dacfb9bd720c9ee604affea6bff8132a8a",
+      "module_declaration_bp": "framework/Android.bp",
+      "module_declaration_verified": true,
+      "api_paths": [
+        {
+          "path": "framework/api/current.txt",
+          "exists": true,
+          "sha256": "7073e1620f6e9f213b99d5aa4559641ff1f295ac713a7a52179d14fa7c6b6f18",
+          "first_line": "// Signature format: 2.0",
+          "nearest_android_bp": "framework/Android.bp",
+          "nearest_bp_default_applicable_licenses": [
+            "Android-Apache-2.0"
+          ],
+          "header_license_references": []
+        }
+      ],
+      "legal_root_paths": []
+    },
+    {
+      "module": "framework-graphics",
+      "repo": "platform/frameworks/base",
+      "commit": "99b01a65cc4c104933788b3143285ab6bae65827",
+      "module_declaration_bp": "libs/hwui/Android.bp",
+      "module_declaration_verified": true,
+      "api_paths": [
+        {
+          "path": "libs/hwui/api/current.txt",
+          "exists": true,
+          "sha256": "c8ad45efb9512c8312b4699cb2c51d963ec455a9042dd53d63901c571fcf9add",
+          "first_line": "// Signature format: 2.0",
+          "nearest_android_bp": "libs/hwui/Android.bp",
+          "nearest_bp_default_applicable_licenses": [
+            "frameworks_base_libs_hwui_license"
+          ],
+          "header_license_references": []
+        }
+      ],
+      "legal_root_paths": [
+        "NOTICE"
+      ]
+    },
+    {
+      "module": "framework-healthfitness",
+      "repo": "platform/packages/modules/HealthFitness",
+      "commit": "c0d64b5a3b88c614e25394499610c39d8926f69d",
+      "module_declaration_bp": "framework/Android.bp",
+      "module_declaration_verified": true,
+      "api_paths": [
+        {
+          "path": "framework/api/current.txt",
+          "exists": true,
+          "sha256": "11719994fa4bf71d478611bb911d54e0b13a8b00dfd806b570dfd5f8992566f5",
+          "first_line": "// Signature format: 2.0",
+          "nearest_android_bp": "framework/Android.bp",
+          "nearest_bp_default_applicable_licenses": [
+            "Android-Apache-2.0"
+          ],
+          "header_license_references": []
+        }
+      ],
+      "legal_root_paths": []
+    },
+    {
+      "module": "framework-location",
+      "repo": "platform/frameworks/base",
+      "commit": "99b01a65cc4c104933788b3143285ab6bae65827",
+      "module_declaration_bp": "location/Android.bp",
+      "module_declaration_verified": true,
+      "api_paths": [
+        {
+          "path": "location/api/current.txt",
+          "exists": true,
+          "sha256": "a0495a8a323846107cbc0e4a45c387bec2b59bdabd01c9cfcc868ed34bee4384",
+          "first_line": "// Signature format: 2.0",
+          "nearest_android_bp": "location/Android.bp",
+          "nearest_bp_default_applicable_licenses": [
+            "frameworks_base_license"
+          ],
+          "header_license_references": []
+        }
+      ],
+      "legal_root_paths": [
+        "NOTICE"
+      ]
+    },
+    {
+      "module": "framework-media",
+      "repo": "platform/packages/modules/Media",
+      "commit": "42f842a7092f63cef3623a634b7631929d2fd3bb",
+      "module_declaration_bp": "apex/framework/Android.bp",
+      "module_declaration_verified": true,
+      "api_paths": [
+        {
+          "path": "apex/framework/api/current.txt",
+          "exists": true,
+          "sha256": "be75d4afd890a189b7bed49caffa9babfb567d0c8e9c09a56224582444c421bc",
+          "first_line": "// Signature format: 2.0",
+          "nearest_android_bp": "apex/framework/Android.bp",
+          "nearest_bp_default_applicable_licenses": [
+            "Android-Apache-2.0"
+          ],
+          "header_license_references": []
+        }
+      ],
+      "legal_root_paths": []
+    },
+    {
+      "module": "framework-mediaprovider",
+      "repo": "platform/packages/providers/MediaProvider",
+      "commit": "d3bb9ac8e6daab448635eaa30e85e2e8d8cbad8e",
+      "module_declaration_bp": "apex/framework/Android.bp",
+      "module_declaration_verified": true,
+      "api_paths": [
+        {
+          "path": "apex/framework/api/current.txt",
+          "exists": true,
+          "sha256": "5db114a5ea2624e9ec900a22506555e89750007a4ed266128a37546b3dcaf2a7",
+          "first_line": "// Signature format: 2.0",
+          "nearest_android_bp": "apex/framework/Android.bp",
+          "nearest_bp_default_applicable_licenses": [
+            "Android-Apache-2.0"
+          ],
+          "header_license_references": []
+        }
+      ],
+      "legal_root_paths": []
+    },
+    {
+      "module": "framework-nfc",
+      "repo": "platform/packages/modules/Nfc",
+      "commit": "bdd94b3be31253e756355e6e22f2fe8983da6b1e",
+      "module_declaration_bp": "framework/Android.bp",
+      "module_declaration_verified": true,
+      "api_paths": [
+        {
+          "path": "framework/api/current.txt",
+          "exists": true,
+          "sha256": "982793338acc443fa403ec424636cc4049831ae1e908395e260d729a32130e83",
+          "first_line": "// Signature format: 2.0",
+          "nearest_android_bp": "framework/Android.bp",
+          "nearest_bp_default_applicable_licenses": [
+            "Android-Apache-2.0"
+          ],
+          "header_license_references": []
+        }
+      ],
+      "legal_root_paths": []
+    },
+    {
+      "module": "framework-ondevicepersonalization",
+      "repo": "platform/packages/modules/OnDevicePersonalization",
+      "commit": "fa6ade439544d48640ee3db5665e0a90035787b8",
+      "module_declaration_bp": "framework/Android.bp",
+      "module_declaration_verified": true,
+      "api_paths": [
+        {
+          "path": "framework/api/current.txt",
+          "exists": true,
+          "sha256": "18c6914e7a8aabe0b7b6b0ff72a3f6356f5e90930c860b29e5f3abf6895e88c5",
+          "first_line": "// Signature format: 2.0",
+          "nearest_android_bp": "framework/Android.bp",
+          "nearest_bp_default_applicable_licenses": [
+            "Android-Apache-2.0"
+          ],
+          "header_license_references": []
+        }
+      ],
+      "legal_root_paths": [
+        "LICENSE"
+      ]
+    },
+    {
+      "module": "framework-pdf",
+      "repo": "platform/packages/providers/MediaProvider",
+      "commit": "d3bb9ac8e6daab448635eaa30e85e2e8d8cbad8e",
+      "module_declaration_bp": "pdf/framework/Android.bp",
+      "module_declaration_verified": true,
+      "api_paths": [
+        {
+          "path": "pdf/framework/api/current.txt",
+          "exists": true,
+          "sha256": "753ef0360052e218f0e508687743e255738351d4c559578cc027117f3745fde8",
+          "first_line": "// Signature format: 2.0",
+          "nearest_android_bp": "pdf/framework/Android.bp",
+          "nearest_bp_default_applicable_licenses": [
+            "Android-Apache-2.0"
+          ],
+          "header_license_references": []
+        }
+      ],
+      "legal_root_paths": []
+    },
+    {
+      "module": "framework-pdf-v",
+      "repo": "platform/packages/providers/MediaProvider",
+      "commit": "d3bb9ac8e6daab448635eaa30e85e2e8d8cbad8e",
+      "module_declaration_bp": "pdf/framework-v/Android.bp",
+      "module_declaration_verified": true,
+      "api_paths": [
+        {
+          "path": "pdf/framework-v/api/current.txt",
+          "exists": true,
+          "sha256": "51322f2646df798ae3883bcaf3ff04a261af1e0677a2b6be93df49bff83e2ec1",
+          "first_line": "// Signature format: 2.0",
+          "nearest_android_bp": "pdf/framework-v/Android.bp",
+          "nearest_bp_default_applicable_licenses": [
+            "Android-Apache-2.0"
+          ],
+          "header_license_references": []
+        }
+      ],
+      "legal_root_paths": []
+    },
+    {
+      "module": "framework-permission",
+      "repo": "platform/packages/modules/Permission",
+      "commit": "fd6db90f998351ae7896543bc08d730ecbbc4f12",
+      "module_declaration_bp": "framework/Android.bp",
+      "module_declaration_verified": true,
+      "api_paths": [
+        {
+          "path": "framework/api/current.txt",
+          "exists": true,
+          "sha256": "39824f8c9fee1582598de5aa8cfa9653e84fbd69bd8aeb92c4a78c861faad552",
+          "first_line": "// Signature format: 2.0",
+          "nearest_android_bp": "framework/Android.bp",
+          "nearest_bp_default_applicable_licenses": [
+            "Android-Apache-2.0"
+          ],
+          "header_license_references": []
+        }
+      ],
+      "legal_root_paths": []
+    },
+    {
+      "module": "framework-permission-s",
+      "repo": "platform/packages/modules/Permission",
+      "commit": "fd6db90f998351ae7896543bc08d730ecbbc4f12",
+      "module_declaration_bp": "framework-s/Android.bp",
+      "module_declaration_verified": true,
+      "api_paths": [
+        {
+          "path": "framework-s/api/current.txt",
+          "exists": true,
+          "sha256": "7e6928dd6c83d40af3a6167551101ca1743b33a8a7ad048beb6bdfeaaa759ca9",
+          "first_line": "// Signature format: 2.0",
+          "nearest_android_bp": "framework-s/Android.bp",
+          "nearest_bp_default_applicable_licenses": [
+            "Android-Apache-2.0"
+          ],
+          "header_license_references": []
+        }
+      ],
+      "legal_root_paths": []
+    },
+    {
+      "module": "framework-profiling",
+      "repo": "platform/packages/modules/Profiling",
+      "commit": "22ff01f4663fcad862d51eac797d8a63b7939845",
+      "module_declaration_bp": "framework/Android.bp",
+      "module_declaration_verified": true,
+      "api_paths": [
+        {
+          "path": "framework/api/current.txt",
+          "exists": true,
+          "sha256": "56802f1a67b4f47b2263a764d5e3726e76ad90de70cf9076827ddf2999d42c07",
+          "first_line": "// Signature format: 2.0",
+          "nearest_android_bp": "framework/Android.bp",
+          "nearest_bp_default_applicable_licenses": [
+            "Android-Apache-2.0"
+          ],
+          "header_license_references": []
+        }
+      ],
+      "legal_root_paths": []
+    },
+    {
+      "module": "framework-photopicker",
+      "repo": "platform/packages/providers/MediaProvider",
+      "commit": "d3bb9ac8e6daab448635eaa30e85e2e8d8cbad8e",
+      "module_declaration_bp": "photopicker/framework/Android.bp",
+      "module_declaration_verified": true,
+      "api_paths": [
+        {
+          "path": "photopicker/framework/api/current.txt",
+          "exists": true,
+          "sha256": "881e449f1252f54ec244f2efac6590b7c20c0a67ef154b26a10aa54fba8a38c5",
+          "first_line": "// Signature format: 2.0",
+          "nearest_android_bp": "photopicker/framework/Android.bp",
+          "nearest_bp_default_applicable_licenses": [
+            "Android-Apache-2.0"
+          ],
+          "header_license_references": []
+        }
+      ],
+      "legal_root_paths": []
+    },
+    {
+      "module": "framework-scheduling",
+      "repo": "platform/packages/modules/Scheduling",
+      "commit": "4672be720b8f41ad2431db7a10705bc2a05f58d5",
+      "module_declaration_bp": "framework/Android.bp",
+      "module_declaration_verified": true,
+      "api_paths": [
+        {
+          "path": "framework/api/current.txt",
+          "exists": true,
+          "sha256": "39824f8c9fee1582598de5aa8cfa9653e84fbd69bd8aeb92c4a78c861faad552",
+          "first_line": "// Signature format: 2.0",
+          "nearest_android_bp": "framework/Android.bp",
+          "nearest_bp_default_applicable_licenses": [
+            "Android-Apache-2.0"
+          ],
+          "header_license_references": []
+        }
+      ],
+      "legal_root_paths": []
+    },
+    {
+      "module": "framework-sdkextensions",
+      "repo": "platform/packages/modules/SdkExtensions",
+      "commit": "3be4c2d8dc0f722045fbd0537ebcde6529a0c903",
+      "module_declaration_bp": "java/android/os/ext/Android.bp",
+      "module_declaration_verified": true,
+      "api_paths": [
+        {
+          "path": "java/android/os/ext/api/current.txt",
+          "exists": true,
+          "sha256": "797b5d5d7d9ba1a9392d91f5f829e97fd5944bbdd1772f133cea4e066d0194ef",
+          "first_line": "// Signature format: 2.0",
+          "nearest_android_bp": "java/android/os/ext/Android.bp",
+          "nearest_bp_default_applicable_licenses": [
+            "Android-Apache-2.0"
+          ],
+          "header_license_references": []
+        }
+      ],
+      "legal_root_paths": []
+    },
+    {
+      "module": "framework-statsd",
+      "repo": "platform/packages/modules/StatsD",
+      "commit": "8022cc37e35d424fb0eab65f79cd272759b5dc54",
+      "module_declaration_bp": "framework/Android.bp",
+      "module_declaration_verified": true,
+      "api_paths": [
+        {
+          "path": "framework/api/current.txt",
+          "exists": true,
+          "sha256": "12ac259073a52518124dc8b9e613880c35d2769dcd4612bebb93498efea9c664",
+          "first_line": "// Signature format: 2.0",
+          "nearest_android_bp": "framework/Android.bp",
+          "nearest_bp_default_applicable_licenses": [
+            "Android-Apache-2.0"
+          ],
+          "header_license_references": []
+        }
+      ],
+      "legal_root_paths": []
+    },
+    {
+      "module": "framework-sdksandbox",
+      "repo": "platform/packages/modules/AdServices",
+      "commit": "a6ee8245f54f1719a899809cc8727f7fcce9ca35",
+      "module_declaration_bp": "sdksandbox/framework/Android.bp",
+      "module_declaration_verified": true,
+      "api_paths": [
+        {
+          "path": "sdksandbox/framework/api/current.txt",
+          "exists": true,
+          "sha256": "0c98c7406e32314c46d03bce5705bea3a31e519f4c98800bd70c81863560a57c",
+          "first_line": "// Signature format: 2.0",
+          "nearest_android_bp": "sdksandbox/framework/Android.bp",
+          "nearest_bp_default_applicable_licenses": [
+            "Android-Apache-2.0"
+          ],
+          "header_license_references": []
+        }
+      ],
+      "legal_root_paths": [
+        "NOTICE"
+      ]
+    },
+    {
+      "module": "framework-tethering",
+      "repo": "platform/packages/modules/Connectivity",
+      "commit": "627eb3c63e7c7cb3cb9f8ea319e4bb1676079c3a",
+      "module_declaration_bp": "Tethering/common/TetheringLib/Android.bp",
+      "module_declaration_verified": true,
+      "api_paths": [
+        {
+          "path": "Tethering/common/TetheringLib/api/current.txt",
+          "exists": true,
+          "sha256": "63e4a3901e7b9d4cb882b6c2d10afa974c978d1fa51e811541d93f518edb6a0b",
+          "first_line": "// Signature format: 2.0",
+          "nearest_android_bp": "Tethering/common/TetheringLib/Android.bp",
+          "nearest_bp_default_applicable_licenses": [
+            "Android-Apache-2.0"
+          ],
+          "header_license_references": []
+        }
+      ],
+      "legal_root_paths": []
+    },
+    {
+      "module": "framework-uwb",
+      "repo": "platform/packages/modules/Uwb",
+      "commit": "adcc2fe7aadac53e67402901e2246af21699749d",
+      "module_declaration_bp": "framework/Android.bp",
+      "module_declaration_verified": true,
+      "api_paths": [
+        {
+          "path": "framework/api/current.txt",
+          "exists": true,
+          "sha256": "39824f8c9fee1582598de5aa8cfa9653e84fbd69bd8aeb92c4a78c861faad552",
+          "first_line": "// Signature format: 2.0",
+          "nearest_android_bp": "framework/Android.bp",
+          "nearest_bp_default_applicable_licenses": [
+            "Android-Apache-2.0"
+          ],
+          "header_license_references": []
+        }
+      ],
+      "legal_root_paths": [
+        "NOTICE"
+      ]
+    },
+    {
+      "module": "framework-virtualization",
+      "repo": "platform/packages/modules/Virtualization",
+      "commit": "c984fc337c11ca5edc03ccf02037b2455dd8fcaf",
+      "module_declaration_bp": "libs/framework-virtualization/Android.bp",
+      "module_declaration_verified": true,
+      "api_paths": [
+        {
+          "path": "libs/framework-virtualization/api/current.txt",
+          "exists": true,
+          "sha256": "39824f8c9fee1582598de5aa8cfa9653e84fbd69bd8aeb92c4a78c861faad552",
+          "first_line": "// Signature format: 2.0",
+          "nearest_android_bp": "libs/framework-virtualization/Android.bp",
+          "nearest_bp_default_applicable_licenses": [
+            "Android-Apache-2.0"
+          ],
+          "header_license_references": []
+        }
+      ],
+      "legal_root_paths": []
+    },
+    {
+      "module": "framework-wifi",
+      "repo": "platform/packages/modules/Wifi",
+      "commit": "14c1216a43e60884e189a66d93d7c179a86ca4f5",
+      "module_declaration_bp": "framework/Android.bp",
+      "module_declaration_verified": true,
+      "api_paths": [
+        {
+          "path": "framework/api/current.txt",
+          "exists": true,
+          "sha256": "a67d7f0dce6800517dea7eb77b984a903c6640e0bab62365968afe68c6927516",
+          "first_line": "// Signature format: 2.0",
+          "nearest_android_bp": "framework/Android.bp",
+          "nearest_bp_default_applicable_licenses": [
+            "Android-Apache-2.0"
+          ],
+          "header_license_references": []
+        }
+      ],
+      "legal_root_paths": []
+    },
+    {
+      "module": "i18n.module.public.api",
+      "repo": "platform/external/icu",
+      "commit": "f17caeafcf20bd38074a9963c31df3629b70b5f5",
+      "module_declaration_bp": "android_icu4j/Android.bp",
+      "module_declaration_verified": true,
+      "api_paths": [
+        {
+          "path": "android_icu4j/api/public/current.txt",
+          "exists": true,
+          "sha256": "31d183909f4413b746de32453bf3b2226407c512b75b03e5dd76d8083ab08c54",
+          "first_line": "// Signature format: 2.0",
+          "nearest_android_bp": "android_icu4j/Android.bp",
+          "nearest_bp_default_applicable_licenses": [
+            "external_icu_license"
+          ],
+          "header_license_references": []
+        }
+      ],
+      "legal_root_paths": [
+        "LICENSE"
+      ]
+    },
+    {
+      "module": "framework-crashrecovery",
+      "repo": "platform/packages/modules/CrashRecovery",
+      "commit": "f38808d476fdb6e362bde748f87200dcce07ec0d",
+      "module_declaration_bp": "framework/Android.bp",
+      "module_declaration_verified": true,
+      "api_paths": [
+        {
+          "path": "framework/api/current.txt",
+          "exists": true,
+          "sha256": "39824f8c9fee1582598de5aa8cfa9653e84fbd69bd8aeb92c4a78c861faad552",
+          "first_line": "// Signature format: 2.0",
+          "nearest_android_bp": "framework/Android.bp",
+          "nearest_bp_default_applicable_licenses": [
+            "Android-Apache-2.0"
+          ],
+          "header_license_references": []
+        }
+      ],
+      "legal_root_paths": []
+    },
+    {
+      "module": "framework-platformcrashrecovery",
+      "repo": "platform/frameworks/base",
+      "commit": "99b01a65cc4c104933788b3143285ab6bae65827",
+      "module_declaration_bp": "packages/CrashRecovery/framework/Android.bp",
+      "module_declaration_verified": true,
+      "api_paths": [
+        {
+          "path": "packages/CrashRecovery/framework/api/current.txt",
+          "exists": true,
+          "sha256": "39824f8c9fee1582598de5aa8cfa9653e84fbd69bd8aeb92c4a78c861faad552",
+          "first_line": "// Signature format: 2.0",
+          "nearest_android_bp": "packages/CrashRecovery/framework/Android.bp",
+          "nearest_bp_default_applicable_licenses": [],
+          "header_license_references": []
+        }
+      ],
+      "legal_root_paths": [
+        "NOTICE"
+      ]
+    },
+    {
+      "module": "framework-ondeviceintelligence",
+      "repo": "platform/packages/modules/NeuralNetworks",
+      "commit": "6cd97dca5e3ce0bd539d84d78f777a3576e673e3",
+      "module_declaration_bp": "framework/Android.bp",
+      "module_declaration_verified": true,
+      "api_paths": [
+        {
+          "path": "framework/api/current.txt",
+          "exists": true,
+          "sha256": "39824f8c9fee1582598de5aa8cfa9653e84fbd69bd8aeb92c4a78c861faad552",
+          "first_line": "// Signature format: 2.0",
+          "nearest_android_bp": "framework/Android.bp",
+          "nearest_bp_default_applicable_licenses": [
+            "Android-Apache-2.0"
+          ],
+          "header_license_references": []
+        }
+      ],
+      "legal_root_paths": [
+        "LICENSE"
+      ]
+    },
+    {
+      "module": "framework-ondeviceintelligence-platform",
+      "repo": "platform/packages/modules/NeuralNetworks",
+      "commit": "6cd97dca5e3ce0bd539d84d78f777a3576e673e3",
+      "module_declaration_bp": "framework/Android.bp",
+      "module_declaration_verified": true,
+      "api_paths": [
+        {
+          "path": "framework/api/current.txt",
+          "exists": true,
+          "sha256": "39824f8c9fee1582598de5aa8cfa9653e84fbd69bd8aeb92c4a78c861faad552",
+          "first_line": "// Signature format: 2.0",
+          "nearest_android_bp": "framework/Android.bp",
+          "nearest_bp_default_applicable_licenses": [
+            "Android-Apache-2.0"
+          ],
+          "header_license_references": []
+        }
+      ],
+      "legal_root_paths": [
+        "LICENSE"
+      ]
+    },
+    {
+      "module": "framework-ranging",
+      "repo": "platform/packages/modules/Uwb",
+      "commit": "adcc2fe7aadac53e67402901e2246af21699749d",
+      "module_declaration_bp": "ranging/framework/Android.bp",
+      "module_declaration_verified": true,
+      "api_paths": [
+        {
+          "path": "ranging/framework/api/current.txt",
+          "exists": true,
+          "sha256": "53036f342a559f78e97296104e607d3e846bfbcf998d25d26b64a7a36921113e",
+          "first_line": "// Signature format: 2.0",
+          "nearest_android_bp": "ranging/framework/Android.bp",
+          "nearest_bp_default_applicable_licenses": [
+            "Android-Apache-2.0"
+          ],
+          "header_license_references": []
+        }
+      ],
+      "legal_root_paths": [
+        "NOTICE"
+      ]
+    }
+  ],
+  "verification": "Main agent independently checked all 38 module names against declaring Android.bp files, each r2 tag commit and each signature SHA-256, and the base bootclasspath names. License fields record observed references and do not assert clearance.",
+  "counts": {
+    "unconditional_modules": 33,
+    "conditional_alternatives": 5,
+    "module_rows": 38
+  },
+  "limits": [
+    "This records public source signature contributions; it does not establish product release flag selection or runtime compatibility.",
+    "The three root license modules include broad aggregation; applicable per-file notices and compliance obligations still need review.",
+    "The compiler worker has not been changed to consume this inventory."
+  ]
+}

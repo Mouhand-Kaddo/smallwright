@@ -1,0 +1,366 @@
+{
+  "status": "partial_component_provenance_not_a_release_input",
+  "source_archive": {
+    "path": "toolchains/android-sdk/platforms/android-36/android-stubs-src.jar",
+    "sha256": "f06372cb9bdbe4dececd35e5cb7b61fec01bb521dcd8a2424489f659b1e9322a"
+  },
+  "reference_archive_sha256": "d9eb9da824d9e247a352f570f01e1169e725b2954bca9e283a71786c59b59f9a",
+  "source_files": 4161,
+  "class_emitting_source_files": 4110,
+  "documentation_source_files": 51,
+  "source_bound_classes": 6222,
+  "final_annotation_classes": 5,
+  "signature_input_manifest": {
+    "path": "toolchain/platform-api36-source-header-manifest.json",
+    "sha256": "c4b1b8fc51b97d08ba2e7edc22d6e9787d3059ffd8874ffa9fd18a1c947f4172"
+  },
+  "signature_provider_source_counts": {
+    "documentation": 51,
+    "platform/external/conscrypt": 2,
+    "platform/external/icu": 110,
+    "platform/frameworks/base": 2055,
+    "platform/libcore": 1387,
+    "platform/packages/modules/AdServices": 72,
+    "platform/packages/modules/AppSearch": 41,
+    "platform/packages/modules/Bluetooth": 50,
+    "platform/packages/modules/ConfigInfrastructure": 2,
+    "platform/packages/modules/Connectivity": 51,
+    "platform/packages/modules/DeviceLock": 2,
+    "platform/packages/modules/HealthFitness": 105,
+    "platform/packages/modules/IPsec": 35,
+    "platform/packages/modules/Media": 10,
+    "platform/packages/modules/Nfc": 27,
+    "platform/packages/modules/OnDevicePersonalization": 37,
+    "platform/packages/modules/Permission": 1,
+    "platform/packages/modules/Profiling": 3,
+    "platform/packages/modules/SdkExtensions": 1,
+    "platform/packages/modules/StatsD": 1,
+    "platform/packages/modules/Uwb": 27,
+    "platform/packages/modules/Wifi": 69,
+    "platform/packages/providers/MediaProvider": 22
+  },
+  "header_categories": [
+    {
+      "category": "Android headerless",
+      "source_files": 5,
+      "class_files": 7
+    },
+    {
+      "category": "Apache header",
+      "source_files": 2679,
+      "class_files": 4534
+    },
+    {
+      "category": "Chromium BSD pointer",
+      "source_files": 14,
+      "class_files": 26
+    },
+    {
+      "category": "GPL+Classpath header",
+      "source_files": 1223,
+      "class_files": 1339
+    },
+    {
+      "category": "SAX public-domain declaration",
+      "source_files": 35,
+      "class_files": 35
+    },
+    {
+      "category": "Unicode/ICU pointer",
+      "source_files": 110,
+      "class_files": 214
+    },
+    {
+      "category": "W3C header",
+      "source_files": 36,
+      "class_files": 36
+    },
+    {
+      "category": "XML Pull pointer/headerless",
+      "source_files": 5,
+      "class_files": 5
+    },
+    {
+      "category": "copyright only",
+      "source_files": 1,
+      "class_files": 1
+    },
+    {
+      "category": "generated marker",
+      "source_files": 2,
+      "class_files": 25
+    },
+    {
+      "category": "package-info headerless",
+      "source_files": 51,
+      "class_files": 0
+    }
+  ],
+  "full_entry_inventory": {
+    "path": "toolchains/platform-api36-source-probe/component-inventory-20261012/inventory-bfcf28a49e4c42edbeca4ae10cce22b7.json",
+    "sha256": "4ad6f2671054e0ab24dc8d97784082074c7ce05f58294040dc292fc0f59c56e6"
+  },
+  "raw_xmlpull_sources": {
+    "repository": "platform/libcore",
+    "commit": "fff4fcc0cf7f080cf2511cbb57561482b13b218f",
+    "filegroup": "non_openjdk_javadoc_xml_files",
+    "source_rows": [
+      {
+        "entry": "org/xmlpull/v1/XmlPullParser.java",
+        "publishedSha256": "a4dad5b1056049a1556017764d850504a74d442b54d9e2de82ddcf6306d49e17",
+        "rawSha256": "ffd59aad6f26bc53e016d1d437e83059ebb09ff9aca7ff05d0decd43a718d458"
+      },
+      {
+        "entry": "org/xmlpull/v1/XmlPullParserException.java",
+        "publishedSha256": "c6ae82789151c04ab114a6f49721b223e36065682d522013c002ad191e48d946",
+        "rawSha256": "a275c02f1aa601dab909b37d9e17eb9413f284d3a9736294b18e6cb1c0966a24"
+      },
+      {
+        "entry": "org/xmlpull/v1/XmlPullParserFactory.java",
+        "publishedSha256": "d4fb43b37e898bed56819877e004b1193769596b7248a86ab8c05ffa99a9b923",
+        "rawSha256": "a5749154add84344cacfc64900816938d5ee1752fc6c5982f68fd3cb88316254"
+      },
+      {
+        "entry": "org/xmlpull/v1/XmlSerializer.java",
+        "publishedSha256": "22b07819dbed0adca56368307aba5a9cb890a9f02fff983985edbc16f2b8e27d",
+        "rawSha256": "8264a479c66efc52a5acdab9c294850a3b0e986bb2263d3e3b18e48a4eb8fc5a"
+      },
+      {
+        "entry": "org/xmlpull/v1/sax2/Driver.java",
+        "publishedSha256": "980d86746d26b304a3ed377b7aadb5ae65208a9b3c4d5e8a521780ee283888cc",
+        "rawSha256": "244f78e9c8f2be525c84425f60a7c9f156bb8c63c3846c8e50d85ba89e716fcc"
+      }
+    ],
+    "raw_regeneration_full_reference": {
+      "sha256": "015162e61dc185ac7c77bd12208921de208efa5f7645e35dda6a1c0128f2e70b",
+      "classes": 6227,
+      "strict_declaration_match": true,
+      "raw_replacements": 5
+    }
+  },
+  "raw_http_sources": {
+    "signature_provider": "platform/packages/modules/Connectivity",
+    "signature_commit": "627eb3c63e7c7cb3cb9f8ea319e4bb1676079c3a",
+    "raw_source_repository": "platform/external/cronet",
+    "raw_source_commit": "3d00a6f18075427606068c038ea2695053213440",
+    "filegroup": "httpclient_api_sources",
+    "source_rows": [
+      {
+        "source_path": "android/java/src/android/net/http/BidirectionalStream.java",
+        "raw_sha256": "b81793c0fcec23d79dd719b99d68e7d334e4936a91c345d25547320963e0acec",
+        "published_sha256": "a92427a0f24c4d520a3d7f080f0945809b89fd116ae927d9d492aa9d2a5de3d7"
+      },
+      {
+        "source_path": "android/java/src/android/net/http/CallbackException.java",
+        "raw_sha256": "834410ec46a215edaa694f1b3c1e0abbbbd1e712f351f842160c3f25caa7f7fd",
+        "published_sha256": "d08805850fc90119a016fd143fae4cd704146d05456700a4379836284e78a3b0"
+      },
+      {
+        "source_path": "android/java/src/android/net/http/ConnectionMigrationOptions.java",
+        "raw_sha256": "0d59056fe83baa1e3f4ef80a263ee129ac530136d3176583a06902c953c72559",
+        "published_sha256": "8a4793a6bdcaa61352ddf45180065acf7a687ecd755cbb91718d02cc156a6914"
+      },
+      {
+        "source_path": "android/java/src/android/net/http/DnsOptions.java",
+        "raw_sha256": "03b6838f67276303a5a5cb7ee3a76906aaa247bfb28f7973665f0841fea9e412",
+        "published_sha256": "843b40c09da045630d39c1b130dbfe8e4a1c73050ec63ed47cc2a1c8ef684216"
+      },
+      {
+        "source_path": "android/java/src/android/net/http/HttpEngine.java",
+        "raw_sha256": "b225dd8ac65c607c1e94f245c0cd3761b3f2100b9692cc6dedd843c4b5dd1114",
+        "published_sha256": "2265c75057ab85888eec302361c27c390d103e5c3e78e1d2a5944e441f0e309c"
+      },
+      {
+        "source_path": "android/java/src/android/net/http/HttpException.java",
+        "raw_sha256": "58e57863fdac84e74bc755ca13ee114001f5f0f3c0d995ededa21becf3b0f7f4",
+        "published_sha256": "08d74240a9fb9b507a06cf3d801e6f155b16a51eea9f603e7a758fb138e0431e"
+      },
+      {
+        "source_path": "android/java/src/android/net/http/InlineExecutionProhibitedException.java",
+        "raw_sha256": "37075632caa492cd7608b414702f9c8514eedf075bdcbb1683ed54fe4b833df2",
+        "published_sha256": "fa3daeef082c3af4098dfe0c233aaecb46a2bb1c16542127cf260b7341361cb1"
+      },
+      {
+        "source_path": "android/java/src/android/net/http/NetworkException.java",
+        "raw_sha256": "ec175639d6fb904b69c025f245ea358e7a2e4774b684f0e04af647e96f2867e6",
+        "published_sha256": "15fc5ac49c9e6b3ed11318c113597a6be2f7fb7bdecfeb84ab78357a6d2b8898"
+      },
+      {
+        "source_path": "android/java/src/android/net/http/QuicException.java",
+        "raw_sha256": "d8ca6d3617904fa870c972d2fa7503aeaf43733d87d3c71b4bfa4d32078eb65e",
+        "published_sha256": "14ada6cb42e3738344171d4e4f2f318c97b27eb060fd9969cabe9f97d93860b1"
+      },
+      {
+        "source_path": "android/java/src/android/net/http/QuicOptions.java",
+        "raw_sha256": "38b2ba029c78f404fbe24b0c48b42970b9903b96eb42c3f8f6cb860da82fa8bf",
+        "published_sha256": "1f9d4d9f8f06e6918bc1a24bb1a44f90a9395612fdda937b1b795eb346779009"
+      },
+      {
+        "source_path": "android/java/src/android/net/http/UploadDataProvider.java",
+        "raw_sha256": "ab9afc0065fe7d65916dded6d60ea49d005489bef1c8fcc11e000739191cf599",
+        "published_sha256": "7ee9dd8947f6777e0bca78905f46970868c3ebba5ca1566355a9f32036ac02d8"
+      },
+      {
+        "source_path": "android/java/src/android/net/http/UploadDataSink.java",
+        "raw_sha256": "5f7c161e43107985d01b402b3de5c427e788c6a40ddf29d2ff34df417b1c721e",
+        "published_sha256": "e08ba8e64c5fc3c6dfe20769141eb81a243e6dca2038835171b339a49cba69ce"
+      },
+      {
+        "source_path": "android/java/src/android/net/http/UrlRequest.java",
+        "raw_sha256": "23b0a9ef694e41954e97b2a9d50f5b8f92e32e5f5f3b90e4308d7ec593f93b0b",
+        "published_sha256": "2b7228156a81942182d4c559c65053cf7a010f1bf600a5a911cf71a4ad75a2c9"
+      },
+      {
+        "source_path": "android/java/src/android/net/http/UrlResponseInfo.java",
+        "raw_sha256": "ce3d25b9093a8dba2b22f8e9f423d7e8cc294ad0f4a3cf6e49dda591c5b10090",
+        "published_sha256": "ace816ee2a42160b439573927a96159d84389abac59ce18a8bae9c5979dd2fc0"
+      }
+    ],
+    "assembly_edge": "framework-connectivity -> CronetJavaDefaults -> httpclient_api_sources",
+    "raw_regeneration_verified": false
+  },
+  "notice_texts": [
+    {
+      "path": "toolchain/api36-component-notices/external-conscrypt-LICENSE",
+      "source_repository": "platform/external/conscrypt",
+      "source_commit": "156a72a6cf2c27ff27ca526942258af8ae6b13fd",
+      "source_path": "LICENSE",
+      "source_url": "https://android.googlesource.com/platform/external/conscrypt/+/156a72a6cf2c27ff27ca526942258af8ae6b13fd/LICENSE?format=TEXT",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+      "bytes": 11358,
+      "scope": "component aggregate text, not automatic per-file applicability"
+    },
+    {
+      "path": "toolchain/api36-component-notices/external-conscrypt-NOTICE",
+      "source_repository": "platform/external/conscrypt",
+      "source_commit": "156a72a6cf2c27ff27ca526942258af8ae6b13fd",
+      "source_path": "NOTICE",
+      "source_url": "https://android.googlesource.com/platform/external/conscrypt/+/156a72a6cf2c27ff27ca526942258af8ae6b13fd/NOTICE?format=TEXT",
+      "sha256": "378a858f72823759ec0cff19b32e70b7d355dbf8f5810df484dc5e3d60ea8dbd",
+      "bytes": 1097,
+      "scope": "component aggregate text, not automatic per-file applicability"
+    },
+    {
+      "path": "toolchain/api36-component-notices/external-icu-LICENSE",
+      "source_repository": "platform/external/icu",
+      "source_commit": "f17caeafcf20bd38074a9963c31df3629b70b5f5",
+      "source_path": "LICENSE",
+      "source_url": "https://android.googlesource.com/platform/external/icu/+/f17caeafcf20bd38074a9963c31df3629b70b5f5/LICENSE?format=TEXT",
+      "sha256": "ea75d2e79a97f8dfc1e1ca04beedc432a47af4993e0cd659cef062050a57d3f9",
+      "bytes": 36620,
+      "scope": "component aggregate text, not automatic per-file applicability"
+    },
+    {
+      "path": "toolchain/api36-component-notices/frameworks-base-NOTICE",
+      "source_repository": "platform/frameworks/base",
+      "source_commit": "99b01a65cc4c104933788b3143285ab6bae65827",
+      "source_path": "NOTICE",
+      "source_url": "https://android.googlesource.com/platform/frameworks/base/+/99b01a65cc4c104933788b3143285ab6bae65827/NOTICE?format=TEXT",
+      "sha256": "cf4dd7cea5b6bcd2622ddd3529b3c74d16ba2b4db444575bc6f5c33f8a960530",
+      "bytes": 18182,
+      "scope": "component aggregate text, not automatic per-file applicability"
+    },
+    {
+      "path": "toolchain/api36-component-notices/libcore-LICENSE",
+      "source_repository": "platform/libcore",
+      "source_commit": "fff4fcc0cf7f080cf2511cbb57561482b13b218f",
+      "source_path": "LICENSE",
+      "source_url": "https://android.googlesource.com/platform/libcore/+/fff4fcc0cf7f080cf2511cbb57561482b13b218f/LICENSE?format=TEXT",
+      "sha256": "067d8f7f645efe1131a9df13aa80ec2910d4ff898f9b14d337443a4202d56ab6",
+      "bytes": 19263,
+      "scope": "component aggregate text, not automatic per-file applicability"
+    },
+    {
+      "path": "toolchain/api36-component-notices/libcore-NOTICE",
+      "source_repository": "platform/libcore",
+      "source_commit": "fff4fcc0cf7f080cf2511cbb57561482b13b218f",
+      "source_path": "NOTICE",
+      "source_url": "https://android.googlesource.com/platform/libcore/+/fff4fcc0cf7f080cf2511cbb57561482b13b218f/NOTICE?format=TEXT",
+      "sha256": "ded3eab76e881c8c18ab9e4ed9e888b1afcac41435913930f88f8188cecb2e8f",
+      "bytes": 5788,
+      "scope": "component aggregate text, not automatic per-file applicability"
+    },
+    {
+      "path": "toolchain/api36-component-notices/libcore-ojluni-src-main-NOTICE",
+      "source_repository": "platform/libcore",
+      "source_commit": "fff4fcc0cf7f080cf2511cbb57561482b13b218f",
+      "source_path": "ojluni/src/main/NOTICE",
+      "source_url": "https://android.googlesource.com/platform/libcore/+/fff4fcc0cf7f080cf2511cbb57561482b13b218f/ojluni/src/main/NOTICE?format=TEXT",
+      "sha256": "4e1144ff2b1369e7b9e8a1a3fb94ea3deee99d5b327cd94b423d148dfa34d25f",
+      "bytes": 13928,
+      "scope": "component aggregate text, not automatic per-file applicability"
+    },
+    {
+      "path": "toolchain/api36-component-notices/packages-modules-AdServices-NOTICE",
+      "source_repository": "platform/packages/modules/AdServices",
+      "source_commit": "a6ee8245f54f1719a899809cc8727f7fcce9ca35",
+      "source_path": "NOTICE",
+      "source_url": "https://android.googlesource.com/platform/packages/modules/AdServices/+/a6ee8245f54f1719a899809cc8727f7fcce9ca35/NOTICE?format=TEXT",
+      "sha256": "38751245389e1e23f73e6f5384b5cbe7fa972cc4410c5adc9c04b082a0b9561a",
+      "bytes": 10695,
+      "scope": "component aggregate text, not automatic per-file applicability"
+    },
+    {
+      "path": "toolchain/api36-component-notices/packages-modules-AppSearch-NOTICE",
+      "source_repository": "platform/packages/modules/AppSearch",
+      "source_commit": "19febf99bc7e9e654d140dfadbfb426fc5227940",
+      "source_path": "NOTICE",
+      "source_url": "https://android.googlesource.com/platform/packages/modules/AppSearch/+/19febf99bc7e9e654d140dfadbfb426fc5227940/NOTICE?format=TEXT",
+      "sha256": "cf14d0774dd1e5f5ae0416edbc5c0de706c474e9402e3fe367e9103cd13891f7",
+      "bytes": 10695,
+      "scope": "component aggregate text, not automatic per-file applicability"
+    },
+    {
+      "path": "toolchain/api36-component-notices/packages-modules-Bluetooth-NOTICE",
+      "source_repository": "platform/packages/modules/Bluetooth",
+      "source_commit": "4b73ee6039271ffbf71ebdc8c109fc98eac8e137",
+      "source_path": "NOTICE",
+      "source_url": "https://android.googlesource.com/platform/packages/modules/Bluetooth/+/4b73ee6039271ffbf71ebdc8c109fc98eac8e137/NOTICE?format=TEXT",
+      "sha256": "fcfd08d120e2558dded978b780df4404a221b94372f7d2aa407b7ada7c54ff07",
+      "bytes": 16650,
+      "scope": "component aggregate text, not automatic per-file applicability"
+    },
+    {
+      "path": "toolchain/api36-component-notices/packages-modules-OnDevicePersonalization-LICENSE",
+      "source_repository": "platform/packages/modules/OnDevicePersonalization",
+      "source_commit": "fa6ade439544d48640ee3db5665e0a90035787b8",
+      "source_path": "LICENSE",
+      "source_url": "https://android.googlesource.com/platform/packages/modules/OnDevicePersonalization/+/fa6ade439544d48640ee3db5665e0a90035787b8/LICENSE?format=TEXT",
+      "sha256": "58d1e17ffe5109a7ae296caafcadfdbe6a7d176f0bc4ab01e12a689b0499d8bd",
+      "bytes": 11357,
+      "scope": "component aggregate text, not automatic per-file applicability"
+    },
+    {
+      "path": "toolchain/api36-component-notices/packages-modules-Uwb-NOTICE",
+      "source_repository": "platform/packages/modules/Uwb",
+      "source_commit": "adcc2fe7aadac53e67402901e2246af21699749d",
+      "source_path": "NOTICE",
+      "source_url": "https://android.googlesource.com/platform/packages/modules/Uwb/+/adcc2fe7aadac53e67402901e2246af21699749d/NOTICE?format=TEXT",
+      "sha256": "bd4990da994f3be0ee455a69d7d28b5aea6430f33acf75bbba4e7e9aef07b29b",
+      "bytes": 1061,
+      "scope": "component aggregate text, not automatic per-file applicability"
+    },
+    {
+      "path": "toolchain/api36-component-notices/xmlpull-LICENSE.txt",
+      "source_url": "https://www.xmlpull.org/v1/download/unpacked/LICENSE.txt",
+      "sha256": "4eeafa29d1d9a0cdbdad0f5178cd553527329b57b5808ffe912cb9c698343612",
+      "bytes": 370,
+      "scope": "XML Pull API distribution text; five selected definitions, excluding tests"
+    },
+    {
+      "path": "toolchain/api36-component-notices/chromium-BSD-LICENSE",
+      "source_url": "https://chromium.googlesource.com/chromium/src/+/refs/tags/126.0.6423.0/LICENSE?format=TEXT",
+      "sha256": "368cca1106be99d39ecd32a38d8305585d802a475effb66380b91ffc9bcf709b",
+      "bytes": 1536,
+      "scope": "Chromium BSD terms referenced by the fourteen HTTP source headers; unrelated Cronet implementation dependencies excluded"
+    }
+  ],
+  "notice_file_count": 14,
+  "notice_bytes": 158600,
+  "limits": [
+    "Signature provider membership does not establish exact SDK raw-source lineage.",
+    "Header categories do not themselves complete per-component rights/notice/source obligations.",
+    "Corresponding source delivery, headerless/generated/documentation entries and whole SDK-derived questions remain open.",
+    "No framework resource clearance, production worker promotion, APK, phone test or full alpha pass."
+  ]
+}

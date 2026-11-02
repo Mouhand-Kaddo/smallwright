@@ -1,0 +1,1 @@
+{"id":"counter_02","kind":"supported","request":"Add a Reset button that asks for confirmation before setting the counter to zero.","checklist":["Reset asks for confirmation","Cancel keeps the old value","Confirm sets zero and persists it"]}

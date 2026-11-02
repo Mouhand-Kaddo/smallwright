@@ -1,0 +1,34 @@
+Third-party licenses
+
+INDEX.md in this folder lists every third-party input with its version,
+SHA-256, source and license. This plain-text summary says where each text is.
+
+Worker
+- ECJ 4.12: EPL-2.0. ecj/EPL-2.0.txt, ecj/about.html. The corresponding
+  source is ecjsrc-4.12.jar; see ecj/SOURCE.txt.
+- R8/D8 8.13.23: BSD-3-Clause, plus the Apache-2.0 and BSD libraries R8
+  bundles. r8/LICENSE is the exact file from the R8 jar. It also lists
+  Trove4J and JAXB, which are not in the jar.
+- AAPT2 (built from source for ARM64): Apache-2.0 and the licenses of its
+  linked components, in aapt2-source-built/ and aapt2-aosp/. INDEX.md maps
+  each linked archive to its notice.
+- AOSP libcore lambda stubs (LambdaMetafactory, SerializedLambda,
+  StringConcatFactory; libcore commit de876a01b29230b877c9f408348c38a90ee724a5):
+  GPLv2 with the Classpath exception. core-lambda-stubs/LICENSE and
+  core-lambda-stubs/NOTICE. Compile-only ECJ input; none of it enters a
+  generated app.
+
+Controller
+- AndroidX, Jetpack Compose, Kotlin standard library, kotlinx-coroutines,
+  kotlinx-serialization-core, JetBrains annotations, JSpecify, Guava
+  listenablefuture: Apache-2.0. Apache-2.0.txt.
+- Gson 2.11.0: Apache-2.0. gson/LICENSE.
+- apksig 8.13.0: Apache-2.0. apksig/LICENSE, copied from the apksig jar.
+- Bouncy Castle 1.86: Bouncy Castle Licence (MIT). bouncycastle/LICENSE.md.
+- Cascadia Mono font: SIL Open Font License 1.1. CascadiaMono-OFL.txt.
+
+Not shipped in release builds
+- aapt2-wrapper/ and the BoringSSL, Brotli, GoogleTest, LZ4, PCRE, tinyxml2
+  and zstd files in aapt2-aosp/ belong to the older lzhiyong AAPT2 binary.
+- sdk36/package.xml belongs to an Android SDK jar an earlier worker bundled.
+  Neither APK bundles it now; setup downloads Google's platform files.

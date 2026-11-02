@@ -1,0 +1,61 @@
+{
+  "audit_date": "2026-09-25",
+  "scope": "Newly retrieved source notices; not a complete binary SBOM or redistribution approval",
+  "binary_source_correspondence": "unverified",
+  "tag_resolutions": {
+    "external-googletest": {
+      "tag": "platform-tools-35.0.2",
+      "commit": "b9640af0b0a5b0e94bbef3f584763be6926b1ce3",
+      "meaning": "tag resolution only; use in packaged release unproven"
+    },
+    "external-tinyxml2": {
+      "tag": "platform-tools-35.0.2",
+      "commit": "c1a174ab5c7f50e6877d3f1c8355759890e61300",
+      "meaning": "tag resolution only; use in packaged release unproven"
+    }
+  },
+  "notice_files": [
+    {
+      "file": "libbase-NOTICE",
+      "url": "https://android.googlesource.com/platform/system/libbase/+/8d00a4f2e93ce79877575157db1a56c8f8485c90/NOTICE?format=TEXT",
+      "sha256": "e0afbb47be661ce2076d21a1d4dc02caa58b7c215ab7ff9d151b6724be341f77",
+      "bytes": 12840
+    },
+    {
+      "file": "expat-COPYING",
+      "url": "https://android.googlesource.com/platform/external/expat/+/b257389b1a8d2af937cfa09fb4bb0934d82f0b4e/COPYING?format=TEXT",
+      "sha256": "122f2c27000472a201d337b9b31f7eb2b52d091b02857061a8880371612d9534",
+      "bytes": 1144
+    },
+    {
+      "file": "libpng-LICENSE",
+      "url": "https://android.googlesource.com/platform/external/libpng/+/fd431af9a5bb2a1b646aab75e529d4fd39171c7b/LICENSE?format=TEXT",
+      "sha256": "7317e078e2d3b5d7ba5a6159e650945153262b44b76f6700f8e9edb261c5143e",
+      "bytes": 5345
+    },
+    {
+      "file": "core-libcutils-NOTICE",
+      "url": "https://android.googlesource.com/platform/system/core/+/de0979b80d7ccda90c265be919691e038b0c7690/libcutils/NOTICE?format=TEXT",
+      "sha256": "38751245389e1e23f73e6f5384b5cbe7fa972cc4410c5adc9c04b082a0b9561a",
+      "bytes": 10695
+    },
+    {
+      "file": "core-libutils-NOTICE",
+      "url": "https://android.googlesource.com/platform/system/core/+/de0979b80d7ccda90c265be919691e038b0c7690/libutils/NOTICE?format=TEXT",
+      "sha256": "38751245389e1e23f73e6f5384b5cbe7fa972cc4410c5adc9c04b082a0b9561a",
+      "bytes": 10695
+    },
+    {
+      "file": "googletest-LICENSE",
+      "url": "https://android.googlesource.com/platform/external/googletest/+/b9640af0b0a5b0e94bbef3f584763be6926b1ce3/LICENSE?format=TEXT",
+      "sha256": "9702de7e4117a8e2b20dafab11ffda58c198aede066406496bef670d40a22138",
+      "bytes": 1475
+    },
+    {
+      "file": "tinyxml2-LICENSE.txt",
+      "url": "https://android.googlesource.com/platform/external/tinyxml2/+/c1a174ab5c7f50e6877d3f1c8355759890e61300/LICENSE.txt?format=TEXT",
+      "sha256": "9332252e9b9e46db8285d4a3f0bf25f139bf1dca6781b956d57f2302efca6432",
+      "bytes": 808
+    }
+  ]
+}

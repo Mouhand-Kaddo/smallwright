@@ -1,0 +1,13 @@
+{
+  "status": "host_source_release_filter_experiment_not_frozen_sdk_or_license_clearance",
+  "source_tag": "android-16.0.0_r2",
+  "release": "existing_BP2A_source_policy_experiment",
+  "api_flags": {
+    "path": "../toolchains/platform-api36-source-probe/framework-flags-r2-public-modules/exportable-flags-config.xml",
+    "sha256": "671edeeefdea02de7552383e34dfd64059f556ec738be5eb319d4ab7b162d2e3"
+  },
+  "history_manifest": {
+    "path": "platform-api35-filtered-source-history.json",
+    "sha256": "05e854ec9a74f12c46713382a5be849e076914fd4dcb7e3790a740490ed9157e"
+  }
+}

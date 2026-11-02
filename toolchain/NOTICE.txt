@@ -1,0 +1,31 @@
+Compiler binaries are ignored local inputs and are not tracked in this repository.
+toolchain/manifest.json pins their SHA-256 values, and the build refuses
+inputs that do not match.
+
+- ECJ 4.12 from the Eclipse 4.12 release,
+  https://archive.eclipse.org/eclipse/downloads/drops4/R-4.12-201906051800/ecj-4.12.jar,
+  SHA-256 69dad18a1fcacd342a7d44c5abf74f50e7529975553a24c64bce0b29b86af497.
+  EPL-2.0; source and license text in licenses/ecj/.
+- R8 8.13.23 from Google's Maven repository, SHA-256
+  e3cdcb003d9beca956209ad6b9e9df31f26b732bfaed9c7c8674e903ca9f3b81.
+  Its LICENSE is preserved verbatim in licenses/r8/LICENSE.
+- AAPT2 built from source for ARM64, SHA-256
+  ed917a383f890b2cad3eb3be00657f20d4fc6f73ca5bbbabf062d357633374e7.
+  Build record in docs/validation/aapt2-source-build.md; notices for its
+  linked components in licenses/aapt2-source-built/ and licenses/aapt2-aosp/.
+  The older lzhiyong/android-sdk-tools 35.0.2 binary is not shipped in
+  release builds.
+
+The worker compiles against Google's Android API 36 android.jar. The APKs do
+not package it: the controller downloads it from Google during setup and the
+worker keeps it unchanged in private storage. Only generated app classes enter
+DEX. ECJ also compiles the three unchanged sources of AOSP libcore's
+core-lambda-stubs-for-system-modules (libcore commit
+de876a01b29230b877c9f408348c38a90ee724a5, ojluni/src/lambda/java/java/lang/invoke/),
+which declare the java.lang.invoke classes lambdas need and android.jar lacks.
+They are GPLv2 with the Classpath exception; the worker ships them as assets
+with their headers, and licenses/core-lambda-stubs/ holds the module's license
+text. D8 desugars every use, so none of them enters a generated app.
+
+See licenses/INDEX.md for every bundled input, its license and where the text
+is.

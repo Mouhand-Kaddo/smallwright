@@ -1,0 +1,33 @@
+{
+  "aapt2": {
+    "abi": "arm64-v8a",
+    "source": "AOSP android-16.0.0_r4 through Termux android-build-tools 16.0.0.4 (commit c4edf8539a34a8600538e6642c1ecb170452a79e) with its 11 submodules",
+    "built_by": "scripts/prepare_aapt2_source_candidate.py and scripts/build_aapt2_source_candidate.sh, NDK 28.2.13676358",
+    "record": "docs/validation/aapt2-source-build.md",
+    "so_sha256": "ed917a383f890b2cad3eb3be00657f20d4fc6f73ca5bbbabf062d357633374e7",
+    "license": "Apache-2.0 and the linked components' licenses in toolchain/licenses/aapt2-source-built/ and aapt2-aosp/",
+    "replaces": "lzhiyong android-sdk-tools 35.0.2 binary db737b3bbee99dd8a9e56108cc05d032597874d3f8ac557a69f3c5de5efaf57f, whose source could not be matched"
+  },
+  "ecj": {
+    "release_url": "https://archive.eclipse.org/eclipse/downloads/drops4/R-4.12-201906051800/ecj-4.12.jar",
+    "release": "Eclipse 4.12",
+    "jar_sha256": "69dad18a1fcacd342a7d44c5abf74f50e7529975553a24c64bce0b29b86af497",
+    "license": "EPL-2.0",
+    "status": "compilation against the Android platform file passed on the Galaxy A33"
+  },
+  "r8": {
+    "maven_coordinate": "com.android.tools:r8:8.13.23",
+    "source_repository": "https://r8.googlesource.com/r8",
+    "jar_sha256": "e3cdcb003d9beca956209ad6b9e9df31f26b732bfaed9c7c8674e903ca9f3b81",
+    "licenses": [
+      "BSD-3-Clause",
+      "Apache-2.0",
+      "MIT",
+      "BSD",
+      "CDDL-1.1 OR GPL-2.0 WITH Classpath-exception-2.0",
+      "LGPL-2.1-only",
+      "EDL-1.0"
+    ],
+    "status": "D8 conversion passed through the physical S23 worker and API 36 emulator runtime/update; bundled LICENSE is byte-verified"
+  }
+}

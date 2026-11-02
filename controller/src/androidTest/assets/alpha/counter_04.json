@@ -1,0 +1,1 @@
+{"id":"counter_04","kind":"supported","request":"Show a separate lifetime tap count that increases on every Increment tap, even after the main count is reset.","checklist":["Tap count is distinct from the main count","Reset does not clear tap count","Both values remain after relaunch"]}

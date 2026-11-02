@@ -1,0 +1,201 @@
+{
+  "status": "exact_installed_runtime_inputs_not_complete_notice_clearance",
+  "ndk_version": "28.2.13676358",
+  "candidate_elf_sha256": "b98cb0180ef839850ce63fc81d6d662834503d24b0fae83594c5d497e86c2179",
+  "link_map_sha256": "d97f516e1f5ee67e45d6c797c50bd62fd7eb9741129f78844efa3e3ae7c61c8d",
+  "selected_archive_member_count": 110,
+  "source_manifest_projects": {
+    "toolchain/llvm-project": "97a699bf4812a18fb657c2779f5296a4ab2694d2",
+    "toolchain/llvm_android": "e727bfb014bd436f581a66a450c939a6983a1fc3",
+    "platform/bionic": "b86008a9cd14a7748867d2232e6de439e4809c10"
+  },
+  "build_info": {
+    "build_id": "13624864",
+    "branch": "aosp-llvm-r530567"
+  },
+  "installed_metadata": [
+    {
+      "path": "toolchains/android-sdk/ndk/28.2.13676358/source.properties",
+      "sha256": "c00aa236fdb205e9be9edd9e2169763e48aca52735efff4e16f34205d49783b5"
+    },
+    {
+      "path": "toolchains/android-sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/linux-x86_64/manifest_13624864.xml",
+      "sha256": "f6d04b56172c8d31f11cf7286208caa1dda259d544d72706ca56fc173ac1d47c"
+    },
+    {
+      "path": "toolchains/android-sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/linux-x86_64/BUILD_INFO",
+      "sha256": "d4985ee45da1e3188abe64289ba4c54cf45097800a5baff151657553a929b659"
+    },
+    {
+      "path": "toolchains/android-sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/linux-x86_64/clang_source_info.md",
+      "sha256": "8ffa6ebc4941a0f0de492584444c08b65ce96ba32d824d674fd35aa0398f1454"
+    },
+    {
+      "path": "toolchains/android-sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/linux-x86_64/NOTICE",
+      "sha256": "f96f763beb66a7ba7a667647fc64c0226ace875e590c831fdd9579ec1c1d91e1"
+    },
+    {
+      "path": "toolchains/android-sdk/ndk/28.2.13676358/NOTICE.toolchain",
+      "sha256": "789714a9076571c580cf531bdcebec776a4d889c12c3c1108adafc6e4338710a"
+    },
+    {
+      "path": "toolchains/android-sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/linux-x86_64/sysroot/NOTICE",
+      "sha256": "2905ac5c59628352af990c748a8f4c3675a04f36eca7914612e3068661d2c6a6"
+    }
+  ],
+  "runtime_archives": [
+    {
+      "path": "toolchains/android-sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/19/lib/linux/aarch64/libunwind.a",
+      "sha256": "cee1176cb585dbd90891470f8c40ae913922515edb225698d819290fc0132787",
+      "selected_member_count": 4,
+      "selected_members": [
+        "UnwindLevel1.c.o",
+        "UnwindRegistersRestore.S.o",
+        "UnwindRegistersSave.S.o",
+        "libunwind.cpp.o"
+      ]
+    },
+    {
+      "path": "toolchains/android-sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/19/lib/linux/libclang_rt.builtins-aarch64-android.a",
+      "sha256": "9c94855d5c2e6db3797dc4b45fc4122927bd508944ac8ca4f4519c68a58f2ab1",
+      "selected_member_count": 64,
+      "selected_members": [
+        "aarch64.c.o",
+        "addtf3.c.o",
+        "clzti2.c.o",
+        "comparetf2.c.o",
+        "divti3.c.o",
+        "emutls.c.o",
+        "fixunstfdi.c.o",
+        "floattidf.c.o",
+        "floatunditf.c.o",
+        "fp_mode.c.o",
+        "modti3.c.o",
+        "outline_atomic_cas1_1.S.o",
+        "outline_atomic_cas1_2.S.o",
+        "outline_atomic_cas1_3.S.o",
+        "outline_atomic_cas1_4.S.o",
+        "outline_atomic_cas4_1.S.o",
+        "outline_atomic_cas4_2.S.o",
+        "outline_atomic_cas4_3.S.o",
+        "outline_atomic_cas4_4.S.o",
+        "outline_atomic_cas8_1.S.o",
+        "outline_atomic_cas8_2.S.o",
+        "outline_atomic_cas8_3.S.o",
+        "outline_atomic_cas8_4.S.o",
+        "outline_atomic_ldadd4_1.S.o",
+        "outline_atomic_ldadd4_2.S.o",
+        "outline_atomic_ldadd4_3.S.o",
+        "outline_atomic_ldadd4_4.S.o",
+        "outline_atomic_ldadd8_1.S.o",
+        "outline_atomic_ldadd8_2.S.o",
+        "outline_atomic_ldadd8_3.S.o",
+        "outline_atomic_ldadd8_4.S.o",
+        "outline_atomic_ldclr8_1.S.o",
+        "outline_atomic_ldclr8_2.S.o",
+        "outline_atomic_ldclr8_3.S.o",
+        "outline_atomic_ldclr8_4.S.o",
+        "outline_atomic_ldeor8_1.S.o",
+        "outline_atomic_ldeor8_2.S.o",
+        "outline_atomic_ldeor8_3.S.o",
+        "outline_atomic_ldeor8_4.S.o",
+        "outline_atomic_ldset4_1.S.o",
+        "outline_atomic_ldset4_2.S.o",
+        "outline_atomic_ldset4_3.S.o",
+        "outline_atomic_ldset4_4.S.o",
+        "outline_atomic_ldset8_1.S.o",
+        "outline_atomic_ldset8_2.S.o",
+        "outline_atomic_ldset8_3.S.o",
+        "outline_atomic_ldset8_4.S.o",
+        "outline_atomic_swp1_1.S.o",
+        "outline_atomic_swp1_2.S.o",
+        "outline_atomic_swp1_3.S.o",
+        "outline_atomic_swp1_4.S.o",
+        "outline_atomic_swp4_1.S.o",
+        "outline_atomic_swp4_2.S.o",
+        "outline_atomic_swp4_3.S.o",
+        "outline_atomic_swp4_4.S.o",
+        "outline_atomic_swp8_1.S.o",
+        "outline_atomic_swp8_2.S.o",
+        "outline_atomic_swp8_3.S.o",
+        "outline_atomic_swp8_4.S.o",
+        "subtf3.c.o",
+        "trunctfsf2.c.o",
+        "udivmodti4.c.o",
+        "udivti3.c.o",
+        "umodti3.c.o"
+      ]
+    },
+    {
+      "path": "toolchains/android-sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/libc++_static.a",
+      "sha256": "111648eb99781b8a734f3557aa1bd1efbd875af6b35b545eae1d89d75cd41b2a",
+      "selected_member_count": 26,
+      "selected_members": [
+        "algorithm.cpp.o",
+        "bind.cpp.o",
+        "call_once.cpp.o",
+        "chrono.cpp.o",
+        "condition_variable.cpp.o",
+        "condition_variable_destructor.cpp.o",
+        "error_category.cpp.o",
+        "exception.cpp.o",
+        "future.cpp.o",
+        "hash.cpp.o",
+        "ios.cpp.o",
+        "ios.instantiations.cpp.o",
+        "iostream.cpp.o",
+        "locale.cpp.o",
+        "memory.cpp.o",
+        "mutex.cpp.o",
+        "mutex_destructor.cpp.o",
+        "new_helpers.cpp.o",
+        "optional.cpp.o",
+        "random.cpp.o",
+        "regex.cpp.o",
+        "stdexcept.cpp.o",
+        "string.cpp.o",
+        "system_error.cpp.o",
+        "thread.cpp.o",
+        "variant.cpp.o"
+      ]
+    },
+    {
+      "path": "toolchains/android-sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/libc++abi.a",
+      "sha256": "da34de171d83e7e9fb0d7b99ce9b0ac88ce5368dd3b581efe13971ef6152edbe",
+      "selected_member_count": 16,
+      "selected_members": [
+        "abort_message.cpp.o",
+        "cxa_aux_runtime.cpp.o",
+        "cxa_default_handlers.cpp.o",
+        "cxa_demangle.cpp.o",
+        "cxa_exception.cpp.o",
+        "cxa_exception_storage.cpp.o",
+        "cxa_guard.cpp.o",
+        "cxa_handlers.cpp.o",
+        "cxa_personality.cpp.o",
+        "cxa_virtual.cpp.o",
+        "fallback_malloc.cpp.o",
+        "private_typeinfo.cpp.o",
+        "stdlib_exception.cpp.o",
+        "stdlib_new_delete.cpp.o",
+        "stdlib_stdexcept.cpp.o",
+        "stdlib_typeinfo.cpp.o"
+      ]
+    }
+  ],
+  "startup_objects": [
+    {
+      "path": "toolchains/android-sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/31/crtbegin_dynamic.o",
+      "sha256": "b3813e65abc9bc6676db7cf7eea08cbc71e6cef6f8037d15205d16786cc6c0b0"
+    },
+    {
+      "path": "toolchains/android-sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/31/crtend_android.o",
+      "sha256": "60ac71634f21a7b2ba70e0c60deaaeee2058f4aa06b7000dc63677771a87c3b6"
+    }
+  ],
+  "limits": [
+    "The metadata identifies installed source/build lineage; it is not an archive-specific reconstruction or bit-for-bit reproduction.",
+    "Selected member source paths, exact applicable notices and transitive included material still need review.",
+    "The receipt belongs to the strict candidate map; later candidate maps must be compared before applying it."
+  ]
+}

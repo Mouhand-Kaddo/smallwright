@@ -1,0 +1,32 @@
+{
+  "wrapper_commit": "c4edf8539a34a8600538e6642c1ecb170452a79e",
+  "patched_files": {
+    "vendor/aidl/code_writer.cpp": "132d71be122ff9742e9dc679f9ff8d1930a7fe420e54868d2dd76726028b1139",
+    "vendor/aidl/code_writer.h": "6354eddab8092ec34d719787f049b712413375ca6fd0f82501fe962b8326f716",
+    "vendor/aidl/generate_aidl_mappings.cpp": "44600606149db9e7483b25bc3bcc44fc3685ca85aef662033eedd52138396c68",
+    "vendor/aidl/generate_java.cpp": "bdd8f2a51f95d4aad1755c19e4a6c6d31730aa80669467893c4b3e0bb820eb97",
+    "vendor/base/libs/androidfw/ApkParsing.cpp": "12f9547bd187b52b39d4b4083dcf18a2f3eb0deec308c7e2589d3925baaecd03",
+    "vendor/base/libs/androidfw/BigBufferStream.cpp": "6e38184d5878c20a9c2620c280aec934d4037e7bf33f6b068cac807b59242a73",
+    "vendor/base/libs/androidfw/PngCrunch.cpp": "97b0bb10dad061ecaaeefc76dd02c2cb0480186a5c02736495354ce31d1ab84f",
+    "vendor/base/libs/androidfw/include/android_content_res.h": "9e4d4aca97ff878e2a983e66bd381507d35a315e5ff9077800b9d1fc4dfc38ad",
+    "vendor/base/libs/androidfw/include/androidfw/FileStream.h": "7b4e6bd068daec889703084054b6a448dc2939ae7df15bfe824b60c6533ca378",
+    "vendor/base/tools/aapt2/ApkInfo.proto": "2241837a9a6ace73f25fdd67cd447695d9593007479ef5acef1805485651ba72",
+    "vendor/base/tools/aapt2/AppInfo.h": "4c6e6788ec2b7ac2f89ce4fdd3c696c586f412f32a95a55133fcb4984e310df0",
+    "vendor/base/tools/aapt2/Resources.proto": "bc39b8839b9da7a21598c229543ddb9178ee8e30c0e851940d3238d8dd0f43f7",
+    "vendor/base/tools/aapt2/ResourcesInternal.proto": "803ede0cab46b0e370e3d57cd5cf023a7cd88c2fd6ff796a7d89579f5826daf6",
+    "vendor/base/tools/aapt2/cmd/Dump.cpp": "67c7440c38c667382da861337509f3579c16e70d9e4ee87a2c3b1828a17e6958",
+    "vendor/base/tools/aapt2/io/StringStream.cpp": "910b1fa8913a24d2c2dff07c3fbc4955bd93ee6dad945102e274f5db4a2825af",
+    "vendor/build/tools/zipalign/ZipFile.cpp": "bafcb4d5b95d425d4be96f07e5141cffe2e098870ede3b7f02428708bb234b5f",
+    "vendor/core/libutils/Threads.cpp": "a26b38fdfa033ecbb85b3e4c3e0fcfe705ee9915e44650a4ce1866d69672e009",
+    "vendor/incremental_delivery/incfs/util/include/util/map_ptr.h": "f549cb8ab5ad5f59b337ab3bd5bbfa42ee61c0b0a3c2c1e62703b784398e65e1",
+    "vendor/incremental_delivery/incfs/util/map_ptr.cpp": "caf9213c5d56ad66729420f7f030fbc26a99b851a900911deee7ee225a3c6278",
+    "vendor/libandroidfw.cmake": "c2fc35dcfe0df8f7f6c5aeadd369f2eda9de7d594a6857f5bdaea866f66bee9c",
+    "vendor/libbase/logging.cpp": "4cccf83bce174221228868deef19761477ffec6b33f4a83879ee14cae00d1359",
+    "vendor/libincfs.cmake": "3e1e844c84f9444721e08a19cd1ec6bb0aa4fa85c0c9dddac9cdbb035d61dee5",
+    "vendor/liblog.cmake": "a36778988eb1e6b1a45d967298f7bc5c0bd6050cab60071c9a68773ba7c935d6",
+    "vendor/libutils.cmake": "d8aa1d4367c6edbba51cdd4aba2d478e4ad3f27e407a8c9c199c4b2545d911c8",
+    "vendor/libziparchive/zip_cd_entry_map.h": "b1e010c0b460351c4a2f81100975d86dad24e33790e426f14241f98b2eba5165",
+    "vendor/logging/liblog/include/android/log.h": "77b1bb9f56f54732c85492047c660a5a580054cc53a8c0821bd03c1f7bc470f4",
+    "vendor/zopfli/CMakeLists.txt": "538b4ee2c7ac98043c2bb6bb02beec0b708e5dff30bc1a10605973f2811687ec"
+  }
+}

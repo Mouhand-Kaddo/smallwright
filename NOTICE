@@ -1,0 +1,51 @@
+Smallwright
+Copyright 2026 Mouhand Kaddo
+
+This product is licensed under the Apache License, Version 2.0 (see LICENSE).
+
+The following third-party material is in this repository or in the APKs built
+from it. It is not covered by this project's Apache-2.0 license; each item
+keeps its own license, and the full texts are in the files named below.
+
+In this repository
+
+- worker/src/main/assets/core-lambda-stubs/: three unchanged source files from
+  the Android Open Source Project's libcore (LambdaMetafactory.java,
+  SerializedLambda.java, StringConcatFactory.java), Copyright Oracle and/or
+  its affiliates. GNU General Public License version 2 with the Classpath
+  exception. Texts: toolchain/licenses/core-lambda-stubs/LICENSE and NOTICE.
+
+- controller/src/main/res/font/cascadia_mono.ttf: Cascadia Mono, Copyright
+  Microsoft Corporation. SIL Open Font License 1.1.
+  Text: toolchain/licenses/CascadiaMono-OFL.txt.
+
+- gradle/wrapper/gradle-wrapper.jar, gradlew, gradlew.bat: Gradle wrapper,
+  Copyright Gradle, Inc. and contributors. Apache License 2.0.
+  Text: toolchain/licenses/Apache-2.0.txt.
+
+- controller/src/main/assets/android-sdk-terms.txt: a copy of Google's
+  Android Software Development Kit License Agreement, shown to the person
+  before the app downloads Google's platform files. Google's text, not
+  licensed by this project.
+
+- toolchain/aapt2-source-compat/*.patch: changes to Android Open Source
+  Project and Termux android-build-tools sources. Apache License 2.0, like
+  the files they change.
+
+- toolchain/licenses/ and toolchain/api36-component-notices/: verbatim
+  third-party license and notice texts, each under its own terms.
+
+In the APKs
+
+- Worker: Eclipse Compiler for Java 4.12 (Eclipse Public License 2.0),
+  R8/D8 8.13.23 (BSD-3-Clause with bundled BSD and Apache-2.0 libraries),
+  AAPT2 built from Android Open Source Project sources (Apache License 2.0
+  with the licenses of its linked components), and the libcore files above.
+
+- Controller: AndroidX, Jetpack Compose, Kotlin standard library,
+  kotlinx-coroutines, kotlinx-serialization, JetBrains annotations, JSpecify,
+  Guava listenablefuture, Gson and apksig (Apache License 2.0), Bouncy Castle
+  (Bouncy Castle Licence, MIT), and the Cascadia Mono font (SIL OFL 1.1).
+
+toolchain/licenses/INDEX.md lists each of these with its version, SHA-256,
+source and license text. Both APKs include that folder as assets.

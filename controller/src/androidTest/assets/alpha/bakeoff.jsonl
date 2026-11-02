@@ -1,0 +1,1 @@
+{"id": "bakeoff_shopping", "kind": "supported", "request": "Turn this into a local shopping list where I can add an item with a quantity, tick an item as bought, and still see the list after closing the app.", "checklist": ["An item with a quantity can be added", "An item can be ticked as bought", "The list and ticks remain after relaunch"]}

@@ -1,0 +1,4 @@
+{
+  "java_home": "~/.local/share/smallwright/jdk",
+  "android_home": "~/.local/share/smallwright/android-sdk"
+}

@@ -1,0 +1,16 @@
+.gradle/
+build/
+**/build/
+local.properties
+.local-tooling.json
+*.jks
+*.keystore
+*.pem
+*.key
+/toolchains/
+/toolchain/input/
+/android-sdk/
+/.avd/
+/worker/src/main/jniLibs/
+/signing/
+__pycache__/

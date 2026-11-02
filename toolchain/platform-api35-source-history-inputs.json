@@ -1,0 +1,268 @@
+{
+  "status": "verified_source_current_history_experiment_not_canonical_frozen_history",
+  "tag": "android-15.0.0_r1",
+  "contributions": [
+    {
+      "module": "android-non-updatable",
+      "repo": "platform/frameworks/base",
+      "commit": "4e43ad12e1b211f15152e9c5b16b0fe88e6b93f3",
+      "source_path": "core/api/current.txt",
+      "path": "../toolchains/platform-api36-source-probe/api35-source-history/base/core/api/current.txt",
+      "sha256": "a07b0a1df1b7aeeb42fd8859c07b5627ff4f7930948771ee545b004f46e73c6e"
+    },
+    {
+      "module": "conscrypt.module.public.api",
+      "repo": "platform/external/conscrypt",
+      "commit": "f8e2d81432416b14fbc8e6f62375d9917b044ef1",
+      "source_path": "api/public/current.txt",
+      "path": "../toolchains/platform-api36-source-probe/api35-source-history/external__conscrypt/api/public/current.txt",
+      "sha256": "9c8ab62c5de5c0607fc0faf0b23599646569b11242d05a61e8befa06b0e9fda9"
+    },
+    {
+      "module": "i18n.module.public.api",
+      "repo": "platform/external/icu",
+      "commit": "cf305aeb6df416fa81cfc98bd73d913ee781175d",
+      "source_path": "android_icu4j/api/public/current.txt",
+      "path": "../toolchains/platform-api36-source-probe/api35-source-history/external__icu/android_icu4j/api/public/current.txt",
+      "sha256": "9023f70dbea3bc1746269c6178bdf4642b3dd2722a8969bf4d08ebb0e1e8c1e8"
+    },
+    {
+      "module": "framework-graphics",
+      "repo": "platform/frameworks/base",
+      "commit": "4e43ad12e1b211f15152e9c5b16b0fe88e6b93f3",
+      "source_path": "libs/hwui/api/current.txt",
+      "path": "../toolchains/platform-api36-source-probe/api35-source-history/frameworks__base/libs/hwui/api/current.txt",
+      "sha256": "c8ad45efb9512c8312b4699cb2c51d963ec455a9042dd53d63901c571fcf9add"
+    },
+    {
+      "module": "framework-location",
+      "repo": "platform/frameworks/base",
+      "commit": "4e43ad12e1b211f15152e9c5b16b0fe88e6b93f3",
+      "source_path": "location/api/current.txt",
+      "path": "../toolchains/platform-api36-source-probe/api35-source-history/frameworks__base/location/api/current.txt",
+      "sha256": "a0495a8a323846107cbc0e4a45c387bec2b59bdabd01c9cfcc868ed34bee4384"
+    },
+    {
+      "module": "art.module.public.api",
+      "repo": "platform/libcore",
+      "commit": "a996d969fdd17c6707b84544e5d1c35e0c25b5cb",
+      "source_path": "api/current.txt",
+      "path": "../toolchains/platform-api36-source-probe/api35-source-history/libcore/api/current.txt",
+      "sha256": "2aed15fc068781c2b153dbd8fa98b5a7de2f9a13eb6379f1c42dae7f3c9da171"
+    },
+    {
+      "module": "framework-adservices",
+      "repo": "platform/packages/modules/AdServices",
+      "commit": "563c714668050f1f628f74ac14e8655dbd391cbe",
+      "source_path": "adservices/framework/api/current.txt",
+      "path": "../toolchains/platform-api36-source-probe/api35-source-history/packages__modules__AdServices/adservices/framework/api/current.txt",
+      "sha256": "d8b5cca29d291244d4c11464077170864b725c45613e01b411f1b6acd8a47531"
+    },
+    {
+      "module": "framework-sdksandbox",
+      "repo": "platform/packages/modules/AdServices",
+      "commit": "563c714668050f1f628f74ac14e8655dbd391cbe",
+      "source_path": "sdksandbox/framework/api/current.txt",
+      "path": "../toolchains/platform-api36-source-probe/api35-source-history/packages__modules__AdServices/sdksandbox/framework/api/current.txt",
+      "sha256": "0c98c7406e32314c46d03bce5705bea3a31e519f4c98800bd70c81863560a57c"
+    },
+    {
+      "module": "framework-appsearch",
+      "repo": "platform/packages/modules/AppSearch",
+      "commit": "5776d8d321cc3525886ff4b507eb7b448b865951",
+      "source_path": "framework/api/current.txt",
+      "path": "../toolchains/platform-api36-source-probe/api35-source-history/packages__modules__AppSearch/framework/api/current.txt",
+      "sha256": "d515bb14d420a9068d60a2850143f087948d36a7b9984e63442f400de8495203"
+    },
+    {
+      "module": "framework-bluetooth",
+      "repo": "platform/packages/modules/Bluetooth",
+      "commit": "84f57cd7ec507a5daeaf65a692435680037987c9",
+      "source_path": "framework/api/current.txt",
+      "path": "../toolchains/platform-api36-source-probe/api35-source-history/packages__modules__Bluetooth/framework/api/current.txt",
+      "sha256": "304ad363f23baa83a4d3500743eac3d766ae6699ddfef4ac0a9d5922713134f3"
+    },
+    {
+      "module": "framework-configinfrastructure",
+      "repo": "platform/packages/modules/ConfigInfrastructure",
+      "commit": "fd0d464d645c3419bf692d4b7c34b085b41155ef",
+      "source_path": "framework/api/current.txt",
+      "path": "../toolchains/platform-api36-source-probe/api35-source-history/packages__modules__ConfigInfrastructure/framework/api/current.txt",
+      "sha256": "39824f8c9fee1582598de5aa8cfa9653e84fbd69bd8aeb92c4a78c861faad552"
+    },
+    {
+      "module": "framework-connectivity",
+      "repo": "platform/packages/modules/Connectivity",
+      "commit": "355670c19612b43b73d496fee4b4fc7d4c13bf01",
+      "source_path": "framework/api/current.txt",
+      "path": "../toolchains/platform-api36-source-probe/api35-source-history/packages__modules__Connectivity/framework/api/current.txt",
+      "sha256": "26bf1910035039b20ac6031ce143f3d1727a74973911305131de75eec30b90d1"
+    },
+    {
+      "module": "framework-connectivity-t",
+      "repo": "platform/packages/modules/Connectivity",
+      "commit": "355670c19612b43b73d496fee4b4fc7d4c13bf01",
+      "source_path": "framework-t/api/current.txt",
+      "path": "../toolchains/platform-api36-source-probe/api35-source-history/packages__modules__Connectivity/framework-t/api/current.txt",
+      "sha256": "2a4b39ab959d50a3627d7016d4b104e27136df99a1e14714e1f89e446e3f2008"
+    },
+    {
+      "module": "framework-tethering",
+      "repo": "platform/packages/modules/Connectivity",
+      "commit": "355670c19612b43b73d496fee4b4fc7d4c13bf01",
+      "source_path": "Tethering/common/TetheringLib/api/current.txt",
+      "path": "../toolchains/platform-api36-source-probe/api35-source-history/packages__modules__Connectivity/Tethering/common/TetheringLib/api/current.txt",
+      "sha256": "39824f8c9fee1582598de5aa8cfa9653e84fbd69bd8aeb92c4a78c861faad552"
+    },
+    {
+      "module": "framework-devicelock",
+      "repo": "platform/packages/modules/DeviceLock",
+      "commit": "9db83af1151d4773a8cf65e111915147d4984131",
+      "source_path": "framework/api/current.txt",
+      "path": "../toolchains/platform-api36-source-probe/api35-source-history/packages__modules__DeviceLock/framework/api/current.txt",
+      "sha256": "9fb3e994059a930f652f040d6a08ef0cab803a0c141f09de8f10d17695cd1464"
+    },
+    {
+      "module": "framework-healthfitness",
+      "repo": "platform/packages/modules/HealthFitness",
+      "commit": "37f52da6d15b630868ff4338652a9f9e225e2bc6",
+      "source_path": "framework/api/current.txt",
+      "path": "../toolchains/platform-api36-source-probe/api35-source-history/packages__modules__HealthFitness/framework/api/current.txt",
+      "sha256": "2f3c5da74406cf298a82e41a9f405d14bdb16e21b92b2b5af59acdb7fdb9d53d"
+    },
+    {
+      "module": "android.net.ipsec.ike",
+      "repo": "platform/packages/modules/IPsec",
+      "commit": "46aaa93155c50ceac2840703cbf42201e20394d7",
+      "source_path": "api/current.txt",
+      "path": "../toolchains/platform-api36-source-probe/api35-source-history/packages__modules__IPsec/api/current.txt",
+      "sha256": "620323adcc535ff7950256936d744a1ba4b97000f70bc40269f4d48c64acdd8d"
+    },
+    {
+      "module": "framework-media",
+      "repo": "platform/packages/modules/Media",
+      "commit": "579b22cdf08d463034146603014a1eab2a08274a",
+      "source_path": "apex/framework/api/current.txt",
+      "path": "../toolchains/platform-api36-source-probe/api35-source-history/packages__modules__Media/apex/framework/api/current.txt",
+      "sha256": "be75d4afd890a189b7bed49caffa9babfb567d0c8e9c09a56224582444c421bc"
+    },
+    {
+      "module": "framework-ondevicepersonalization",
+      "repo": "platform/packages/modules/OnDevicePersonalization",
+      "commit": "3195f6b6babad2ab7c63bc7b28f9876c58e245ef",
+      "source_path": "framework/api/current.txt",
+      "path": "../toolchains/platform-api36-source-probe/api35-source-history/packages__modules__OnDevicePersonalization/framework/api/current.txt",
+      "sha256": "9737ac787b9b61d38e44e09773b19072a6d815a6c4f7f5fd014e90a4735082a3"
+    },
+    {
+      "module": "framework-permission",
+      "repo": "platform/packages/modules/Permission",
+      "commit": "d7374497d3ac1a1257af7df777e7fdf5a4a46501",
+      "source_path": "framework/api/current.txt",
+      "path": "../toolchains/platform-api36-source-probe/api35-source-history/packages__modules__Permission/framework/api/current.txt",
+      "sha256": "39824f8c9fee1582598de5aa8cfa9653e84fbd69bd8aeb92c4a78c861faad552"
+    },
+    {
+      "module": "framework-permission-s",
+      "repo": "platform/packages/modules/Permission",
+      "commit": "d7374497d3ac1a1257af7df777e7fdf5a4a46501",
+      "source_path": "framework-s/api/current.txt",
+      "path": "../toolchains/platform-api36-source-probe/api35-source-history/packages__modules__Permission/framework-s/api/current.txt",
+      "sha256": "7e6928dd6c83d40af3a6167551101ca1743b33a8a7ad048beb6bdfeaaa759ca9"
+    },
+    {
+      "module": "framework-profiling",
+      "repo": "platform/packages/modules/Profiling",
+      "commit": "80382258289dda9a692f3ea5f58b8bc41792ae43",
+      "source_path": "framework/api/current.txt",
+      "path": "../toolchains/platform-api36-source-probe/api35-source-history/packages__modules__Profiling/framework/api/current.txt",
+      "sha256": "4ac3cd9285a6a335c008c10b8da97c1e6e8234e66898a86b1f4af6acc1bdfa3b"
+    },
+    {
+      "module": "framework-scheduling",
+      "repo": "platform/packages/modules/Scheduling",
+      "commit": "82f4ac84261a8f16f048072abc4a9b07567fa4e5",
+      "source_path": "framework/api/current.txt",
+      "path": "../toolchains/platform-api36-source-probe/api35-source-history/packages__modules__Scheduling/framework/api/current.txt",
+      "sha256": "39824f8c9fee1582598de5aa8cfa9653e84fbd69bd8aeb92c4a78c861faad552"
+    },
+    {
+      "module": "framework-sdkextensions",
+      "repo": "platform/packages/modules/SdkExtensions",
+      "commit": "fdf46b5f21629f4716c705d3f0a5569dacca5bbe",
+      "source_path": "java/android/os/ext/api/current.txt",
+      "path": "../toolchains/platform-api36-source-probe/api35-source-history/packages__modules__SdkExtensions/java/android/os/ext/api/current.txt",
+      "sha256": "797b5d5d7d9ba1a9392d91f5f829e97fd5944bbdd1772f133cea4e066d0194ef"
+    },
+    {
+      "module": "framework-statsd",
+      "repo": "platform/packages/modules/StatsD",
+      "commit": "95f509bb8b4ff6f6148ac52bda328e3a580eb79e",
+      "source_path": "framework/api/current.txt",
+      "path": "../toolchains/platform-api36-source-probe/api35-source-history/packages__modules__StatsD/framework/api/current.txt",
+      "sha256": "12ac259073a52518124dc8b9e613880c35d2769dcd4612bebb93498efea9c664"
+    },
+    {
+      "module": "framework-uwb",
+      "repo": "platform/packages/modules/Uwb",
+      "commit": "ad0ad840e8ecf9eeea28cf5dc8879aaf3eeb7f6e",
+      "source_path": "framework/api/current.txt",
+      "path": "../toolchains/platform-api36-source-probe/api35-source-history/packages__modules__Uwb/framework/api/current.txt",
+      "sha256": "39824f8c9fee1582598de5aa8cfa9653e84fbd69bd8aeb92c4a78c861faad552"
+    },
+    {
+      "module": "framework-wifi",
+      "repo": "platform/packages/modules/Wifi",
+      "commit": "a88d7fbb026bada1345124fc1afbbaa0a6b5498f",
+      "source_path": "framework/api/current.txt",
+      "path": "../toolchains/platform-api36-source-probe/api35-source-history/packages__modules__Wifi/framework/api/current.txt",
+      "sha256": "c10ce9a2f78634c258eb2c5c4ca035a1f27ef9073785a4f84559493df771f0b9"
+    },
+    {
+      "module": "framework-mediaprovider",
+      "repo": "platform/packages/providers/MediaProvider",
+      "commit": "8a53c6d378a9c6ff61ef751d260a1281985b93fe",
+      "source_path": "apex/framework/api/current.txt",
+      "path": "../toolchains/platform-api36-source-probe/api35-source-history/packages__providers__MediaProvider/apex/framework/api/current.txt",
+      "sha256": "10521bf0f7f12977b4b8682ba1b87236f06fce087747dab3b66f29896e0a043e"
+    },
+    {
+      "module": "framework-pdf",
+      "repo": "platform/packages/providers/MediaProvider",
+      "commit": "8a53c6d378a9c6ff61ef751d260a1281985b93fe",
+      "source_path": "pdf/framework/api/current.txt",
+      "path": "../toolchains/platform-api36-source-probe/api35-source-history/packages__providers__MediaProvider/pdf/framework/api/current.txt",
+      "sha256": "8b654ac1c60788f1076ba29281a5d195f12201d9a4082f5c8a5097d8851a3a89"
+    },
+    {
+      "module": "framework-pdf-v",
+      "repo": "platform/packages/providers/MediaProvider",
+      "commit": "8a53c6d378a9c6ff61ef751d260a1281985b93fe",
+      "source_path": "pdf/framework-v/api/current.txt",
+      "path": "../toolchains/platform-api36-source-probe/api35-source-history/packages__providers__MediaProvider/pdf/framework-v/api/current.txt",
+      "sha256": "a04511453250abc1a6142539bddbc3fe848d7b3df3247f9f9488d267d41d9336"
+    },
+    {
+      "module": "framework-virtualization",
+      "repo": "platform/packages/modules/Virtualization",
+      "commit": "fb58d45765319e46e2c95c34532ad343e0b9232e",
+      "source_path": "java/framework/api/current.txt",
+      "path": "../toolchains/platform-api36-source-probe/api35-source-history/packages__modules__Virtualization/java/framework/api/current.txt",
+      "sha256": "39824f8c9fee1582598de5aa8cfa9653e84fbd69bd8aeb92c4a78c861faad552"
+    },
+    {
+      "module": "framework-nfc",
+      "repo": "platform/frameworks/base",
+      "commit": "4e43ad12e1b211f15152e9c5b16b0fe88e6b93f3",
+      "source_path": "nfc/api/current.txt",
+      "path": "../toolchains/platform-api36-source-probe/api35-source-history/base/nfc/api/current.txt",
+      "sha256": "d1866c10fc888c38b357133f7fdd071453da60de4db73bca63288fa752ee6d47"
+    }
+  ],
+  "limits": [
+    "These are maintained current.txt files from Android15r1 source, not frozen released API snapshots. Unfiltered history exposes unreleased flagged APIs.",
+    "Upstream release flag filtering and canonical frozen-history selection remain pending.",
+    "No worker assets or production SDK inputs are selected by this manifest."
+  ],
+  "selection": "Unconditional31+nonupdatablebase only; conditionalrelease_crashrecovery_module selection remains unestablished."
+}

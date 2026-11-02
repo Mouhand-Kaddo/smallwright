@@ -1,0 +1,16 @@
+{
+  "status": "source_derived_ap3a_history_experiment_not_frozen_sdk_parity",
+  "tag": "android-15.0.0_r1",
+  "derivation": {
+    "source_manifest": "platform-api35-source-history-inputs.json",
+    "filter_manifest": "platform-api35-release-filter.json",
+    "receipt_path": "../toolchains/platform-api36-source-probe/api35-release-20261002/ap3a-filtered/receipt.json"
+  },
+  "contributions": [
+    {
+      "path": "../toolchains/platform-api36-source-probe/api35-release-20261002/ap3a-filtered/filtered-api.txt",
+      "sha256": "22f960867194fbdfcbc03ca09cec36468f847524966af5f572e43f1d315950ab",
+      "module": "source_filtered_combined_public_history"
+    }
+  ]
+}

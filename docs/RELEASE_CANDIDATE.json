@@ -1,0 +1,80 @@
+{
+  "status": "blocked",
+  "current_as_of": "2026-09-28",
+  "current_build": {
+    "controller_debug_sha256": "c681bbd297aa8877ea75c8d85a7d5ff01d3d7d9d28ce528ede2010ba3d6ca468",
+    "controller_android_test_sha256": "f9498a8eff759e555833e1481a4a826ae143719dbcb1cbc71b4649978ae93cdb",
+    "worker_debug_sha256": "2e699837c99020ec92386e0c45b0c4eff59f2d4e76827892fecc8e0478343953",
+    "worker_android_test_sha256": "93173c49c3bbac49924ea3bd3d79faa89845c2050e5d50410f0154f895387c75",
+    "verification": "Current normal pair is a local compiler harness checkpoint. Controller project/chat navigation, project build/sign/install and persistence passed on disposable emulators in the checkpoints recorded in docs/STATUS.md. Worker unit tests, offline normal/probe assembly and lint passed; normal worker ZIP contains no experimental SDK/reference assets. The opt-in separate resource-table worker and SDK-reference Java input passed API31 build/sign/explicit install/native editing/persistence; the earlier full-resource candidate passed API31 and API36. These opt-in results are separate from normal APK coverage. No current pair physical S23 pass or real model-generated source reproduction is claimed. Historical physical APK evidence is retained in last_physical_build_2026_09_27 and actual_checks.",
+    "distribution_blockers": [
+      "Normal worker uses opaque AAPT2; exact release binary source/build correspondence and complete transitive notice mapping remain open. Source-built ARM64 candidate evidence is separate.",
+      "Normal Java stubs remain limited. Full public Java source/module graph, release metadata, declaration/resource parity and component provenance/notices are required. SDK reference/history inputs are test-only and are not approved release inputs.",
+      "Current pair project/chat/build/install/recovery needs physical S23 verification; cross-device recovery and the two-device private-alpha suite remain open."
+    ],
+    "next_physical_check": "Reconnect S23, rebuild/verify the normal pair and install in place while preserving projects, chats, signing keys and generated-app data. Follow docs/validation/phone-test-queue.md; do not infer a phone pass from emulator results."
+  },
+  "controller_apk": "controller/build/outputs/apk/debug/controller-debug.apk",
+  "worker_apk": "worker/build/outputs/apk/debug/worker-debug.apk",
+  "actual_checks": [
+    "2026-09-28 table-only opt-in worker API31 emulator: api36ResourceOnApi31, experimentalPlatform and experimentalNoteOnly each returned raw code -1; real snapshot compilation, controller signing, explicit installation, native editing and restart persistence. Source input SHA-256 82eb76d8be6bd66a353581b2409bffeaca10d922c10d151f314dfb6de1a25bf6; exact commands/limits in docs/validation/platform-api36-experiment.md. Emulator stopped, no physical device connected.",
+    "2026-09-27 fresh API 36 x86_64 emulator note fixture: separate-UID worker built and controller signed APK SHA-256 27e0950b987e114863e81c34215e268d7db2845a323e471b5210b3819ad69fb5; on-emulator install and launch showed editable note/Save, Saved: hello_fixture after tap, and hello_fixture restored after force-stop/relaunch; no artifact left emulator",
+    "2026-09-27 current S23 note-app recovery: prior disabled Build/Generate state had worker connected, no active run, source revision 30 and stale REPAIR_NEEDED revision 8; fixed startup reopened with controls enabled. Saved source returned COMPILE_ERROR before note-editing stub additions and OK after; manual UI Build signed it and enabled Install; Android package installer confirmation opened and was cancelled, installed generated app stayed version 11. Final controller/worker installed SHA-256 f65418dbba8b357f355a86cdca433262dae198c1e33830abb72300762c9c958b and 94afaf3e2dda568465cbebfd7f1f69a6cd5430a482bf10676471e2ecae1505c7 match local builds; runJournalOnly, stopBeforeBuildOnly and localityProofOnly passed",
+    "2026-09-27 final current controller and worker APKs include eight exact candidate notice assets, including the full pinned wrapper Apache-2.0 LICENSE; installed S23 hashes 2c65a0c27e9a9309f9c515fc45c07b43586bd1d8f3e5ae783383a9cddf8fec9e and 02144595f1c0585c9040101e53f8c5880005ded24a4c72dbc88d5e834bf1e0f9 match local builds, no worker android-36.jar; localityProofOnly returned code -1 with signed private APK SHA-256 9d9b9717efa2c50f945a830130e13bfe3859a9ca465d77e6259f10986fb3bf51",
+    "2026-09-27 prior controller and worker notice rebuilds contain seven exact source-built AAPT2 notices and no worker android-36.jar; installed S23 APK hashes 66ea4e8fc264e2c9e6fb68ef115cb78a2056f8d726596af996e6c46b764bdeb5 and 120c8f9cdbab39c7014da4ed5fffefa2af736d26561c23b9f1c9bf87779797e8 match local outputs; localityProofOnly returned code -1 with signed private APK SHA-256 cfaa82ece583c2045b5fcece232ad286bf645e94154f00e92f4ebaafbf34b2be",
+    "2026-09-27 current no-JAR controller/worker installed in place on physical SM-S918B; APK SHA-256 hashes 3323795f9a3734fb1b2e5219fc3961a57319cc43d23770420d8a4273c5f70b63 and 04416cb3f7b464bb8b1f322deef14d00ec97c61e68b92d487fc6ae000a8c2cce matched installed base.apk; post-update localityProofOnly returned code -1",
+    "2026-09-27 no-JAR worker plus clean-source ARM64 AAPT2 candidate APK SHA-256 409b1abe7e6d13a216e730a77d28553fd04f98a40a520f2587051805ffd14115 passed physical productionSnapshot, real Binder localityProofOnly and updateContinuityOnly, all code -1; original opaque compiler input restored afterward",
+    "2026-09-27 fresh API 36 x86_64 emulator generated-app runtime: on-emulator worker build/sign/install/launch, counter 0 to 1 and persisted after restart; v1-to-v2 update retained count 1 and changed button label; no APK artifact left the emulator",
+    "2026-09-27 separate source-built ARM64 AAPT2 candidate (stripped SHA-256 b53f1864211640e07b9d24eece65501adf98f287e24cbb621b848d7020b59890) ran version and disposable resource compile/link on physical SM-S918B; candidate worker APK SHA-256 6e4ba33de12c896522bcd729a600da98728d33647f7856439abbf0ceffd2e325 passed separate-UID locality signed build and two-version signer-continuity instrumentation, both code -1; generated APKs were not installed; exact original worker APK restored and on-device SHA-256 reverified",
+    "2026-09-26 current controller, worker and androidTest APKs installed in place on physical SM-S918B Android 16 arm64-v8a; on-device installed APK SHA-256 matched all three local build hashes",
+    "2026-09-26 current physical build: isolated locality signed no-permission on-phone APK SHA-256 70a584d7058f2c11ec142ac0909f84834d6411c56103e9b6fe9203253d967cfb; worker UID 10464 distinct from controller UID 10465; worker Internet denied; Binder overlap, two-version signer continuity/unsigned cleanup, oversized-input rejection and queued-background Stop probes passed with instrumentation code -1",
+    "2026-09-26 physical in-memory recovery bundle/envelope and disposable portable signer-store probes passed with instrumentation code -1; isolated export preparation returned code 0 because an installed generated app has an unrelated signer, so no physical export/import is claimed",
+    "2026-09-25 updated worker/controller on physical S23 Ultra: distinct existing UIDs retained; controller built signed counter-v5.apk with UI/file SHA-256 match; local preview approval reported no model request; generated v5 was not installed",
+    "2026-09-25 B2 worker ZIP/diagnostic/output/startup bounds passed 20 host tests; API 36 x86_64 emulator packaged AAPT2 malformed-resource rejection and scratch cleanup passed; normal emulator snapshot build produced signed counter-v6.apk with matching digest",
+    "2026-09-25 B3 revision-bound local context preview passed four focused host tests and emulator UI inspection; combined offline unit/lint/APK/androidTest assembly passed 193 tasks, 36 controller and 20 worker tests; subsequent controller navigation-inset assembly and emulator bounds inspection passed",
+    "2026-09-25 seven new AOSP notices have verified source URLs/hashes and are included in both rebuilt APKs; redistribution remains blocked by incomplete AAPT2 binary provenance and Android SDK stub-license mapping",
+    "2026-09-25 B3 dummy-credential AES-GCM host tests and Android Keystore emulator probe passed with raw instrumentation code -1; compiled controller APK manifest and XML contain cloud/device-transfer exclusions; final offline tests/lint/assembly passed (167 tasks, 32 controller and 10 worker tests)",
+    "2026-09-25 B1 revisioned project store integrated; 15 focused B1 host tests and emulator migration/build passed; B3 ContextFilter slice has four host tests; final offline unit/lint/assembly passed (141 tasks, 29 controller and 10 worker tests)",
+    "2026-09-25 user reports the S23 Ultra physical compiler/install alpha passed the intended gate during their own concurrent testing; independently observed build/runtime details are recorded in docs/STATUS.md",
+    "2026-09-25 physical SM-S918B Android API 36 arm64-v8a: separate controller/worker/generated UIDs; on-phone signed counter v1-v4 artifacts; generated version 4 installed by controller and native counter UI visible",
+    "2026-09-25 post-review API 36 x86_64 emulator manifest policy passed 29 real APK cases; two launcher-filter cases failed before the fix; exact-result wrapper rejects RED output",
+    "2026-09-25 emulator worker UID could not open host-attested controller dummy file (ENOENT) or create an AF_INET socket (EPERM); separately signed app bind was denied by signature permission",
+    "2026-09-25 emulator worker built another Java/XML snapshot through compiled-launcher policy; final offline host test/lint/assembly gate passed (141 tasks)",
+    "2026-09-25 repo-local JDK 21 and Android SDK 36 restored; offline host test, lint, and assembly gate passed (141 tasks; 10 controller and 10 worker tests)",
+    "2026-09-25 earlier API 36 x86_64 emulator artifact-policy instrumentation passed 27 real APK manifest cases before the launcher-filter fixtures were added",
+    "2026-09-25 API 36 x86_64 emulator built and installed counter v2; visible increment reached Counter: 1; local Java edit and explicit update to v3 displayed Updated: 1 with data retained",
+    "2026-09-25 emulator artifact-byte tamper prevented installation; unauthenticated shell service start denied by signature permission",
+    "2026-09-13 debug APK assembly passed with toolchain license assets packaged in both APKs",
+    "2026-09-13 API 36 x86_64 emulator ran the signed controller-to-worker AAPT2 version probe",
+    "2026-09-13 API 36 x86_64 emulator ran ECJ 4.12 with Android API 36 compile stubs: valid Java produced a class and malformed Java produced a diagnostic",
+    "2026-09-13 API 36 x86_64 emulator ran D8, AAPT2 resource compile/link, and unsigned Java/XML counter APK assembly inside the worker",
+    "2026-09-13 worker BoundedProcessTest passed for success, hanging output, and overflow",
+    "2026-09-13 API 36 x86_64 emulator completed ART apksig signing, PackageInstaller cancellation and confirmation, generated-counter increment, Java edit, update, and retained count (Updated: 1).",
+    "2026-09-13 offline unit/lint/assembly passed; both APK ZIPs contain assets/INDEX.txt, assets/aapt2-wrapper/LICENSE.txt, assets/apksig/pom.xml, and assets/ecj/about.html",
+    "Controller APK SHA-256: 44ccb6d2f852c3d7f15d433a1d80a6176681ce82baa95c4f0e6a1831873806f6",
+    "Worker APK SHA-256: 0f527e13f299a39f6dd4f0125cb70217718ff8cf1ffb37f727f38d9a61588525"
+  ],
+  "limitations": [
+    "The latest normal controller/worker pair has host and emulator checkpoint evidence, but is not verified on physical hardware. Historical S23 probes apply to the exact earlier hashes, retained separately. Current project/chat, generated-app install/update and recovery require physical checks.",
+    "Cross-device encrypted recovery transfer, an installed-app update after recovery on physical devices, low-storage and power-loss behavior, and a representative second physical device remain unverified.",
+    "The normal worker bundles opaque ARM64 AAPT2 and limited authored compile definitions; it contains no experimental SDK JAR/table. Source-built AAPT2 and public API probes remain separate evidence. Full release input provenance/notices and binary parity are incomplete; distribution remains blocked.",
+    "Authored compile definitions support limited cases. Opt-in SDK-reference emulator note/PdfDocument tests and raw-source graphics declaration comparisons do not establish complete permitted API coverage in the normal worker.",
+    "The live free-only read_file attempt returned only a provider-failure category. No successful live tool effect, tool-result continuation, feedback update or compiler-error repair is claimed. Each future project-context upload needs its own specific approval.",
+    "Source ZIP/APK export, crash-report import, active-worker/model foreground Stop behavior, offline build and detached-laptop use still need the queued physical checks. The queued-background Stop case passed physically; no new timing, memory or thermal measurements are inferred.",
+    "The fixed 20-request private-alpha suite has not run on two physical devices; no full alpha acceptance or public distribution pass is claimed."
+  ],
+  "first_manual_test": "The phone is disconnected. When reconnected, verify/rebuild current normal APKs and install updates in place, preserving projects and installed generated-app data. Continue docs/validation/phone-test-queue.md; do not uninstall or reset. No current physical pass is claimed.",
+  "last_physical_build_2026_09_27": {
+    "controller_debug_sha256": "f65418dbba8b357f355a86cdca433262dae198c1e33830abb72300762c9c958b",
+    "controller_android_test_sha256": "cd9f0b5f962c869b7702c49b21b47b7957f3333417562ecdb76b57b0eb10a308",
+    "worker_debug_sha256": "94afaf3e2dda568465cbebfd7f1f69a6cd5430a482bf10676471e2ecae1505c7",
+    "verification": "Current no-SDK-JAR controller and worker passed host unit tests, worker lint and APK assembly. On physical SM-S918B Android 16, stale repair-run startup blocking was reproduced and fixed without resetting source; the saved note-app Java source then compiled and signed through the real worker, Install became enabled, and Android's confirmation screen opened. The prompt was cancelled, leaving installed generated-app version 11 unchanged. Final installed controller, controller androidTest and worker APK hashes match local outputs; runJournalOnly, stopBeforeBuildOnly and separate-UID localityProofOnly passed after the final update. A fresh API 36 x86_64 emulator built, installed and launched an authored note fixture and retained its saved text after force-stop/relaunch. Earlier physical two-version continuity and emulator generated-app update passed on prior builds; see docs/STATUS.md. Both current APKs still package eight exact source-built AAPT2 notice assets; source-built ARM64 AAPT2 remains a separately tested candidate.",
+    "distribution_blockers": [
+      "Current opaque AAPT2 binary lacks exact release source/build correspondence and complete transitive notice mapping; source-built candidate still needs linked-runtime/notice clearance",
+      "Authored Java/Android compile stubs cover the default app and this note-editor case only; broader generated edits and physical generated-app runtime remain unverified",
+      "Visible recovery import/update and cross-device transfer lack physical-device verification"
+    ],
+    "next_physical_check": "Use docs/validation/phone-test-queue.md for a visible user-approved generated-app install/update and recovery checks; preserve the existing S23 controller and installed generated app.",
+    "worker_android_test_sha256": "b415e0759fdef6d910c2ef133efbf62af0a60fd4b115a23469f47732f2b98ff8"
+  }
+}

@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Counter Fixture</string>
+    <string name="increment">Increment</string>
+    <string name="count_format">Count: %1$d</string>
+</resources>

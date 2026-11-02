@@ -1,0 +1,1 @@
+{"id":"counter_05","kind":"supported","request":"Change the Increment button label to Add one without changing its saved counter behavior.","checklist":["Add one label is visible","Tap increments exactly once","Saved count remains after update"]}

@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://smallwright.invalid/benchmarks/results.schema.json",
+  "title": "Phone-local alpha attempt",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "run_id", "prompt_id", "device_model", "android_version",
+    "controller_apk_sha256", "worker_apk_sha256", "source_revision_before",
+    "source_revision_after", "model_id", "free_only", "approved_context_sha256",
+    "provider_reported_tokens", "provider_reported_cost_usd", "worker_uid",
+    "compile_result", "artifact_sha256", "generated_package", "generated_version",
+    "install_result", "functional_result", "phone_build_elapsed_ms",
+    "adb_detached", "network_disabled_for_build", "notes"
+  ],
+  "properties": {
+    "run_id": {"type": "string", "pattern": "^[A-Za-z0-9_-]{1,64}$"},
+    "prompt_id": {"type": "string", "pattern": "^[A-Za-z0-9_-]{1,64}$"},
+    "device_model": {"type": "string", "maxLength": 80},
+    "android_version": {"type": "string", "maxLength": 40},
+    "controller_apk_sha256": {"$ref": "#/$defs/hash"},
+    "worker_apk_sha256": {"$ref": "#/$defs/hash"},
+    "source_revision_before": {"type": "integer", "minimum": 0},
+    "source_revision_after": {"type": ["integer", "null"], "minimum": 0},
+    "model_id": {"type": ["string", "null"], "maxLength": 128},
+    "free_only": {"type": ["boolean", "null"]},
+    "approved_context_sha256": {"$ref": "#/$defs/optionalHash"},
+    "provider_reported_tokens": {"type": ["integer", "null"], "minimum": 0},
+    "provider_reported_cost_usd": {"type": ["number", "null"], "minimum": 0},
+    "worker_uid": {"type": ["integer", "null"], "minimum": 0},
+    "compile_result": {"enum": ["verified", "compile_error", "policy_rejected", "cancelled", "failed", "unknown"]},
+    "artifact_sha256": {"$ref": "#/$defs/optionalHash"},
+    "generated_package": {"type": ["string", "null"], "maxLength": 180},
+    "generated_version": {"type": ["integer", "null"], "minimum": 1},
+    "install_result": {"enum": ["confirmed", "debug_installed", "rejected", "failed", "not_attempted", "unknown"]},
+    "functional_result": {"enum": ["accepted", "rejected", "untested", "unknown"]},
+    "phone_build_elapsed_ms": {"type": ["integer", "null"], "minimum": 0},
+    "adb_detached": {"type": "boolean"},
+    "network_disabled_for_build": {"type": "boolean"},
+    "notes": {"type": "string", "maxLength": 500}
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "optionalHash": {"anyOf": [{"$ref": "#/$defs/hash"}, {"type": "null"}]}
+  }
+}

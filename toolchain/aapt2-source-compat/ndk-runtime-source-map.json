@@ -1,0 +1,1863 @@
+{
+  "bionic_pinned_sources": {
+    "commit": "b86008a9cd14a7748867d2232e6de439e4809c10",
+    "files": [
+      {
+        "audit_copy": "toolchains/aapt2-runtime-notice-audit/bionic/libc/Android.bp",
+        "path": "libc/Android.bp",
+        "sha256": "66a4861efeb8905e8e86b9dc597d9a4f15852517b61500009f730129a26e8a72",
+        "size_bytes": 87614,
+        "url": "https://android.googlesource.com/platform/bionic/+/b86008a9cd14a7748867d2232e6de439e4809c10/libc/Android.bp"
+      },
+      {
+        "audit_copy": "toolchains/aapt2-runtime-notice-audit/bionic/libc/NOTICE",
+        "path": "libc/NOTICE",
+        "sha256": "75b5d593f1f741cd94dc88d18ba39d7c33d6b716e6985d7cabe308539f46b264",
+        "size_bytes": 268209,
+        "url": "https://android.googlesource.com/platform/bionic/+/b86008a9cd14a7748867d2232e6de439e4809c10/libc/NOTICE"
+      },
+      {
+        "audit_copy": "toolchains/aapt2-runtime-notice-audit/bionic/libc/arch-common/bionic/crtbegin.c",
+        "path": "libc/arch-common/bionic/crtbegin.c",
+        "sha256": "25e4e95c97e263fb402ee73774598a0f9886babe4f5cbbb0530aa7d888fd5d2d",
+        "size_bytes": 4896,
+        "url": "https://android.googlesource.com/platform/bionic/+/b86008a9cd14a7748867d2232e6de439e4809c10/libc/arch-common/bionic/crtbegin.c"
+      },
+      {
+        "audit_copy": "toolchains/aapt2-runtime-notice-audit/bionic/libc/arch-common/bionic/crtbrand.S",
+        "path": "libc/arch-common/bionic/crtbrand.S",
+        "sha256": "c4d083478b33ee6c44113fb8dbecd5a156226ab98eed780a2aa7f11e534c8bcb",
+        "size_bytes": 1981,
+        "url": "https://android.googlesource.com/platform/bionic/+/b86008a9cd14a7748867d2232e6de439e4809c10/libc/arch-common/bionic/crtbrand.S"
+      },
+      {
+        "audit_copy": "toolchains/aapt2-runtime-notice-audit/bionic/libc/arch-common/bionic/crtend.S",
+        "path": "libc/arch-common/bionic/crtend.S",
+        "sha256": "67447574b30707d446aeeb6f5ef5836b00921271921f2fc68e4793d40eb3c700",
+        "size_bytes": 1734,
+        "url": "https://android.googlesource.com/platform/bionic/+/b86008a9cd14a7748867d2232e6de439e4809c10/libc/arch-common/bionic/crtend.S"
+      }
+    ],
+    "notice_mapping": "All 3 source license headers uniquely match NDK sysroot NOTICE after removing comment decoration/whitespace; line offsets above.",
+    "recipe": "Pinned libc/Android.bp maps crtbegin_dynamic to crtbegin.c + crtbrand object (crtbrand.S); crtend_android to crtend.S; host-only linker_wrapper is excluded for Android target.",
+    "recipe_source_ranges": [
+      {
+        "lines": "2060-2075",
+        "meaning": "crtbrand object compiles arch-common/bionic/crtbrand.S.",
+        "path": "libc/Android.bp",
+        "sha256": "66a4861efeb8905e8e86b9dc597d9a4f15852517b61500009f730129a26e8a72",
+        "url": "https://android.googlesource.com/platform/bionic/+/b86008a9cd14a7748867d2232e6de439e4809c10/libc/Android.bp"
+      },
+      {
+        "lines": "2118-2138",
+        "meaning": "crtbegin_dynamic compiles arch-common/bionic/crtbegin.c and combines crtbrand. Host-specific linux_bionic linker_wrapper branch is excluded for Android target.",
+        "path": "libc/Android.bp"
+      },
+      {
+        "lines": "2140-2150",
+        "meaning": "crtend_android compiles arch-common/bionic/crtend.S.",
+        "path": "libc/Android.bp"
+      }
+    ]
+  },
+  "component_licenses": [
+    {
+      "component": "compiler-rt",
+      "credits_file": {
+        "mentioned_by_source_license": true,
+        "path": "compiler-rt/CREDITS.TXT",
+        "sha256": "a9901f47a089da41e4690682d00ce4cedaa2baf41fedbe79beee366d43ac2461",
+        "size_bytes": 1049,
+        "url": "https://android.googlesource.com/toolchain/llvm-project/+/97a699bf4812a18fb657c2779f5296a4ab2694d2/compiler-rt/CREDITS.TXT"
+      },
+      "exact_notice_sections": [
+        {
+          "embedded_license_sha256": "1a8f1058753f1ba890de984e48f0242a3a5c29a6a8f2ed9fd813f36985387e8d",
+          "line_end": 591,
+          "line_start": 281,
+          "notice_path": "toolchains/android-sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/linux-x86_64/NOTICE"
+        },
+        {
+          "embedded_license_sha256": "1a8f1058753f1ba890de984e48f0242a3a5c29a6a8f2ed9fd813f36985387e8d",
+          "line_end": 2423,
+          "line_start": 2113,
+          "notice_path": "toolchains/android-sdk/ndk/28.2.13676358/NOTICE.toolchain"
+        },
+        {
+          "embedded_license_sha256": "1a8f1058753f1ba890de984e48f0242a3a5c29a6a8f2ed9fd813f36985387e8d",
+          "line_end": 591,
+          "line_start": 281,
+          "notice_path": "toolchain/licenses/aapt2-source-built/ndk-llvm-prebuilt-NOTICE"
+        }
+      ],
+      "size_bytes": 16708,
+      "source_license_path": "compiler-rt/LICENSE.TXT",
+      "source_license_sha256": "1a8f1058753f1ba890de984e48f0242a3a5c29a6a8f2ed9fd813f36985387e8d",
+      "source_license_url": "https://android.googlesource.com/toolchain/llvm-project/+/97a699bf4812a18fb657c2779f5296a4ab2694d2/compiler-rt/LICENSE.TXT"
+    },
+    {
+      "component": "libcxx",
+      "credits_file": {
+        "mentioned_by_source_license": true,
+        "path": "libcxx/CREDITS.TXT",
+        "sha256": "054e099bf5954c8821b880f5751d2fbf221bf43cf7c57ac1c2c5ff6263d6d9c3",
+        "size_bytes": 4124,
+        "url": "https://android.googlesource.com/toolchain/llvm-project/+/97a699bf4812a18fb657c2779f5296a4ab2694d2/libcxx/CREDITS.TXT"
+      },
+      "exact_notice_sections": [
+        {
+          "embedded_license_sha256": "539dd7aed86e8a4f12cbdd0e6c50c189c7d74847e4fecc64ce2c6ee3a01da38b",
+          "line_end": 903,
+          "line_start": 593,
+          "notice_path": "toolchains/android-sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/linux-x86_64/NOTICE"
+        },
+        {
+          "embedded_license_sha256": "539dd7aed86e8a4f12cbdd0e6c50c189c7d74847e4fecc64ce2c6ee3a01da38b",
+          "line_end": 2735,
+          "line_start": 2425,
+          "notice_path": "toolchains/android-sdk/ndk/28.2.13676358/NOTICE.toolchain"
+        },
+        {
+          "embedded_license_sha256": "539dd7aed86e8a4f12cbdd0e6c50c189c7d74847e4fecc64ce2c6ee3a01da38b",
+          "line_end": 903,
+          "line_start": 593,
+          "notice_path": "toolchain/licenses/aapt2-source-built/ndk-llvm-prebuilt-NOTICE"
+        }
+      ],
+      "size_bytes": 16703,
+      "source_license_path": "libcxx/LICENSE.TXT",
+      "source_license_sha256": "539dd7aed86e8a4f12cbdd0e6c50c189c7d74847e4fecc64ce2c6ee3a01da38b",
+      "source_license_url": "https://android.googlesource.com/toolchain/llvm-project/+/97a699bf4812a18fb657c2779f5296a4ab2694d2/libcxx/LICENSE.TXT"
+    },
+    {
+      "component": "libcxxabi",
+      "credits_file": {
+        "mentioned_by_source_license": true,
+        "path": "libcxxabi/CREDITS.TXT",
+        "sha256": "a259fff28a51623f14917dd68f97f3af7804984087ddc1bfd8196d08ebb75b83",
+        "size_bytes": 1660,
+        "url": "https://android.googlesource.com/toolchain/llvm-project/+/97a699bf4812a18fb657c2779f5296a4ab2694d2/libcxxabi/CREDITS.TXT"
+      },
+      "exact_notice_sections": [
+        {
+          "embedded_license_sha256": "e2b35be49f7284a45b7baca8fc7b3ab7440e7902392b2528a457816b5bb2a15c",
+          "line_end": 1215,
+          "line_start": 905,
+          "notice_path": "toolchains/android-sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/linux-x86_64/NOTICE"
+        },
+        {
+          "embedded_license_sha256": "e2b35be49f7284a45b7baca8fc7b3ab7440e7902392b2528a457816b5bb2a15c",
+          "line_end": 3047,
+          "line_start": 2737,
+          "notice_path": "toolchains/android-sdk/ndk/28.2.13676358/NOTICE.toolchain"
+        },
+        {
+          "embedded_license_sha256": "e2b35be49f7284a45b7baca8fc7b3ab7440e7902392b2528a457816b5bb2a15c",
+          "line_end": 1215,
+          "line_start": 905,
+          "notice_path": "toolchain/licenses/aapt2-source-built/ndk-llvm-prebuilt-NOTICE"
+        }
+      ],
+      "size_bytes": 16706,
+      "source_license_path": "libcxxabi/LICENSE.TXT",
+      "source_license_sha256": "e2b35be49f7284a45b7baca8fc7b3ab7440e7902392b2528a457816b5bb2a15c",
+      "source_license_url": "https://android.googlesource.com/toolchain/llvm-project/+/97a699bf4812a18fb657c2779f5296a4ab2694d2/libcxxabi/LICENSE.TXT"
+    },
+    {
+      "component": "libunwind",
+      "credits_file": null,
+      "exact_notice_sections": [],
+      "size_bytes": 16706,
+      "source_license_path": "libunwind/LICENSE.TXT",
+      "source_license_sha256": "b5efebcaca80879234098e52d1725e6d9eb8fb96a19fce625d39184b705f7b6d",
+      "source_license_url": "https://android.googlesource.com/toolchain/llvm-project/+/97a699bf4812a18fb657c2779f5296a4ab2694d2/libunwind/LICENSE.TXT"
+    }
+  ],
+  "date": "2026-09-28",
+  "findings": {
+    "compiler_rt_builtins": "64 -> 17 exact compiler-rt source paths, all same SPDX; lse.S is source to generated outline members; exact compiler-rt LICENSE.TXT embedded.",
+    "libc++_static": "26 members -> 26 exact libcxx/src files, all SPDX Apache-2.0 WITH LLVM-exception; exact LICENSE.TXT is embedded in the three LLVM NDK notice files.",
+    "libc++abi": "16 -> 16 exact libcxxabi/src files, all same SPDX; exact LICENSE.TXT embedded.",
+    "libunwind": "4 -> 4 exact libunwind/src files, all same SPDX; exact source LICENSE.TXT includes its legacy UIUC BSD-like/MIT section and is absent byte-for-byte from NDK NOTICE, NOTICE.toolchain, and collected prebuilt NOTICE.",
+    "open_gaps": [
+      "Preserve exact libunwind/LICENSE.TXT before distribution.",
+      "Transitive included runtime headers/generated source inputs not audited here.",
+      "Hashes pin installed archive/object bytes and source metadata but do not prove bit-identical recompilation.",
+      "No legal conclusion/redistribution clearance.",
+      "Check whether the UIUC/MIT license references to CREDITS.TXT require carrying the exact component credits files in a downstream distribution; NDK NOTICE includes the reference but not those credit lists. Pinned source contains compiler-rt/libcxx/libcxxabi CREDITS.TXT files; no libunwind/CREDITS.TXT exists at this revision."
+    ],
+    "other_component_licenses": "compiler-rt, libc++, libc++abi, libunwind LICENSE.TXT each carries legacy UIUC BSD-like/MIT dual-license text alongside LLVM Apache/exception terms. First 3 have exact matching NDK notice copies; libunwind does not.",
+    "startup": "crtbegin_dynamic.o source group: crtbegin.c and crtbrand.S; crtend_android.o: crtend.S; both archive/input hashes and source hashes included. Bionic BSD-style source notices occur in NDK sysroot NOTICE."
+  },
+  "ndk": {
+    "android_patches_commit": "e727bfb014bd436f581a66a450c939a6983a1fc3",
+    "branch": "aosp-llvm-r530567",
+    "build_id": "13624864",
+    "build_source_metadata": [
+      {
+        "line_ranges": [],
+        "path": "libcxx/CMakeLists.txt",
+        "sha256": "44e3bf9630562fda807d5157ff7ffb1a594cc3d6a0aaf13e74f9aac4eb005f86",
+        "size_bytes": 41350,
+        "url": "https://android.googlesource.com/toolchain/llvm-project/+/97a699bf4812a18fb657c2779f5296a4ab2694d2/libcxx/CMakeLists.txt"
+      },
+      {
+        "line_ranges": [],
+        "path": "libcxxabi/CMakeLists.txt",
+        "sha256": "2b0499d3a4acff9fc60b61ed4249483760d97c82050b8b0b0c018090ef4d8a43",
+        "size_bytes": 18941,
+        "url": "https://android.googlesource.com/toolchain/llvm-project/+/97a699bf4812a18fb657c2779f5296a4ab2694d2/libcxxabi/CMakeLists.txt"
+      },
+      {
+        "line_ranges": [],
+        "path": "libunwind/CMakeLists.txt",
+        "sha256": "6905fa26f2a94692b3c4e3886101e648958ce6626f289582075369ab454884b9",
+        "size_bytes": 13236,
+        "url": "https://android.googlesource.com/toolchain/llvm-project/+/97a699bf4812a18fb657c2779f5296a4ab2694d2/libunwind/CMakeLists.txt"
+      },
+      {
+        "line_ranges": [
+          {
+            "lines": "198-219",
+            "meaning": "GENERIC_TF_SOURCES contains fixunstfdi/floatunditf; AArch64 includes this generic set."
+          },
+          {
+            "lines": "557-562",
+            "meaning": "AArch64 source list selects generic TF and generic source sets plus cpu_model/aarch64.c and aarch64/fp_mode.c."
+          },
+          {
+            "lines": "572-591",
+            "meaning": "Outline atomic helper outputs use aarch64/lse.S with per-output operation/SIZE/MODEL compile definitions."
+          },
+          {
+            "lines": "694-703",
+            "meaning": "powerpc64 selects same-stem ppc/fixunstfdi.c and ppc/floatunditf.c, resolving the archive member basename ambiguity for ARM64."
+          }
+        ],
+        "path": "compiler-rt/lib/builtins/CMakeLists.txt",
+        "sha256": "b62993a0dbad605272194914305ca62ade86e47e49d6ba63b0221609270a4ea0",
+        "size_bytes": 24214,
+        "url": "https://android.googlesource.com/toolchain/llvm-project/+/97a699bf4812a18fb657c2779f5296a4ab2694d2/compiler-rt/lib/builtins/CMakeLists.txt"
+      }
+    ],
+    "clang_source_info_base_revision": "3b5e7c83a6e226d5bd7ed2e9b67449b64812074c",
+    "llvm_checkout": {
+      "commit": "97a699bf4812a18fb657c2779f5296a4ab2694d2",
+      "depth": 1,
+      "path": "toolchains/aapt2-runtime-notice-audit/llvm-project",
+      "remote": "https://android.googlesource.com/toolchain/llvm-project",
+      "shallow": true
+    },
+    "manifest_pins": {
+      "platform/bionic": "b86008a9cd14a7748867d2232e6de439e4809c10",
+      "toolchain/llvm-project": "97a699bf4812a18fb657c2779f5296a4ab2694d2",
+      "toolchain/llvm_android": "e727bfb014bd436f581a66a450c939a6983a1fc3"
+    },
+    "metadata": {
+      "toolchains/android-sdk/ndk/28.2.13676358/NOTICE.toolchain": {
+        "sha256": "789714a9076571c580cf531bdcebec776a4d889c12c3c1108adafc6e4338710a",
+        "size_bytes": 799639
+      },
+      "toolchains/android-sdk/ndk/28.2.13676358/source.properties": {
+        "sha256": "c00aa236fdb205e9be9edd9e2169763e48aca52735efff4e16f34205d49783b5",
+        "size_bytes": 108
+      },
+      "toolchains/android-sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/linux-x86_64/BUILD_INFO": {
+        "sha256": "d4985ee45da1e3188abe64289ba4c54cf45097800a5baff151657553a929b659",
+        "size_bytes": 23825
+      },
+      "toolchains/android-sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/linux-x86_64/NOTICE": {
+        "sha256": "f96f763beb66a7ba7a667647fc64c0226ace875e590c831fdd9579ec1c1d91e1",
+        "size_bytes": 130424
+      },
+      "toolchains/android-sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/linux-x86_64/clang_source_info.md": {
+        "sha256": "8ffa6ebc4941a0f0de492584444c08b65ce96ba32d824d674fd35aa0398f1454",
+        "size_bytes": 11370
+      },
+      "toolchains/android-sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/linux-x86_64/manifest_13624864.xml": {
+        "sha256": "f6d04b56172c8d31f11cf7286208caa1dda259d544d72706ca56fc173ac1d47c",
+        "size_bytes": 4813
+      },
+      "toolchains/android-sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/linux-x86_64/sysroot/NOTICE": {
+        "sha256": "2905ac5c59628352af990c748a8f4c3675a04f36eca7914612e3068661d2c6a6",
+        "size_bytes": 494921
+      }
+    },
+    "path": "toolchains/android-sdk/ndk/28.2.13676358",
+    "provenance_limit": "Build manifest/source metadata pins lineage, but no archive-specific recreation record or byte-identical rebuild.",
+    "version": "28.2.13676358/r28c"
+  },
+  "runtime_archives": [
+    {
+      "archive_path": "toolchains/android-sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/19/lib/linux/aarch64/libunwind.a",
+      "archive_sha256": "cee1176cb585dbd90891470f8c40ae913922515edb225698d819290fc0132787",
+      "members": [
+        {
+          "archive_member": "UnwindLevel1.c.o",
+          "mapping_basis": "unique exact source basename",
+          "source_path": "libunwind/src/UnwindLevel1.c",
+          "source_sha256": "60713346aa7712b5292e4cc2a05c0d3400296ebe76d7c25d256ee46a7dc2a174",
+          "source_spdx_header": "Apache-2.0 WITH LLVM-exception"
+        },
+        {
+          "archive_member": "UnwindRegistersRestore.S.o",
+          "mapping_basis": "unique exact source basename",
+          "source_path": "libunwind/src/UnwindRegistersRestore.S",
+          "source_sha256": "7c66721db60ae08b776119e0475bb4efe6aeaec79dc0386c8cd35cb4aee268f1",
+          "source_spdx_header": "Apache-2.0 WITH LLVM-exception"
+        },
+        {
+          "archive_member": "UnwindRegistersSave.S.o",
+          "mapping_basis": "unique exact source basename",
+          "source_path": "libunwind/src/UnwindRegistersSave.S",
+          "source_sha256": "9c7c51e705f73bb22d8113714a47fe9f1a3b84fe5a9484bb6801578523cabc5d",
+          "source_spdx_header": "Apache-2.0 WITH LLVM-exception"
+        },
+        {
+          "archive_member": "libunwind.cpp.o",
+          "mapping_basis": "unique exact source basename",
+          "source_path": "libunwind/src/libunwind.cpp",
+          "source_sha256": "6897d1a337fc38d050b5742f404a623c8988ce9d6a55fe8271c4b7ceee32ef10",
+          "source_spdx_header": "Apache-2.0 WITH LLVM-exception"
+        }
+      ],
+      "selected_member_count": 4
+    },
+    {
+      "archive_path": "toolchains/android-sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/19/lib/linux/libclang_rt.builtins-aarch64-android.a",
+      "archive_sha256": "9c94855d5c2e6db3797dc4b45fc4122927bd508944ac8ca4f4519c68a58f2ab1",
+      "members": [
+        {
+          "archive_member": "aarch64.c.o",
+          "mapping_basis": "AArch64 CMake source list",
+          "source_path": "compiler-rt/lib/builtins/cpu_model/aarch64.c",
+          "source_sha256": "7f6857adea78f7e75ae8719c96a300b7173f2d6dd3e506e397cb1c3a4824a3b7",
+          "source_spdx_header": "Apache-2.0 WITH LLVM-exception"
+        },
+        {
+          "archive_member": "addtf3.c.o",
+          "mapping_basis": "generic AArch64 CMake source list",
+          "source_path": "compiler-rt/lib/builtins/addtf3.c",
+          "source_sha256": "b23037fd20a30845a5c19414659ac2820de33a5ea4abf65c2aceaa8ba94fd102",
+          "source_spdx_header": "Apache-2.0 WITH LLVM-exception"
+        },
+        {
+          "archive_member": "clzti2.c.o",
+          "mapping_basis": "generic AArch64 CMake source list",
+          "source_path": "compiler-rt/lib/builtins/clzti2.c",
+          "source_sha256": "70c9c2896ae9282850e9b6425dab8bc53c3ef68bef5f0ff2f8fd7bef4434fd79",
+          "source_spdx_header": "Apache-2.0 WITH LLVM-exception"
+        },
+        {
+          "archive_member": "comparetf2.c.o",
+          "mapping_basis": "generic AArch64 CMake source list",
+          "source_path": "compiler-rt/lib/builtins/comparetf2.c",
+          "source_sha256": "4656413b5b87c11855a053a55f1c1fb8c483c1b6c5183b5e70ba1ca6e939819d",
+          "source_spdx_header": "Apache-2.0 WITH LLVM-exception"
+        },
+        {
+          "archive_member": "divti3.c.o",
+          "mapping_basis": "generic AArch64 CMake source list",
+          "source_path": "compiler-rt/lib/builtins/divti3.c",
+          "source_sha256": "b8392be2b070cda2a01bc33c7912e06ab83ce9a1ec7995fe0acbe44540cf92ae",
+          "source_spdx_header": "Apache-2.0 WITH LLVM-exception"
+        },
+        {
+          "archive_member": "emutls.c.o",
+          "mapping_basis": "generic AArch64 CMake source list",
+          "source_path": "compiler-rt/lib/builtins/emutls.c",
+          "source_sha256": "a4437f3e329a0835adbc7df38e36df12f358d05c073b11813c409f849c2345d2",
+          "source_spdx_header": "Apache-2.0 WITH LLVM-exception"
+        },
+        {
+          "archive_member": "fixunstfdi.c.o",
+          "mapping_basis": "GENERIC_TF_SOURCES for AArch64; ppc same-stem sources selected only for powerpc64",
+          "source_path": "compiler-rt/lib/builtins/fixunstfdi.c",
+          "source_sha256": "ff89c13b098b55aed90473cde432df5b3009e867558c9fa9a6fd3789fc5b0e6d",
+          "source_spdx_header": "Apache-2.0 WITH LLVM-exception"
+        },
+        {
+          "archive_member": "floattidf.c.o",
+          "mapping_basis": "generic AArch64 CMake source list",
+          "source_path": "compiler-rt/lib/builtins/floattidf.c",
+          "source_sha256": "6e676a5f03ae29781b3978ab6b7510317d896b929fcda5084d2fe4b650999491",
+          "source_spdx_header": "Apache-2.0 WITH LLVM-exception"
+        },
+        {
+          "archive_member": "floatunditf.c.o",
+          "mapping_basis": "GENERIC_TF_SOURCES for AArch64; ppc same-stem sources selected only for powerpc64",
+          "source_path": "compiler-rt/lib/builtins/floatunditf.c",
+          "source_sha256": "24a32bf0ac8589d0c0c2fb68c01d94cb24d3e580648da7374013d82a08c6ceaa",
+          "source_spdx_header": "Apache-2.0 WITH LLVM-exception"
+        },
+        {
+          "archive_member": "fp_mode.c.o",
+          "mapping_basis": "AArch64 CMake source list resolves same-stem variants",
+          "source_path": "compiler-rt/lib/builtins/aarch64/fp_mode.c",
+          "source_sha256": "17850b3a2e6f20c20e91927e4aca19b7b87f29f3f5ffb5fa5e6ab197d73d9351",
+          "source_spdx_header": "Apache-2.0 WITH LLVM-exception"
+        },
+        {
+          "archive_member": "modti3.c.o",
+          "mapping_basis": "generic AArch64 CMake source list",
+          "source_path": "compiler-rt/lib/builtins/modti3.c",
+          "source_sha256": "23b5f5af57a8a3ccdab785eec6e486bffef932cee87ff1152b3beedaa6296414",
+          "source_spdx_header": "Apache-2.0 WITH LLVM-exception"
+        },
+        {
+          "archive_member": "outline_atomic_cas1_1.S.o",
+          "generated_compile_definitions": {
+            "MODEL": 1,
+            "SIZE": 1,
+            "operation": "L_cas"
+          },
+          "mapping_basis": "CMake generated from lse.S; L operation/SIZE/MODEL recorded",
+          "source_path": "compiler-rt/lib/builtins/aarch64/lse.S",
+          "source_sha256": "5fd4c206fae16dd1ffac0de729df51d02c5ba1b697188963f443cf2454b044da",
+          "source_spdx_header": "Apache-2.0 WITH LLVM-exception"
+        },
+        {
+          "archive_member": "outline_atomic_cas1_2.S.o",
+          "generated_compile_definitions": {
+            "MODEL": 2,
+            "SIZE": 1,
+            "operation": "L_cas"
+          },
+          "mapping_basis": "CMake generated from lse.S; L operation/SIZE/MODEL recorded",
+          "source_path": "compiler-rt/lib/builtins/aarch64/lse.S",
+          "source_sha256": "5fd4c206fae16dd1ffac0de729df51d02c5ba1b697188963f443cf2454b044da",
+          "source_spdx_header": "Apache-2.0 WITH LLVM-exception"
+        },
+        {
+          "archive_member": "outline_atomic_cas1_3.S.o",
+          "generated_compile_definitions": {
+            "MODEL": 3,
+            "SIZE": 1,
+            "operation": "L_cas"
+          },
+          "mapping_basis": "CMake generated from lse.S; L operation/SIZE/MODEL recorded",
+          "source_path": "compiler-rt/lib/builtins/aarch64/lse.S",
+          "source_sha256": "5fd4c206fae16dd1ffac0de729df51d02c5ba1b697188963f443cf2454b044da",
+          "source_spdx_header": "Apache-2.0 WITH LLVM-exception"
+        },
+        {
+          "archive_member": "outline_atomic_cas1_4.S.o",
+          "generated_compile_definitions": {
+            "MODEL": 4,
+            "SIZE": 1,
+            "operation": "L_cas"
+          },
+          "mapping_basis": "CMake generated from lse.S; L operation/SIZE/MODEL recorded",
+          "source_path": "compiler-rt/lib/builtins/aarch64/lse.S",
+          "source_sha256": "5fd4c206fae16dd1ffac0de729df51d02c5ba1b697188963f443cf2454b044da",
+          "source_spdx_header": "Apache-2.0 WITH LLVM-exception"
+        },
+        {
+          "archive_member": "outline_atomic_cas4_1.S.o",
+          "generated_compile_definitions": {
+            "MODEL": 1,
+            "SIZE": 4,
+            "operation": "L_cas"
+          },
+          "mapping_basis": "CMake generated from lse.S; L operation/SIZE/MODEL recorded",
+          "source_path": "compiler-rt/lib/builtins/aarch64/lse.S",
+          "source_sha256": "5fd4c206fae16dd1ffac0de729df51d02c5ba1b697188963f443cf2454b044da",
+          "source_spdx_header": "Apache-2.0 WITH LLVM-exception"
+        },
+        {
+          "archive_member": "outline_atomic_cas4_2.S.o",
+          "generated_compile_definitions": {
+            "MODEL": 2,
+            "SIZE": 4,
+            "operation": "L_cas"
+          },
+          "mapping_basis": "CMake generated from lse.S; L operation/SIZE/MODEL recorded",
+          "source_path": "compiler-rt/lib/builtins/aarch64/lse.S",
+          "source_sha256": "5fd4c206fae16dd1ffac0de729df51d02c5ba1b697188963f443cf2454b044da",
+          "source_spdx_header": "Apache-2.0 WITH LLVM-exception"
+        },
+        {
+          "archive_member": "outline_atomic_cas4_3.S.o",
+          "generated_compile_definitions": {
+            "MODEL": 3,
+            "SIZE": 4,
+            "operation": "L_cas"
+          },
+          "mapping_basis": "CMake generated from lse.S; L operation/SIZE/MODEL recorded",
+          "source_path": "compiler-rt/lib/builtins/aarch64/lse.S",
+          "source_sha256": "5fd4c206fae16dd1ffac0de729df51d02c5ba1b697188963f443cf2454b044da",
+          "source_spdx_header": "Apache-2.0 WITH LLVM-exception"
+        },
+        {
+          "archive_member": "outline_atomic_cas4_4.S.o",
+          "generated_compile_definitions": {
+            "MODEL": 4,
+            "SIZE": 4,
+            "operation": "L_cas"
+          },
+          "mapping_basis": "CMake generated from lse.S; L operation/SIZE/MODEL recorded",
+          "source_path": "compiler-rt/lib/builtins/aarch64/lse.S",
+          "source_sha256": "5fd4c206fae16dd1ffac0de729df51d02c5ba1b697188963f443cf2454b044da",
+          "source_spdx_header": "Apache-2.0 WITH LLVM-exception"
+        },
+        {
+          "archive_member": "outline_atomic_cas8_1.S.o",
+          "generated_compile_definitions": {
+            "MODEL": 1,
+            "SIZE": 8,
+            "operation": "L_cas"
+          },
+          "mapping_basis": "CMake generated from lse.S; L operation/SIZE/MODEL recorded",
+          "source_path": "compiler-rt/lib/builtins/aarch64/lse.S",
+          "source_sha256": "5fd4c206fae16dd1ffac0de729df51d02c5ba1b697188963f443cf2454b044da",
+          "source_spdx_header": "Apache-2.0 WITH LLVM-exception"
+        },
+        {
+          "archive_member": "outline_atomic_cas8_2.S.o",
+          "generated_compile_definitions": {
+            "MODEL": 2,
+            "SIZE": 8,
+            "operation": "L_cas"
+          },
+          "mapping_basis": "CMake generated from lse.S; L operation/SIZE/MODEL recorded",
+          "source_path": "compiler-rt/lib/builtins/aarch64/lse.S",
+          "source_sha256": "5fd4c206fae16dd1ffac0de729df51d02c5ba1b697188963f443cf2454b044da",
+          "source_spdx_header": "Apache-2.0 WITH LLVM-exception"
+        },
+        {
+          "archive_member": "outline_atomic_cas8_3.S.o",
+          "generated_compile_definitions": {
+            "MODEL": 3,
+            "SIZE": 8,
+            "operation": "L_cas"
+          },
+          "mapping_basis": "CMake generated from lse.S; L operation/SIZE/MODEL recorded",
+          "source_path": "compiler-rt/lib/builtins/aarch64/lse.S",
+          "source_sha256": "5fd4c206fae16dd1ffac0de729df51d02c5ba1b697188963f443cf2454b044da",
+          "source_spdx_header": "Apache-2.0 WITH LLVM-exception"
+        },
+        {
+          "archive_member": "outline_atomic_cas8_4.S.o",
+          "generated_compile_definitions": {
+            "MODEL": 4,
+            "SIZE": 8,
+            "operation": "L_cas"
+          },
+          "mapping_basis": "CMake generated from lse.S; L operation/SIZE/MODEL recorded",
+          "source_path": "compiler-rt/lib/builtins/aarch64/lse.S",
+          "source_sha256": "5fd4c206fae16dd1ffac0de729df51d02c5ba1b697188963f443cf2454b044da",
+          "source_spdx_header": "Apache-2.0 WITH LLVM-exception"
+        },
+        {
+          "archive_member": "outline_atomic_ldadd4_1.S.o",
+          "generated_compile_definitions": {
+            "MODEL": 1,
+            "SIZE": 4,
+            "operation": "L_ldadd"
+          },
+          "mapping_basis": "CMake generated from lse.S; L operation/SIZE/MODEL recorded",
+          "source_path": "compiler-rt/lib/builtins/aarch64/lse.S",
+          "source_sha256": "5fd4c206fae16dd1ffac0de729df51d02c5ba1b697188963f443cf2454b044da",
+          "source_spdx_header": "Apache-2.0 WITH LLVM-exception"
+        },
+        {
+          "archive_member": "outline_atomic_ldadd4_2.S.o",
+          "generated_compile_definitions": {
+            "MODEL": 2,
+            "SIZE": 4,
+            "operation": "L_ldadd"
+          },
+          "mapping_basis": "CMake generated from lse.S; L operation/SIZE/MODEL recorded",
+          "source_path": "compiler-rt/lib/builtins/aarch64/lse.S",
+          "source_sha256": "5fd4c206fae16dd1ffac0de729df51d02c5ba1b697188963f443cf2454b044da",
+          "source_spdx_header": "Apache-2.0 WITH LLVM-exception"
+        },
+        {
+          "archive_member": "outline_atomic_ldadd4_3.S.o",
+          "generated_compile_definitions": {
+            "MODEL": 3,
+            "SIZE": 4,
+            "operation": "L_ldadd"
+          },
+          "mapping_basis": "CMake generated from lse.S; L operation/SIZE/MODEL recorded",
+          "source_path": "compiler-rt/lib/builtins/aarch64/lse.S",
+          "source_sha256": "5fd4c206fae16dd1ffac0de729df51d02c5ba1b697188963f443cf2454b044da",
+          "source_spdx_header": "Apache-2.0 WITH LLVM-exception"
+        },
+        {
+          "archive_member": "outline_atomic_ldadd4_4.S.o",
+          "generated_compile_definitions": {
+            "MODEL": 4,
+            "SIZE": 4,
+            "operation": "L_ldadd"
+          },
+          "mapping_basis": "CMake generated from lse.S; L operation/SIZE/MODEL recorded",
+          "source_path": "compiler-rt/lib/builtins/aarch64/lse.S",
+          "source_sha256": "5fd4c206fae16dd1ffac0de729df51d02c5ba1b697188963f443cf2454b044da",
+          "source_spdx_header": "Apache-2.0 WITH LLVM-exception"
+        },
+        {
+          "archive_member": "outline_atomic_ldadd8_1.S.o",
+          "generated_compile_definitions": {
+            "MODEL": 1,
+            "SIZE": 8,
+            "operation": "L_ldadd"
+          },
+          "mapping_basis": "CMake generated from lse.S; L operation/SIZE/MODEL recorded",
+          "source_path": "compiler-rt/lib/builtins/aarch64/lse.S",
+          "source_sha256": "5fd4c206fae16dd1ffac0de729df51d02c5ba1b697188963f443cf2454b044da",
+          "source_spdx_header": "Apache-2.0 WITH LLVM-exception"
+        },
+        {
+          "archive_member": "outline_atomic_ldadd8_2.S.o",
+          "generated_compile_definitions": {
+            "MODEL": 2,
+            "SIZE": 8,
+            "operation": "L_ldadd"
+          },
+          "mapping_basis": "CMake generated from lse.S; L operation/SIZE/MODEL recorded",
+          "source_path": "compiler-rt/lib/builtins/aarch64/lse.S",
+          "source_sha256": "5fd4c206fae16dd1ffac0de729df51d02c5ba1b697188963f443cf2454b044da",
+          "source_spdx_header": "Apache-2.0 WITH LLVM-exception"
+        },
+        {
+          "archive_member": "outline_atomic_ldadd8_3.S.o",
+          "generated_compile_definitions": {
+            "MODEL": 3,
+            "SIZE": 8,
+            "operation": "L_ldadd"
+          },
+          "mapping_basis": "CMake generated from lse.S; L operation/SIZE/MODEL recorded",
+          "source_path": "compiler-rt/lib/builtins/aarch64/lse.S",
+          "source_sha256": "5fd4c206fae16dd1ffac0de729df51d02c5ba1b697188963f443cf2454b044da",
+          "source_spdx_header": "Apache-2.0 WITH LLVM-exception"
+        },
+        {
+          "archive_member": "outline_atomic_ldadd8_4.S.o",
+          "generated_compile_definitions": {
+            "MODEL": 4,
+            "SIZE": 8,
+            "operation": "L_ldadd"
+          },
+          "mapping_basis": "CMake generated from lse.S; L operation/SIZE/MODEL recorded",
+          "source_path": "compiler-rt/lib/builtins/aarch64/lse.S",
+          "source_sha256": "5fd4c206fae16dd1ffac0de729df51d02c5ba1b697188963f443cf2454b044da",
+          "source_spdx_header": "Apache-2.0 WITH LLVM-exception"
+        },
+        {
+          "archive_member": "outline_atomic_ldclr8_1.S.o",
+          "generated_compile_definitions": {
+            "MODEL": 1,
+            "SIZE": 8,
+            "operation": "L_ldclr"
+          },
+          "mapping_basis": "CMake generated from lse.S; L operation/SIZE/MODEL recorded",
+          "source_path": "compiler-rt/lib/builtins/aarch64/lse.S",
+          "source_sha256": "5fd4c206fae16dd1ffac0de729df51d02c5ba1b697188963f443cf2454b044da",
+          "source_spdx_header": "Apache-2.0 WITH LLVM-exception"
+        },
+        {
+          "archive_member": "outline_atomic_ldclr8_2.S.o",
+          "generated_compile_definitions": {
+            "MODEL": 2,
+            "SIZE": 8,
+            "operation": "L_ldclr"
+          },
+          "mapping_basis": "CMake generated from lse.S; L operation/SIZE/MODEL recorded",
+          "source_path": "compiler-rt/lib/builtins/aarch64/lse.S",
+          "source_sha256": "5fd4c206fae16dd1ffac0de729df51d02c5ba1b697188963f443cf2454b044da",
+          "source_spdx_header": "Apache-2.0 WITH LLVM-exception"
+        },
+        {
+          "archive_member": "outline_atomic_ldclr8_3.S.o",
+          "generated_compile_definitions": {
+            "MODEL": 3,
+            "SIZE": 8,
+            "operation": "L_ldclr"
+          },
+          "mapping_basis": "CMake generated from lse.S; L operation/SIZE/MODEL recorded",
+          "source_path": "compiler-rt/lib/builtins/aarch64/lse.S",
+          "source_sha256": "5fd4c206fae16dd1ffac0de729df51d02c5ba1b697188963f443cf2454b044da",
+          "source_spdx_header": "Apache-2.0 WITH LLVM-exception"
+        },
+        {
+          "archive_member": "outline_atomic_ldclr8_4.S.o",
+          "generated_compile_definitions": {
+            "MODEL": 4,
+            "SIZE": 8,
+            "operation": "L_ldclr"
+          },
+          "mapping_basis": "CMake generated from lse.S; L operation/SIZE/MODEL recorded",
+          "source_path": "compiler-rt/lib/builtins/aarch64/lse.S",
+          "source_sha256": "5fd4c206fae16dd1ffac0de729df51d02c5ba1b697188963f443cf2454b044da",
+          "source_spdx_header": "Apache-2.0 WITH LLVM-exception"
+        },
+        {
+          "archive_member": "outline_atomic_ldeor8_1.S.o",
+          "generated_compile_definitions": {
+            "MODEL": 1,
+            "SIZE": 8,
+            "operation": "L_ldeor"
+          },
+          "mapping_basis": "CMake generated from lse.S; L operation/SIZE/MODEL recorded",
+          "source_path": "compiler-rt/lib/builtins/aarch64/lse.S",
+          "source_sha256": "5fd4c206fae16dd1ffac0de729df51d02c5ba1b697188963f443cf2454b044da",
+          "source_spdx_header": "Apache-2.0 WITH LLVM-exception"
+        },
+        {
+          "archive_member": "outline_atomic_ldeor8_2.S.o",
+          "generated_compile_definitions": {
+            "MODEL": 2,
+            "SIZE": 8,
+            "operation": "L_ldeor"
+          },
+          "mapping_basis": "CMake generated from lse.S; L operation/SIZE/MODEL recorded",
+          "source_path": "compiler-rt/lib/builtins/aarch64/lse.S",
+          "source_sha256": "5fd4c206fae16dd1ffac0de729df51d02c5ba1b697188963f443cf2454b044da",
+          "source_spdx_header": "Apache-2.0 WITH LLVM-exception"
+        },
+        {
+          "archive_member": "outline_atomic_ldeor8_3.S.o",
+          "generated_compile_definitions": {
+            "MODEL": 3,
+            "SIZE": 8,
+            "operation": "L_ldeor"
+          },
+          "mapping_basis": "CMake generated from lse.S; L operation/SIZE/MODEL recorded",
+          "source_path": "compiler-rt/lib/builtins/aarch64/lse.S",
+          "source_sha256": "5fd4c206fae16dd1ffac0de729df51d02c5ba1b697188963f443cf2454b044da",
+          "source_spdx_header": "Apache-2.0 WITH LLVM-exception"
+        },
+        {
+          "archive_member": "outline_atomic_ldeor8_4.S.o",
+          "generated_compile_definitions": {
+            "MODEL": 4,
+            "SIZE": 8,
+            "operation": "L_ldeor"
+          },
+          "mapping_basis": "CMake generated from lse.S; L operation/SIZE/MODEL recorded",
+          "source_path": "compiler-rt/lib/builtins/aarch64/lse.S",
+          "source_sha256": "5fd4c206fae16dd1ffac0de729df51d02c5ba1b697188963f443cf2454b044da",
+          "source_spdx_header": "Apache-2.0 WITH LLVM-exception"
+        },
+        {
+          "archive_member": "outline_atomic_ldset4_1.S.o",
+          "generated_compile_definitions": {
+            "MODEL": 1,
+            "SIZE": 4,
+            "operation": "L_ldset"
+          },
+          "mapping_basis": "CMake generated from lse.S; L operation/SIZE/MODEL recorded",
+          "source_path": "compiler-rt/lib/builtins/aarch64/lse.S",
+          "source_sha256": "5fd4c206fae16dd1ffac0de729df51d02c5ba1b697188963f443cf2454b044da",
+          "source_spdx_header": "Apache-2.0 WITH LLVM-exception"
+        },
+        {
+          "archive_member": "outline_atomic_ldset4_2.S.o",
+          "generated_compile_definitions": {
+            "MODEL": 2,
+            "SIZE": 4,
+            "operation": "L_ldset"
+          },
+          "mapping_basis": "CMake generated from lse.S; L operation/SIZE/MODEL recorded",
+          "source_path": "compiler-rt/lib/builtins/aarch64/lse.S",
+          "source_sha256": "5fd4c206fae16dd1ffac0de729df51d02c5ba1b697188963f443cf2454b044da",
+          "source_spdx_header": "Apache-2.0 WITH LLVM-exception"
+        },
+        {
+          "archive_member": "outline_atomic_ldset4_3.S.o",
+          "generated_compile_definitions": {
+            "MODEL": 3,
+            "SIZE": 4,
+            "operation": "L_ldset"
+          },
+          "mapping_basis": "CMake generated from lse.S; L operation/SIZE/MODEL recorded",
+          "source_path": "compiler-rt/lib/builtins/aarch64/lse.S",
+          "source_sha256": "5fd4c206fae16dd1ffac0de729df51d02c5ba1b697188963f443cf2454b044da",
+          "source_spdx_header": "Apache-2.0 WITH LLVM-exception"
+        },
+        {
+          "archive_member": "outline_atomic_ldset4_4.S.o",
+          "generated_compile_definitions": {
+            "MODEL": 4,
+            "SIZE": 4,
+            "operation": "L_ldset"
+          },
+          "mapping_basis": "CMake generated from lse.S; L operation/SIZE/MODEL recorded",
+          "source_path": "compiler-rt/lib/builtins/aarch64/lse.S",
+          "source_sha256": "5fd4c206fae16dd1ffac0de729df51d02c5ba1b697188963f443cf2454b044da",
+          "source_spdx_header": "Apache-2.0 WITH LLVM-exception"
+        },
+        {
+          "archive_member": "outline_atomic_ldset8_1.S.o",
+          "generated_compile_definitions": {
+            "MODEL": 1,
+            "SIZE": 8,
+            "operation": "L_ldset"
+          },
+          "mapping_basis": "CMake generated from lse.S; L operation/SIZE/MODEL recorded",
+          "source_path": "compiler-rt/lib/builtins/aarch64/lse.S",
+          "source_sha256": "5fd4c206fae16dd1ffac0de729df51d02c5ba1b697188963f443cf2454b044da",
+          "source_spdx_header": "Apache-2.0 WITH LLVM-exception"
+        },
+        {
+          "archive_member": "outline_atomic_ldset8_2.S.o",
+          "generated_compile_definitions": {
+            "MODEL": 2,
+            "SIZE": 8,
+            "operation": "L_ldset"
+          },
+          "mapping_basis": "CMake generated from lse.S; L operation/SIZE/MODEL recorded",
+          "source_path": "compiler-rt/lib/builtins/aarch64/lse.S",
+          "source_sha256": "5fd4c206fae16dd1ffac0de729df51d02c5ba1b697188963f443cf2454b044da",
+          "source_spdx_header": "Apache-2.0 WITH LLVM-exception"
+        },
+        {
+          "archive_member": "outline_atomic_ldset8_3.S.o",
+          "generated_compile_definitions": {
+            "MODEL": 3,
+            "SIZE": 8,
+            "operation": "L_ldset"
+          },
+          "mapping_basis": "CMake generated from lse.S; L operation/SIZE/MODEL recorded",
+          "source_path": "compiler-rt/lib/builtins/aarch64/lse.S",
+          "source_sha256": "5fd4c206fae16dd1ffac0de729df51d02c5ba1b697188963f443cf2454b044da",
+          "source_spdx_header": "Apache-2.0 WITH LLVM-exception"
+        },
+        {
+          "archive_member": "outline_atomic_ldset8_4.S.o",
+          "generated_compile_definitions": {
+            "MODEL": 4,
+            "SIZE": 8,
+            "operation": "L_ldset"
+          },
+          "mapping_basis": "CMake generated from lse.S; L operation/SIZE/MODEL recorded",
+          "source_path": "compiler-rt/lib/builtins/aarch64/lse.S",
+          "source_sha256": "5fd4c206fae16dd1ffac0de729df51d02c5ba1b697188963f443cf2454b044da",
+          "source_spdx_header": "Apache-2.0 WITH LLVM-exception"
+        },
+        {
+          "archive_member": "outline_atomic_swp1_1.S.o",
+          "generated_compile_definitions": {
+            "MODEL": 1,
+            "SIZE": 1,
+            "operation": "L_swp"
+          },
+          "mapping_basis": "CMake generated from lse.S; L operation/SIZE/MODEL recorded",
+          "source_path": "compiler-rt/lib/builtins/aarch64/lse.S",
+          "source_sha256": "5fd4c206fae16dd1ffac0de729df51d02c5ba1b697188963f443cf2454b044da",
+          "source_spdx_header": "Apache-2.0 WITH LLVM-exception"
+        },
+        {
+          "archive_member": "outline_atomic_swp1_2.S.o",
+          "generated_compile_definitions": {
+            "MODEL": 2,
+            "SIZE": 1,
+            "operation": "L_swp"
+          },
+          "mapping_basis": "CMake generated from lse.S; L operation/SIZE/MODEL recorded",
+          "source_path": "compiler-rt/lib/builtins/aarch64/lse.S",
+          "source_sha256": "5fd4c206fae16dd1ffac0de729df51d02c5ba1b697188963f443cf2454b044da",
+          "source_spdx_header": "Apache-2.0 WITH LLVM-exception"
+        },
+        {
+          "archive_member": "outline_atomic_swp1_3.S.o",
+          "generated_compile_definitions": {
+            "MODEL": 3,
+            "SIZE": 1,
+            "operation": "L_swp"
+          },
+          "mapping_basis": "CMake generated from lse.S; L operation/SIZE/MODEL recorded",
+          "source_path": "compiler-rt/lib/builtins/aarch64/lse.S",
+          "source_sha256": "5fd4c206fae16dd1ffac0de729df51d02c5ba1b697188963f443cf2454b044da",
+          "source_spdx_header": "Apache-2.0 WITH LLVM-exception"
+        },
+        {
+          "archive_member": "outline_atomic_swp1_4.S.o",
+          "generated_compile_definitions": {
+            "MODEL": 4,
+            "SIZE": 1,
+            "operation": "L_swp"
+          },
+          "mapping_basis": "CMake generated from lse.S; L operation/SIZE/MODEL recorded",
+          "source_path": "compiler-rt/lib/builtins/aarch64/lse.S",
+          "source_sha256": "5fd4c206fae16dd1ffac0de729df51d02c5ba1b697188963f443cf2454b044da",
+          "source_spdx_header": "Apache-2.0 WITH LLVM-exception"
+        },
+        {
+          "archive_member": "outline_atomic_swp4_1.S.o",
+          "generated_compile_definitions": {
+            "MODEL": 1,
+            "SIZE": 4,
+            "operation": "L_swp"
+          },
+          "mapping_basis": "CMake generated from lse.S; L operation/SIZE/MODEL recorded",
+          "source_path": "compiler-rt/lib/builtins/aarch64/lse.S",
+          "source_sha256": "5fd4c206fae16dd1ffac0de729df51d02c5ba1b697188963f443cf2454b044da",
+          "source_spdx_header": "Apache-2.0 WITH LLVM-exception"
+        },
+        {
+          "archive_member": "outline_atomic_swp4_2.S.o",
+          "generated_compile_definitions": {
+            "MODEL": 2,
+            "SIZE": 4,
+            "operation": "L_swp"
+          },
+          "mapping_basis": "CMake generated from lse.S; L operation/SIZE/MODEL recorded",
+          "source_path": "compiler-rt/lib/builtins/aarch64/lse.S",
+          "source_sha256": "5fd4c206fae16dd1ffac0de729df51d02c5ba1b697188963f443cf2454b044da",
+          "source_spdx_header": "Apache-2.0 WITH LLVM-exception"
+        },
+        {
+          "archive_member": "outline_atomic_swp4_3.S.o",
+          "generated_compile_definitions": {
+            "MODEL": 3,
+            "SIZE": 4,
+            "operation": "L_swp"
+          },
+          "mapping_basis": "CMake generated from lse.S; L operation/SIZE/MODEL recorded",
+          "source_path": "compiler-rt/lib/builtins/aarch64/lse.S",
+          "source_sha256": "5fd4c206fae16dd1ffac0de729df51d02c5ba1b697188963f443cf2454b044da",
+          "source_spdx_header": "Apache-2.0 WITH LLVM-exception"
+        },
+        {
+          "archive_member": "outline_atomic_swp4_4.S.o",
+          "generated_compile_definitions": {
+            "MODEL": 4,
+            "SIZE": 4,
+            "operation": "L_swp"
+          },
+          "mapping_basis": "CMake generated from lse.S; L operation/SIZE/MODEL recorded",
+          "source_path": "compiler-rt/lib/builtins/aarch64/lse.S",
+          "source_sha256": "5fd4c206fae16dd1ffac0de729df51d02c5ba1b697188963f443cf2454b044da",
+          "source_spdx_header": "Apache-2.0 WITH LLVM-exception"
+        },
+        {
+          "archive_member": "outline_atomic_swp8_1.S.o",
+          "generated_compile_definitions": {
+            "MODEL": 1,
+            "SIZE": 8,
+            "operation": "L_swp"
+          },
+          "mapping_basis": "CMake generated from lse.S; L operation/SIZE/MODEL recorded",
+          "source_path": "compiler-rt/lib/builtins/aarch64/lse.S",
+          "source_sha256": "5fd4c206fae16dd1ffac0de729df51d02c5ba1b697188963f443cf2454b044da",
+          "source_spdx_header": "Apache-2.0 WITH LLVM-exception"
+        },
+        {
+          "archive_member": "outline_atomic_swp8_2.S.o",
+          "generated_compile_definitions": {
+            "MODEL": 2,
+            "SIZE": 8,
+            "operation": "L_swp"
+          },
+          "mapping_basis": "CMake generated from lse.S; L operation/SIZE/MODEL recorded",
+          "source_path": "compiler-rt/lib/builtins/aarch64/lse.S",
+          "source_sha256": "5fd4c206fae16dd1ffac0de729df51d02c5ba1b697188963f443cf2454b044da",
+          "source_spdx_header": "Apache-2.0 WITH LLVM-exception"
+        },
+        {
+          "archive_member": "outline_atomic_swp8_3.S.o",
+          "generated_compile_definitions": {
+            "MODEL": 3,
+            "SIZE": 8,
+            "operation": "L_swp"
+          },
+          "mapping_basis": "CMake generated from lse.S; L operation/SIZE/MODEL recorded",
+          "source_path": "compiler-rt/lib/builtins/aarch64/lse.S",
+          "source_sha256": "5fd4c206fae16dd1ffac0de729df51d02c5ba1b697188963f443cf2454b044da",
+          "source_spdx_header": "Apache-2.0 WITH LLVM-exception"
+        },
+        {
+          "archive_member": "outline_atomic_swp8_4.S.o",
+          "generated_compile_definitions": {
+            "MODEL": 4,
+            "SIZE": 8,
+            "operation": "L_swp"
+          },
+          "mapping_basis": "CMake generated from lse.S; L operation/SIZE/MODEL recorded",
+          "source_path": "compiler-rt/lib/builtins/aarch64/lse.S",
+          "source_sha256": "5fd4c206fae16dd1ffac0de729df51d02c5ba1b697188963f443cf2454b044da",
+          "source_spdx_header": "Apache-2.0 WITH LLVM-exception"
+        },
+        {
+          "archive_member": "subtf3.c.o",
+          "mapping_basis": "generic AArch64 CMake source list",
+          "source_path": "compiler-rt/lib/builtins/subtf3.c",
+          "source_sha256": "e68ff5c165411378b63779937f24ac7b7b9e15d76387187e3fd5e1673e946600",
+          "source_spdx_header": "Apache-2.0 WITH LLVM-exception"
+        },
+        {
+          "archive_member": "trunctfsf2.c.o",
+          "mapping_basis": "generic AArch64 CMake source list",
+          "source_path": "compiler-rt/lib/builtins/trunctfsf2.c",
+          "source_sha256": "6d1cf89c99ca23deb573fda82b729105cc8d8a44643a47d3377a8636f5bb2998",
+          "source_spdx_header": "Apache-2.0 WITH LLVM-exception"
+        },
+        {
+          "archive_member": "udivmodti4.c.o",
+          "mapping_basis": "generic AArch64 CMake source list",
+          "source_path": "compiler-rt/lib/builtins/udivmodti4.c",
+          "source_sha256": "2cfaca7399d1392c92ec4dd6458da22933b4ad2e0cd58769f22b52be98116760",
+          "source_spdx_header": "Apache-2.0 WITH LLVM-exception"
+        },
+        {
+          "archive_member": "udivti3.c.o",
+          "mapping_basis": "generic AArch64 CMake source list",
+          "source_path": "compiler-rt/lib/builtins/udivti3.c",
+          "source_sha256": "c0b20f06f6e0e8a6b5423ca6674cf0c57219d07554f6f35c9ecc36bf28915355",
+          "source_spdx_header": "Apache-2.0 WITH LLVM-exception"
+        },
+        {
+          "archive_member": "umodti3.c.o",
+          "mapping_basis": "generic AArch64 CMake source list",
+          "source_path": "compiler-rt/lib/builtins/umodti3.c",
+          "source_sha256": "3d88088419d87b486858a4bf54ff08209944ae526c77b8dc5e0c0b6b8001c1e9",
+          "source_spdx_header": "Apache-2.0 WITH LLVM-exception"
+        }
+      ],
+      "selected_member_count": 64
+    },
+    {
+      "archive_path": "toolchains/android-sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/libc++_static.a",
+      "archive_sha256": "111648eb99781b8a734f3557aa1bd1efbd875af6b35b545eae1d89d75cd41b2a",
+      "members": [
+        {
+          "archive_member": "algorithm.cpp.o",
+          "mapping_basis": "unique exact source basename",
+          "source_path": "libcxx/src/algorithm.cpp",
+          "source_sha256": "5965a2ccb91e21d3dbeaa659299e43566a8128d9648743395d1dd14d592ec8a7",
+          "source_spdx_header": "Apache-2.0 WITH LLVM-exception"
+        },
+        {
+          "archive_member": "bind.cpp.o",
+          "mapping_basis": "unique exact source basename",
+          "source_path": "libcxx/src/bind.cpp",
+          "source_sha256": "caba738eeaa4d08d5db0372bea32133b1c02b307b7f9578b6b7ffa860b6a08f2",
+          "source_spdx_header": "Apache-2.0 WITH LLVM-exception"
+        },
+        {
+          "archive_member": "call_once.cpp.o",
+          "mapping_basis": "unique exact source basename",
+          "source_path": "libcxx/src/call_once.cpp",
+          "source_sha256": "b01877158f1ba03d107d0e01307bfcd7a26613ccb9f605ca0eb741a6aad800b3",
+          "source_spdx_header": "Apache-2.0 WITH LLVM-exception"
+        },
+        {
+          "archive_member": "chrono.cpp.o",
+          "mapping_basis": "unique exact source basename",
+          "source_path": "libcxx/src/chrono.cpp",
+          "source_sha256": "b4f61b94430171b4d7c3f8f8fa8dbf50b82c8ba8d44d291f06b7bc6cbc25fe13",
+          "source_spdx_header": "Apache-2.0 WITH LLVM-exception"
+        },
+        {
+          "archive_member": "condition_variable.cpp.o",
+          "mapping_basis": "unique exact source basename",
+          "source_path": "libcxx/src/condition_variable.cpp",
+          "source_sha256": "2c2daa42f90592fcd085bec73a99b3db1d4dc0f228622401a25b630f4a2cf57d",
+          "source_spdx_header": "Apache-2.0 WITH LLVM-exception"
+        },
+        {
+          "archive_member": "condition_variable_destructor.cpp.o",
+          "mapping_basis": "unique exact source basename",
+          "source_path": "libcxx/src/condition_variable_destructor.cpp",
+          "source_sha256": "5ffc3496ccaafcc01a57c854a6e8e9fc15f2ed18008b8a96382603f674f79e08",
+          "source_spdx_header": "Apache-2.0 WITH LLVM-exception"
+        },
+        {
+          "archive_member": "error_category.cpp.o",
+          "mapping_basis": "unique exact source basename",
+          "source_path": "libcxx/src/error_category.cpp",
+          "source_sha256": "236d878ed42578f1599dae12d0b7b5f44acc146f9f5af2b92f29c5b54008193a",
+          "source_spdx_header": "Apache-2.0 WITH LLVM-exception"
+        },
+        {
+          "archive_member": "exception.cpp.o",
+          "mapping_basis": "unique exact source basename",
+          "source_path": "libcxx/src/exception.cpp",
+          "source_sha256": "a7b7792329befed2fa15e31232329340ae36f4380c76348f895b9ad0e7975e66",
+          "source_spdx_header": "Apache-2.0 WITH LLVM-exception"
+        },
+        {
+          "archive_member": "future.cpp.o",
+          "mapping_basis": "unique exact source basename",
+          "source_path": "libcxx/src/future.cpp",
+          "source_sha256": "81d9672773eee216b5150cb6004c54a04c30d22c71a3402a25bb9eac1551f8e9",
+          "source_spdx_header": "Apache-2.0 WITH LLVM-exception"
+        },
+        {
+          "archive_member": "hash.cpp.o",
+          "mapping_basis": "unique exact source basename",
+          "source_path": "libcxx/src/hash.cpp",
+          "source_sha256": "63890063c9f5b28bdfe5168bc2777ccc19586d27a05465f25dfa04ef51e1a6e4",
+          "source_spdx_header": "Apache-2.0 WITH LLVM-exception"
+        },
+        {
+          "archive_member": "ios.cpp.o",
+          "mapping_basis": "unique exact source basename",
+          "source_path": "libcxx/src/ios.cpp",
+          "source_sha256": "88be7f1eaf4fdf7d2647de4ed0bceb519bdc41768cf919e28a20c314c8d73795",
+          "source_spdx_header": "Apache-2.0 WITH LLVM-exception"
+        },
+        {
+          "archive_member": "ios.instantiations.cpp.o",
+          "mapping_basis": "unique exact source basename",
+          "source_path": "libcxx/src/ios.instantiations.cpp",
+          "source_sha256": "995a37e2e986af415dd95c5406daa73a7c4f847b16ecd06bd5c621e059096427",
+          "source_spdx_header": "Apache-2.0 WITH LLVM-exception"
+        },
+        {
+          "archive_member": "iostream.cpp.o",
+          "mapping_basis": "unique exact source basename",
+          "source_path": "libcxx/src/iostream.cpp",
+          "source_sha256": "40d3e492483efc0e3335df66564bc36ad33a010d54d2574968ba2d73725cdd35",
+          "source_spdx_header": "Apache-2.0 WITH LLVM-exception"
+        },
+        {
+          "archive_member": "locale.cpp.o",
+          "mapping_basis": "unique exact source basename",
+          "source_path": "libcxx/src/locale.cpp",
+          "source_sha256": "fca6ab86c3b16b3660d41ba38360efb3fa5e9f4cbc42186f19556431716d1457",
+          "source_spdx_header": "Apache-2.0 WITH LLVM-exception"
+        },
+        {
+          "archive_member": "memory.cpp.o",
+          "mapping_basis": "unique exact source basename",
+          "source_path": "libcxx/src/memory.cpp",
+          "source_sha256": "f5dd019603cdbe6a03c2caabad2a85a2ff6782f276f5c69ab1c523ab40fa1551",
+          "source_spdx_header": "Apache-2.0 WITH LLVM-exception"
+        },
+        {
+          "archive_member": "mutex.cpp.o",
+          "mapping_basis": "unique exact source basename",
+          "source_path": "libcxx/src/mutex.cpp",
+          "source_sha256": "f562a2cda5b2fff8c592e94f225af080916a547cd4c144cba959e8e4e1326fbe",
+          "source_spdx_header": "Apache-2.0 WITH LLVM-exception"
+        },
+        {
+          "archive_member": "mutex_destructor.cpp.o",
+          "mapping_basis": "unique exact source basename",
+          "source_path": "libcxx/src/mutex_destructor.cpp",
+          "source_sha256": "0940ca95f81440e72ca9919b284b9a1a837b1700e08dbe90d61139240ac57cce",
+          "source_spdx_header": "Apache-2.0 WITH LLVM-exception"
+        },
+        {
+          "archive_member": "new_helpers.cpp.o",
+          "mapping_basis": "unique exact source basename",
+          "source_path": "libcxx/src/new_helpers.cpp",
+          "source_sha256": "745bd190f8e82539b9896aef7f9a6a32948f2c5313bcbdc836a5f45b518a1399",
+          "source_spdx_header": "Apache-2.0 WITH LLVM-exception"
+        },
+        {
+          "archive_member": "optional.cpp.o",
+          "mapping_basis": "unique exact source basename",
+          "source_path": "libcxx/src/optional.cpp",
+          "source_sha256": "55e0f33f4a6637ff14488270cbd20229f46f1fedcb4fc69cf0dda219a422d224",
+          "source_spdx_header": "Apache-2.0 WITH LLVM-exception"
+        },
+        {
+          "archive_member": "random.cpp.o",
+          "mapping_basis": "unique exact source basename",
+          "source_path": "libcxx/src/random.cpp",
+          "source_sha256": "c288b5d9d4cdf253bd867a5572c7aca9a1c93398680b915518f4ae111d82bfed",
+          "source_spdx_header": "Apache-2.0 WITH LLVM-exception"
+        },
+        {
+          "archive_member": "regex.cpp.o",
+          "mapping_basis": "unique exact source basename",
+          "source_path": "libcxx/src/regex.cpp",
+          "source_sha256": "87ce61e6756d2a07a5794ed44df844a4c3e02c5cf91cfcf0d3c6626f7e846643",
+          "source_spdx_header": "Apache-2.0 WITH LLVM-exception"
+        },
+        {
+          "archive_member": "stdexcept.cpp.o",
+          "mapping_basis": "unique exact source basename",
+          "source_path": "libcxx/src/stdexcept.cpp",
+          "source_sha256": "3d4cdfcf736eb5cd67d0cb1c406caf8c7b831f7bfd80f13fcb19cb5df18fdaee",
+          "source_spdx_header": "Apache-2.0 WITH LLVM-exception"
+        },
+        {
+          "archive_member": "string.cpp.o",
+          "mapping_basis": "unique exact source basename",
+          "source_path": "libcxx/src/string.cpp",
+          "source_sha256": "7fc174817784c4ebd597b5cb494a62c76098eb40aee0949ce22b8233e9476a01",
+          "source_spdx_header": "Apache-2.0 WITH LLVM-exception"
+        },
+        {
+          "archive_member": "system_error.cpp.o",
+          "mapping_basis": "unique exact source basename",
+          "source_path": "libcxx/src/system_error.cpp",
+          "source_sha256": "fb570270dcc6749dd2d5bdd078d7b0f0576ffbc0afb2d2e6862a691f53f1c8ff",
+          "source_spdx_header": "Apache-2.0 WITH LLVM-exception"
+        },
+        {
+          "archive_member": "thread.cpp.o",
+          "mapping_basis": "unique exact source basename",
+          "source_path": "libcxx/src/thread.cpp",
+          "source_sha256": "74acf68a6c8eb1701e166fc48b4c40a39cf09d29af95bee63d6bbd56401f6a45",
+          "source_spdx_header": "Apache-2.0 WITH LLVM-exception"
+        },
+        {
+          "archive_member": "variant.cpp.o",
+          "mapping_basis": "unique exact source basename",
+          "source_path": "libcxx/src/variant.cpp",
+          "source_sha256": "1409f5559f84668a585b0cedb83d854dc3802dfeb03eefb184bf6f0735e19c90",
+          "source_spdx_header": "Apache-2.0 WITH LLVM-exception"
+        }
+      ],
+      "selected_member_count": 26
+    },
+    {
+      "archive_path": "toolchains/android-sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/libc++abi.a",
+      "archive_sha256": "da34de171d83e7e9fb0d7b99ce9b0ac88ce5368dd3b581efe13971ef6152edbe",
+      "members": [
+        {
+          "archive_member": "abort_message.cpp.o",
+          "mapping_basis": "unique exact source basename",
+          "source_path": "libcxxabi/src/abort_message.cpp",
+          "source_sha256": "2891464b7f9273747fe6dd10d9c34e5b07023add80735065965d9f3bfeb8997d",
+          "source_spdx_header": "Apache-2.0 WITH LLVM-exception"
+        },
+        {
+          "archive_member": "cxa_aux_runtime.cpp.o",
+          "mapping_basis": "unique exact source basename",
+          "source_path": "libcxxabi/src/cxa_aux_runtime.cpp",
+          "source_sha256": "05fb65ba6f3c4f559b994a6f98709ee14075756fd354ebed66d728c926c44c8f",
+          "source_spdx_header": "Apache-2.0 WITH LLVM-exception"
+        },
+        {
+          "archive_member": "cxa_default_handlers.cpp.o",
+          "mapping_basis": "unique exact source basename",
+          "source_path": "libcxxabi/src/cxa_default_handlers.cpp",
+          "source_sha256": "eed7e4752a04198064a8cf15d64495bc854135b8d7bf1b5ec320457f86fe0c8b",
+          "source_spdx_header": "Apache-2.0 WITH LLVM-exception"
+        },
+        {
+          "archive_member": "cxa_demangle.cpp.o",
+          "mapping_basis": "unique exact source basename",
+          "source_path": "libcxxabi/src/cxa_demangle.cpp",
+          "source_sha256": "75d8f3ff6fb628bc57508f4c95cc8534e228c085e4e5167c593ea1cf4f703e97",
+          "source_spdx_header": "Apache-2.0 WITH LLVM-exception"
+        },
+        {
+          "archive_member": "cxa_exception.cpp.o",
+          "mapping_basis": "unique exact source basename",
+          "source_path": "libcxxabi/src/cxa_exception.cpp",
+          "source_sha256": "eb6c7923d2e8ddc9347410b95981c6b800ccbe251d34057e5fca9069bf99ecf2",
+          "source_spdx_header": "Apache-2.0 WITH LLVM-exception"
+        },
+        {
+          "archive_member": "cxa_exception_storage.cpp.o",
+          "mapping_basis": "unique exact source basename",
+          "source_path": "libcxxabi/src/cxa_exception_storage.cpp",
+          "source_sha256": "320adf288aded3e266bd1b1ef117e714c90d24bc1de607a7c51567ade3f06b9b",
+          "source_spdx_header": "Apache-2.0 WITH LLVM-exception"
+        },
+        {
+          "archive_member": "cxa_guard.cpp.o",
+          "mapping_basis": "unique exact source basename",
+          "source_path": "libcxxabi/src/cxa_guard.cpp",
+          "source_sha256": "97dbc2a48acb2233301bd7c11717cda173b23c73e7da64eb1710332c3b19f54d",
+          "source_spdx_header": "Apache-2.0 WITH LLVM-exception"
+        },
+        {
+          "archive_member": "cxa_handlers.cpp.o",
+          "mapping_basis": "unique exact source basename",
+          "source_path": "libcxxabi/src/cxa_handlers.cpp",
+          "source_sha256": "c95d15e9b6e3f3e3e665a2ca170ebfe87bd323fb498ded9711e32e0633da2892",
+          "source_spdx_header": "Apache-2.0 WITH LLVM-exception"
+        },
+        {
+          "archive_member": "cxa_personality.cpp.o",
+          "mapping_basis": "unique exact source basename",
+          "source_path": "libcxxabi/src/cxa_personality.cpp",
+          "source_sha256": "57c285728ed943c0168dbbcd244ba5550af673ea7e317c0953eecaa733e7559b",
+          "source_spdx_header": "Apache-2.0 WITH LLVM-exception"
+        },
+        {
+          "archive_member": "cxa_virtual.cpp.o",
+          "mapping_basis": "unique exact source basename",
+          "source_path": "libcxxabi/src/cxa_virtual.cpp",
+          "source_sha256": "ac1a29d1c9d4fa78d69e209879f61abeb65e1614d1cdd7271d2f386737a4d2a3",
+          "source_spdx_header": "Apache-2.0 WITH LLVM-exception"
+        },
+        {
+          "archive_member": "fallback_malloc.cpp.o",
+          "mapping_basis": "unique exact source basename",
+          "source_path": "libcxxabi/src/fallback_malloc.cpp",
+          "source_sha256": "b68232eb83588c20e28acf706703a5e9769c63adbeb2c6594ce4c0be5634a011",
+          "source_spdx_header": "Apache-2.0 WITH LLVM-exception"
+        },
+        {
+          "archive_member": "private_typeinfo.cpp.o",
+          "mapping_basis": "unique exact source basename",
+          "source_path": "libcxxabi/src/private_typeinfo.cpp",
+          "source_sha256": "55fb71fdd633e1c0f7b4bccba5b947bd03c1498f9cb5f79f162c58efc34342c3",
+          "source_spdx_header": "Apache-2.0 WITH LLVM-exception"
+        },
+        {
+          "archive_member": "stdlib_exception.cpp.o",
+          "mapping_basis": "unique exact source basename",
+          "source_path": "libcxxabi/src/stdlib_exception.cpp",
+          "source_sha256": "d609597f8f536fec59f7afa2dbd352c69a9b50ce8aaf85082fd1fbad08c79a25",
+          "source_spdx_header": "Apache-2.0 WITH LLVM-exception"
+        },
+        {
+          "archive_member": "stdlib_new_delete.cpp.o",
+          "mapping_basis": "unique exact source basename",
+          "source_path": "libcxxabi/src/stdlib_new_delete.cpp",
+          "source_sha256": "eba213003682944709bcfeb8278da1327be01cf2620146ed9aea412ad04b6c69",
+          "source_spdx_header": "Apache-2.0 WITH LLVM-exception"
+        },
+        {
+          "archive_member": "stdlib_stdexcept.cpp.o",
+          "mapping_basis": "unique exact source basename",
+          "source_path": "libcxxabi/src/stdlib_stdexcept.cpp",
+          "source_sha256": "8539fc8929cd9a166a74fe04ef81472e7a6d507f4422f991963867fbda1f256a",
+          "source_spdx_header": "Apache-2.0 WITH LLVM-exception"
+        },
+        {
+          "archive_member": "stdlib_typeinfo.cpp.o",
+          "mapping_basis": "unique exact source basename",
+          "source_path": "libcxxabi/src/stdlib_typeinfo.cpp",
+          "source_sha256": "5d0b584b9341eb49ea5e640a475dc690d44b0770712222e2667185b1e814367f",
+          "source_spdx_header": "Apache-2.0 WITH LLVM-exception"
+        }
+      ],
+      "selected_member_count": 16
+    }
+  ],
+  "startup_objects": [
+    {
+      "path": "toolchains/android-sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/31/crtbegin_dynamic.o",
+      "recipe_url": "https://android.googlesource.com/platform/bionic/+/b86008a9cd14a7748867d2232e6de439e4809c10/libc/Android.bp",
+      "sha256": "b3813e65abc9bc6676db7cf7eea08cbc71e6cef6f8037d15205d16786cc6c0b0",
+      "source_files": [
+        {
+          "license": "AOSP BSD-style header",
+          "ndk_sysroot_notice_matching_line": 406,
+          "path": "libc/arch-common/bionic/crtbegin.c",
+          "sha256": "25e4e95c97e263fb402ee73774598a0f9886babe4f5cbbb0530aa7d888fd5d2d",
+          "url": "https://android.googlesource.com/platform/bionic/+/b86008a9cd14a7748867d2232e6de439e4809c10/libc/arch-common/bionic/crtbegin.c"
+        },
+        {
+          "license": "AOSP BSD-style header",
+          "ndk_sysroot_notice_matching_line": 592,
+          "path": "libc/arch-common/bionic/crtbrand.S",
+          "sha256": "c4d083478b33ee6c44113fb8dbecd5a156226ab98eed780a2aa7f11e534c8bcb",
+          "url": "https://android.googlesource.com/platform/bionic/+/b86008a9cd14a7748867d2232e6de439e4809c10/libc/arch-common/bionic/crtbrand.S"
+        }
+      ]
+    },
+    {
+      "path": "toolchains/android-sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/31/crtend_android.o",
+      "recipe_url": "https://android.googlesource.com/platform/bionic/+/b86008a9cd14a7748867d2232e6de439e4809c10/libc/Android.bp",
+      "sha256": "60ac71634f21a7b2ba70e0c60deaaeee2058f4aa06b7000dc63677771a87c3b6",
+      "source_files": [
+        {
+          "license": "AOSP BSD-style header",
+          "ndk_sysroot_notice_matching_line": 202,
+          "path": "libc/arch-common/bionic/crtend.S",
+          "sha256": "67447574b30707d446aeeb6f5ef5836b00921271921f2fc68e4793d40eb3c700",
+          "url": "https://android.googlesource.com/platform/bionic/+/b86008a9cd14a7748867d2232e6de439e4809c10/libc/arch-common/bionic/crtend.S"
+        }
+      ]
+    }
+  ],
+  "status": "bounded mapping; not legal clearance",
+  "strict_candidate": {
+    "archive_member_pairs": 398,
+    "candidate_map_comparison": [
+      {
+        "elf_path": "toolchains/aapt2-build-arm64-strict/vendor/aapt2",
+        "elf_sha256": "b98cb0180ef839850ce63fc81d6d662834503d24b0fae83594c5d497e86c2179",
+        "map_path": "toolchains/aapt2-build-arm64-strict/aapt2-link.map",
+        "map_sha256": "d97f516e1f5ee67e45d6c797c50bd62fd7eb9741129f78844efa3e3ae7c61c8d",
+        "normalized_pair_count": 398,
+        "normalized_pair_set_path": "toolchains/aapt2-runtime-notice-audit/strict-archive-members.txt",
+        "normalized_pair_set_sha256": "ca96874114bc62d76112b7042cbae4e6450d199d5bd9163e8d988ac9ca8afec4"
+      },
+      {
+        "elf_path": "toolchains/aapt2-replay-20260927-oneshot/build/aapt2/vendor/aapt2",
+        "elf_sha256": "a1a8a676ddb43e74c5d323559baa932d0ff3ed431902b5b6b0bee58cc7633cc5",
+        "map_path": "toolchains/aapt2-replay-20260927-oneshot/aapt2-link.map",
+        "map_sha256": "f8b8413fbd982cbdae8e8973f5964f7324982e66c445d488225e66116392b003",
+        "normalized_pair_count": 398,
+        "normalized_pair_set_path": "toolchains/aapt2-runtime-notice-audit/oneshot-archive-members.txt",
+        "normalized_pair_set_sha256": "ca96874114bc62d76112b7042cbae4e6450d199d5bd9163e8d988ac9ca8afec4",
+        "stripped_elf_path": "toolchains/aapt2-replay-20260927-oneshot/aapt2-stripped",
+        "stripped_elf_sha256": "8f87b17cc1f57d489802e8c0aadc2b68e14ee0a0d4514081e2134b84ce2ecd00"
+      },
+      {
+        "elf_path": "toolchains/aapt2-clean-source-link-20260927/build/vendor/aapt2",
+        "elf_sha256": "969634ab95296a3ea823cdec6b4bf4e46a6f0fda6ec14c54f31dfde52f9b408e",
+        "map_path": "toolchains/aapt2-clean-source-link-20260927/aapt2-link.map",
+        "map_sha256": "7ecfee60dfc0d30e330b73bd4594fc52921424cfbbb3e7a962defdb0a0961ccc",
+        "normalized_pair_count": 398,
+        "normalized_pair_set_path": "toolchains/aapt2-runtime-notice-audit/clean-source-archive-members.txt",
+        "normalized_pair_set_sha256": "ca96874114bc62d76112b7042cbae4e6450d199d5bd9163e8d988ac9ca8afec4",
+        "stripped_elf_path": "toolchains/aapt2-clean-source-link-20260927/aapt2-stripped",
+        "stripped_elf_sha256": "ed917a383f890b2cad3eb3be00657f20d4fc6f73ca5bbbabf062d357633374e7"
+      }
+    ],
+    "elf_sha256": "b98cb0180ef839850ce63fc81d6d662834503d24b0fae83594c5d497e86c2179",
+    "link_members_json_sha256": "9f4750c87dca338c9f6272a64090fbedad68adbca59ec64d6e27c4a817fecd83",
+    "map_pair_set_sha256": "ca96874114bc62d76112b7042cbae4e6450d199d5bd9163e8d988ac9ca8afec4",
+    "map_sha256": "d97f516e1f5ee67e45d6c797c50bd62fd7eb9741129f78844efa3e3ae7c61c8d",
+    "ndk_link_members": 110,
+    "path": "toolchains/aapt2-build-arm64-strict"
+  },
+  "unique_runtime_sources": [
+    {
+      "path": "compiler-rt/lib/builtins/aarch64/fp_mode.c",
+      "sha256": "17850b3a2e6f20c20e91927e4aca19b7b87f29f3f5ffb5fa5e6ab197d73d9351",
+      "size_bytes": 1711,
+      "spdx_header": "Apache-2.0 WITH LLVM-exception",
+      "url": "https://android.googlesource.com/toolchain/llvm-project/+/97a699bf4812a18fb657c2779f5296a4ab2694d2/compiler-rt/lib/builtins/aarch64/fp_mode.c"
+    },
+    {
+      "path": "compiler-rt/lib/builtins/aarch64/lse.S",
+      "sha256": "5fd4c206fae16dd1ffac0de729df51d02c5ba1b697188963f443cf2454b044da",
+      "size_bytes": 5778,
+      "spdx_header": "Apache-2.0 WITH LLVM-exception",
+      "url": "https://android.googlesource.com/toolchain/llvm-project/+/97a699bf4812a18fb657c2779f5296a4ab2694d2/compiler-rt/lib/builtins/aarch64/lse.S"
+    },
+    {
+      "path": "compiler-rt/lib/builtins/addtf3.c",
+      "sha256": "b23037fd20a30845a5c19414659ac2820de33a5ea4abf65c2aceaa8ba94fd102",
+      "size_bytes": 703,
+      "spdx_header": "Apache-2.0 WITH LLVM-exception",
+      "url": "https://android.googlesource.com/toolchain/llvm-project/+/97a699bf4812a18fb657c2779f5296a4ab2694d2/compiler-rt/lib/builtins/addtf3.c"
+    },
+    {
+      "path": "compiler-rt/lib/builtins/clzti2.c",
+      "sha256": "70c9c2896ae9282850e9b6425dab8bc53c3ef68bef5f0ff2f8fd7bef4434fd79",
+      "size_bytes": 884,
+      "spdx_header": "Apache-2.0 WITH LLVM-exception",
+      "url": "https://android.googlesource.com/toolchain/llvm-project/+/97a699bf4812a18fb657c2779f5296a4ab2694d2/compiler-rt/lib/builtins/clzti2.c"
+    },
+    {
+      "path": "compiler-rt/lib/builtins/comparetf2.c",
+      "sha256": "4656413b5b87c11855a053a55f1c1fb8c483c1b6c5183b5e70ba1ca6e939819d",
+      "size_bytes": 1988,
+      "spdx_header": "Apache-2.0 WITH LLVM-exception",
+      "url": "https://android.googlesource.com/toolchain/llvm-project/+/97a699bf4812a18fb657c2779f5296a4ab2694d2/compiler-rt/lib/builtins/comparetf2.c"
+    },
+    {
+      "path": "compiler-rt/lib/builtins/cpu_model/aarch64.c",
+      "sha256": "7f6857adea78f7e75ae8719c96a300b7173f2d6dd3e506e397cb1c3a4824a3b7",
+      "size_bytes": 3774,
+      "spdx_header": "Apache-2.0 WITH LLVM-exception",
+      "url": "https://android.googlesource.com/toolchain/llvm-project/+/97a699bf4812a18fb657c2779f5296a4ab2694d2/compiler-rt/lib/builtins/cpu_model/aarch64.c"
+    },
+    {
+      "path": "compiler-rt/lib/builtins/divti3.c",
+      "sha256": "b8392be2b070cda2a01bc33c7912e06ab83ce9a1ec7995fe0acbe44540cf92ae",
+      "size_bytes": 829,
+      "spdx_header": "Apache-2.0 WITH LLVM-exception",
+      "url": "https://android.googlesource.com/toolchain/llvm-project/+/97a699bf4812a18fb657c2779f5296a4ab2694d2/compiler-rt/lib/builtins/divti3.c"
+    },
+    {
+      "path": "compiler-rt/lib/builtins/emutls.c",
+      "sha256": "a4437f3e329a0835adbc7df38e36df12f358d05c073b11813c409f849c2345d2",
+      "size_bytes": 13660,
+      "spdx_header": "Apache-2.0 WITH LLVM-exception",
+      "url": "https://android.googlesource.com/toolchain/llvm-project/+/97a699bf4812a18fb657c2779f5296a4ab2694d2/compiler-rt/lib/builtins/emutls.c"
+    },
+    {
+      "path": "compiler-rt/lib/builtins/fixunstfdi.c",
+      "sha256": "ff89c13b098b55aed90473cde432df5b3009e867558c9fa9a6fd3789fc5b0e6d",
+      "size_bytes": 577,
+      "spdx_header": "Apache-2.0 WITH LLVM-exception",
+      "url": "https://android.googlesource.com/toolchain/llvm-project/+/97a699bf4812a18fb657c2779f5296a4ab2694d2/compiler-rt/lib/builtins/fixunstfdi.c"
+    },
+    {
+      "path": "compiler-rt/lib/builtins/floattidf.c",
+      "sha256": "6e676a5f03ae29781b3978ab6b7510317d896b929fcda5084d2fe4b650999491",
+      "size_bytes": 989,
+      "spdx_header": "Apache-2.0 WITH LLVM-exception",
+      "url": "https://android.googlesource.com/toolchain/llvm-project/+/97a699bf4812a18fb657c2779f5296a4ab2694d2/compiler-rt/lib/builtins/floattidf.c"
+    },
+    {
+      "path": "compiler-rt/lib/builtins/floatunditf.c",
+      "sha256": "24a32bf0ac8589d0c0c2fb68c01d94cb24d3e580648da7374013d82a08c6ceaa",
+      "size_bytes": 1275,
+      "spdx_header": "Apache-2.0 WITH LLVM-exception",
+      "url": "https://android.googlesource.com/toolchain/llvm-project/+/97a699bf4812a18fb657c2779f5296a4ab2694d2/compiler-rt/lib/builtins/floatunditf.c"
+    },
+    {
+      "path": "compiler-rt/lib/builtins/modti3.c",
+      "sha256": "23b5f5af57a8a3ccdab785eec6e486bffef932cee87ff1152b3beedaa6296414",
+      "size_bytes": 828,
+      "spdx_header": "Apache-2.0 WITH LLVM-exception",
+      "url": "https://android.googlesource.com/toolchain/llvm-project/+/97a699bf4812a18fb657c2779f5296a4ab2694d2/compiler-rt/lib/builtins/modti3.c"
+    },
+    {
+      "path": "compiler-rt/lib/builtins/subtf3.c",
+      "sha256": "e68ff5c165411378b63779937f24ac7b7b9e15d76387187e3fd5e1673e946600",
+      "size_bytes": 798,
+      "spdx_header": "Apache-2.0 WITH LLVM-exception",
+      "url": "https://android.googlesource.com/toolchain/llvm-project/+/97a699bf4812a18fb657c2779f5296a4ab2694d2/compiler-rt/lib/builtins/subtf3.c"
+    },
+    {
+      "path": "compiler-rt/lib/builtins/trunctfsf2.c",
+      "sha256": "6d1cf89c99ca23deb573fda82b729105cc8d8a44643a47d3377a8636f5bb2998",
+      "size_bytes": 591,
+      "spdx_header": "Apache-2.0 WITH LLVM-exception",
+      "url": "https://android.googlesource.com/toolchain/llvm-project/+/97a699bf4812a18fb657c2779f5296a4ab2694d2/compiler-rt/lib/builtins/trunctfsf2.c"
+    },
+    {
+      "path": "compiler-rt/lib/builtins/udivmodti4.c",
+      "sha256": "2cfaca7399d1392c92ec4dd6458da22933b4ad2e0cd58769f22b52be98116760",
+      "size_bytes": 4988,
+      "spdx_header": "Apache-2.0 WITH LLVM-exception",
+      "url": "https://android.googlesource.com/toolchain/llvm-project/+/97a699bf4812a18fb657c2779f5296a4ab2694d2/compiler-rt/lib/builtins/udivmodti4.c"
+    },
+    {
+      "path": "compiler-rt/lib/builtins/udivti3.c",
+      "sha256": "c0b20f06f6e0e8a6b5423ca6674cf0c57219d07554f6f35c9ecc36bf28915355",
+      "size_bytes": 699,
+      "spdx_header": "Apache-2.0 WITH LLVM-exception",
+      "url": "https://android.googlesource.com/toolchain/llvm-project/+/97a699bf4812a18fb657c2779f5296a4ab2694d2/compiler-rt/lib/builtins/udivti3.c"
+    },
+    {
+      "path": "compiler-rt/lib/builtins/umodti3.c",
+      "sha256": "3d88088419d87b486858a4bf54ff08209944ae526c77b8dc5e0c0b6b8001c1e9",
+      "size_bytes": 717,
+      "spdx_header": "Apache-2.0 WITH LLVM-exception",
+      "url": "https://android.googlesource.com/toolchain/llvm-project/+/97a699bf4812a18fb657c2779f5296a4ab2694d2/compiler-rt/lib/builtins/umodti3.c"
+    },
+    {
+      "path": "libcxx/src/algorithm.cpp",
+      "sha256": "5965a2ccb91e21d3dbeaa659299e43566a8128d9648743395d1dd14d592ec8a7",
+      "size_bytes": 2648,
+      "spdx_header": "Apache-2.0 WITH LLVM-exception",
+      "url": "https://android.googlesource.com/toolchain/llvm-project/+/97a699bf4812a18fb657c2779f5296a4ab2694d2/libcxx/src/algorithm.cpp"
+    },
+    {
+      "path": "libcxx/src/bind.cpp",
+      "sha256": "caba738eeaa4d08d5db0372bea32133b1c02b307b7f9578b6b7ffa860b6a08f2",
+      "size_bytes": 706,
+      "spdx_header": "Apache-2.0 WITH LLVM-exception",
+      "url": "https://android.googlesource.com/toolchain/llvm-project/+/97a699bf4812a18fb657c2779f5296a4ab2694d2/libcxx/src/bind.cpp"
+    },
+    {
+      "path": "libcxx/src/call_once.cpp",
+      "sha256": "b01877158f1ba03d107d0e01307bfcd7a26613ccb9f605ca0eb741a6aad800b3",
+      "size_bytes": 2276,
+      "spdx_header": "Apache-2.0 WITH LLVM-exception",
+      "url": "https://android.googlesource.com/toolchain/llvm-project/+/97a699bf4812a18fb657c2779f5296a4ab2694d2/libcxx/src/call_once.cpp"
+    },
+    {
+      "path": "libcxx/src/chrono.cpp",
+      "sha256": "b4f61b94430171b4d7c3f8f8fa8dbf50b82c8ba8d44d291f06b7bc6cbc25fe13",
+      "size_bytes": 7370,
+      "spdx_header": "Apache-2.0 WITH LLVM-exception",
+      "url": "https://android.googlesource.com/toolchain/llvm-project/+/97a699bf4812a18fb657c2779f5296a4ab2694d2/libcxx/src/chrono.cpp"
+    },
+    {
+      "path": "libcxx/src/condition_variable.cpp",
+      "sha256": "2c2daa42f90592fcd085bec73a99b3db1d4dc0f228622401a25b630f4a2cf57d",
+      "size_bytes": 2582,
+      "spdx_header": "Apache-2.0 WITH LLVM-exception",
+      "url": "https://android.googlesource.com/toolchain/llvm-project/+/97a699bf4812a18fb657c2779f5296a4ab2694d2/libcxx/src/condition_variable.cpp"
+    },
+    {
+      "path": "libcxx/src/condition_variable_destructor.cpp",
+      "sha256": "5ffc3496ccaafcc01a57c854a6e8e9fc15f2ed18008b8a96382603f674f79e08",
+      "size_bytes": 1246,
+      "spdx_header": "Apache-2.0 WITH LLVM-exception",
+      "url": "https://android.googlesource.com/toolchain/llvm-project/+/97a699bf4812a18fb657c2779f5296a4ab2694d2/libcxx/src/condition_variable_destructor.cpp"
+    },
+    {
+      "path": "libcxx/src/error_category.cpp",
+      "sha256": "236d878ed42578f1599dae12d0b7b5f44acc146f9f5af2b92f29c5b54008193a",
+      "size_bytes": 1236,
+      "spdx_header": "Apache-2.0 WITH LLVM-exception",
+      "url": "https://android.googlesource.com/toolchain/llvm-project/+/97a699bf4812a18fb657c2779f5296a4ab2694d2/libcxx/src/error_category.cpp"
+    },
+    {
+      "path": "libcxx/src/exception.cpp",
+      "sha256": "a7b7792329befed2fa15e31232329340ae36f4380c76348f895b9ad0e7975e66",
+      "size_bytes": 1302,
+      "spdx_header": "Apache-2.0 WITH LLVM-exception",
+      "url": "https://android.googlesource.com/toolchain/llvm-project/+/97a699bf4812a18fb657c2779f5296a4ab2694d2/libcxx/src/exception.cpp"
+    },
+    {
+      "path": "libcxx/src/future.cpp",
+      "sha256": "81d9672773eee216b5150cb6004c54a04c30d22c71a3402a25bb9eac1551f8e9",
+      "size_bytes": 5917,
+      "spdx_header": "Apache-2.0 WITH LLVM-exception",
+      "url": "https://android.googlesource.com/toolchain/llvm-project/+/97a699bf4812a18fb657c2779f5296a4ab2694d2/libcxx/src/future.cpp"
+    },
+    {
+      "path": "libcxx/src/hash.cpp",
+      "sha256": "63890063c9f5b28bdfe5168bc2777ccc19586d27a05465f25dfa04ef51e1a6e4",
+      "size_bytes": 10286,
+      "spdx_header": "Apache-2.0 WITH LLVM-exception",
+      "url": "https://android.googlesource.com/toolchain/llvm-project/+/97a699bf4812a18fb657c2779f5296a4ab2694d2/libcxx/src/hash.cpp"
+    },
+    {
+      "path": "libcxx/src/ios.cpp",
+      "sha256": "88be7f1eaf4fdf7d2647de4ed0bceb519bdc41768cf919e28a20c314c8d73795",
+      "size_bytes": 12198,
+      "spdx_header": "Apache-2.0 WITH LLVM-exception",
+      "url": "https://android.googlesource.com/toolchain/llvm-project/+/97a699bf4812a18fb657c2779f5296a4ab2694d2/libcxx/src/ios.cpp"
+    },
+    {
+      "path": "libcxx/src/ios.instantiations.cpp",
+      "sha256": "995a37e2e986af415dd95c5406daa73a7c4f847b16ecd06bd5c621e059096427",
+      "size_bytes": 2182,
+      "spdx_header": "Apache-2.0 WITH LLVM-exception",
+      "url": "https://android.googlesource.com/toolchain/llvm-project/+/97a699bf4812a18fb657c2779f5296a4ab2694d2/libcxx/src/ios.instantiations.cpp"
+    },
+    {
+      "path": "libcxx/src/iostream.cpp",
+      "sha256": "40d3e492483efc0e3335df66564bc36ad33a010d54d2574968ba2d73725cdd35",
+      "size_bytes": 6262,
+      "spdx_header": "Apache-2.0 WITH LLVM-exception",
+      "url": "https://android.googlesource.com/toolchain/llvm-project/+/97a699bf4812a18fb657c2779f5296a4ab2694d2/libcxx/src/iostream.cpp"
+    },
+    {
+      "path": "libcxx/src/locale.cpp",
+      "sha256": "fca6ab86c3b16b3660d41ba38360efb3fa5e9f4cbc42186f19556431716d1457",
+      "size_bytes": 192159,
+      "spdx_header": "Apache-2.0 WITH LLVM-exception",
+      "url": "https://android.googlesource.com/toolchain/llvm-project/+/97a699bf4812a18fb657c2779f5296a4ab2694d2/libcxx/src/locale.cpp"
+    },
+    {
+      "path": "libcxx/src/memory.cpp",
+      "sha256": "f5dd019603cdbe6a03c2caabad2a85a2ff6782f276f5c69ab1c523ab40fa1551",
+      "size_bytes": 6129,
+      "spdx_header": "Apache-2.0 WITH LLVM-exception",
+      "url": "https://android.googlesource.com/toolchain/llvm-project/+/97a699bf4812a18fb657c2779f5296a4ab2694d2/libcxx/src/memory.cpp"
+    },
+    {
+      "path": "libcxx/src/mutex.cpp",
+      "sha256": "f562a2cda5b2fff8c592e94f225af080916a547cd4c144cba959e8e4e1326fbe",
+      "size_bytes": 3701,
+      "spdx_header": "Apache-2.0 WITH LLVM-exception",
+      "url": "https://android.googlesource.com/toolchain/llvm-project/+/97a699bf4812a18fb657c2779f5296a4ab2694d2/libcxx/src/mutex.cpp"
+    },
+    {
+      "path": "libcxx/src/mutex_destructor.cpp",
+      "sha256": "0940ca95f81440e72ca9919b284b9a1a837b1700e08dbe90d61139240ac57cce",
+      "size_bytes": 1492,
+      "spdx_header": "Apache-2.0 WITH LLVM-exception",
+      "url": "https://android.googlesource.com/toolchain/llvm-project/+/97a699bf4812a18fb657c2779f5296a4ab2694d2/libcxx/src/mutex_destructor.cpp"
+    },
+    {
+      "path": "libcxx/src/new_helpers.cpp",
+      "sha256": "745bd190f8e82539b9896aef7f9a6a32948f2c5313bcbdc836a5f45b518a1399",
+      "size_bytes": 752,
+      "spdx_header": "Apache-2.0 WITH LLVM-exception",
+      "url": "https://android.googlesource.com/toolchain/llvm-project/+/97a699bf4812a18fb657c2779f5296a4ab2694d2/libcxx/src/new_helpers.cpp"
+    },
+    {
+      "path": "libcxx/src/optional.cpp",
+      "sha256": "55e0f33f4a6637ff14488270cbd20229f46f1fedcb4fc69cf0dda219a422d224",
+      "size_bytes": 1239,
+      "spdx_header": "Apache-2.0 WITH LLVM-exception",
+      "url": "https://android.googlesource.com/toolchain/llvm-project/+/97a699bf4812a18fb657c2779f5296a4ab2694d2/libcxx/src/optional.cpp"
+    },
+    {
+      "path": "libcxx/src/random.cpp",
+      "sha256": "c288b5d9d4cdf253bd867a5572c7aca9a1c93398680b915518f4ae111d82bfed",
+      "size_bytes": 4992,
+      "spdx_header": "Apache-2.0 WITH LLVM-exception",
+      "url": "https://android.googlesource.com/toolchain/llvm-project/+/97a699bf4812a18fb657c2779f5296a4ab2694d2/libcxx/src/random.cpp"
+    },
+    {
+      "path": "libcxx/src/regex.cpp",
+      "sha256": "87ce61e6756d2a07a5794ed44df844a4c3e02c5cf91cfcf0d3c6626f7e846643",
+      "size_bytes": 10538,
+      "spdx_header": "Apache-2.0 WITH LLVM-exception",
+      "url": "https://android.googlesource.com/toolchain/llvm-project/+/97a699bf4812a18fb657c2779f5296a4ab2694d2/libcxx/src/regex.cpp"
+    },
+    {
+      "path": "libcxx/src/stdexcept.cpp",
+      "sha256": "3d4cdfcf736eb5cd67d0cb1c406caf8c7b831f7bfd80f13fcb19cb5df18fdaee",
+      "size_bytes": 897,
+      "spdx_header": "Apache-2.0 WITH LLVM-exception",
+      "url": "https://android.googlesource.com/toolchain/llvm-project/+/97a699bf4812a18fb657c2779f5296a4ab2694d2/libcxx/src/stdexcept.cpp"
+    },
+    {
+      "path": "libcxx/src/string.cpp",
+      "sha256": "7fc174817784c4ebd597b5cb494a62c76098eb40aee0949ce22b8233e9476a01",
+      "size_bytes": 12581,
+      "spdx_header": "Apache-2.0 WITH LLVM-exception",
+      "url": "https://android.googlesource.com/toolchain/llvm-project/+/97a699bf4812a18fb657c2779f5296a4ab2694d2/libcxx/src/string.cpp"
+    },
+    {
+      "path": "libcxx/src/system_error.cpp",
+      "sha256": "fb570270dcc6749dd2d5bdd078d7b0f0576ffbc0afb2d2e6862a691f53f1c8ff",
+      "size_bytes": 7199,
+      "spdx_header": "Apache-2.0 WITH LLVM-exception",
+      "url": "https://android.googlesource.com/toolchain/llvm-project/+/97a699bf4812a18fb657c2779f5296a4ab2694d2/libcxx/src/system_error.cpp"
+    },
+    {
+      "path": "libcxx/src/thread.cpp",
+      "sha256": "74acf68a6c8eb1701e166fc48b4c40a39cf09d29af95bee63d6bbd56401f6a45",
+      "size_bytes": 5246,
+      "spdx_header": "Apache-2.0 WITH LLVM-exception",
+      "url": "https://android.googlesource.com/toolchain/llvm-project/+/97a699bf4812a18fb657c2779f5296a4ab2694d2/libcxx/src/thread.cpp"
+    },
+    {
+      "path": "libcxx/src/variant.cpp",
+      "sha256": "1409f5559f84668a585b0cedb83d854dc3802dfeb03eefb184bf6f0735e19c90",
+      "size_bytes": 514,
+      "spdx_header": "Apache-2.0 WITH LLVM-exception",
+      "url": "https://android.googlesource.com/toolchain/llvm-project/+/97a699bf4812a18fb657c2779f5296a4ab2694d2/libcxx/src/variant.cpp"
+    },
+    {
+      "path": "libcxxabi/src/abort_message.cpp",
+      "sha256": "2891464b7f9273747fe6dd10d9c34e5b07023add80735065965d9f3bfeb8997d",
+      "size_bytes": 2421,
+      "spdx_header": "Apache-2.0 WITH LLVM-exception",
+      "url": "https://android.googlesource.com/toolchain/llvm-project/+/97a699bf4812a18fb657c2779f5296a4ab2694d2/libcxxabi/src/abort_message.cpp"
+    },
+    {
+      "path": "libcxxabi/src/cxa_aux_runtime.cpp",
+      "sha256": "05fb65ba6f3c4f559b994a6f98709ee14075756fd354ebed66d728c926c44c8f",
+      "size_bytes": 1148,
+      "spdx_header": "Apache-2.0 WITH LLVM-exception",
+      "url": "https://android.googlesource.com/toolchain/llvm-project/+/97a699bf4812a18fb657c2779f5296a4ab2694d2/libcxxabi/src/cxa_aux_runtime.cpp"
+    },
+    {
+      "path": "libcxxabi/src/cxa_default_handlers.cpp",
+      "sha256": "eed7e4752a04198064a8cf15d64495bc854135b8d7bf1b5ec320457f86fe0c8b",
+      "size_bytes": 4838,
+      "spdx_header": "Apache-2.0 WITH LLVM-exception",
+      "url": "https://android.googlesource.com/toolchain/llvm-project/+/97a699bf4812a18fb657c2779f5296a4ab2694d2/libcxxabi/src/cxa_default_handlers.cpp"
+    },
+    {
+      "path": "libcxxabi/src/cxa_demangle.cpp",
+      "sha256": "75d8f3ff6fb628bc57508f4c95cc8534e228c085e4e5167c593ea1cf4f703e97",
+      "size_bytes": 11815,
+      "spdx_header": "Apache-2.0 WITH LLVM-exception",
+      "url": "https://android.googlesource.com/toolchain/llvm-project/+/97a699bf4812a18fb657c2779f5296a4ab2694d2/libcxxabi/src/cxa_demangle.cpp"
+    },
+    {
+      "path": "libcxxabi/src/cxa_exception.cpp",
+      "sha256": "eb6c7923d2e8ddc9347410b95981c6b800ccbe251d34057e5fca9069bf99ecf2",
+      "size_bytes": 33242,
+      "spdx_header": "Apache-2.0 WITH LLVM-exception",
+      "url": "https://android.googlesource.com/toolchain/llvm-project/+/97a699bf4812a18fb657c2779f5296a4ab2694d2/libcxxabi/src/cxa_exception.cpp"
+    },
+    {
+      "path": "libcxxabi/src/cxa_exception_storage.cpp",
+      "sha256": "320adf288aded3e266bd1b1ef117e714c90d24bc1de607a7c51567ade3f06b9b",
+      "size_bytes": 3481,
+      "spdx_header": "Apache-2.0 WITH LLVM-exception",
+      "url": "https://android.googlesource.com/toolchain/llvm-project/+/97a699bf4812a18fb657c2779f5296a4ab2694d2/libcxxabi/src/cxa_exception_storage.cpp"
+    },
+    {
+      "path": "libcxxabi/src/cxa_guard.cpp",
+      "sha256": "97dbc2a48acb2233301bd7c11717cda173b23c73e7da64eb1710332c3b19f54d",
+      "size_bytes": 1722,
+      "spdx_header": "Apache-2.0 WITH LLVM-exception",
+      "url": "https://android.googlesource.com/toolchain/llvm-project/+/97a699bf4812a18fb657c2779f5296a4ab2694d2/libcxxabi/src/cxa_guard.cpp"
+    },
+    {
+      "path": "libcxxabi/src/cxa_handlers.cpp",
+      "sha256": "c95d15e9b6e3f3e3e665a2ca170ebfe87bd323fb498ded9711e32e0633da2892",
+      "size_bytes": 2515,
+      "spdx_header": "Apache-2.0 WITH LLVM-exception",
+      "url": "https://android.googlesource.com/toolchain/llvm-project/+/97a699bf4812a18fb657c2779f5296a4ab2694d2/libcxxabi/src/cxa_handlers.cpp"
+    },
+    {
+      "path": "libcxxabi/src/cxa_personality.cpp",
+      "sha256": "57c285728ed943c0168dbbcd244ba5550af673ea7e317c0953eecaa733e7559b",
+      "size_bytes": 56006,
+      "spdx_header": "Apache-2.0 WITH LLVM-exception",
+      "url": "https://android.googlesource.com/toolchain/llvm-project/+/97a699bf4812a18fb657c2779f5296a4ab2694d2/libcxxabi/src/cxa_personality.cpp"
+    },
+    {
+      "path": "libcxxabi/src/cxa_virtual.cpp",
+      "sha256": "ac1a29d1c9d4fa78d69e209879f61abeb65e1614d1cdd7271d2f386737a4d2a3",
+      "size_bytes": 734,
+      "spdx_header": "Apache-2.0 WITH LLVM-exception",
+      "url": "https://android.googlesource.com/toolchain/llvm-project/+/97a699bf4812a18fb657c2779f5296a4ab2694d2/libcxxabi/src/cxa_virtual.cpp"
+    },
+    {
+      "path": "libcxxabi/src/fallback_malloc.cpp",
+      "sha256": "b68232eb83588c20e28acf706703a5e9769c63adbeb2c6594ce4c0be5634a011",
+      "size_bytes": 9884,
+      "spdx_header": "Apache-2.0 WITH LLVM-exception",
+      "url": "https://android.googlesource.com/toolchain/llvm-project/+/97a699bf4812a18fb657c2779f5296a4ab2694d2/libcxxabi/src/fallback_malloc.cpp"
+    },
+    {
+      "path": "libcxxabi/src/private_typeinfo.cpp",
+      "sha256": "55fb71fdd633e1c0f7b4bccba5b947bd03c1498f9cb5f79f162c58efc34342c3",
+      "size_bytes": 66924,
+      "spdx_header": "Apache-2.0 WITH LLVM-exception",
+      "url": "https://android.googlesource.com/toolchain/llvm-project/+/97a699bf4812a18fb657c2779f5296a4ab2694d2/libcxxabi/src/private_typeinfo.cpp"
+    },
+    {
+      "path": "libcxxabi/src/stdlib_exception.cpp",
+      "sha256": "d609597f8f536fec59f7afa2dbd352c69a9b50ce8aaf85082fd1fbad08c79a25",
+      "size_bytes": 1122,
+      "spdx_header": "Apache-2.0 WITH LLVM-exception",
+      "url": "https://android.googlesource.com/toolchain/llvm-project/+/97a699bf4812a18fb657c2779f5296a4ab2694d2/libcxxabi/src/stdlib_exception.cpp"
+    },
+    {
+      "path": "libcxxabi/src/stdlib_new_delete.cpp",
+      "sha256": "eba213003682944709bcfeb8278da1327be01cf2620146ed9aea412ad04b6c69",
+      "size_bytes": 9652,
+      "spdx_header": "Apache-2.0 WITH LLVM-exception",
+      "url": "https://android.googlesource.com/toolchain/llvm-project/+/97a699bf4812a18fb657c2779f5296a4ab2694d2/libcxxabi/src/stdlib_new_delete.cpp"
+    },
+    {
+      "path": "libcxxabi/src/stdlib_stdexcept.cpp",
+      "sha256": "8539fc8929cd9a166a74fe04ef81472e7a6d507f4422f991963867fbda1f256a",
+      "size_bytes": 1239,
+      "spdx_header": "Apache-2.0 WITH LLVM-exception",
+      "url": "https://android.googlesource.com/toolchain/llvm-project/+/97a699bf4812a18fb657c2779f5296a4ab2694d2/libcxxabi/src/stdlib_stdexcept.cpp"
+    },
+    {
+      "path": "libcxxabi/src/stdlib_typeinfo.cpp",
+      "sha256": "5d0b584b9341eb49ea5e640a475dc690d44b0770712222e2667185b1e814367f",
+      "size_bytes": 793,
+      "spdx_header": "Apache-2.0 WITH LLVM-exception",
+      "url": "https://android.googlesource.com/toolchain/llvm-project/+/97a699bf4812a18fb657c2779f5296a4ab2694d2/libcxxabi/src/stdlib_typeinfo.cpp"
+    },
+    {
+      "path": "libunwind/src/UnwindLevel1.c",
+      "sha256": "60713346aa7712b5292e4cc2a05c0d3400296ebe76d7c25d256ee46a7dc2a174",
+      "size_bytes": 24332,
+      "spdx_header": "Apache-2.0 WITH LLVM-exception",
+      "url": "https://android.googlesource.com/toolchain/llvm-project/+/97a699bf4812a18fb657c2779f5296a4ab2694d2/libunwind/src/UnwindLevel1.c"
+    },
+    {
+      "path": "libunwind/src/UnwindRegistersRestore.S",
+      "sha256": "7c66721db60ae08b776119e0475bb4efe6aeaec79dc0386c8cd35cb4aee268f1",
+      "size_bytes": 30582,
+      "spdx_header": "Apache-2.0 WITH LLVM-exception",
+      "url": "https://android.googlesource.com/toolchain/llvm-project/+/97a699bf4812a18fb657c2779f5296a4ab2694d2/libunwind/src/UnwindRegistersRestore.S"
+    },
+    {
+      "path": "libunwind/src/UnwindRegistersSave.S",
+      "sha256": "9c7c51e705f73bb22d8113714a47fe9f1a3b84fe5a9484bb6801578523cabc5d",
+      "size_bytes": 28775,
+      "spdx_header": "Apache-2.0 WITH LLVM-exception",
+      "url": "https://android.googlesource.com/toolchain/llvm-project/+/97a699bf4812a18fb657c2779f5296a4ab2694d2/libunwind/src/UnwindRegistersSave.S"
+    },
+    {
+      "path": "libunwind/src/libunwind.cpp",
+      "sha256": "6897d1a337fc38d050b5742f404a623c8988ce9d6a55fe8271c4b7ceee32ef10",
+      "size_bytes": 17807,
+      "spdx_header": "Apache-2.0 WITH LLVM-exception",
+      "url": "https://android.googlesource.com/toolchain/llvm-project/+/97a699bf4812a18fb657c2779f5296a4ab2694d2/libunwind/src/libunwind.cpp"
+    }
+  ],
+  "version": 1,
+  "downstream_collection": {
+    "note": "Main independently verified archive/member/source/startup/map/license hashes, then copied exact libunwind license and the 3 referenced credits. APK packaging not rebuilt or checked at this checkpoint. Transitive runtime headers still open.",
+    "paths": [
+      "toolchain/licenses/aapt2-source-built/llvm-compiler-rt-CREDITS.TXT",
+      "toolchain/licenses/aapt2-source-built/llvm-libcxx-CREDITS.TXT",
+      "toolchain/licenses/aapt2-source-built/llvm-libcxxabi-CREDITS.TXT",
+      "toolchain/licenses/aapt2-source-built/llvm-libunwind-LICENSE.TXT"
+    ]
+  }
+}

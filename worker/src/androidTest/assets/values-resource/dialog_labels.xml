@@ -1,0 +1,4 @@
+<resources>
+    <string name="dialog_confirm">Confirm resource reset</string>
+    <string name="dialog_cancel">Cancel resource reset</string>
+</resources>

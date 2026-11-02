@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Terminal" parent="@android:style/Theme.Material.NoActionBar">
+        <item name="android:windowBackground">#1A1B26</item>
+        <item name="android:colorBackground">#1A1B26</item>
+        <item name="android:colorAccent">#7AA2F7</item>
+        <item name="android:colorPrimary">#1A1B26</item>
+        <item name="android:colorPrimaryDark">#1A1B26</item>
+        <item name="android:textColorPrimary">#C0CAF5</item>
+        <item name="android:textColorSecondary">#8A93BE</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowLightNavigationBar">false</item>
+    </style>
+</resources>

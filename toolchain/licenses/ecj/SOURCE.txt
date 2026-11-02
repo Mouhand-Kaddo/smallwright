@@ -1,0 +1,20 @@
+Eclipse Compiler for Java (ECJ) 4.12
+
+The worker app contains the unmodified ecj-4.12.jar from the Eclipse 4.12 release,
+converted to Android DEX format by the Android build. It is licensed under the
+Eclipse Public License 2.0; the full text is in EPL-2.0.txt next to this file.
+
+The corresponding source code is ecjsrc-4.12.jar from the same Eclipse release:
+https://archive.eclipse.org/eclipse/downloads/drops4/R-4.12-201906051800/ecjsrc-4.12.jar
+SHA-256 d42c8ae16f590cbade9700525263b31cb723f278ee22dbf72d1c5e3c4d48db71
+SHA-512 0e5d3ef13d168784965e5215d89462987bd455d28c26f5e494ba6a4d743b9c9c03716ccbd10d8620f7f4eb71c8a28f05b48a1778e24edf59b6a241a0565b4751
+(the SHA-512 matches Eclipse's published checksum/eclipse-4.12-SUMSSHA512)
+
+The binary used is:
+https://archive.eclipse.org/eclipse/downloads/drops4/R-4.12-201906051800/ecj-4.12.jar
+SHA-256 69dad18a1fcacd342a7d44c5abf74f50e7529975553a24c64bce0b29b86af497
+
+No changes were made to the ECJ source or classes.
+
+EPL-2.0.txt was fetched from https://www.eclipse.org/org/documents/epl-2.0/EPL-2.0.txt
+on 2026-11-02, SHA-256 0becf16567beb77fa252b7664631dd177c8f9a1889e48995b45379c7130e5303.

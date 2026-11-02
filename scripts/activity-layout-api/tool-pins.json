@@ -1,0 +1,556 @@
+{
+  "metalava": {
+    "installation": "toolchains/platform-api36-source-probe/out-r4/metalava/metalava/build/install/metalava",
+    "files": [
+      {
+        "path": "bin/metalava",
+        "sha256": "3323d7bf283f6c2390b89de7c187668bb873e62b81453545c08dc30e09786282"
+      },
+      {
+        "path": "lib/FastInfoset-1.2.16.jar",
+        "sha256": "056f3a1e144409f21ed16afc26805f58e9a21f3fce1543c42d400719d250c511"
+      },
+      {
+        "path": "lib/ST4-4.3.4.jar",
+        "sha256": "f927ac384c46d749f8b5ec68972a53aed21e00313509299616edb73bfa15ff33"
+      },
+      {
+        "path": "lib/aapt2-proto-8.13.0-alpha03-13719691.jar",
+        "sha256": "76429e79b1b19bd103b796eddb33131c095b8605ad544331a8629e228d320506"
+      },
+      {
+        "path": "lib/annotations-23.0.0.jar",
+        "sha256": "7b0f19724082cbfcbc66e5abea2b9bc92cf08a1ea11e191933ed43801eb3cd05"
+      },
+      {
+        "path": "lib/annotations-31.13.0-alpha03.jar",
+        "sha256": "3b4bb9620c17d19e5bd91ac1988080553573b4c3b739fdd92416f42f2daf3e78"
+      },
+      {
+        "path": "lib/antlr-runtime-3.5.3.jar",
+        "sha256": "68bf9f5a33dfcb34033495c587e6236bef4e37aa6612919f5b1e843b90669fb9"
+      },
+      {
+        "path": "lib/antlr4-4.13.1.jar",
+        "sha256": "ce261dce69525839aa9fc5bd232ce1b813a7a40a75030713cc4a80ef8170f3d5"
+      },
+      {
+        "path": "lib/antlr4-runtime-4.13.1.jar",
+        "sha256": "54665d2838cc66458343468efc539e454fc95b46a8a04b13c6ac43fc9be63505"
+      },
+      {
+        "path": "lib/asm-9.7.1.jar",
+        "sha256": "8cadd43ac5eb6d09de05faecca38b917a040bb9139c7edeb4cc81c740b713281"
+      },
+      {
+        "path": "lib/asm-analysis-9.7.1.jar",
+        "sha256": "85b29371884ba31bb76edf22323c2c24e172c3267a67152eba3d1ccc2e041ef2"
+      },
+      {
+        "path": "lib/asm-commons-9.7.1.jar",
+        "sha256": "9a579b54d292ad9be171d4313fd4739c635592c2b5ac3a459bbd1049cddec6a0"
+      },
+      {
+        "path": "lib/asm-tree-9.7.1.jar",
+        "sha256": "9929881f59eb6b840e86d54570c77b59ce721d104e6dfd7a40978991c2d3b41f"
+      },
+      {
+        "path": "lib/bcpkix-jdk18on-1.79.jar",
+        "sha256": "3639a24ddf9ba4b7eba0659b44770e91eba816421888e571f285aadefe532cd6"
+      },
+      {
+        "path": "lib/bcprov-jdk18on-1.79.jar",
+        "sha256": "0d81ecc3124536b539bce9aa3fe9621b7f84c9cee371b635a5b31c78b79ab1da"
+      },
+      {
+        "path": "lib/bcutil-jdk18on-1.79.jar",
+        "sha256": "c70b88ada58938cbc2f005d40329054078bcfa1149e6ffc03e9242eb6ab21836"
+      },
+      {
+        "path": "lib/builder-model-8.13.0-alpha03.jar",
+        "sha256": "cf275e338d1316584e8a6ecd4a399dc1aad0af36223e2608bdaa4a7b3626bcf8"
+      },
+      {
+        "path": "lib/checker-qual-3.43.0.jar",
+        "sha256": "3fbc2e98f05854c3df16df9abaa955b91b15b3ecac33623208ed6424640ef0f6"
+      },
+      {
+        "path": "lib/clikt-jvm.jar",
+        "sha256": "e003327a491671d612d787a5269188a7fb84c2f419f08f590a35a18e87c30817"
+      },
+      {
+        "path": "lib/common-31.13.0-alpha03.jar",
+        "sha256": "619e8e536947ee67403efdb2fdf98cea99d1db8fc4123bf0628325392f68de51"
+      },
+      {
+        "path": "lib/commons-codec-1.10.jar",
+        "sha256": "4241dfa94e711d435f29a4604a3e2de5c4aa3c165e23bd066be6fc1fc4309569"
+      },
+      {
+        "path": "lib/commons-compress-1.21.jar",
+        "sha256": "6aecfd5459728a595601cfa07258d131972ffc39b492eb48bdd596577a2f244a"
+      },
+      {
+        "path": "lib/commons-io-2.16.1.jar",
+        "sha256": "f41f7baacd716896447ace9758621f62c1c6b0a91d89acee488da26fc477c84f"
+      },
+      {
+        "path": "lib/commons-logging-1.2.jar",
+        "sha256": "daddea1ea0be0f56978ab3006b8ac92834afeefbd9b7e4e6316fca57df0fa636"
+      },
+      {
+        "path": "lib/ddmlib-31.13.0-alpha03.jar",
+        "sha256": "839957f961100713ea0eed628a8684cc39aa479631c36249793e6df7e0cd63d8"
+      },
+      {
+        "path": "lib/dvlib-31.13.0-alpha03.jar",
+        "sha256": "e3cf3fdc947788dee8d5baa76cb72a66571174bc4741edf0e3bab97a7ca90e1b"
+      },
+      {
+        "path": "lib/error_prone_annotations-2.28.0.jar",
+        "sha256": "f3fc8a3a0a4020706a373b00e7f57c2512dd26d1f83d28c7d38768f8682b231e"
+      },
+      {
+        "path": "lib/failureaccess-1.0.2.jar",
+        "sha256": "8a8f81cf9b359e3f6dfa691a1e776985c061ef2f223c9b2c80753e1b458e8064"
+      },
+      {
+        "path": "lib/fastdoubleparser-0.8.0.jar",
+        "sha256": "10fe288fd7a2cdaf5175332b73529f9abf8fd54dcfff317d6967c0c35ffb133b"
+      },
+      {
+        "path": "lib/groovy-3.0.22.jar",
+        "sha256": "c92c92c4b9b183f9981ba7399f36592e5e3ad6f4cdac7101b5a22cc17998d13f"
+      },
+      {
+        "path": "lib/gson-2.11.0.jar",
+        "sha256": "57928d6e5a6edeb2abd3770a8f95ba44dce45f3b23b7a9dc2b309c581552a78b"
+      },
+      {
+        "path": "lib/guava-33.3.1-jre.jar",
+        "sha256": "4bf0e2c5af8e4525c96e8fde17a4f7307f97f8478f11c4c8e35a0e3298ae4e90"
+      },
+      {
+        "path": "lib/httpclient-4.5.6.jar",
+        "sha256": "c03f813195e7a80e3608d0ddd8da80b21696a4c92a6a2298865bf149071551c7"
+      },
+      {
+        "path": "lib/httpcore-4.4.16.jar",
+        "sha256": "6c9b3dd142a09dc468e23ad39aad6f75a0f2b85125104469f026e52a474e464f"
+      },
+      {
+        "path": "lib/httpmime-4.5.6.jar",
+        "sha256": "0b2b1102c18d3c7e05a77214b9b7501a6f6056174ae5604e0e256776eda7553e"
+      },
+      {
+        "path": "lib/icu4j-72.1.jar",
+        "sha256": "3df572b240a68d13b5cd778ad2393e885d26411434cd8f098ac5987ea2e64ce3"
+      },
+      {
+        "path": "lib/intellij-core-31.13.0-alpha03.jar",
+        "sha256": "9a6faa6061d0f3d54a64decb61944c1b2c6927f8d325cd298c82c2a8d867ee68"
+      },
+      {
+        "path": "lib/istack-commons-runtime-3.0.8.jar",
+        "sha256": "4ffabb06be454a05e4398e20c77fa2b6308d4b88dfbef7ca30a76b5b7d5505ef"
+      },
+      {
+        "path": "lib/j2objc-annotations-3.0.0.jar",
+        "sha256": "88241573467ddca44ffd4d74aa04c2bbfd11bf7c17e0c342c94c9de7a70a7c64"
+      },
+      {
+        "path": "lib/jackson-annotations-2.15.0.jar",
+        "sha256": "91adcd3dcf5fd9a16499934e7536a23d456692a0093e3d4fd52f138c3936348c"
+      },
+      {
+        "path": "lib/jackson-core-2.15.0.jar",
+        "sha256": "5b483f68fa9dd6aa37da37d1f79dd5c4b9464238f4f0660a242cb6b5c724950c"
+      },
+      {
+        "path": "lib/jackson-databind-2.15.0.jar",
+        "sha256": "00c5a5d5ae71ac8e8d5b8da606841e2251c806355939cb5d51c4cdc6b644a0dc"
+      },
+      {
+        "path": "lib/jackson-dataformat-xml-2.15.0.jar",
+        "sha256": "e3137c89b08d0c3d9f7dfeae11d5b941b310f5f7bfdea90063f29c0b3b1f6807"
+      },
+      {
+        "path": "lib/jackson-module-kotlin-2.15.0.jar",
+        "sha256": "a8f728e2b8da5cd679ed940138a684891a165c7fdd95aede85e95aa0a004cb1e"
+      },
+      {
+        "path": "lib/jakarta.activation-api-1.2.1.jar",
+        "sha256": "8b0a0f52fa8b05c5431921a063ed866efaa41dadf2e3a7ee3e1961f2b0d9645b"
+      },
+      {
+        "path": "lib/jakarta.xml.bind-api-2.3.2.jar",
+        "sha256": "69156304079bdeed9fc0ae3b39389f19b3cc4ba4443bc80508995394ead742ea"
+      },
+      {
+        "path": "lib/javax.activation-1.2.0.jar",
+        "sha256": "993302b16cd7056f21e779cc577d175a810bb4900ef73cd8fbf2b50f928ba9ce"
+      },
+      {
+        "path": "lib/javax.inject-1.jar",
+        "sha256": "91c77044a50c481636c32d916fd89c9118a72195390452c81065080f957de7ff"
+      },
+      {
+        "path": "lib/jaxb-runtime-2.3.2.jar",
+        "sha256": "e6e0a1e89fb6ff786279e6a0082d5cef52dc2ebe67053d041800737652b4fd1b"
+      },
+      {
+        "path": "lib/jimfs-1.1.jar",
+        "sha256": "c4828e28d7c0a930af9387510b3bada7daa5c04d7c25a75c7b8b081f1c257ddd"
+      },
+      {
+        "path": "lib/jna-5.6.0.jar",
+        "sha256": "5557e235a8aa2f9766d5dc609d67948f2a8832c2d796cea9ef1d6cbe0b3b7eaf"
+      },
+      {
+        "path": "lib/jna-platform-5.6.0.jar",
+        "sha256": "9ecea8bf2b1b39963939d18b70464eef60c508fed8820f9dcaba0c35518eabf7"
+      },
+      {
+        "path": "lib/jsr305-3.0.2.jar",
+        "sha256": "766ad2a0783f2687962c8ad74ceecc38a28b9f72a2d085ee438b7813e928d0c7"
+      },
+      {
+        "path": "lib/kotlin-compiler-31.13.0-alpha03.jar",
+        "sha256": "552dfaffe295d08504870816c27fc09007e1231fb9b14c1ff9bbf861f9b35990"
+      },
+      {
+        "path": "lib/kotlin-metadata-jvm-2.2.0.jar",
+        "sha256": "501222ae7d63527e55f2e5e645f18d4eff2c19074c85b9bc055866e3ed2b17bf"
+      },
+      {
+        "path": "lib/kotlin-reflect-2.1.20.jar",
+        "sha256": "419778f2b7a826bad6ee2ca1e4bdebe639ab306d2904fa3ef2a308ecfaab3811"
+      },
+      {
+        "path": "lib/kotlin-stdlib-2.2.0.jar",
+        "sha256": "65d12d85a3b865c160db9147851712a64b10dadd68b22eea22a95bf8a8670dca"
+      },
+      {
+        "path": "lib/kotlin-stdlib-jdk7-2.1.20.jar",
+        "sha256": "5343bf795783932e5fa538b0bca05af810bb07213edb9baa770c784068f57867"
+      },
+      {
+        "path": "lib/kotlin-stdlib-jdk8-2.1.20.jar",
+        "sha256": "ed22217b5dc0940a068d8be9440bbe2f7f9f51c466cdd1185e2385cdec19f238"
+      },
+      {
+        "path": "lib/kotlinx-coroutines-core-jvm-1.9.0.jar",
+        "sha256": "ad89c2892235e670f222d819cb3d81188143cb19a05b59df9889ae4269f5c70a"
+      },
+      {
+        "path": "lib/kxml2-2.3.0.jar",
+        "sha256": "f264dd9f79a1fde10ce5ecc53221eff24be4c9331c830b7d52f2f08a7b633de2"
+      },
+      {
+        "path": "lib/layoutlib-api-31.13.0-alpha03.jar",
+        "sha256": "d06bc650247632a4a4e6596b87312019f45e900267c5476c47a5bfa6e3fd3132"
+      },
+      {
+        "path": "lib/lint-31.13.0-alpha03.jar",
+        "sha256": "771b3a72d07c13d85b6606d03026ea60c11890c1976ebd783f45b1dbf4492a21"
+      },
+      {
+        "path": "lib/lint-api-31.13.0-alpha03.jar",
+        "sha256": "299b7732a29013f3f50497d72b2f496f94ad0daacf763cef7e3beabf006eaf48"
+      },
+      {
+        "path": "lib/lint-checks-31.13.0-alpha03.jar",
+        "sha256": "c535a19cf9bc53f4381f16a60b9e9f2d3055cbc5795b41fdde6238f8adad745a"
+      },
+      {
+        "path": "lib/lint-gradle-31.13.0-alpha03.jar",
+        "sha256": "a42b6a41c436d90ca31a13d67afba1157b157efc892a7496f67432bf8a831cbd"
+      },
+      {
+        "path": "lib/lint-model-31.13.0-alpha03.jar",
+        "sha256": "84364a9bf0f234541d668d42318221516fd3a7273425bee2ee1bb3674c8e7723"
+      },
+      {
+        "path": "lib/lint-typedef-remover-31.13.0-alpha03.jar",
+        "sha256": "4a3ba3babfd79e6fc67bcef647fb4ecfeaf59b481b108f7c2eba4d1c5c6dea8e"
+      },
+      {
+        "path": "lib/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar",
+        "sha256": "b372a037d4230aa57fbeffdef30fd6123f9c0c2db85d0aced00c91b974f33f99"
+      },
+      {
+        "path": "lib/manifest-merger-31.13.0-alpha03.jar",
+        "sha256": "c0cc65183e76503b6397d73f66ef652904214027608de38f29926c057070bc67"
+      },
+      {
+        "path": "lib/metalava-1.0.0-alpha13.jar",
+        "sha256": "ca821807e3011ef5eb0598796825c1e7a2c6409312e713b17d639880d886e7c9"
+      },
+      {
+        "path": "lib/metalava-model-1.0.0-alpha13.jar",
+        "sha256": "da09092652ab1cfbd35df3d3e23eef99dff6600dfbd5876e0d4f447cd490dccb"
+      },
+      {
+        "path": "lib/metalava-model-psi-1.0.0-alpha13.jar",
+        "sha256": "757f5bddfbdc3a37368924e40d0922446311c0dff276c32bbccf8b532a111643"
+      },
+      {
+        "path": "lib/metalava-model-source-1.0.0-alpha13.jar",
+        "sha256": "f06d6253bd600180ff8a36ec354fa2ddeed28a10b7a889c2a0fecae7d6e0a1a1"
+      },
+      {
+        "path": "lib/metalava-model-text-1.0.0-alpha13.jar",
+        "sha256": "ec3c6648737652fec6a4e9faf93997f55ea8d2cc8467e19fa691e32c128314ff"
+      },
+      {
+        "path": "lib/metalava-reporter-1.0.0-alpha13.jar",
+        "sha256": "529fdd302a0d58dad1ea1ce1edc4ed4665adf2ac3fe31d601fda27372b75ce9b"
+      },
+      {
+        "path": "lib/org.abego.treelayout.core-1.0.3.jar",
+        "sha256": "fa5e31395c39c2e7d46aca0f81f72060931607b2fa41bd36038eb2cb6fb93326"
+      },
+      {
+        "path": "lib/play-sdk-proto-31.13.0-alpha03.jar",
+        "sha256": "c6fc15a5c203064cfd2c8a176fdeac72ae0a2d743ec47a2e66a0238d8d870b6b"
+      },
+      {
+        "path": "lib/protobuf-java-3.25.5.jar",
+        "sha256": "8540247fad9e06baefa8fb45eb313802d019f485f14300e0f9d6b556ed88e753"
+      },
+      {
+        "path": "lib/protos-31.13.0-alpha03.jar",
+        "sha256": "279bc6b0d27c7d3d80a66797833d53dadc583a70c55623fe8ac55e58b31c6622"
+      },
+      {
+        "path": "lib/repository-31.13.0-alpha03.jar",
+        "sha256": "cd8ef16ac11af377f6da1578de25035a0528db48eaf4ae0bfb14027256dbf803"
+      },
+      {
+        "path": "lib/sdk-common-31.13.0-alpha03.jar",
+        "sha256": "b77b259305dccb4b543233ad040f91c42c7c50f6cd2ed305858d9f2b8d0948d1"
+      },
+      {
+        "path": "lib/sdklib-31.13.0-alpha03.jar",
+        "sha256": "60d9409f03941c0a0a60e57f77daf13831812c5faabf1dcd22cbd1e8cd03e477"
+      },
+      {
+        "path": "lib/shared-31.13.0-alpha03.jar",
+        "sha256": "ed9b91b43fcdbcdf171878cd96676150e59517850712ea13688aece0a0bfc6d4"
+      },
+      {
+        "path": "lib/stax-ex-1.8.1.jar",
+        "sha256": "20522549056e9e50aa35ef0b445a2e47a53d06be0b0a9467d704e2483ffb049a"
+      },
+      {
+        "path": "lib/stax2-api-4.2.1.jar",
+        "sha256": "678567e48b51a42c65c699f266539ad3d676d4b1a5b0ad7d89ece8b9d5772579"
+      },
+      {
+        "path": "lib/tracker-31.13.0-alpha03.jar",
+        "sha256": "54d569d5317fda625c7a49a91d7c69206a5f388d410f546d9894e60b91dca4a3"
+      },
+      {
+        "path": "lib/txw2-2.3.2.jar",
+        "sha256": "4a6a9f483388d461b81aa9a28c685b8b74c0597993bf1884b04eddbca95f48fe"
+      },
+      {
+        "path": "lib/uast-31.13.0-alpha03.jar",
+        "sha256": "78f18ac2b2509fb6cb19058e8fc9585c361b97990dd7d5db0c2a94744dfb0a96"
+      },
+      {
+        "path": "lib/woodstox-core-6.5.1.jar",
+        "sha256": "c928d60665c6415fb1c39775cf95cfc44f7f4580cf5ab01b1c380ebffd76887f"
+      }
+    ]
+  },
+  "jdk": {
+    "installation": "toolchains/jdk-21.0.12.1+1",
+    "files": [
+      {
+        "path": "bin/java",
+        "sha256": "2a207f5e7d075afa01d97f8048389a64432a44c4a5af0f5e77d6e286ec5f401d"
+      },
+      {
+        "path": "bin/javac",
+        "sha256": "55859b80e7a9c4c4736be19ad3addeb35112ca6d17a30c4e0e116afc0a499bdb"
+      },
+      {
+        "path": "lib/jspawnhelper",
+        "sha256": "e3101d3a580c9ae6e973acbf2e861855e93ebceb0bbd8e5fa3ddf6abbf6fd63d"
+      },
+      {
+        "path": "lib/libattach.so",
+        "sha256": "7f43a611ea113553f48dc194eb8df3a08126a4e32af7e93fb3eecd169051bfbc"
+      },
+      {
+        "path": "lib/libawt.so",
+        "sha256": "01f29315049ba6a93cdd258cb67e5737f341e93b4cecbdf40817a5df0b383196"
+      },
+      {
+        "path": "lib/libawt_headless.so",
+        "sha256": "55d55817cfc310947adc1b21e55475247aab77c6541206d8cad60daa9ffb141a"
+      },
+      {
+        "path": "lib/libawt_xawt.so",
+        "sha256": "eac420d5a6887bf4f6a8e1f37fe310db0c0ce28e19c0c80ac4e80dca93c451ee"
+      },
+      {
+        "path": "lib/libdt_socket.so",
+        "sha256": "d9019fb6c656703100d16c4db3e81bfcf5992075aabfe91ed6a5f96bc3ad1dff"
+      },
+      {
+        "path": "lib/libextnet.so",
+        "sha256": "91e3599f2d909a8698e7997f56368c769e35fda67770bd6f43d4df4bc41fdf5a"
+      },
+      {
+        "path": "lib/libfontmanager.so",
+        "sha256": "acb8a0ed44dff99a9a628b64f213b960262eadf22eaa660bbdf52a8dcc7e69a6"
+      },
+      {
+        "path": "lib/libfreetype.so",
+        "sha256": "18c1a93dd3f9135228e3033d8226a2d7f0aff9b00a951d331e6fe656a5ab67d3"
+      },
+      {
+        "path": "lib/libinstrument.so",
+        "sha256": "158c64a19fba996e9b86a0a6be4bfee1797bd4b957573dee64d75c91ff3c5dd6"
+      },
+      {
+        "path": "lib/libj2gss.so",
+        "sha256": "274e0e6d5b911ab6f3a8ffc62986a947e476447d5ffbde97935838d0f9edd269"
+      },
+      {
+        "path": "lib/libj2pcsc.so",
+        "sha256": "2b49943a8aeb5acb820d02f91e7667e1b3d4128e96e5ad02bf5b1886ff728ac3"
+      },
+      {
+        "path": "lib/libj2pkcs11.so",
+        "sha256": "cf9dc53d155800c2da7bd7d34c2e33253ccb6b90ad8edab523b0f1a571309a3f"
+      },
+      {
+        "path": "lib/libjaas.so",
+        "sha256": "4f6d1b53cb3d6fb4bf45ef612f8d5e063dfc3c1e20baeee8232c641abe54c6be"
+      },
+      {
+        "path": "lib/libjava.so",
+        "sha256": "306e8a988c8a81c65eea71928998c503caddd1c3adbcb2983a949ac264fc2cf4"
+      },
+      {
+        "path": "lib/libjavajpeg.so",
+        "sha256": "fc197b10db38b66557a716be44a1b621fde301b62301914987afe0df9bf0c1bd"
+      },
+      {
+        "path": "lib/libjawt.so",
+        "sha256": "26e615fb8724926c20c1e1b25dc33c6386b1240c3bea8e92e85b82d05a4df219"
+      },
+      {
+        "path": "lib/libjdwp.so",
+        "sha256": "542037a5b8b5c2c958ce97efa9837b4e789f1a28b392efbc4694c5a43f1bdfec"
+      },
+      {
+        "path": "lib/libjimage.so",
+        "sha256": "d6d358f58dac20e3f51bc42ac65cb474db79da1243deb5e650489e17e9f5ac4a"
+      },
+      {
+        "path": "lib/libjli.so",
+        "sha256": "6703dbc0a7d5953ba248f45afca71b13807e5be9682110ed205f4361640f496a"
+      },
+      {
+        "path": "lib/libjsig.so",
+        "sha256": "677fa55d7355d5d08862572d98e497e6f7e595abc191c4fc50eaea662fe97978"
+      },
+      {
+        "path": "lib/libjsound.so",
+        "sha256": "21f2e2a797355986c88307d063fe18431c4a4590430d5c8f04ed7f8a2a379c3f"
+      },
+      {
+        "path": "lib/libjsvml.so",
+        "sha256": "4e4e0083eed81082833347c9b684601a57eec965479e8b5c725eef52e3ec3609"
+      },
+      {
+        "path": "lib/liblcms.so",
+        "sha256": "71e00581955e41e0398d9fe1f0a6901a71f87967e11043f6c13948259b22d222"
+      },
+      {
+        "path": "lib/lible.so",
+        "sha256": "0fa02eed5d6bea05954ef78fe78175972e6a9d46b7245457a3cbd02d8586fb27"
+      },
+      {
+        "path": "lib/libmanagement.so",
+        "sha256": "04a891d209a927a81851ddbc679d46bba73d497f705a1b7d6b7da458f9fad475"
+      },
+      {
+        "path": "lib/libmanagement_agent.so",
+        "sha256": "08c84bfb484c5e8107f9ce5bdf21710b03e3a22f488bfd8e5bb79690edc57379"
+      },
+      {
+        "path": "lib/libmanagement_ext.so",
+        "sha256": "0bf707899932426b6c9a63e77eb642647e1208bff982aefd8f4a27d15f7dcc33"
+      },
+      {
+        "path": "lib/libmlib_image.so",
+        "sha256": "559782269a0ea9c3724df6a5e1acb61961e29f0c717f89aa2a775d7a02e8d7c6"
+      },
+      {
+        "path": "lib/libnet.so",
+        "sha256": "0b639279725269834585b4c07cae76ce92a18f51fa209c275da7ab161df6937b"
+      },
+      {
+        "path": "lib/libnio.so",
+        "sha256": "7248427389419f6921471d22d8cb0a3dc5e146fd80782be092c2e597e5eafbb3"
+      },
+      {
+        "path": "lib/libprefs.so",
+        "sha256": "d4732a1d3db8d466a23222209978a2f3ed64e0682c777e4fa8a0fda41d0f7359"
+      },
+      {
+        "path": "lib/librmi.so",
+        "sha256": "ab44a7f673edc9da321000a0ab3e45f9aaeb78ea167aebdcec364cbba42b7d14"
+      },
+      {
+        "path": "lib/libsaproc.so",
+        "sha256": "8e2b0ca2b230e90ba756c242345111cc23690f08fbf4cd7bbc418c382dfd5112"
+      },
+      {
+        "path": "lib/libsctp.so",
+        "sha256": "e78f00e1399ae5373b4b220e9aa1ab39d8b2ecfc5774dff9f6166a4139fbdb6f"
+      },
+      {
+        "path": "lib/libsplashscreen.so",
+        "sha256": "dcd6935a10568aa4a000d3d44f7b62b093cbec0d2905859532bcd242edddab44"
+      },
+      {
+        "path": "lib/libsyslookup.so",
+        "sha256": "84108f2487b041dfee509ab748ad0dc39fbca7df4b0e7ff7c1c54b6b09ad1adf"
+      },
+      {
+        "path": "lib/libverify.so",
+        "sha256": "74ee5b2ec966b5b7f3ff444d9988e3adac23a303c600ba604a86d13cb88b4b43"
+      },
+      {
+        "path": "lib/libzip.so",
+        "sha256": "e644cd8a31bdef1c75b72a077acb285400552703beb7adc760fad9048dff29cf"
+      },
+      {
+        "path": "lib/modules",
+        "sha256": "70c5465dabf8e1bec2860631ea3ffd342f0ec23a5e2efd3a389d2abe32448f98"
+      },
+      {
+        "path": "lib/server/libjsig.so",
+        "sha256": "677fa55d7355d5d08862572d98e497e6f7e595abc191c4fc50eaea662fe97978"
+      },
+      {
+        "path": "lib/server/libjvm.so",
+        "sha256": "462fa559157ee8a862e7e4b8a4a74f8abbf5e1a9deb64f22ee23c7e8c43f698b"
+      },
+      {
+        "path": "release",
+        "sha256": "ebbd70bf00bab6d39addf51969c5ff244030b86b29de400b9fb10612ebd3ceec"
+      },
+      {
+        "path": "bin/javap",
+        "sha256": "bd8fe7ac7eb91e0167766b6c37350fa96c4b601a5f086de8fa96d9f8f6a7b0dd"
+      }
+    ]
+  }
+}

@@ -1,0 +1,11 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <uses-permission android:name="dev.smallwright.permission.BIND_BUILD_WORKER" />
+
+    <queries>
+        <package android:name="dev.smallwright.worker" />
+    </queries>
+
+    <application
+        android:allowBackup="false"
+        android:label="Smallwright Security Probe" />
+</manifest>

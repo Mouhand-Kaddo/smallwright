@@ -1,0 +1,453 @@
+package @PACKAGE@.builderlink;
+
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.Application;
+import android.content.ComponentName;
+import android.content.ContentProvider;
+import android.content.ContentValues;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.pm.ActivityInfo;
+import android.content.pm.PackageManager;
+import android.database.Cursor;
+import android.graphics.Bitmap;
+import android.net.Uri;
+import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
+import android.os.ParcelFileDescriptor;
+import android.util.Log;
+import android.view.PixelCopy;
+import android.view.View;
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.util.regex.Pattern;
+
+/**
+ * Added by Smallwright to every app it makes: it saves a crash report the person can send
+ * to the builder, and draws the app's own screen when the builder asks. Only the builder app,
+ * by package and signing certificate, can ask.
+ */
+public final class BuilderLink {
+  static final String CONTROLLER = "@CONTROLLER@";
+  static final String CONTROLLER_CERT_SHA256 = "@CONTROLLER_CERT_SHA256@";
+  static final String REPORT_ACTIVITY = "@REPORT_ACTIVITY@";
+  static final String EXTRA_REPORT = "@EXTRA_REPORT@";
+  static final String EXTRA_ACTIVITY = "@EXTRA_ACTIVITY@";
+  static final String OWN_PACKAGE = "@PACKAGE@.builderlink.";
+  static final int RESULT_NO_ACTIVITY = Activity.RESULT_FIRST_USER;
+  static final int RESULT_CLOSED = Activity.RESULT_FIRST_USER + 1;
+  static final int RESULT_NOT_COPIED = Activity.RESULT_FIRST_USER + 2;
+  private static final String REPORT = "builderlink-crash-report.txt";
+  private static final String PENDING = "builderlink-crash-pending";
+  private static final String LOOK = "builderlink/look.png";
+  private static final int MAX_REPORT_BYTES = @MAX_REPORT_BYTES@;
+  private static final int MAX_SIDE = 1568;
+  private static final long SETTLE_MILLIS = 800;
+  private static final Pattern NAME = Pattern.compile("[\\p{L}\\p{N}_$<>.-]+");
+  private static Look looking;
+  private static Activity resumed;
+  private static boolean crashOffered;
+
+  private BuilderLink() {}
+
+  static boolean isController(Context context, String caller) {
+    if (!CONTROLLER.equals(caller)) return false;
+    try {
+      byte[] digest = new byte[32];
+      for (int i = 0; i < 32; i++)
+        digest[i] = (byte) Integer.parseInt(CONTROLLER_CERT_SHA256.substring(2 * i, 2 * i + 2), 16);
+      return context.getPackageManager()
+          .hasSigningCertificate(CONTROLLER, digest, PackageManager.CERT_INPUT_SHA256);
+    } catch (RuntimeException unknown) {
+      return false;
+    }
+  }
+
+  /** Starts with the app's process, before any of its activities, and is never exported. */
+  public static final class Starter extends ContentProvider {
+    @Override public boolean onCreate() {
+      Context app = getContext().getApplicationContext();
+      installHandler(app);
+      if (app instanceof Application)
+        ((Application) app).registerActivityLifecycleCallbacks(new Tracker());
+      return true;
+    }
+
+    @Override public ParcelFileDescriptor openFile(Uri uri, String mode)
+        throws FileNotFoundException {
+      File look = new File(getContext().getCacheDir(), LOOK);
+      if (!"r".equals(mode) || !"/look.png".equals(uri.getPath()) || uri.getQuery() != null
+          || !look.isFile())
+        throw new FileNotFoundException();
+      return ParcelFileDescriptor.open(look, ParcelFileDescriptor.MODE_READ_ONLY);
+    }
+
+    @Override public String getType(Uri uri) {
+      return "/look.png".equals(uri.getPath()) ? "image/png" : null;
+    }
+
+    @Override public Cursor query(Uri uri, String[] projection, String selection,
+        String[] arguments, String order) {
+      return null;
+    }
+
+    @Override public Uri insert(Uri uri, ContentValues values) {
+      return null;
+    }
+
+    @Override public int delete(Uri uri, String selection, String[] arguments) {
+      return 0;
+    }
+
+    @Override public int update(Uri uri, ContentValues values, String selection,
+        String[] arguments) {
+      return 0;
+    }
+  }
+
+  private static void installHandler(final Context app) {
+    final Thread.UncaughtExceptionHandler previous = Thread.getDefaultUncaughtExceptionHandler();
+    Thread.setDefaultUncaughtExceptionHandler(new Thread.UncaughtExceptionHandler() {
+      private boolean handling;
+
+      @Override public void uncaughtException(Thread thread, Throwable failure) {
+        boolean offered = false;
+        if (!handling) {
+          handling = true;
+          try {
+            Log.e("BuilderLink", "The app crashed", failure);
+            save(app, report(failure));
+            app.startActivity(new Intent(app, Crash.class)
+                .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK));
+            offered = true;
+          } catch (Throwable ignored) {
+          }
+        }
+        if (!offered && previous != null) {
+          previous.uncaughtException(thread, failure);
+          return;
+        }
+        android.os.Process.killProcess(android.os.Process.myPid());
+        System.exit(10);
+      }
+    });
+  }
+
+  static String report(Throwable failure) {
+    StringBuilder text = new StringBuilder(4096);
+    text.append("Generated app crash\nException messages and values omitted.\n");
+    int bytes = text.toString().getBytes(StandardCharsets.UTF_8).length;
+    Throwable current = failure;
+    for (int cause = 0; current != null && cause < 4; cause++) {
+      String line = "Cause " + cause + ": " + shortText(current.getClass().getName()) + "\n";
+      int size = line.getBytes(StandardCharsets.UTF_8).length;
+      if (bytes + size > MAX_REPORT_BYTES) break;
+      text.append(line);
+      bytes += size;
+      StackTraceElement[] frames = current.getStackTrace();
+      for (int i = 0; i < frames.length && i < 40; i++) {
+        line = "  at " + shortText(frames[i].getClassName()) + "."
+            + shortText(frames[i].getMethodName()) + ":" + frames[i].getLineNumber() + "\n";
+        size = line.getBytes(StandardCharsets.UTF_8).length;
+        if (bytes + size > MAX_REPORT_BYTES) return text.toString();
+        text.append(line);
+        bytes += size;
+      }
+      current = current.getCause();
+    }
+    return text.toString();
+  }
+
+  private static String shortText(String value) {
+    if (value == null || value.isEmpty()) return "unknown";
+    String shown = value.length() <= 256 ? value : value.substring(0, 256);
+    return NAME.matcher(shown).matches() && !shown.startsWith(".") ? shown : "unknown";
+  }
+
+  private static void save(Context app, String report) throws IOException {
+    byte[] bytes = report.getBytes(StandardCharsets.UTF_8);
+    if (bytes.length > MAX_REPORT_BYTES) throw new IOException("Crash report too large");
+    File partial = new File(app.getFilesDir(), REPORT + ".partial");
+    try (FileOutputStream out = new FileOutputStream(partial)) {
+      out.write(bytes);
+    }
+    if (!partial.renameTo(new File(app.getFilesDir(), REPORT)))
+      throw new IOException("Crash report not saved");
+    new FileOutputStream(new File(app.getFilesDir(), PENDING)).close();
+  }
+
+  private static byte[] savedReport(Context context) {
+    File file = new File(context.getFilesDir(), REPORT);
+    if (!file.isFile() || file.length() < 1 || file.length() > MAX_REPORT_BYTES) return null;
+    try (FileInputStream in = new FileInputStream(file);
+        ByteArrayOutputStream out = new ByteArrayOutputStream()) {
+      byte[] buffer = new byte[4096];
+      int read;
+      while ((read = in.read(buffer)) != -1) {
+        if (out.size() + read > MAX_REPORT_BYTES) return null;
+        out.write(buffer, 0, read);
+      }
+      return out.toByteArray();
+    } catch (IOException unreadable) {
+      return null;
+    }
+  }
+
+  static final class Tracker implements Application.ActivityLifecycleCallbacks {
+    @Override public void onActivityResumed(Activity activity) {
+      if (activity instanceof Look || activity instanceof Crash) return;
+      resumed = activity;
+      if (looking != null) {
+        looking.copySoon();
+        return;
+      }
+      if (!crashOffered && new File(activity.getFilesDir(), PENDING).exists()) {
+        crashOffered = true;
+        try {
+          activity.startActivity(new Intent(activity, Crash.class));
+        } catch (RuntimeException unavailable) {
+        }
+      }
+    }
+
+    @Override public void onActivityCreated(Activity activity, Bundle state) {
+      if (looking != null && looking.shownByLook == null && !(activity instanceof Look)
+          && !(activity instanceof Crash))
+        looking.shownByLook = activity;
+    }
+
+    @Override public void onActivityStarted(Activity activity) {}
+
+    @Override public void onActivityPaused(Activity activity) {
+      if (resumed == activity) resumed = null;
+    }
+
+    @Override public void onActivityStopped(Activity activity) {}
+
+    @Override public void onActivitySaveInstanceState(Activity activity, Bundle state) {}
+
+    @Override public void onActivityDestroyed(Activity activity) {}
+  }
+
+  /** Runs in its own process, so it still opens after the app's process crashed. */
+  public static final class Crash extends Activity {
+    private byte[] report;
+
+    @Override protected void onCreate(Bundle state) {
+      super.onCreate(state);
+      new File(getFilesDir(), PENDING).delete();
+      report = savedReport(this);
+      if (report == null || state != null) {
+        finish();
+        return;
+      }
+      CharSequence name = getApplicationInfo().loadLabel(getPackageManager());
+      new AlertDialog.Builder(this)
+          .setTitle(name + " stopped")
+          .setPositiveButton("Tell the builder", new DialogInterface.OnClickListener() {
+            @Override public void onClick(DialogInterface dialog, int which) {
+              tell();
+            }
+          })
+          .setNegativeButton("Close", new DialogInterface.OnClickListener() {
+            @Override public void onClick(DialogInterface dialog, int which) {
+              finish();
+            }
+          })
+          .setOnCancelListener(new DialogInterface.OnCancelListener() {
+            @Override public void onCancel(DialogInterface dialog) {
+              finish();
+            }
+          })
+          .show();
+    }
+
+    private void tell() {
+      if (!isController(this, CONTROLLER)) {
+        notTaken();
+        return;
+      }
+      try {
+        startActivityForResult(
+            new Intent().setClassName(CONTROLLER, REPORT_ACTIVITY).putExtra(EXTRA_REPORT, report),
+            1);
+      } catch (RuntimeException unavailable) {
+        notTaken();
+      }
+    }
+
+    @Override protected void onActivityResult(int request, int result, Intent data) {
+      super.onActivityResult(request, result, data);
+      if (result != RESULT_OK) {
+        notTaken();
+        return;
+      }
+      new File(getFilesDir(), REPORT).delete();
+      finish();
+    }
+
+    private void notTaken() {
+      new AlertDialog.Builder(this)
+          .setMessage("The builder did not accept this report. Tell it what happened in the chat"
+              + " instead.")
+          .setPositiveButton("Close", new DialogInterface.OnClickListener() {
+            @Override public void onClick(DialogInterface dialog, int which) {
+              finish();
+            }
+          })
+          .setOnCancelListener(new DialogInterface.OnCancelListener() {
+            @Override public void onCancel(DialogInterface dialog) {
+              finish();
+            }
+          })
+          .show();
+    }
+  }
+
+  /** Opens one of the app's activities for the builder and copies its window to a picture. */
+  public static final class Look extends Activity {
+    private final Handler main = new Handler(Looper.getMainLooper());
+    private String target;
+    private boolean opened;
+    private boolean copying;
+    private Activity shownByLook;
+
+    @Override protected void onCreate(Bundle state) {
+      super.onCreate(state);
+      if (state != null || !isController(this, getCallingPackage())) {
+        setResult(RESULT_CANCELED);
+        finish();
+        return;
+      }
+      target = declared(getIntent().getStringExtra(EXTRA_ACTIVITY));
+      if (target == null) {
+        setResult(RESULT_NO_ACTIVITY);
+        finish();
+      }
+    }
+
+    @Override protected void onResume() {
+      super.onResume();
+      if (target == null || isFinishing()) return;
+      if (!opened) {
+        opened = true;
+        looking = this;
+        try {
+          startActivity(new Intent().setClassName(this, target));
+        } catch (RuntimeException unavailable) {
+          done(RESULT_CLOSED, null);
+        }
+        return;
+      }
+      if (!copying) done(RESULT_CLOSED, null);
+    }
+
+    @Override protected void onDestroy() {
+      if (looking == this) {
+        looking = null;
+        if (shownByLook != null && !shownByLook.isFinishing()) shownByLook.finish();
+      }
+      super.onDestroy();
+    }
+
+    private String declared(String requested) {
+      try {
+        String name = requested;
+        if (name == null) {
+          Intent launch = getPackageManager().getLaunchIntentForPackage(getPackageName());
+          if (launch == null || launch.getComponent() == null) return null;
+          name = launch.getComponent().getClassName();
+        }
+        if (name.startsWith(OWN_PACKAGE)) return null;
+        ActivityInfo info = getPackageManager().getActivityInfo(new ComponentName(this, name), 0);
+        return getPackageName().equals(info.packageName) ? name : null;
+      } catch (PackageManager.NameNotFoundException | RuntimeException unknown) {
+        return null;
+      }
+    }
+
+    void copySoon() {
+      if (copying) return;
+      copying = true;
+      main.postDelayed(new Runnable() {
+        @Override public void run() {
+          copy();
+        }
+      }, SETTLE_MILLIS);
+    }
+
+    private void copy() {
+      if (looking != this) return;
+      final Activity shown = resumed;
+      if (shown == null) {
+        done(RESULT_NOT_COPIED, null);
+        return;
+      }
+      View decor = shown.getWindow().getDecorView();
+      int width = decor.getWidth();
+      int height = decor.getHeight();
+      if (shown.isFinishing() || width < 1 || height < 1) {
+        done(RESULT_NOT_COPIED, shown);
+        return;
+      }
+      float scale = Math.min(1f, (float) MAX_SIDE / Math.max(width, height));
+      final Bitmap bitmap = Bitmap.createBitmap(Math.max(1, Math.round(width * scale)),
+          Math.max(1, Math.round(height * scale)), Bitmap.Config.ARGB_8888);
+      try {
+        PixelCopy.request(shown.getWindow(), bitmap,
+            new PixelCopy.OnPixelCopyFinishedListener() {
+              @Override public void onPixelCopyFinished(int result) {
+                int outcome = RESULT_NOT_COPIED;
+                try {
+                  if (result == PixelCopy.SUCCESS) {
+                    write(bitmap);
+                    outcome = RESULT_OK;
+                  }
+                } catch (IOException | RuntimeException unwritten) {
+                  outcome = RESULT_NOT_COPIED;
+                } finally {
+                  bitmap.recycle();
+                }
+                done(outcome, shown);
+              }
+            }, main);
+      } catch (RuntimeException unavailable) {
+        bitmap.recycle();
+        done(RESULT_NOT_COPIED, shown);
+      }
+    }
+
+    private void write(Bitmap bitmap) throws IOException {
+      File look = new File(getCacheDir(), LOOK);
+      File directory = look.getParentFile();
+      if (!directory.isDirectory() && !directory.mkdirs()) throw new IOException("No cache");
+      File partial = new File(directory, "look.png.partial");
+      try (FileOutputStream out = new FileOutputStream(partial)) {
+        if (!bitmap.compress(Bitmap.CompressFormat.PNG, 100, out))
+          throw new IOException("Not compressed");
+      }
+      if (!partial.renameTo(look)) throw new IOException("Not saved");
+    }
+
+    private void done(int result, Activity shown) {
+      if (looking == this) looking = null;
+      if (result == RESULT_OK) {
+        setResult(RESULT_OK, new Intent()
+            .setData(Uri.parse("content://" + getPackageName() + ".builderlink/look.png"))
+            .addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION));
+      } else {
+        setResult(result);
+      }
+      finish();
+      if (shown != null && !shown.isFinishing()) shown.finish();
+    }
+  }
+}

@@ -1,0 +1,552 @@
+{
+  "candidate_elf_sha256": "b98cb0180ef839850ce63fc81d6d662834503d24b0fae83594c5d497e86c2179",
+  "link_map_sha256": "d97f516e1f5ee67e45d6c797c50bd62fd7eb9741129f78844efa3e3ae7c61c8d",
+  "method": "Distinct archive/member labels parsed from LLVM lld -Map output; one duplicated Util.cpp.o label has two confirmed source contributors. This is not a complete license determination.",
+  "direct_objects": [
+    "toolchains/android-sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/31/crtbegin_dynamic.o",
+    "toolchains/android-sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/31/crtend_android.o",
+    "vendor/CMakeFiles/aapt2.dir/base/tools/aapt2/Main.cpp.o",
+    "vendor/CMakeFiles/aapt2.dir/base/tools/aapt2/cmd/ApkInfo.cpp.o",
+    "vendor/CMakeFiles/aapt2.dir/base/tools/aapt2/cmd/Command.cpp.o",
+    "vendor/CMakeFiles/aapt2.dir/base/tools/aapt2/cmd/Compile.cpp.o",
+    "vendor/CMakeFiles/aapt2.dir/base/tools/aapt2/cmd/Convert.cpp.o",
+    "vendor/CMakeFiles/aapt2.dir/base/tools/aapt2/cmd/Diff.cpp.o",
+    "vendor/CMakeFiles/aapt2.dir/base/tools/aapt2/cmd/Dump.cpp.o",
+    "vendor/CMakeFiles/aapt2.dir/base/tools/aapt2/cmd/Link.cpp.o",
+    "vendor/CMakeFiles/aapt2.dir/base/tools/aapt2/cmd/Optimize.cpp.o",
+    "vendor/CMakeFiles/aapt2.dir/base/tools/aapt2/cmd/Util.cpp.o"
+  ],
+  "archive_members": {
+    "toolchains/aapt2-sysroot-arm64/lib/libabsl_base.a": [
+      "cycleclock.cc.o",
+      "spinlock.cc.o",
+      "sysinfo.cc.o",
+      "thread_identity.cc.o"
+    ],
+    "toolchains/aapt2-sysroot-arm64/lib/libabsl_city.a": [
+      "city.cc.o"
+    ],
+    "toolchains/aapt2-sysroot-arm64/lib/libabsl_cord.a": [
+      "cord.cc.o",
+      "cord_analysis.cc.o"
+    ],
+    "toolchains/aapt2-sysroot-arm64/lib/libabsl_cord_internal.a": [
+      "cord_internal.cc.o",
+      "cord_rep_btree.cc.o",
+      "cord_rep_btree_navigator.cc.o",
+      "cord_rep_btree_reader.cc.o",
+      "cord_rep_consume.cc.o",
+      "cord_rep_crc.cc.o"
+    ],
+    "toolchains/aapt2-sysroot-arm64/lib/libabsl_cordz_functions.a": [
+      "cordz_functions.cc.o"
+    ],
+    "toolchains/aapt2-sysroot-arm64/lib/libabsl_cordz_handle.a": [
+      "cordz_handle.cc.o"
+    ],
+    "toolchains/aapt2-sysroot-arm64/lib/libabsl_cordz_info.a": [
+      "cordz_info.cc.o"
+    ],
+    "toolchains/aapt2-sysroot-arm64/lib/libabsl_crc32c.a": [
+      "crc32c.cc.o",
+      "crc_memcpy_fallback.cc.o"
+    ],
+    "toolchains/aapt2-sysroot-arm64/lib/libabsl_crc_cord_state.a": [
+      "crc_cord_state.cc.o"
+    ],
+    "toolchains/aapt2-sysroot-arm64/lib/libabsl_crc_internal.a": [
+      "crc.cc.o",
+      "crc_x86_arm_combined.cc.o"
+    ],
+    "toolchains/aapt2-sysroot-arm64/lib/libabsl_examine_stack.a": [
+      "examine_stack.cc.o"
+    ],
+    "toolchains/aapt2-sysroot-arm64/lib/libabsl_exponential_biased.a": [
+      "exponential_biased.cc.o"
+    ],
+    "toolchains/aapt2-sysroot-arm64/lib/libabsl_graphcycles_internal.a": [
+      "graphcycles.cc.o"
+    ],
+    "toolchains/aapt2-sysroot-arm64/lib/libabsl_hash.a": [
+      "hash.cc.o"
+    ],
+    "toolchains/aapt2-sysroot-arm64/lib/libabsl_hashtablez_sampler.a": [
+      "hashtablez_sampler.cc.o",
+      "hashtablez_sampler_force_weak_definition.cc.o"
+    ],
+    "toolchains/aapt2-sysroot-arm64/lib/libabsl_int128.a": [
+      "int128.cc.o"
+    ],
+    "toolchains/aapt2-sysroot-arm64/lib/libabsl_kernel_timeout_internal.a": [
+      "kernel_timeout.cc.o"
+    ],
+    "toolchains/aapt2-sysroot-arm64/lib/libabsl_leak_check.a": [
+      "leak_check.cc.o"
+    ],
+    "toolchains/aapt2-sysroot-arm64/lib/libabsl_log_globals.a": [
+      "globals.cc.o"
+    ],
+    "toolchains/aapt2-sysroot-arm64/lib/libabsl_log_internal_check_op.a": [
+      "check_op.cc.o"
+    ],
+    "toolchains/aapt2-sysroot-arm64/lib/libabsl_log_internal_conditions.a": [
+      "conditions.cc.o"
+    ],
+    "toolchains/aapt2-sysroot-arm64/lib/libabsl_log_internal_format.a": [
+      "log_format.cc.o"
+    ],
+    "toolchains/aapt2-sysroot-arm64/lib/libabsl_log_internal_globals.a": [
+      "globals.cc.o"
+    ],
+    "toolchains/aapt2-sysroot-arm64/lib/libabsl_log_internal_log_sink_set.a": [
+      "log_sink_set.cc.o"
+    ],
+    "toolchains/aapt2-sysroot-arm64/lib/libabsl_log_internal_message.a": [
+      "log_message.cc.o"
+    ],
+    "toolchains/aapt2-sysroot-arm64/lib/libabsl_log_internal_nullguard.a": [
+      "nullguard.cc.o"
+    ],
+    "toolchains/aapt2-sysroot-arm64/lib/libabsl_log_internal_proto.a": [
+      "proto.cc.o"
+    ],
+    "toolchains/aapt2-sysroot-arm64/lib/libabsl_log_internal_structured_proto.a": [
+      "structured_proto.cc.o"
+    ],
+    "toolchains/aapt2-sysroot-arm64/lib/libabsl_log_sink.a": [
+      "log_sink.cc.o"
+    ],
+    "toolchains/aapt2-sysroot-arm64/lib/libabsl_low_level_hash.a": [
+      "low_level_hash.cc.o"
+    ],
+    "toolchains/aapt2-sysroot-arm64/lib/libabsl_malloc_internal.a": [
+      "low_level_alloc.cc.o"
+    ],
+    "toolchains/aapt2-sysroot-arm64/lib/libabsl_raw_hash_set.a": [
+      "raw_hash_set.cc.o"
+    ],
+    "toolchains/aapt2-sysroot-arm64/lib/libabsl_raw_logging_internal.a": [
+      "raw_logging.cc.o"
+    ],
+    "toolchains/aapt2-sysroot-arm64/lib/libabsl_spinlock_wait.a": [
+      "spinlock_wait.cc.o"
+    ],
+    "toolchains/aapt2-sysroot-arm64/lib/libabsl_stacktrace.a": [
+      "stacktrace.cc.o"
+    ],
+    "toolchains/aapt2-sysroot-arm64/lib/libabsl_status.a": [
+      "status.cc.o",
+      "status_internal.cc.o",
+      "status_payload_printer.cc.o"
+    ],
+    "toolchains/aapt2-sysroot-arm64/lib/libabsl_statusor.a": [
+      "statusor.cc.o"
+    ],
+    "toolchains/aapt2-sysroot-arm64/lib/libabsl_str_format_internal.a": [
+      "arg.cc.o",
+      "bind.cc.o",
+      "extension.cc.o",
+      "float_conversion.cc.o",
+      "output.cc.o",
+      "parser.cc.o"
+    ],
+    "toolchains/aapt2-sysroot-arm64/lib/libabsl_strerror.a": [
+      "strerror.cc.o"
+    ],
+    "toolchains/aapt2-sysroot-arm64/lib/libabsl_strings.a": [
+      "ascii.cc.o",
+      "charconv.cc.o",
+      "charconv_bigint.cc.o",
+      "charconv_parse.cc.o",
+      "escaping.cc.o",
+      "match.cc.o",
+      "memutil.cc.o",
+      "numbers.cc.o",
+      "str_cat.cc.o",
+      "str_split.cc.o",
+      "stringify_sink.cc.o",
+      "substitute.cc.o"
+    ],
+    "toolchains/aapt2-sysroot-arm64/lib/libabsl_strings_internal.a": [
+      "escaping.cc.o",
+      "utf8.cc.o"
+    ],
+    "toolchains/aapt2-sysroot-arm64/lib/libabsl_symbolize.a": [
+      "symbolize.cc.o"
+    ],
+    "toolchains/aapt2-sysroot-arm64/lib/libabsl_synchronization.a": [
+      "create_thread_identity.cc.o",
+      "futex_waiter.cc.o",
+      "mutex.cc.o",
+      "per_thread_sem.cc.o",
+      "waiter_base.cc.o"
+    ],
+    "toolchains/aapt2-sysroot-arm64/lib/libabsl_throw_delegate.a": [
+      "throw_delegate.cc.o"
+    ],
+    "toolchains/aapt2-sysroot-arm64/lib/libabsl_time.a": [
+      "clock.cc.o",
+      "duration.cc.o",
+      "time.cc.o"
+    ],
+    "toolchains/aapt2-sysroot-arm64/lib/libabsl_time_zone.a": [
+      "time_zone_fixed.cc.o",
+      "time_zone_if.cc.o",
+      "time_zone_impl.cc.o",
+      "time_zone_info.cc.o",
+      "time_zone_libc.cc.o",
+      "time_zone_lookup.cc.o",
+      "time_zone_posix.cc.o",
+      "zone_info_source.cc.o"
+    ],
+    "toolchains/aapt2-sysroot-arm64/lib/libexpat.a": [
+      "xmlparse.c.o",
+      "xmlrole.c.o",
+      "xmltok.c.o"
+    ],
+    "toolchains/aapt2-sysroot-arm64/lib/libfmt.a": [
+      "format.cc.o"
+    ],
+    "toolchains/aapt2-sysroot-arm64/lib/libpng16.a": [
+      "arm_init.c.o",
+      "filter_neon_intrinsics.c.o",
+      "palette_neon_intrinsics.c.o",
+      "png.c.o",
+      "pngerror.c.o",
+      "pngget.c.o",
+      "pngmem.c.o",
+      "pngread.c.o",
+      "pngrio.c.o",
+      "pngrtran.c.o",
+      "pngrutil.c.o",
+      "pngset.c.o",
+      "pngtrans.c.o",
+      "pngwio.c.o",
+      "pngwrite.c.o",
+      "pngwtran.c.o",
+      "pngwutil.c.o"
+    ],
+    "toolchains/aapt2-sysroot-arm64/lib/libprotobuf.a": [
+      "any.cc.o",
+      "any_lite.cc.o",
+      "arena.cc.o",
+      "arenastring.cc.o",
+      "coded_stream.cc.o",
+      "common.cc.o",
+      "cpp_features.pb.cc.o",
+      "descriptor.cc.o",
+      "descriptor.pb.cc.o",
+      "descriptor_database.cc.o",
+      "dynamic_message.cc.o",
+      "extension_set.cc.o",
+      "extension_set_heavy.cc.o",
+      "feature_resolver.cc.o",
+      "generated_enum_util.cc.o",
+      "generated_message_bases.cc.o",
+      "generated_message_reflection.cc.o",
+      "generated_message_tctable_full.cc.o",
+      "generated_message_tctable_gen.cc.o",
+      "generated_message_tctable_lite.cc.o",
+      "generated_message_util.cc.o",
+      "implicit_weak_message.cc.o",
+      "inlined_string_field.cc.o",
+      "map.cc.o",
+      "map_field.cc.o",
+      "message.cc.o",
+      "message_lite.cc.o",
+      "parse_context.cc.o",
+      "port.cc.o",
+      "raw_ptr.cc.o",
+      "reflection_mode.cc.o",
+      "reflection_ops.cc.o",
+      "repeated_field.cc.o",
+      "repeated_ptr_field.cc.o",
+      "strtod.cc.o",
+      "text_format.cc.o",
+      "tokenizer.cc.o",
+      "unknown_field_set.cc.o",
+      "wire_format.cc.o",
+      "wire_format_lite.cc.o",
+      "zero_copy_stream.cc.o",
+      "zero_copy_stream_impl.cc.o",
+      "zero_copy_stream_impl_lite.cc.o"
+    ],
+    "toolchains/aapt2-sysroot-arm64/lib/libutf8_validity.a": [
+      "utf8_validity.cc.o"
+    ],
+    "toolchains/android-sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/19/lib/linux/aarch64/libunwind.a": [
+      "UnwindLevel1.c.o",
+      "UnwindRegistersRestore.S.o",
+      "UnwindRegistersSave.S.o",
+      "libunwind.cpp.o"
+    ],
+    "toolchains/android-sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/19/lib/linux/libclang_rt.builtins-aarch64-android.a": [
+      "aarch64.c.o",
+      "addtf3.c.o",
+      "clzti2.c.o",
+      "comparetf2.c.o",
+      "divti3.c.o",
+      "emutls.c.o",
+      "fixunstfdi.c.o",
+      "floattidf.c.o",
+      "floatunditf.c.o",
+      "fp_mode.c.o",
+      "modti3.c.o",
+      "outline_atomic_cas1_1.S.o",
+      "outline_atomic_cas1_2.S.o",
+      "outline_atomic_cas1_3.S.o",
+      "outline_atomic_cas1_4.S.o",
+      "outline_atomic_cas4_1.S.o",
+      "outline_atomic_cas4_2.S.o",
+      "outline_atomic_cas4_3.S.o",
+      "outline_atomic_cas4_4.S.o",
+      "outline_atomic_cas8_1.S.o",
+      "outline_atomic_cas8_2.S.o",
+      "outline_atomic_cas8_3.S.o",
+      "outline_atomic_cas8_4.S.o",
+      "outline_atomic_ldadd4_1.S.o",
+      "outline_atomic_ldadd4_2.S.o",
+      "outline_atomic_ldadd4_3.S.o",
+      "outline_atomic_ldadd4_4.S.o",
+      "outline_atomic_ldadd8_1.S.o",
+      "outline_atomic_ldadd8_2.S.o",
+      "outline_atomic_ldadd8_3.S.o",
+      "outline_atomic_ldadd8_4.S.o",
+      "outline_atomic_ldclr8_1.S.o",
+      "outline_atomic_ldclr8_2.S.o",
+      "outline_atomic_ldclr8_3.S.o",
+      "outline_atomic_ldclr8_4.S.o",
+      "outline_atomic_ldeor8_1.S.o",
+      "outline_atomic_ldeor8_2.S.o",
+      "outline_atomic_ldeor8_3.S.o",
+      "outline_atomic_ldeor8_4.S.o",
+      "outline_atomic_ldset4_1.S.o",
+      "outline_atomic_ldset4_2.S.o",
+      "outline_atomic_ldset4_3.S.o",
+      "outline_atomic_ldset4_4.S.o",
+      "outline_atomic_ldset8_1.S.o",
+      "outline_atomic_ldset8_2.S.o",
+      "outline_atomic_ldset8_3.S.o",
+      "outline_atomic_ldset8_4.S.o",
+      "outline_atomic_swp1_1.S.o",
+      "outline_atomic_swp1_2.S.o",
+      "outline_atomic_swp1_3.S.o",
+      "outline_atomic_swp1_4.S.o",
+      "outline_atomic_swp4_1.S.o",
+      "outline_atomic_swp4_2.S.o",
+      "outline_atomic_swp4_3.S.o",
+      "outline_atomic_swp4_4.S.o",
+      "outline_atomic_swp8_1.S.o",
+      "outline_atomic_swp8_2.S.o",
+      "outline_atomic_swp8_3.S.o",
+      "outline_atomic_swp8_4.S.o",
+      "subtf3.c.o",
+      "trunctfsf2.c.o",
+      "udivmodti4.c.o",
+      "udivti3.c.o",
+      "umodti3.c.o"
+    ],
+    "toolchains/android-sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/libc++_static.a": [
+      "algorithm.cpp.o",
+      "bind.cpp.o",
+      "call_once.cpp.o",
+      "chrono.cpp.o",
+      "condition_variable.cpp.o",
+      "condition_variable_destructor.cpp.o",
+      "error_category.cpp.o",
+      "exception.cpp.o",
+      "future.cpp.o",
+      "hash.cpp.o",
+      "ios.cpp.o",
+      "ios.instantiations.cpp.o",
+      "iostream.cpp.o",
+      "locale.cpp.o",
+      "memory.cpp.o",
+      "mutex.cpp.o",
+      "mutex_destructor.cpp.o",
+      "new_helpers.cpp.o",
+      "optional.cpp.o",
+      "random.cpp.o",
+      "regex.cpp.o",
+      "stdexcept.cpp.o",
+      "string.cpp.o",
+      "system_error.cpp.o",
+      "thread.cpp.o",
+      "variant.cpp.o"
+    ],
+    "toolchains/android-sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/libc++abi.a": [
+      "abort_message.cpp.o",
+      "cxa_aux_runtime.cpp.o",
+      "cxa_default_handlers.cpp.o",
+      "cxa_demangle.cpp.o",
+      "cxa_exception.cpp.o",
+      "cxa_exception_storage.cpp.o",
+      "cxa_guard.cpp.o",
+      "cxa_handlers.cpp.o",
+      "cxa_personality.cpp.o",
+      "cxa_virtual.cpp.o",
+      "fallback_malloc.cpp.o",
+      "private_typeinfo.cpp.o",
+      "stdlib_exception.cpp.o",
+      "stdlib_new_delete.cpp.o",
+      "stdlib_stdexcept.cpp.o",
+      "stdlib_typeinfo.cpp.o"
+    ],
+    "vendor/liblibaapt2.a": [
+      "AbiFilter.cpp.o",
+      "AnnotationProcessor.cpp.o",
+      "ApkInfo.pb.cc.o",
+      "Archive.cpp.o",
+      "AutoVersioner.cpp.o",
+      "BinaryResourceParser.cpp.o",
+      "ClassDefinition.cpp.o",
+      "ConfigFilter.cpp.o",
+      "Configuration.pb.cc.o",
+      "ConfigurationParser.cpp.o",
+      "Container.cpp.o",
+      "Debug.cpp.o",
+      "DominatorTree.cpp.o",
+      "DumpManifest.cpp.o",
+      "FeatureFlagsFilter.cpp.o",
+      "File.cpp.o",
+      "FileSystem.cpp.o",
+      "Files.cpp.o",
+      "FlagNotEnabledResourceRemover.cpp.o",
+      "FlaggedXmlVersioner.cpp.o",
+      "IdAssigner.cpp.o",
+      "InlineXmlFormatParser.cpp.o",
+      "JavaClassGenerator.cpp.o",
+      "LoadedApk.cpp.o",
+      "ManifestClassGenerator.cpp.o",
+      "ManifestFixer.cpp.o",
+      "MultiApkGenerator.cpp.o",
+      "NoDefaultResourceRemover.cpp.o",
+      "Obfuscator.cpp.o",
+      "Printer.cpp.o",
+      "PrivateAttributeMover.cpp.o",
+      "ProductFilter.cpp.o",
+      "ProguardRules.cpp.o",
+      "ProtoDeserialize.cpp.o",
+      "ProtoSerialize.cpp.o",
+      "PseudolocaleGenerator.cpp.o",
+      "Pseudolocalizer.cpp.o",
+      "ReferenceLinker.cpp.o",
+      "ResChunkPullParser.cpp.o",
+      "ResEntryWriter.cpp.o",
+      "Resource.cpp.o",
+      "ResourceDeduper.cpp.o",
+      "ResourceExcluder.cpp.o",
+      "ResourceFilter.cpp.o",
+      "ResourceMetadata.pb.cc.o",
+      "ResourceParser.cpp.o",
+      "ResourceTable.cpp.o",
+      "ResourceUtils.cpp.o",
+      "ResourceValues.cpp.o",
+      "Resources.pb.cc.o",
+      "ResourcesInternal.pb.cc.o",
+      "SdkConstants.cpp.o",
+      "StringStream.cpp.o",
+      "SymbolTable.cpp.o",
+      "TableFlattener.cpp.o",
+      "TableMerger.cpp.o",
+      "TableSplitter.cpp.o",
+      "TraceBuffer.cpp.o",
+      "Unicode.cpp.o",
+      "Utf8Iterator.cpp.o",
+      "Util.cpp.o",
+      "ValueTransformer.cpp.o",
+      "VersionCollapser.cpp.o",
+      "XmlActionExecutor.cpp.o",
+      "XmlCompatVersioner.cpp.o",
+      "XmlDom.cpp.o",
+      "XmlFlattener.cpp.o",
+      "XmlIdCollector.cpp.o",
+      "XmlNamespaceRemover.cpp.o",
+      "XmlPullParser.cpp.o",
+      "XmlReferenceLinker.cpp.o",
+      "XmlUtil.cpp.o",
+      "ZipArchive.cpp.o"
+    ],
+    "vendor/liblibandroidfw.a": [
+      "ApkAssets.cpp.o",
+      "ApkParsing.cpp.o",
+      "Asset.cpp.o",
+      "AssetDir.cpp.o",
+      "AssetManager.cpp.o",
+      "AssetManager2.cpp.o",
+      "AssetsProvider.cpp.o",
+      "BigBuffer.cpp.o",
+      "BigBufferStream.cpp.o",
+      "ChunkIterator.cpp.o",
+      "ConfigDescription.cpp.o",
+      "FileStream.cpp.o",
+      "Idmap.cpp.o",
+      "LoadedArsc.cpp.o",
+      "Locale.cpp.o",
+      "LocaleData.cpp.o",
+      "LocaleDataLookup.cpp.o",
+      "NinePatch.cpp.o",
+      "PathUtils.cpp.o",
+      "Png.cpp.o",
+      "PngChunkFilter.cpp.o",
+      "PngCrunch.cpp.o",
+      "ResourceTypes.cpp.o",
+      "ResourceUtils.cpp.o",
+      "StreamingZipInflater.cpp.o",
+      "StringPool.cpp.o",
+      "TypeWrappers.cpp.o",
+      "Util.cpp.o",
+      "ZipFileRO.cpp.o",
+      "ZipUtils.cpp.o",
+      "misc.cpp.o"
+    ],
+    "vendor/liblibbase.a": [
+      "errors_unix.cpp.o",
+      "file.cpp.o",
+      "logging.cpp.o",
+      "mapped_file.cpp.o",
+      "posix_strerror_r.cpp.o",
+      "stringprintf.cpp.o",
+      "strings.cpp.o",
+      "threads.cpp.o"
+    ],
+    "vendor/liblibcutils.a": [
+      "trace-host.cpp.o"
+    ],
+    "vendor/liblibincfs.a": [
+      "map_ptr.cpp.o"
+    ],
+    "vendor/libliblog.a": [
+      "log_event_list.cpp.o",
+      "log_event_write.cpp.o",
+      "logd_writer.cpp.o",
+      "logger_write.cpp.o",
+      "pmsg_writer.cpp.o",
+      "properties.cpp.o"
+    ],
+    "vendor/liblibutils.a": [
+      "FileMap.cpp.o",
+      "JenkinsHash.cpp.o",
+      "RefBase.cpp.o",
+      "SharedBuffer.cpp.o",
+      "String16.cpp.o",
+      "String8.cpp.o",
+      "StrongPointer.cpp.o",
+      "Unicode.cpp.o",
+      "VectorImpl.cpp.o"
+    ],
+    "vendor/liblibziparchive.a": [
+      "zip_archive.cc.o",
+      "zip_cd_entry_map.cc.o",
+      "zip_error.cpp.o",
+      "zip_writer.cc.o"
+    ]
+  },
+  "duplicate_label_sources": {
+    "vendor/liblibaapt2.a(Util.cpp.o)": [
+      "toolchains/aapt2-source-c4edf85/vendor/base/tools/aapt2/io/Util.cpp",
+      "toolchains/aapt2-source-c4edf85/vendor/base/tools/aapt2/util/Util.cpp"
+    ]
+  },
+  "confirmed_archive_object_instances": 399
+}

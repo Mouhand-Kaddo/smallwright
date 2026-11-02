@@ -1,0 +1,87 @@
+package dev.smallwright.controller;
+
+import java.util.Map;
+
+/** ECJ 4.12 IProblem constant names for common compile errors, sent instead of compiler prose. */
+final class EcjProblemNames {
+    private static final Map<Integer, String> NAMES =
+            Map.ofEntries(
+                    Map.entry(67109264, "AbstractMethodMustBeImplemented"),
+                    Map.entry(536870936, "CannotDefineStaticInitializerInLocalType"),
+                    Map.entry(536871073, "CodeCannotBeReached"),
+                    Map.entry(33554772, "DuplicateField"),
+                    Map.entry(536870969, "DuplicateFinalLocalInitialization"),
+                    Map.entry(67109219, "DuplicateMethod"),
+                    Map.entry(33554512, "FinalFieldAssignment"),
+                    Map.entry(16777239, "IllegalEnclosingInstanceSpecification"),
+                    Map.entry(16777522, "IllegalModifierForLocalClass"),
+                    Map.entry(553648786, "IncompatibleLambdaParameterType"),
+                    Map.entry(16777232, "IncompatibleTypesInConditionalOperator"),
+                    Map.entry(16777231, "IncompatibleTypesInEqualityOperator"),
+                    Map.entry(16777796, "IncompatibleTypesInForeach"),
+                    Map.entry(16777741, "IncorrectArityForParameterizedType"),
+                    Map.entry(1610612989, "InvalidCharacterConstant"),
+                    Map.entry(16777373, "InvalidClassInstantiation"),
+                    Map.entry(536871072, "InvalidOperator"),
+                    Map.entry(536871115, "InvalidTypeExpression"),
+                    Map.entry(536871076, "InvalidVoidExpression"),
+                    Map.entry(16777540, "IsClassPathCorrect"),
+                    Map.entry(536870973, "LocalVariableIsNeverUsed"),
+                    Map.entry(67108970, "MethodReturnsVoid"),
+                    Map.entry(16777236, "MissingEnclosingInstanceForConstructorCall"),
+                    Map.entry(16777327, "MissingReturnType"),
+                    Map.entry(134217857, "MissingTypeInConstructor"),
+                    Map.entry(67108984, "MissingTypeInMethod"),
+                    Map.entry(67108980, "NoMessageSendOnArrayType"),
+                    Map.entry(67108978, "NoMessageSendOnBaseType"),
+                    Map.entry(33554506, "NonStaticFieldFromStaticInvocation"),
+                    Map.entry(134217859, "NotVisibleConstructor"),
+                    Map.entry(33554503, "NotVisibleField"),
+                    Map.entry(67108965, "NotVisibleMethod"),
+                    Map.entry(16777219, "NotVisibleType"),
+                    Map.entry(536871575, "OuterLocalMustBeEffectivelyFinal"),
+                    Map.entry(536870937, "OuterLocalMustBeFinal"),
+                    Map.entry(67108979, "ParameterMismatch"),
+                    Map.entry(1610612940, "ParsingError"),
+                    Map.entry(1610612968, "ParsingErrorDeleteToken"),
+                    Map.entry(1610612969, "ParsingErrorDeleteTokens"),
+                    Map.entry(1610612976, "ParsingErrorInsertToComplete"),
+                    Map.entry(1610612978, "ParsingErrorInsertToCompletePhrase"),
+                    Map.entry(1610612977, "ParsingErrorInsertToCompleteScope"),
+                    Map.entry(1610612967, "ParsingErrorInsertTokenAfter"),
+                    Map.entry(1610612966, "ParsingErrorInsertTokenBefore"),
+                    Map.entry(1610612971, "ParsingErrorInvalidToken"),
+                    Map.entry(1610612970, "ParsingErrorMergeTokens"),
+                    Map.entry(1610612972, "ParsingErrorMisplacedConstruct"),
+                    Map.entry(1610612941, "ParsingErrorNoSuggestion"),
+                    Map.entry(1610612973, "ParsingErrorReplaceTokens"),
+                    Map.entry(536870968, "RedefinedArgument"),
+                    Map.entry(536870967, "RedefinedLocal"),
+                    Map.entry(16777235, "ReturnTypeMismatch"),
+                    Map.entry(603979884, "ShouldReturnValue"),
+                    Map.entry(603979977, "StaticMethodRequested"),
+                    Map.entry(16777742, "TypeArgumentMismatch"),
+                    Map.entry(16777233, "TypeMismatch"),
+                    Map.entry(134217858, "UndefinedConstructor"),
+                    Map.entry(33554502, "UndefinedField"),
+                    Map.entry(67108964, "UndefinedMethod"),
+                    Map.entry(570425394, "UndefinedName"),
+                    Map.entry(16777218, "UndefinedType"),
+                    Map.entry(67109225, "UnexpectedStaticModifierForMethod"),
+                    Map.entry(16777384, "UnhandledException"),
+                    Map.entry(16778098, "UnhandledExceptionOnAutoClose"),
+                    Map.entry(536871543, "UnhandledWarningToken"),
+                    Map.entry(536870963, "UninitializedLocalVariable"),
+                    Map.entry(1610612956, "UnmatchedBracket"),
+                    Map.entry(83886247, "UnreachableCatch"),
+                    Map.entry(33554515, "UnresolvedVariable"),
+                    Map.entry(16777748, "UnsafeTypeConversion"),
+                    Map.entry(1610612995, "UnterminatedString"),
+                    Map.entry(67108969, "VoidMethodReturnsValue"));
+
+    private EcjProblemNames() {}
+
+    static String name(int id) {
+        return NAMES.get(id);
+    }
+}

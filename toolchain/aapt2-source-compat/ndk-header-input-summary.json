@@ -1,0 +1,384 @@
+{
+  "absolute_paths_only": true,
+  "bionic_manifest_commit": "b86008a9cd14a7748867d2232e6de439e4809c10",
+  "build_root": "toolchains/aapt2-replay-20260927/build",
+  "category_counts": {
+    "Android NDK API headers": 8,
+    "Bionic / POSIX sysroot headers": 108,
+    "Clang resource headers": 23,
+    "Linux UAPI / architecture headers": 104,
+    "NDK linker/runtime input (not a header)": 15,
+    "libc++ headers": 939
+  },
+  "generated_utc_date": "2026-09-28",
+  "llvm_pinned_source_checkout": "toolchains/aapt2-runtime-notice-audit/llvm-project",
+  "llvm_source_comparisons": {
+    "Clang resource headers | byte-identical": 19,
+    "Clang resource headers | different bytes": 1,
+    "Clang resource headers | expected source path absent from pinned checkout": 3,
+    "libc++ headers | byte-identical": 932,
+    "libc++ headers | different bytes": 3,
+    "libc++ headers | expected source path absent from pinned checkout": 4
+  },
+  "marker_counts": {
+    "Android NDK API headers | copyright/license text in first 5 KiB": 7,
+    "Android NDK API headers | no conventional marker in first 5 KiB": 1,
+    "Bionic / POSIX sysroot headers | BSD-2-Clause": 1,
+    "Bionic / POSIX sysroot headers | copyright/license text in first 5 KiB": 103,
+    "Bionic / POSIX sysroot headers | no conventional marker in first 5 KiB": 4,
+    "Clang resource headers | Apache-2.0 WITH LLVM-exception": 22,
+    "Clang resource headers | copyright/license text in first 5 KiB": 1,
+    "Linux UAPI / architecture headers | no conventional marker in first 5 KiB": 104,
+    "NDK linker/runtime input (not a header) | no conventional marker in first 5 KiB": 15,
+    "libc++ headers | Apache-2.0 WITH LLVM-exception": 939
+  },
+  "method": "read-only ninja -t deps queries; no build targets invoked",
+  "ndk_manifest_commit": "97a699bf4812a18fb657c2779f5296a4ab2694d2",
+  "ndk_version": "28.2.13676358",
+  "ninja": "toolchains/android-sdk/cmake/3.31.4/bin/ninja",
+  "notice_inputs": {
+    "compiler_rt_LICENSE": {
+      "path": "toolchains/aapt2-runtime-notice-audit/llvm-project/compiler-rt/LICENSE.TXT",
+      "sha256": "1a8f1058753f1ba890de984e48f0242a3a5c29a6a8f2ed9fd813f36985387e8d"
+    },
+    "libcxx_LICENSE": {
+      "path": "toolchains/aapt2-runtime-notice-audit/llvm-project/libcxx/LICENSE.TXT",
+      "sha256": "539dd7aed86e8a4f12cbdd0e6c50c189c7d74847e4fecc64ce2c6ee3a01da38b"
+    },
+    "libcxxabi_LICENSE": {
+      "path": "toolchains/aapt2-runtime-notice-audit/llvm-project/libcxxabi/LICENSE.TXT",
+      "sha256": "e2b35be49f7284a45b7baca8fc7b3ab7440e7902392b2528a457816b5bb2a15c"
+    },
+    "libunwind_LICENSE": {
+      "path": "toolchains/aapt2-runtime-notice-audit/llvm-project/libunwind/LICENSE.TXT",
+      "sha256": "b5efebcaca80879234098e52d1725e6d9eb8fb96a19fce625d39184b705f7b6d"
+    },
+    "llvm_clang_LICENSE": {
+      "path": "toolchains/aapt2-runtime-notice-audit/llvm-project/clang/LICENSE.TXT",
+      "sha256": "ebcd9bbf783a73d05c53ba4d586b8d5813dcdf3bbec50265860ccc885e606f47",
+      "size_bytes": 15140
+    },
+    "llvm_project_LICENSE": {
+      "path": "toolchains/aapt2-runtime-notice-audit/llvm-project/LICENSE.TXT",
+      "sha256": "8d85c1057d742e597985c7d4e6320b015a9139385cff4cbae06ffc0ebe89afee"
+    },
+    "ndk_llvm_prebuilt_NOTICE": {
+      "path": "toolchains/android-sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/linux-x86_64/NOTICE",
+      "sha256": "f96f763beb66a7ba7a667647fc64c0226ace875e590c831fdd9579ec1c1d91e1",
+      "size_bytes": 130424
+    },
+    "sysroot_NOTICE": {
+      "byte_identical_to_copy": "toolchain/licenses/aapt2-source-built/ndk-sysroot-NOTICE",
+      "path": "toolchains/android-sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/linux-x86_64/sysroot/NOTICE",
+      "sha256": "2905ac5c59628352af990c748a8f4c3675a04f36eca7914612e3068661d2c6a6"
+    }
+  },
+  "path_count_note": "2,701 unique absolute dependency paths. Earlier 2,736 all-path Ninja inventory contains 35 relative build-tree entries excluded by this receipt parser.",
+  "per_build_distinct_dependencies": {
+    "aapt2": 1914,
+    "abseil": 1470,
+    "expat": 126,
+    "fmtlib": 817,
+    "googletest": 1024,
+    "libpng": 118,
+    "protobuf": 1311,
+    "zlib": 969
+  },
+  "queried_builds": [
+    "toolchains/aapt2-replay-20260927/build/expat",
+    "toolchains/aapt2-replay-20260927/build/fmtlib",
+    "toolchains/aapt2-replay-20260927/build/googletest",
+    "toolchains/aapt2-replay-20260927/build/abseil",
+    "toolchains/aapt2-replay-20260927/build/protobuf",
+    "toolchains/aapt2-replay-20260927/build/zlib",
+    "toolchains/aapt2-replay-20260927/build/libpng",
+    "toolchains/aapt2-replay-20260927/build/aapt2"
+  ],
+  "scope_note": "This is the conservative all-compiled-objects dependency union. It includes files/objects not selected by the AAPT2 linker. It is not a linked-object-specific notice determination.",
+  "source_mapping_caveat": "Pinned LLVM libc++ and Clang source path comparisons cover only same-named upstream files; generated and NDK-specialized files can have no corresponding source path or differ. Bionic/kernel header sources are not in the sparse Bionic checkout; source origin/notice section mapping remains open.",
+  "unique_dependency_path_count": 2701,
+  "unique_ndk_path_count": 1197,
+  "unmarked_header_count": 109,
+  "full_ignored_receipt_sha256": "0328cc7583b622b10030bd7851f9f793ba1ba3519fb1d9aea87eb18799770f12",
+  "full_ignored_receipt_path": "toolchains/aapt2-runtime-notice-audit/ndk-header-dependency-audit.json",
+  "source_nonidentical_cases": [
+    {
+      "category": "Clang resource headers",
+      "dependency_databases": [
+        "aapt2",
+        "abseil",
+        "libpng",
+        "protobuf"
+      ],
+      "marker_observation": "Apache-2.0 WITH LLVM-exception",
+      "path": "toolchains/android-sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/19/include/arm_bf16.h",
+      "pinned_llvm_source_comparison": "expected source path absent from pinned checkout",
+      "pinned_llvm_source_path": "toolchains/aapt2-runtime-notice-audit/llvm-project/clang/lib/Headers/arm_bf16.h",
+      "pinned_llvm_source_sha256": null,
+      "relative_to_ndk": "toolchains/llvm/prebuilt/linux-x86_64/lib/clang/19/include/arm_bf16.h",
+      "sha256": "87f7bc1cb7aa53a85347bd4e1855cccd45599408bb106e66515519c1033a6a3d",
+      "size_bytes": 548
+    },
+    {
+      "category": "Clang resource headers",
+      "dependency_databases": [
+        "aapt2",
+        "abseil",
+        "libpng",
+        "protobuf"
+      ],
+      "marker_observation": "copyright/license text in first 5 KiB",
+      "path": "toolchains/android-sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/19/include/arm_neon.h",
+      "pinned_llvm_source_comparison": "expected source path absent from pinned checkout",
+      "pinned_llvm_source_path": "toolchains/aapt2-runtime-notice-audit/llvm-project/clang/lib/Headers/arm_neon.h",
+      "pinned_llvm_source_sha256": null,
+      "relative_to_ndk": "toolchains/llvm/prebuilt/linux-x86_64/lib/clang/19/include/arm_neon.h",
+      "sha256": "4f5d94ca46847b300d5ae10bfa92470d3abdb08d2f4ef7bc3664b84734aafa8f",
+      "size_bytes": 2570012
+    },
+    {
+      "category": "Clang resource headers",
+      "dependency_databases": [
+        "aapt2",
+        "abseil",
+        "libpng",
+        "protobuf"
+      ],
+      "marker_observation": "Apache-2.0 WITH LLVM-exception",
+      "path": "toolchains/android-sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/19/include/arm_vector_types.h",
+      "pinned_llvm_source_comparison": "expected source path absent from pinned checkout",
+      "pinned_llvm_source_path": "toolchains/aapt2-runtime-notice-audit/llvm-project/clang/lib/Headers/arm_vector_types.h",
+      "pinned_llvm_source_sha256": null,
+      "relative_to_ndk": "toolchains/llvm/prebuilt/linux-x86_64/lib/clang/19/include/arm_vector_types.h",
+      "sha256": "cd1ca50913b2595e28c33f5f90aa1ef00a7f293097fb80a8451fa1b621c86a59",
+      "size_bytes": 7280
+    },
+    {
+      "category": "Clang resource headers",
+      "dependency_databases": [
+        "aapt2",
+        "abseil",
+        "expat",
+        "fmtlib",
+        "googletest",
+        "libpng",
+        "protobuf",
+        "zlib"
+      ],
+      "marker_observation": "Apache-2.0 WITH LLVM-exception",
+      "path": "toolchains/android-sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/linux-x86_64/lib/clang/19/include/limits.h",
+      "pinned_llvm_source_comparison": "different bytes",
+      "pinned_llvm_source_path": "toolchains/aapt2-runtime-notice-audit/llvm-project/clang/lib/Headers/limits.h",
+      "pinned_llvm_source_sha256": "de837ee8c890eb2f23b2e7b8753a62648dbeaa3d93c1c936a0fe93177a1943fa",
+      "relative_to_ndk": "toolchains/llvm/prebuilt/linux-x86_64/lib/clang/19/include/limits.h",
+      "sha256": "201a7790932ddd1da2b69c0484d6d8ecd076e08684aabc5ce984bd0fa8ef2cf8",
+      "size_bytes": 3686
+    },
+    {
+      "category": "libc++ headers",
+      "dependency_databases": [
+        "aapt2",
+        "abseil",
+        "fmtlib",
+        "googletest",
+        "protobuf",
+        "zlib"
+      ],
+      "marker_observation": "Apache-2.0 WITH LLVM-exception",
+      "path": "toolchains/android-sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/c++/v1/__assertion_handler",
+      "pinned_llvm_source_comparison": "expected source path absent from pinned checkout",
+      "pinned_llvm_source_path": "toolchains/aapt2-runtime-notice-audit/llvm-project/libcxx/include/__assertion_handler",
+      "pinned_llvm_source_sha256": null,
+      "relative_to_ndk": "toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/c++/v1/__assertion_handler",
+      "sha256": "2fa4dceacadd36ae06bf468667157b39019650581df64359e5c6c43e4ec5fc1b",
+      "size_bytes": 1013
+    },
+    {
+      "category": "libc++ headers",
+      "dependency_databases": [
+        "aapt2",
+        "abseil",
+        "fmtlib",
+        "googletest",
+        "protobuf",
+        "zlib"
+      ],
+      "marker_observation": "Apache-2.0 WITH LLVM-exception",
+      "path": "toolchains/android-sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/c++/v1/__config",
+      "pinned_llvm_source_comparison": "different bytes",
+      "pinned_llvm_source_path": "toolchains/aapt2-runtime-notice-audit/llvm-project/libcxx/include/__config",
+      "pinned_llvm_source_sha256": "07f24bbc7d1022dfcd3035890a6b297ab1d600121e09a55f26f4357010e2ea47",
+      "relative_to_ndk": "toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/c++/v1/__config",
+      "sha256": "4a2eb47672b4f8c68000044174ba4ea01a00e287483a3fda12b29ed268fa93da",
+      "size_bytes": 67393
+    },
+    {
+      "category": "libc++ headers",
+      "dependency_databases": [
+        "aapt2",
+        "abseil",
+        "fmtlib",
+        "googletest",
+        "protobuf",
+        "zlib"
+      ],
+      "marker_observation": "Apache-2.0 WITH LLVM-exception",
+      "path": "toolchains/android-sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/c++/v1/__config_site",
+      "pinned_llvm_source_comparison": "expected source path absent from pinned checkout",
+      "pinned_llvm_source_path": "toolchains/aapt2-runtime-notice-audit/llvm-project/libcxx/include/__config_site",
+      "pinned_llvm_source_sha256": null,
+      "relative_to_ndk": "toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/c++/v1/__config_site",
+      "sha256": "66c17667e816458ffbb45e76d110a8ce0b5cdc4a8820f0b1f0835ffad919d5bc",
+      "size_bytes": 1776
+    },
+    {
+      "category": "libc++ headers",
+      "dependency_databases": [
+        "aapt2",
+        "abseil",
+        "googletest"
+      ],
+      "marker_observation": "Apache-2.0 WITH LLVM-exception",
+      "path": "toolchains/android-sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/c++/v1/__cxxabi_config.h",
+      "pinned_llvm_source_comparison": "expected source path absent from pinned checkout",
+      "pinned_llvm_source_path": "toolchains/aapt2-runtime-notice-audit/llvm-project/libcxx/include/__cxxabi_config.h",
+      "pinned_llvm_source_sha256": null,
+      "relative_to_ndk": "toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/c++/v1/__cxxabi_config.h",
+      "sha256": "17143f9c5cfec39e2b741b4b319dec733eb3ba859324859f760f4ad87bd1cb09",
+      "size_bytes": 3333
+    },
+    {
+      "category": "libc++ headers",
+      "dependency_databases": [
+        "aapt2",
+        "abseil",
+        "fmtlib",
+        "googletest",
+        "protobuf",
+        "zlib"
+      ],
+      "marker_observation": "Apache-2.0 WITH LLVM-exception",
+      "path": "toolchains/android-sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/c++/v1/atomic",
+      "pinned_llvm_source_comparison": "different bytes",
+      "pinned_llvm_source_path": "toolchains/aapt2-runtime-notice-audit/llvm-project/libcxx/include/atomic",
+      "pinned_llvm_source_sha256": "6d355cd09ccb52badf08da91d4017706cf9f683ce3eca91498ebedf134ecf8db",
+      "relative_to_ndk": "toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/c++/v1/atomic",
+      "sha256": "99cb8c4b0cc7866a710f877a377c9749a3e3c6905d8eb7012b00859f20a4a1bd",
+      "size_bytes": 28312
+    },
+    {
+      "category": "libc++ headers",
+      "dependency_databases": [
+        "aapt2",
+        "abseil",
+        "googletest"
+      ],
+      "marker_observation": "Apache-2.0 WITH LLVM-exception",
+      "path": "toolchains/android-sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/c++/v1/cxxabi.h",
+      "pinned_llvm_source_comparison": "expected source path absent from pinned checkout",
+      "pinned_llvm_source_path": "toolchains/aapt2-runtime-notice-audit/llvm-project/libcxx/include/cxxabi.h",
+      "pinned_llvm_source_sha256": null,
+      "relative_to_ndk": "toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/c++/v1/cxxabi.h",
+      "sha256": "c81f2d2fbcbcc1c5b3c30f2b3e12508810c47d04e0d3badf372021d5dc92153b",
+      "size_bytes": 7682
+    },
+    {
+      "category": "libc++ headers",
+      "dependency_databases": [
+        "aapt2"
+      ],
+      "marker_observation": "Apache-2.0 WITH LLVM-exception",
+      "path": "toolchains/android-sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/c++/v1/regex",
+      "pinned_llvm_source_comparison": "different bytes",
+      "pinned_llvm_source_path": "toolchains/aapt2-runtime-notice-audit/llvm-project/libcxx/include/regex",
+      "pinned_llvm_source_sha256": "897795afd99ac6fea51498ab5bdcdfac55bfd652e82200e8a0fe8a3d9ea35451",
+      "relative_to_ndk": "toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/c++/v1/regex",
+      "sha256": "2ea7d95853a15ef16925668750ccdface9deead18c79fb3e8064447ff326d982",
+      "size_bytes": 213476
+    }
+  ],
+  "unmarked_non_kernel_cases": [
+    {
+      "category": "Android NDK API headers",
+      "dependency_databases": [
+        "aapt2",
+        "abseil",
+        "expat",
+        "fmtlib",
+        "googletest",
+        "libpng",
+        "protobuf",
+        "zlib"
+      ],
+      "marker_observation": "no conventional marker in first 5 KiB",
+      "path": "toolchains/android-sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/android/ndk-version.h",
+      "pinned_llvm_source_comparison": null,
+      "pinned_llvm_source_path": null,
+      "pinned_llvm_source_sha256": null,
+      "relative_to_ndk": "toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/android/ndk-version.h",
+      "sha256": "82b9d2fac89ea92200a9130a3d9224e2ef60a56dc2fc4df17b184ea9547c6fa0",
+      "size_bytes": 710
+    },
+    {
+      "category": "Bionic / POSIX sysroot headers",
+      "dependency_databases": [
+        "aapt2",
+        "abseil"
+      ],
+      "marker_observation": "no conventional marker in first 5 KiB",
+      "path": "toolchains/android-sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/glibc-syscalls.h",
+      "pinned_llvm_source_comparison": null,
+      "pinned_llvm_source_path": null,
+      "pinned_llvm_source_sha256": null,
+      "relative_to_ndk": "toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/bits/glibc-syscalls.h",
+      "sha256": "058f52d87377ab1b5458ff711708cfc6d84b6d797dfcab96a3538181aa3b263e",
+      "size_bytes": 35640
+    },
+    {
+      "category": "Bionic / POSIX sysroot headers",
+      "dependency_databases": [
+        "aapt2",
+        "googletest",
+        "protobuf"
+      ],
+      "marker_observation": "no conventional marker in first 5 KiB",
+      "path": "toolchains/android-sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/endian.h",
+      "pinned_llvm_source_comparison": null,
+      "pinned_llvm_source_path": null,
+      "pinned_llvm_source_sha256": null,
+      "relative_to_ndk": "toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/endian.h",
+      "sha256": "12a4017bdf01fcac13a6e84f2f2f00984619b7af4b55d29a472d8bf34a14f3bb",
+      "size_bytes": 171
+    },
+    {
+      "category": "Bionic / POSIX sysroot headers",
+      "dependency_databases": [
+        "aapt2",
+        "zlib"
+      ],
+      "marker_observation": "no conventional marker in first 5 KiB",
+      "path": "toolchains/android-sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/memory.h",
+      "pinned_llvm_source_comparison": null,
+      "pinned_llvm_source_path": null,
+      "pinned_llvm_source_sha256": null,
+      "relative_to_ndk": "toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/memory.h",
+      "sha256": "ffe9a756562db9e11d2a4368d963d2e33ae61839bfa75bfd1d174e0eb678d592",
+      "size_bytes": 160
+    },
+    {
+      "category": "Bionic / POSIX sysroot headers",
+      "dependency_databases": [
+        "abseil"
+      ],
+      "marker_observation": "no conventional marker in first 5 KiB",
+      "path": "toolchains/android-sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/syscall.h",
+      "pinned_llvm_source_comparison": null,
+      "pinned_llvm_source_path": null,
+      "pinned_llvm_source_sha256": null,
+      "relative_to_ndk": "toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/syscall.h",
+      "sha256": "5fcb7d6779d06f6781c1373b298e0922e93b910b6a259cd3b8a33597ed25ccc5",
+      "size_bytes": 176
+    }
+  ],
+  "main_verification": "Rehashed all 1197 NDK files, mapped LLVM source files and 951 byte-identical pairs; independently replayed 8 Ninja dependency queries and compared exact 1197 NDK path set. Not selected-link-object closure or legal clearance."
+}

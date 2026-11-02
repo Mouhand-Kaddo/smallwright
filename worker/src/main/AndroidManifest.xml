@@ -1,0 +1,21 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <permission
+        android:name="dev.smallwright.permission.BIND_BUILD_WORKER"
+        android:protectionLevel="signature" />
+
+    <application
+        android:allowBackup="false"
+        android:extractNativeLibs="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="Smallwright Worker"
+        android:supportsRtl="true">
+        <service
+            android:name=".BuildService"
+            android:exported="true"
+            android:permission="dev.smallwright.permission.BIND_BUILD_WORKER">
+            <intent-filter>
+                <action android:name="dev.smallwright.worker.BUILD_SERVICE" />
+            </intent-filter>
+        </service>
+    </application>
+</manifest>

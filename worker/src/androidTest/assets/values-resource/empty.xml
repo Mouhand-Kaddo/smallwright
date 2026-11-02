@@ -1,0 +1,5 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:orientation="vertical" android:padding="32dp" android:layout_width="match_parent" android:layout_height="match_parent">
+    <TextView android:id="@+id/dialog_count" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Dialog count: 0"/>
+    <Button android:id="@+id/dialog_add" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Add dialog count"/>
+    <Button android:id="@+id/dialog_ask" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Open resource dialog"/>
+</LinearLayout>

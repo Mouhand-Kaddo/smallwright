@@ -1,0 +1,53 @@
+diff --git i/vendor/libandroidfw.cmake w/vendor/libandroidfw.cmake
+index 99306c1..b9b947f 100644
+--- i/vendor/libandroidfw.cmake
++++ w/vendor/libandroidfw.cmake
+@@ -62,6 +62,7 @@ target_include_directories(libandroidfw PUBLIC
+     base/libs/androidfw/include
+     base/libs/androidfw/include_pathutils
+     native/include
++    native/libs/binder/include
+ )
+ 
+ target_link_libraries(libandroidfw PUBLIC
+diff --git i/vendor/libincfs.cmake w/vendor/libincfs.cmake
+index b63a902..38af150 100644
+--- i/vendor/libincfs.cmake
++++ w/vendor/libincfs.cmake
+@@ -6,9 +6,11 @@ set(libincfs_SRCS
+ )
+ 
+ add_library(libincfs STATIC ${libincfs_SRCS})
++target_compile_definitions(libincfs PUBLIC INCFS_SUPPORT_DISABLED=1)
+ 
+ target_include_directories(libincfs PUBLIC
+     incremental_delivery/incfs/util/include
++    incremental_delivery/incfs/include
+ )
+ 
+ target_link_libraries(libincfs PUBLIC
+diff --git i/vendor/liblog.cmake w/vendor/liblog.cmake
+index 9cce45f..8fa70a7 100644
+--- i/vendor/liblog.cmake
++++ w/vendor/liblog.cmake
+@@ -7,6 +7,8 @@ set(liblog_SRCS
+     logging/liblog/logger_name.cpp
+     logging/liblog/logger_read.cpp
+     logging/liblog/logger_write.cpp
++    logging/liblog/logd_writer.cpp
++    logging/liblog/pmsg_writer.cpp
+     logging/liblog/logprint.cpp
+     logging/liblog/properties.cpp
+ )
+diff --git i/vendor/libutils.cmake w/vendor/libutils.cmake
+index 52fac40..e6e4d26 100644
+--- i/vendor/libutils.cmake
++++ w/vendor/libutils.cmake
+@@ -39,6 +39,7 @@ add_library(libutils STATIC
+ 
+ target_compile_definitions(libutils PRIVATE
+     ANDROID_UTILS_REF_BASE_DISABLE_IMPLICIT_CONSTRUCTION
++    __ANDROID_RECOVERY__
+ )
+ 
+ target_include_directories(libutils PUBLIC

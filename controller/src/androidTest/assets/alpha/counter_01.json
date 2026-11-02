@@ -1,0 +1,1 @@
+{"id": "counter_01", "kind": "supported", "request": "Add a Decrement button beside Increment. It should subtract one and persist the count after closing the app.", "checklist": ["Decrement is visible", "One tap lowers the displayed count by one", "Count remains after relaunch"]}

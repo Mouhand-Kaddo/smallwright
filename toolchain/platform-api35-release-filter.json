@@ -1,0 +1,14 @@
+{
+  "status": "host_source_release_filter_experiment_not_frozen_sdk_or_license_clearance",
+  "source_tag": "android-15.0.0_r1",
+  "release": "root_then_AP3A",
+  "api_flags": {
+    "path": "../toolchains/platform-api36-source-probe/api35-release-20261002/ap3a-inputs/root-ap3a-public-exportable-flags-config.xml",
+    "sha256": "c7f8729bebab1efc5b291e494fc1d07a7ee89b0e4f832df2d1e3cbf16b2f83c6"
+  },
+  "history_manifest": {
+    "path": "platform-api34-source-history-inputs.json",
+    "sha256": "add3fdfd51ce32012c8cbaea9eefbd03c43ca0eb8ebf29ee4fd98c7f4aea78fa"
+  },
+  "source_policy_inventory": "platform-api35-release-policy-inputs.json"
+}

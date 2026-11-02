@@ -1,4 +1,4 @@
-# Public release readiness
+# Public release
 
 Updated 2026-11-02. The app is renamed Smallwright (`dev.smallwright.*`).
 
@@ -24,19 +24,18 @@ Updated 2026-11-02. The app is renamed Smallwright (`dev.smallwright.*`).
 - OpenAI-compatible model servers besides OpenRouter (ADR 0009), tested on the
   A33 with Claude Haiku 5.5 through Anthropic's endpoint.
 
-## Before publishing
+## Published 2026-11-02
 
-- Publish under the personal account as `Mouhand-Kaddo/smallwright`; no
-  domain or organization (a free side project). The app ids keep
-  `dev.smallwright.*` without owning the domain.
-- The USPTO search for SMALLWRIGHT found no live or dead marks (user, 2026-11-02).
-  The EU office is not searched. The earlier name, Palmwright, was dropped
-  because "Palmwright Software LLC" (Florida) sells custom software at
-  palmwright.com.
-- Create the public repository from one clean commit with the GitHub no-reply
-  address, and upload the AAPT2 binary as the release asset `bootstrap.sh`
-  downloads.
-- Back up `signing/`.
+- Public repository https://github.com/Mouhand-Kaddo/smallwright, from one
+  commit with the GitHub no-reply address; no domain or organization. The app
+  ids keep `dev.smallwright.*` without owning the domain.
+- Releases: `v0.1.0` (pre-release) with both APKs and `SHA256SUMS`, and
+  `aapt2-android-16.0.0_r4` with the AAPT2 binary `bootstrap.sh` downloads.
+  Anonymous downloads matched the tested hashes.
+- The release key is backed up by the user, encrypted, off this laptop.
+- The USPTO search for SMALLWRIGHT found no live or dead marks (user). The EU
+  office is not searched. The earlier name, Palmwright, was dropped because
+  "Palmwright Software LLC" (Florida) sells custom software at palmwright.com.
 
 ## Known gaps
 

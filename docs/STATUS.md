@@ -57,7 +57,9 @@ Updated 2026-11-02 Dubai. The full history up to 2026-10-25 is in
 
 ## Remaining
 
-1. Public release on GitHub: see [release readiness](release-readiness.md).
+1. Released publicly on 2026-11-02 as
+   [Mouhand-Kaddo/smallwright](https://github.com/Mouhand-Kaddo/smallwright),
+   v0.1.0; see [release](release-readiness.md). Known gaps are listed there.
 
 ## Commands
 

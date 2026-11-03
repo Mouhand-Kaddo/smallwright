@@ -47,6 +47,14 @@ Updated 2026-11-02. The app is renamed Smallwright (`dev.smallwright.*`).
 - On the A33 it installed over the update-test builds, updated the worker from
   its main screen and built the starter app.
 
+## 0.1.2, 2026-11-03
+
+- `v0.1.2` is GitHub's latest release, with `smallwright-0.1.2.apk`
+  (`305ac165…`, version code 5) and `SHA256SUMS`. It adds OpenRouter sign-in
+  by a pasted code ([ADR 0010](adr/0010-openrouter-sign-in-by-pasted-code.md)).
+- On the A33 it installed over the sign-in test build, updated the worker from
+  its main screen, built the starter app and kept the signed-in key.
+
 ## Known gaps
 
 - The exact AAPT2 build was a manual configure; its record is

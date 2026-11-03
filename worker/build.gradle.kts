@@ -57,6 +57,7 @@ val alphaSigning = signingIdentity("harness-alpha")
 val releaseSigning = signingIdentity("release")
 
 val childPolicyTests = providers.gradleProperty("childPolicyTests").orNull == "true"
+val isolationProbe = providers.gradleProperty("isolationProbe").orNull == "true"
 val childPolicyJni = layout.buildDirectory.dir("generated/child-policy-probe/jni")
 val guardJni = layout.buildDirectory.dir("generated/aapt2-process-guard/jni")
 val childPolicyHeader = project.file("src/main/c/child_process_policy.h")
@@ -193,7 +194,10 @@ android {
     }
 
     buildTypes {
-        getByName("debug") { signingConfigs.findByName("alpha")?.let { signingConfig = it } }
+        getByName("debug") {
+            signingConfigs.findByName("alpha")?.let { signingConfig = it }
+            if (isolationProbe) applicationIdSuffix = ".isolationprobe"
+        }
         getByName("release") {
             signingConfig = signingConfigs.findByName("release")
             ndk { abiFilters += "arm64-v8a" }
@@ -211,6 +215,11 @@ android {
         if (childPolicyTests) getByName("androidTest").jniLibs.srcDir(childPolicyJni)
         getByName("main").jniLibs.srcDir(guardJni)
         getByName("main").assets.srcDir("../toolchain/licenses")
+        if (isolationProbe)
+            getByName("debug") {
+                java.srcDir("src/isolationProbe/java")
+                manifest.srcFile("src/isolationProbe/AndroidManifest.xml")
+            }
     }
 }
 

@@ -96,7 +96,7 @@ A normal `android:process=":worker"` is not a UID/security boundary. A companion
 
 The controller and worker are signed by the same harness publisher certificate solely to authenticate a signature-protected IPC service. Generated apps use separate per-project keys and must NOT share that certificate. Verify the Binder caller as well as the declared permission. Transfer large snapshots/artifacts with bounded file descriptors, not large Binder byte arrays. No unauthenticated localhost command server, implicit intent command channel or broad content provider.
 
-Alternative to investigate later: a single APK with an `isolatedProcess` service and descriptor-based I/O. Android documents a permissionless isolated process, but whether the chosen compilers can operate with its filesystem/subprocess restrictions must be demonstrated. Do not assume setting this flag makes a complete Gradle/JDK environment work.
+A single APK with an `isolatedProcess` service was tested on the A33 and does not work with the current toolchain: the isolated process has no writable directory and cannot reopen passed descriptors by path, and AAPT2 needs paths ([record](validation/isolated-process-a33-20261103.md)).
 
 The worker holds only the current project's scratch copy and public toolchain inputs, not a mirror of the entire project store. Wipe stale scratch before accepting a request after a crash. Run serialization and cleanup are part of the isolation contract.
 

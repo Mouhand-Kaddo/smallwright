@@ -1,0 +1,13 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <permission
+        android:name="dev.smallwright.permission.BIND_BUILD_WORKER"
+        tools:node="remove" />
+
+    <application>
+        <service
+            android:name=".IsolatedProbeService"
+            android:exported="false"
+            android:isolatedProcess="true" />
+    </application>
+</manifest>

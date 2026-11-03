@@ -85,6 +85,16 @@ public final class ConfinementInstrumentation extends Instrumentation {
                 }
                 return;
             }
+            if ("isolatedProcess".equals(mode)) {
+                try {
+                    result.putString("stream", IsolatedProcessProbe.run(this));
+                    finish(Activity.RESULT_OK, result);
+                } catch (Throwable failure) {
+                    result.putString("stream", "Isolated process probe FAILED " + failure + "\n");
+                    finish(Activity.RESULT_CANCELED, result);
+                }
+                return;
+            }
             if ("childProcessPolicy".equals(mode)) {
                 try {
                     result.putString("stream", ChildProcessPolicyProbe.run(this, observationId));

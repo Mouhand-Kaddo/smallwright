@@ -67,7 +67,7 @@ AndroidX, Compose, Google Play services, Firebase and other libraries are separa
 4. **Install and test.** Present a clear Install action, the relevant permissions and Android's confirmation. Preserve the project package/signing identity across updates and test app-data continuity. Platform consent is part of the experience and cannot honestly be promised away.
 5. **Update tooling.** Use signed harness updates for executable compilers. Retain compatible project toolchain versions or perform a checked migration with a recoverable project snapshot. Do not silently break existing projects by replacing a compile SDK or library. Recovery need not mean Android APK version downgrades; a later signed release can restore earlier compiler behavior.
 
-Longer term, one APK with an `isolatedProcess` service may remove the companion-install step. This is a research candidate, not established parity: prove distinct UID, denied network and credential access, snapshot-only input, writable scratch/output handling and native compiler execution first. A normal same-UID secondary process is not equivalent. [Android service isolation attributes](https://developer.android.com/guide/topics/manifest/service-element).
+One APK with an `isolatedProcess` service was tested on the A33 on 2026-11-03. UID separation, network denial and native AAPT2 execution worked, but there is no writable scratch and passed descriptors cannot be reopened by path, so AAPT2 cannot build there ([record](validation/isolated-process-a33-20261103.md)). A normal same-UID secondary process is not equivalent. [Android service isolation attributes](https://developer.android.com/guide/topics/manifest/service-element).
 
 ## Distribution and installation constraints that affect UX
 

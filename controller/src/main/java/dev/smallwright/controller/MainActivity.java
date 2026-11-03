@@ -36,6 +36,7 @@ import dev.smallwright.controller.ui.Picker;
 import dev.smallwright.controller.ui.TextBox;
 import dev.smallwright.controller.ui.Turn;
 import dev.smallwright.controller.ui.UiState;
+import dev.smallwright.controller.ui.WorkerState;
 import dev.smallwright.project.ChatStore;
 import dev.smallwright.project.ProjectIdentity;
 import dev.smallwright.project.ProjectRegistry;
@@ -66,6 +67,7 @@ public class MainActivity extends androidx.activity.ComponentActivity {
     private static final ExecutorService CATALOG_TASKS = Executors.newSingleThreadExecutor();
 
     private static final ExecutorService PLATFORM_TASKS = Executors.newSingleThreadExecutor();
+    private static final ExecutorService WORKER_INSTALL_TASKS = Executors.newSingleThreadExecutor();
 
     private static final ExecutorService PICTURE_TASKS = Executors.newSingleThreadExecutor();
 
@@ -380,6 +382,7 @@ public class MainActivity extends androidx.activity.ComponentActivity {
                                 runOnUiThread(
                                         () -> {
                                             setStatus(message);
+                                            connectWorker();
                                             if (!isBusy()) checkTestHandoff(false);
                                             refreshUndo();
                                         }));
@@ -393,9 +396,68 @@ public class MainActivity extends androidx.activity.ComponentActivity {
                             + "Build and generation are disabled to protect saved work.";
             setStatus(startupRecoveryMessage);
         }
-        bound = BuildWorker.bind(this, connection);
-        if (!bound && startupRecoveryMessage == null)
-            setStatus("The build worker is not installed, or it is signed with a different key.");
+        ui.setOnInstallWorker(this::installWorker);
+        String workerProblem = workerProblem(connectWorker());
+        if (workerProblem != null && startupRecoveryMessage == null) setStatus(workerProblem);
+    }
+
+    private WorkerState connectWorker() {
+        WorkerState state = BuildWorker.state(this);
+        ui.setWorker(state);
+        if (!bound && (state == WorkerState.READY || state == WorkerState.OUTDATED))
+            bound = BuildWorker.bind(this, connection);
+        return state;
+    }
+
+    private String workerProblem(WorkerState state) {
+        switch (state) {
+            case MISSING:
+                return "The build worker is not installed. Tap "
+                        + Labels.INSTALL_WORKER
+                        + " to add it.";
+            case OUTDATED:
+                return "The build worker is older than this app. Tap "
+                        + Labels.UPDATE_WORKER
+                        + " before building.";
+            case OTHER_KEY:
+                return "The installed build worker is signed with a different key. "
+                        + "Uninstall Smallwright Worker, then come back here to install it.";
+            case READY:
+            default:
+                return bound ? null : "The build worker refused the connection.";
+        }
+    }
+
+    private void installWorker() {
+        if (destroyed || !installsAllowed(Labels.INSTALL_WORKER)) return;
+        setStatus("Opening Android's installer...");
+        WORKER_INSTALL_TASKS.execute(
+                () -> {
+                    try {
+                        installs.installWorker();
+                    } catch (Exception exception) {
+                        runOnUiThread(
+                                () ->
+                                        setStatus(
+                                                "Could not start installation: "
+                                                        + exception.getMessage()));
+                    }
+                });
+    }
+
+    /** Opens Android's setting when this app may not install apps yet; then it needs a new tap. */
+    private boolean installsAllowed(String retryLabel) {
+        if (getPackageManager().canRequestPackageInstalls()) return true;
+        setStatus(
+                "Android needs 'Allow from this source' for Smallwright. "
+                        + "Enable it in Settings, return here, then tap "
+                        + retryLabel
+                        + " again.");
+        startActivity(
+                new Intent(
+                        Settings.ACTION_MANAGE_UNKNOWN_APP_SOURCES,
+                        Uri.parse("package:" + getPackageName())));
+        return false;
     }
 
     private static final String UNVERIFIED_INSTALL =
@@ -1009,6 +1071,7 @@ public class MainActivity extends androidx.activity.ComponentActivity {
     protected void onResume() {
         super.onResume();
         refreshNotificationsAllowed();
+        connectWorker();
         if (testHandoff != null && !isBusy()) checkTestHandoff(false);
     }
 
@@ -1104,18 +1167,7 @@ public class MainActivity extends androidx.activity.ComponentActivity {
         if (signedArtifact == null || isBusy() || destroyed) return;
         ui.setToolsOpen(false);
         try {
-            if (!getPackageManager().canRequestPackageInstalls()) {
-                setStatus(
-                        "Android needs 'Allow from this source' for Smallwright. "
-                                + "Enable it in Settings, return here, then tap "
-                                + Labels.INSTALL
-                                + " again.");
-                startActivity(
-                        new Intent(
-                                Settings.ACTION_MANAGE_UNKNOWN_APP_SOURCES,
-                                Uri.parse("package:" + getPackageName())));
-                return;
-            }
+            if (!installsAllowed(Labels.INSTALL)) return;
             installs.install(signedArtifact, activeProject);
             setStatus("Opening Android's installer...");
         } catch (Exception exception) {
@@ -3105,6 +3157,16 @@ public class MainActivity extends androidx.activity.ComponentActivity {
                         setStatus(
                                 startupRecoveryMessage
                                         + "\nCompiler worker disconnected; reconnecting.");
+                }
+
+                /** Android ends a binding for good when the worker is updated or removed. */
+                @Override
+                public void onBindingDied(ComponentName name) {
+                    worker = null;
+                    if (bound) unbindService(this);
+                    bound = false;
+                    refreshControls();
+                    if (!destroyed) connectWorker();
                 }
             };
 }

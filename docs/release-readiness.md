@@ -48,3 +48,6 @@ Updated 2026-11-02. The app is renamed Smallwright (`dev.smallwright.*`).
 - No licenses screen in the app.
 - When a reinstall meets an app built with the old project keys, the build is
   refused at signing, but the screen only says "Local build failed".
+- Published 0.1.0 needs both APKs. From the next release the builder carries
+  the worker ([record](validation/bundled-worker-a33-20261103.md)), so its
+  release notes should say to install only the builder.

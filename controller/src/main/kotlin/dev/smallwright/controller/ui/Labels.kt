@@ -14,6 +14,8 @@ object Labels {
     @JvmField val TOOLS = "Project tools"
     @JvmField val SETTINGS = "Settings"
     @JvmField val GET_PLATFORM = "Get Android platform files"
+    @JvmField val INSTALL_WORKER = "Install the build worker"
+    @JvmField val UPDATE_WORKER = "Update the build worker"
     @JvmField val ACCEPT_AND_DOWNLOAD = "Accept and download"
     @JvmField val TRY_AGAIN = "Try again"
     @JvmField val NOT_NOW = "Not now"

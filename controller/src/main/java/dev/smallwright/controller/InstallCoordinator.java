@@ -8,12 +8,18 @@ import android.content.IntentFilter;
 import android.content.IntentSender;
 import android.content.pm.PackageInstaller;
 import android.os.Build;
+import android.os.FileUtils;
 import dev.smallwright.project.ProjectIdentity;
+import java.io.InputStream;
 import java.io.OutputStream;
 
 final class InstallCoordinator {
     interface Listener {
         void onInstallStatus(String status);
+    }
+
+    private interface ApkWriter {
+        void writeTo(OutputStream output) throws Exception;
     }
 
     private static final String ACTION_STATUS = "dev.smallwright.controller.INSTALL_STATUS";
@@ -62,10 +68,21 @@ final class InstallCoordinator {
         install(apk, identity.packageName());
     }
 
+    /** Installs or updates the build worker from the copy inside this app. */
+    void installWorker() throws Exception {
+        try (InputStream apk = context.getAssets().open(BuildWorker.BUNDLED_APK)) {
+            commit(BuildWorker.SERVICE.getPackageName(), -1, output -> FileUtils.copy(apk, output));
+        }
+    }
+
     private void install(VerifiedArtifact apk, String packageName) throws Exception {
         if (!packageName.matches("dev\\.smallwright\\.generated\\.(?:counter|app[0-9a-f]{32})"))
             throw new IllegalArgumentException("Invalid generated package");
         apk.verifyPackage(context, packageName);
+        commit(packageName, apk.length(), apk::copyTo);
+    }
+
+    private void commit(String packageName, long length, ApkWriter apk) throws Exception {
         PackageInstaller installer = context.getPackageManager().getPackageInstaller();
         PackageInstaller.SessionParams params =
                 new PackageInstaller.SessionParams(
@@ -76,8 +93,8 @@ final class InstallCoordinator {
         }
         int sessionId = installer.createSession(params);
         try (PackageInstaller.Session session = installer.openSession(sessionId)) {
-            try (OutputStream output = session.openWrite("generated.apk", 0, apk.length())) {
-                apk.copyTo(output);
+            try (OutputStream output = session.openWrite("app.apk", 0, length)) {
+                apk.writeTo(output);
                 session.fsync(output);
             }
             Intent status = new Intent(ACTION_STATUS).setPackage(context.getPackageName());

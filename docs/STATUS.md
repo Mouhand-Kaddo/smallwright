@@ -29,6 +29,12 @@ Updated 2026-11-02 Dubai. The full history up to 2026-10-25 is in
 
 ## Latest verification
 
+- 2026-11-03, A33: the builder carries the worker and installs or updates it
+  from its main screen through Android's prompt; builds work after both, and
+  the builder now reconnects after a worker update.
+  [Record](validation/bundled-worker-a33-20261103.md). One APK with an isolated
+  process instead of a worker app does not work: AAPT2 has no writable folder
+  there. [Record](validation/isolated-process-a33-20261103.md).
 - 2026-11-02, recovery on the A33: an idle app evicted, a background run killed
   with `kill -9` after a build, and a run killed during a build all reopened
   correctly; a full disk ends a run with a plain storage message, a restart
@@ -37,7 +43,8 @@ Updated 2026-11-02 Dubai. The full history up to 2026-10-25 is in
   earlier chat is unsaved is host-reviewed only, because Android frees space
   within seconds. [Record](validation/recovery-a33-20261102.md).
 - Host, after the Smallwright rename: 858 tests (767 controller, 91 worker)
-  pass in each of the debug and release variants, plus 43 platform probe and 5
+  pass in each of the debug and release variants (771 controller after
+  2026-11-03, debug run), plus 43 platform probe and 5
   protocol tests; Spotless and lint pass.
 - 2026-11-02, A33: release APKs signed with the release key install, set up,
   build the starter app and install it through Android's installer.
@@ -66,5 +73,5 @@ python3 scripts/validate_benchmarks.py benchmarks/results/*.jsonl
 PHONE_SERIAL=<A33 serial> APPROVED_MODEL=deepseek/deepseek-v4.1-flash python3 scripts/suite/suite.py run <runId> <promptId> [--continue <runId>]
 ```
 
-Installed on the A33 (2026-11-02): Smallwright controller `c3a428c1…`, worker
-`b543b150…`. See [testing](TESTING.md) for other commands.
+Installed on the A33 (2026-11-03): update-test builder and worker at version
+code 3 (builder `f83e0fd2…`). See [testing](TESTING.md) for other commands.

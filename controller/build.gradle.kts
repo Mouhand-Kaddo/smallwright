@@ -26,8 +26,8 @@ android {
         applicationId = "dev.smallwright.controller"
         minSdk = 31
         targetSdk = 36
-        versionCode = 1
-        versionName = "0.1.0"
+        versionCode = providers.gradleProperty("smallwright.versionCode").get().toInt()
+        versionName = providers.gradleProperty("smallwright.versionName").get()
         testInstrumentationRunner = "dev.smallwright.controller.ArtifactPolicyInstrumentation"
     }
 
@@ -74,6 +74,38 @@ android {
 }
 
 kotlin { compilerOptions { jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17) } }
+
+/** Copies the worker APK of the same build type into this app's assets as worker.apk. */
+abstract class BundleWorkerApk : DefaultTask() {
+    @get:InputDirectory abstract val workerApks: DirectoryProperty
+
+    @get:OutputDirectory abstract val assets: DirectoryProperty
+
+    @TaskAction
+    fun copy() {
+        val apks = workerApks.get().asFile.listFiles { file -> file.extension == "apk" }.orEmpty()
+        val apk =
+            apks.singleOrNull()
+                ?: throw GradleException(
+                    "Expected one worker APK in ${workerApks.get()}, found ${apks.size}",
+                )
+        apk.copyTo(assets.get().file("worker.apk").asFile, overwrite = true)
+    }
+}
+
+androidComponents {
+    onVariants { variant ->
+        val buildType = variant.name.replaceFirstChar(Char::uppercaseChar)
+        val bundle =
+            tasks.register<BundleWorkerApk>("bundle${buildType}WorkerApk") {
+                dependsOn(":worker:assemble$buildType")
+                workerApks.set(
+                    project(":worker").layout.buildDirectory.dir("outputs/apk/${variant.name}"),
+                )
+            }
+        variant.sources.assets?.addGeneratedSourceDirectory(bundle, BundleWorkerApk::assets)
+    }
+}
 
 dependencies {
     implementation(project(":protocol"))

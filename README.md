@@ -34,8 +34,10 @@ Alpha. Tested on one phone, a Samsung Galaxy A33 5G on Android 16.
 
 ## Install
 
-Download both APKs from the latest release. Install the worker first, then the
-builder. Both must come from the same release.
+Download the builder APK from the latest release and install it. The builder
+carries the worker: tap **Install the build worker** on its main screen and
+confirm Android's prompt. After a builder update, tap **Update the build
+worker** the same way.
 
 ## Build from source
 
@@ -62,7 +64,8 @@ scripts/create-signing.sh release
 ./gradlew assembleRelease
 ```
 
-Install a worker and builder signed with the same key.
+Each builder APK carries the worker of the same build type, signed with the
+same key.
 
 ## Docs
 

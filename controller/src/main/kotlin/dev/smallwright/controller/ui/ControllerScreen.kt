@@ -95,6 +95,7 @@ private fun Home(ui: UiState, transcriptScroll: ScrollState, covered: Boolean) {
     ) {
         TopBar(ui)
         StatusLine(ui)
+        WorkerNeeded(ui)
         PlatformNeeded(ui)
         Rule()
         Conversation(ui, transcriptScroll, Modifier.weight(1f))
@@ -156,6 +157,26 @@ private fun StatusLine(ui: UiState) {
         message,
         Modifier.fillMaxWidth().padding(horizontal = 20.dp).padding(bottom = 12.dp),
         style = Type.small.copy(color = Ink.dim),
+    )
+}
+
+/** Offers the build worker this app carries while it is missing or older than this app. */
+@Composable
+private fun WorkerNeeded(ui: UiState) {
+    val label =
+        when (ui.worker) {
+            WorkerState.MISSING -> Labels.INSTALL_WORKER
+            WorkerState.OUTDATED -> Labels.UPDATE_WORKER
+            WorkerState.READY,
+            WorkerState.OTHER_KEY -> return
+        }
+    BasicText(
+        "$label  >",
+        Modifier.fillMaxWidth()
+            .clickable(role = Role.Button) { ui.onInstallWorker.run() }
+            .heightIn(min = 48.dp)
+            .padding(horizontal = 20.dp, vertical = 14.dp),
+        style = Type.body.copy(color = Ink.waiting),
     )
 }
 

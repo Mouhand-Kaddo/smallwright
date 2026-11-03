@@ -217,6 +217,16 @@ enum class PlatformState {
     DONE,
 }
 
+/**
+ * The separate build worker app: usable, missing, older than this app, or signed by another key.
+ */
+enum class WorkerState {
+    READY,
+    MISSING,
+    OUTDATED,
+    OTHER_KEY,
+}
+
 enum class ModelListState {
     IDLE,
     LOADING,
@@ -321,6 +331,7 @@ class UiState {
     var platformTotal by mutableLongStateOf(1L)
     var platformMessage by mutableStateOf("")
     var platformNeededNote by mutableStateOf(false)
+    var worker by mutableStateOf(WorkerState.READY)
 
     var model by mutableStateOf(ModelChoice.DEFAULT, referentialEqualityPolicy())
     var models by mutableStateOf(listOf<ModelChoice>())
@@ -335,6 +346,7 @@ class UiState {
     var onPickReasoning: Consumer<ReasoningLevel> = Consumer {}
     var onFinishOnboarding: Runnable = Runnable {}
     var onGetPlatform: Runnable = Runnable {}
+    var onInstallWorker: Runnable = Runnable {}
     var onToggleStopWhenStuck: Runnable = Runnable {}
     var onToggleAskBeforeLibraries: Runnable = Runnable {}
     var onToggleAskBeforeSkills: Runnable = Runnable {}

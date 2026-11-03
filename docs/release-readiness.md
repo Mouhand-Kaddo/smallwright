@@ -37,6 +37,16 @@ Updated 2026-11-02. The app is renamed Smallwright (`dev.smallwright.*`).
   office is not searched. The earlier name, Palmwright, was dropped because
   "Palmwright Software LLC" (Florida) sells custom software at palmwright.com.
 
+## 0.1.1, 2026-11-03
+
+- `v0.1.1` is GitHub's latest release, with `smallwright-0.1.1.apk`
+  (`774671e9…`, version code 4) and `SHA256SUMS`. The builder carries the
+  worker, so it is the only download
+  ([record](validation/bundled-worker-a33-20261103.md)). The site's Download
+  button and the README link to `/releases/latest`.
+- On the A33 it installed over the update-test builds, updated the worker from
+  its main screen and built the starter app.
+
 ## Known gaps
 
 - The exact AAPT2 build was a manual configure; its record is
@@ -48,6 +58,3 @@ Updated 2026-11-02. The app is renamed Smallwright (`dev.smallwright.*`).
 - No licenses screen in the app.
 - When a reinstall meets an app built with the old project keys, the build is
   refused at signing, but the screen only says "Local build failed".
-- Published 0.1.0 needs both APKs. From the next release the builder carries
-  the worker ([record](validation/bundled-worker-a33-20261103.md)), so its
-  release notes should say to install only the builder.

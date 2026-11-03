@@ -26,7 +26,9 @@ The app's install-unknown-apps permission was already granted from the 0.1.0 tes
 
 | Final code, fresh install | After switching the asset copy to `FileUtils.copy` (lint: `InputStream.transferTo` needs API 33), uninstall the worker, install version-code-3 builder `f83e0fd2…`, tap Install | Worker installed by the builder, connected, "Your app is ready." Play Protect did not ask again |
 
-The test builders used `-Psmallwright.versionCode=2` and `=3` with version name `0.1.0-update-test` (version-code-3 builder `c47ed79b…`). The A33 now has builder and worker at version code 3. A later release needs version code 4 or higher to install over them, or uninstall them first.
+| Release 0.1.1 | Install `smallwright-0.1.1.apk` (`774671e9…`, version code 4) over the version-code-3 test builder, tap Update the build worker, Scan app, Install, then Build from this source | Builder and worker at 0.1.1, connected, "Your app is ready." |
+
+The test builders used `-Psmallwright.versionCode=2` and `=3` with version name `0.1.0-update-test` (version-code-3 builder `c47ed79b…`). Release 0.1.1 uses version code 4, so it installs over those test builds.
 
 ## Not covered
 

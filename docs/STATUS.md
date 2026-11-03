@@ -60,7 +60,8 @@ Updated 2026-11-02 Dubai. The full history up to 2026-10-25 is in
 
 1. Released publicly on 2026-11-02 as
    [Mouhand-Kaddo/smallwright](https://github.com/Mouhand-Kaddo/smallwright),
-   v0.1.0; see [release](release-readiness.md). Known gaps are listed there.
+   v0.1.0; 0.1.1 (one APK) followed on 2026-11-03. See
+   [release](release-readiness.md); known gaps are listed there.
 
 ## Commands
 
@@ -73,5 +74,5 @@ python3 scripts/validate_benchmarks.py benchmarks/results/*.jsonl
 PHONE_SERIAL=<A33 serial> APPROVED_MODEL=deepseek/deepseek-v4.1-flash python3 scripts/suite/suite.py run <runId> <promptId> [--continue <runId>]
 ```
 
-Installed on the A33 (2026-11-03): update-test builder and worker at version
-code 3 (builder `f83e0fd2…`). See [testing](TESTING.md) for other commands.
+Installed on the A33 (2026-11-03): release 0.1.1 builder `774671e9…` and its
+worker, version code 4. See [testing](TESTING.md) for other commands.

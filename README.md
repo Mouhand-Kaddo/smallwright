@@ -34,7 +34,9 @@ Alpha. Tested on one phone, a Samsung Galaxy A33 5G on Android 16.
 
 ## Install
 
-Download the builder APK from the latest release and install it. The builder
+Download the builder APK from the
+[latest release](https://github.com/Mouhand-Kaddo/smallwright/releases/latest)
+and install it. The builder
 carries the worker: tap **Install the build worker** on its main screen and
 confirm Android's prompt. After a builder update, tap **Update the build
 worker** the same way.

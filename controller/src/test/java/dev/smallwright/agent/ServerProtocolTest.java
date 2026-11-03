@@ -74,6 +74,9 @@ public class ServerProtocolTest {
         assertFalse(body.get("tools").toString().contains("openrouter:"));
         assertFalse(connection.getInstanceFollowRedirects());
         assertEquals(0, connection.getReadTimeout());
+        for (String openRouterAttribution :
+                new String[] {"HTTP-Referer", "X-OpenRouter-Title", "X-OpenRouter-Categories"})
+            assertNull(openRouterAttribution, connection.getRequestProperty(openRouterAttribution));
     }
 
     @Test

@@ -72,6 +72,18 @@ public class ModelProtocolTest {
     }
 
     @Test
+    public void namesSmallwrightAsTheAppInOpenRoutersRankings() throws Exception {
+        FakeConnection connection = new FakeConnection(200, SseBody.of(VALID));
+        send(url -> connection);
+        assertEquals(
+                "https://github.com/Mouhand-Kaddo/smallwright",
+                connection.getRequestProperty("HTTP-Referer"));
+        assertEquals("Smallwright", connection.getRequestProperty("X-OpenRouter-Title"));
+        assertEquals(
+                "native-app-builder", connection.getRequestProperty("X-OpenRouter-Categories"));
+    }
+
+    @Test
     public void namesTheTransportFailureKindWithoutItsText() throws Exception {
         IOException[] failures = {
             new java.net.SocketTimeoutException("secret"),

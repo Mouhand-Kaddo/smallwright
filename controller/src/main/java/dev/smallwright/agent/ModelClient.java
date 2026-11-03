@@ -20,6 +20,16 @@ public final class ModelClient {
     public static final String ENDPOINT = "https://openrouter.ai/api/v1/chat/completions";
 
     /**
+     * How OpenRouter's app rankings name Smallwright: its source repository, display name and
+     * marketplace category. Model servers get none of these.
+     */
+    static final String[][] OPENROUTER_ATTRIBUTION = {
+        {"HTTP-Referer", "https://github.com/Mouhand-Kaddo/smallwright"},
+        {"X-OpenRouter-Title", "Smallwright"},
+        {"X-OpenRouter-Categories", "native-app-builder"},
+    };
+
+    /**
      * What one reply's words and tool calls may hold: four bytes for each token any reply could be
      * counted as, which no model writes. It keeps a broken server from filling the phone's memory.
      */
@@ -510,6 +520,9 @@ public final class ModelClient {
             connection.setRequestProperty(
                     "Accept",
                     body.get("stream").getAsBoolean() ? "text/event-stream" : "application/json");
+            if (model.provider.isOpenRouter())
+                for (String[] header : OPENROUTER_ATTRIBUTION)
+                    connection.setRequestProperty(header[0], header[1]);
             connection.setFixedLengthStreamingMode(payload.length);
             try (OutputStream output = connection.getOutputStream()) {
                 output.write(payload);

@@ -28,7 +28,8 @@ Alpha. Tested on one phone, a Samsung Galaxy A33 5G on Android 16.
   OpenAI-compatible service. Requests are paid by you, per request, with no
   spending limit set by the app. Your messages, the project's source files and
   any pictures you attach are sent to that service and the model you pick.
-  Web search, app icons and pictures, attached pictures, cost totals and the
+  Requests to OpenRouter name Smallwright as the app, so its use shows in
+  OpenRouter's public app rankings; nothing about you is added. Web search, app icons and pictures, attached pictures, cost totals and the
   spending limit need OpenRouter.
 
 ## Install

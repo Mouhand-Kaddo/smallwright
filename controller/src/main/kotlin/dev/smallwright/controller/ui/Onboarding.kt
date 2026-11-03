@@ -1,7 +1,5 @@
 package dev.smallwright.controller.ui
 
-import android.content.Intent
-import android.net.Uri
 import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
@@ -113,7 +111,6 @@ private fun TypedLines(lines: List<String>) {
 
 @Composable
 private fun ColumnScope.ConnectKey(ui: UiState) {
-    val context = LocalContext.current
     Column(
         Modifier.weight(1f).verticalScroll(rememberScrollState()).padding(horizontal = 24.dp),
     ) {
@@ -121,9 +118,9 @@ private fun ColumnScope.ConnectKey(ui: UiState) {
         BasicText("Connect OpenRouter", style = Type.title.copy(color = Ink.text))
         BasicText(
             "OpenRouter gives this app access to AI models. You pay OpenRouter for what you " +
-                "use. Paste your key here; it is stored on this phone. You can also set a credit " +
-                "limit on the key at openrouter.ai/keys, so it can never spend more than you " +
-                "choose.",
+                "use. Sign in to make a key for this app, or paste a key you have; it is stored " +
+                "on this phone. You can also set a credit limit on the key at " +
+                "openrouter.ai/keys, so it can never spend more than you choose.",
             Modifier.padding(top = 12.dp),
             style = Type.body.copy(color = Ink.dim),
         )
@@ -134,6 +131,7 @@ private fun ColumnScope.ConnectKey(ui: UiState) {
                 style = Type.body.copy(color = Ink.done),
             )
         } else {
+            OpenRouterSignIn(ui)
             TerminalField(
                 ui.providerKey,
                 Modifier.fillMaxWidth().padding(top = 20.dp),
@@ -152,27 +150,10 @@ private fun ColumnScope.ConnectKey(ui: UiState) {
                 style = Type.small.copy(color = Ink.dim),
             )
         }
-        if (!ui.hasKey) {
-            Spacer(Modifier.padding(top = 12.dp))
-            val getKey = remember {
-                Control("Get a key at openrouter.ai/keys").apply { isEnabled = true }
-            }
-            getKey.onClick = Runnable {
-                try {
-                    context.startActivity(
-                        Intent(Intent.ACTION_VIEW, Uri.parse("https://openrouter.ai/keys"))
-                            .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK),
-                    )
-                } catch (noBrowser: android.content.ActivityNotFoundException) {
-                    ui.keyResult =
-                        "No browser is installed. Open openrouter.ai/keys on another device."
-                }
-            }
-            ToolRow(getKey, tone = Ink.prompt)
-        }
     }
     Primary(if (ui.hasKey) "Continue" else "Skip for now") {
         ui.providerKey.clear()
+        ui.signInCode.clear()
         ui.keyResult = ""
         ui.onboarding = OnboardingStep.MODEL
     }

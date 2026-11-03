@@ -29,6 +29,11 @@ Updated 2026-11-02 Dubai. The full history up to 2026-10-25 is in
 
 ## Latest verification
 
+- 2026-11-03, A33: OpenRouter sign-in by a pasted one-time code
+  ([ADR 0010](adr/0010-openrouter-sign-in-by-pasted-code.md)). The user signed
+  in and approved, the pasted code became a saved key, and one DeepSeek V4.1
+  Flash question with that key read 3 files and answered without changes.
+  [Record](validation/openrouter-sign-in-a33-20261103.md).
 - 2026-11-03, A33: the builder carries the worker and installs or updates it
   from its main screen through Android's prompt; builds work after both, and
   the builder now reconnects after a worker update.
@@ -43,7 +48,7 @@ Updated 2026-11-02 Dubai. The full history up to 2026-10-25 is in
   earlier chat is unsaved is host-reviewed only, because Android frees space
   within seconds. [Record](validation/recovery-a33-20261102.md).
 - Host, after the Smallwright rename: 858 tests (767 controller, 91 worker)
-  pass in each of the debug and release variants (771 controller after
+  pass in each of the debug and release variants (779 controller after
   2026-11-03, debug run), plus 43 platform probe and 5
   protocol tests; Spotless and lint pass.
 - 2026-11-02, A33: release APKs signed with the release key install, set up,
@@ -74,5 +79,5 @@ python3 scripts/validate_benchmarks.py benchmarks/results/*.jsonl
 PHONE_SERIAL=<A33 serial> APPROVED_MODEL=deepseek/deepseek-v4.1-flash python3 scripts/suite/suite.py run <runId> <promptId> [--continue <runId>]
 ```
 
-Installed on the A33 (2026-11-03): release 0.1.1 builder `774671e9…` and its
-worker, version code 4. See [testing](TESTING.md) for other commands.
+Installed on the A33 (2026-11-03): builder with sign-in `cdf7ead6…` (version
+code 4, not a published release) and the 0.1.1 worker. See [testing](TESTING.md) for other commands.

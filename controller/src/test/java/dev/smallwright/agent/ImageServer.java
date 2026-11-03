@@ -83,11 +83,15 @@ public final class ImageServer implements AutoCloseable {
         return line.toString(StandardCharsets.US_ASCII.name());
     }
 
-    /** Connections that reach this server instead of OpenRouter. */
+    /** Connections that reach this server instead of OpenRouter's chat completions. */
     public ModelClient.ConnectionFactory connections() {
+        return connections(ModelClient.ENDPOINT);
+    }
+
+    /** Connections that reach this server instead of {@code endpoint}. */
+    public ModelClient.ConnectionFactory connections(String endpoint) {
         return url -> {
-            if (!ModelClient.ENDPOINT.equals(url.toString()))
-                throw new AssertionError("Unexpected URL " + url);
+            if (!endpoint.equals(url.toString())) throw new AssertionError("Unexpected URL " + url);
             return (HttpURLConnection)
                     new URL(
                                     "http://127.0.0.1:"

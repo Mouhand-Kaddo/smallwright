@@ -562,12 +562,14 @@ internal fun ToolRow(control: Control, tone: Color = Ink.text) {
 private fun SettingsPage(ui: UiState) {
     val close = {
         ui.providerKey.clear()
+        ui.signInCode.clear()
         ui.serverKey.clear()
         ui.settingsOpen = false
     }
     DisposableEffect(Unit) {
         onDispose {
             ui.providerKey.clear()
+            ui.signInCode.clear()
             ui.serverKey.clear()
             ui.keyResult = ""
             ui.serverResult = ""
@@ -594,6 +596,7 @@ private fun SettingsPage(ui: UiState) {
                 Modifier.padding(top = 12.dp),
                 style = Type.body.copy(color = if (ui.hasKey) Ink.done else Ink.waiting),
             )
+            OpenRouterSignIn(ui)
             TerminalField(
                 ui.providerKey,
                 Modifier.fillMaxWidth().padding(top = 16.dp),

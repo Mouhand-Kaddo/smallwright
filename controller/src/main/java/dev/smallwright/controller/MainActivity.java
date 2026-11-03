@@ -29,6 +29,7 @@ import androidx.activity.result.contract.ActivityResultContracts;
 import dev.smallwright.agent.ModelCatalog;
 import dev.smallwright.agent.ModelChoice;
 import dev.smallwright.agent.ModelProvider;
+import dev.smallwright.agent.OpenRouterSignIn;
 import dev.smallwright.controller.ui.Control;
 import dev.smallwright.controller.ui.Labels;
 import dev.smallwright.controller.ui.LiveRun;
@@ -68,6 +69,7 @@ public class MainActivity extends androidx.activity.ComponentActivity {
 
     private static final ExecutorService PLATFORM_TASKS = Executors.newSingleThreadExecutor();
     private static final ExecutorService WORKER_INSTALL_TASKS = Executors.newSingleThreadExecutor();
+    private static final ExecutorService SIGN_IN_TASKS = Executors.newSingleThreadExecutor();
 
     private static final ExecutorService PICTURE_TASKS = Executors.newSingleThreadExecutor();
 
@@ -151,6 +153,8 @@ public class MainActivity extends androidx.activity.ComponentActivity {
     private SkillSettings skills;
     private TextBox providerKey;
     private Control saveProviderKey;
+    private OpenRouterSignIn pendingSignIn;
+    private boolean signInExchanging;
     private Control removeProviderKey;
     private volatile boolean destroyed;
     private IBuildService worker;
@@ -336,6 +340,8 @@ public class MainActivity extends androidx.activity.ComponentActivity {
                     setStatus("Crash report removed from your next message.");
                 });
         saveProviderKey.setOnClickListener(() -> saveOpenRouterKey());
+        ui.getSignIn().setOnClickListener(this::startOpenRouterSignIn);
+        ui.getUseSignInCode().setOnClickListener(this::useOpenRouterSignInCode);
         ui.getSaveServer().setOnClickListener(this::saveServer);
         ui.getRemoveServerKey().setOnClickListener(this::confirmRemoveServerKey);
         ui.getUseServerModel().setOnClickListener(this::useServerModel);
@@ -2125,6 +2131,8 @@ public class MainActivity extends androidx.activity.ComponentActivity {
         previewContext.setEnabled(idle);
         providerKey.setEnabled(idle);
         saveProviderKey.setEnabled(idle);
+        ui.getSignIn().setEnabled(idle && !signInExchanging);
+        ui.getUseSignInCode().setEnabled(idle && !signInExchanging);
         removeProviderKey.setEnabled(!isBusy() && !destroyed);
         ui.getServerBase().setEnabled(idle);
         ui.getServerKey().setEnabled(idle);
@@ -2664,15 +2672,7 @@ public class MainActivity extends androidx.activity.ComponentActivity {
                 () -> {
                     try {
                         CredentialStore.openRouter(this).save(key);
-                        runOnUiThread(
-                                () -> {
-                                    ui.setHasKey(true);
-                                    keyResult("Key saved on this phone.");
-                                    if (ui.getOnboarding()
-                                            == dev.smallwright.controller.ui.OnboardingStep.KEY)
-                                        ui.setOnboarding(
-                                                dev.smallwright.controller.ui.OnboardingStep.MODEL);
-                                });
+                        runOnUiThread(this::openRouterKeySaved);
                     } catch (Exception exception) {
                         runOnUiThread(() -> keyResult("Could not save the key. Try again."));
                     } finally {
@@ -2682,6 +2682,77 @@ public class MainActivity extends androidx.activity.ComponentActivity {
                                     if (!destroyed) refreshControls();
                                 });
                     }
+                });
+    }
+
+    private void openRouterKeySaved() {
+        ui.setHasKey(true);
+        keyResult("Key saved on this phone.");
+        if (ui.getOnboarding() == dev.smallwright.controller.ui.OnboardingStep.KEY)
+            ui.setOnboarding(dev.smallwright.controller.ui.OnboardingStep.MODEL);
+    }
+
+    /** Opens OpenRouter's sign-in page; the code it shows is pasted back here. */
+    private void startOpenRouterSignIn() {
+        OpenRouterSignIn started = OpenRouterSignIn.start();
+        try {
+            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(started.authorizationUrl())));
+        } catch (android.content.ActivityNotFoundException noBrowser) {
+            keyResult("No browser is installed. Paste a key from openrouter.ai/keys instead.");
+            return;
+        }
+        pendingSignIn = started;
+        ui.getSignInCode().clear();
+        ui.setSignInStarted(true);
+        keyResult("");
+    }
+
+    private void useOpenRouterSignInCode() {
+        OpenRouterSignIn signIn = pendingSignIn;
+        String code = ui.getSignInCode().getText();
+        if (signIn == null) {
+            keyResult("Tap " + Labels.SIGN_IN + " first.");
+            return;
+        }
+        signInExchanging = true;
+        refreshControls();
+        keyResult("Checking the code with OpenRouter...");
+        SIGN_IN_TASKS.execute(
+                () -> {
+                    String failure = null;
+                    byte[] key = null;
+                    try {
+                        key = signIn.exchange(code);
+                        CredentialStore.openRouter(this).save(key);
+                    } catch (OpenRouterSignIn.RefusedCode refused) {
+                        failure =
+                                "OpenRouter did not accept that code. A code works once, for 10 "
+                                        + "minutes. Tap "
+                                        + Labels.SIGN_IN
+                                        + " for a new one.";
+                    } catch (java.io.IOException unreachable) {
+                        failure =
+                                key == null
+                                        ? "Could not get a key from OpenRouter. Check the "
+                                                + "connection and try the code again."
+                                        : "Could not save the key. Try again.";
+                    } catch (Exception notSaved) {
+                        failure = "Could not save the key. Try again.";
+                    } finally {
+                        if (key != null) Arrays.fill(key, (byte) 0);
+                    }
+                    String result = failure;
+                    runOnUiThread(
+                            () -> {
+                                signInExchanging = false;
+                                if (result == null) {
+                                    if (pendingSignIn == signIn) pendingSignIn = null;
+                                    ui.getSignInCode().clear();
+                                    ui.setSignInStarted(false);
+                                    openRouterKeySaved();
+                                } else keyResult(result);
+                                if (!destroyed) refreshControls();
+                            });
                 });
     }
 

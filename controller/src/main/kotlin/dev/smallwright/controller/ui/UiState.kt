@@ -240,6 +240,7 @@ class UiState {
     val source = TextBox(hint = "The app's main source file")
     val modelRequest = TextBox(hint = "Message the builder")
     val providerKey = TextBox(hint = "sk-or-...")
+    val signInCode = TextBox(hint = "Code from OpenRouter")
     val serverBase = TextBox(hint = "https://api.example.com/v1")
     val serverKey = TextBox(hint = "API key")
     val serverModel = TextBox(hint = "Model name")
@@ -268,6 +269,8 @@ class UiState {
     val importCrashReport = Control(Labels.IMPORT_CRASH)
     val clearCrashReport = Control(Labels.CLEAR_CRASH)
     val deleteProject = Control(Labels.DELETE_PROJECT)
+    val signIn = Control(Labels.SIGN_IN)
+    val useSignInCode = Control(Labels.USE_CODE)
     val saveProviderKey = Control(Labels.SAVE_KEY)
     val removeProviderKey = Control(Labels.REMOVE_KEY)
     val saveServer = Control(Labels.SAVE_SERVER)
@@ -298,6 +301,7 @@ class UiState {
     var sending by mutableStateOf(listOf<Bitmap>())
     var keyResult by mutableStateOf("")
     var hasKey by mutableStateOf(false)
+    var signInStarted by mutableStateOf(false)
     /** The model server's saved address, empty when none is saved. */
     var serverSaved by mutableStateOf("")
     var hasServerKey by mutableStateOf(false)
@@ -364,6 +368,8 @@ class UiState {
         selectScreenshot.isEnabled = true
         importCrashReport.isEnabled = true
         clearCrashReport.isEnabled = true
+        signIn.isEnabled = true
+        useSignInCode.isEnabled = true
         saveProviderKey.isEnabled = true
         removeProviderKey.isEnabled = true
         saveServer.isEnabled = true

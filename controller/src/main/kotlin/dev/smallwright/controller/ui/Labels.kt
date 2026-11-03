@@ -35,6 +35,8 @@ object Labels {
     @JvmField val IMPORT_CRASH = "Import a crash report"
     @JvmField val CLEAR_CRASH = "Remove crash report"
     @JvmField val DELETE_PROJECT = "Delete this project"
+    @JvmField val SIGN_IN = "Sign in with OpenRouter"
+    @JvmField val USE_CODE = "Use this code"
     @JvmField val SAVE_KEY = "Save key"
     @JvmField val REMOVE_KEY = "Remove saved key"
     @JvmField val SAVE_SERVER = "Save address and key"

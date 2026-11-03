@@ -24,8 +24,8 @@ Alpha. Tested on one phone, a Samsung Galaxy A33 5G on Android 16.
 ## Requirements
 
 - Android 12 or newer on a 64-bit ARM phone.
-- An API key for [OpenRouter](https://openrouter.ai) or for any
-  OpenAI-compatible service. Requests are paid by you, per request, with no
+- An [OpenRouter](https://openrouter.ai) account (sign in from the app, or
+  paste a key), or an API key for any OpenAI-compatible service. Requests are paid by you, per request, with no
   spending limit set by the app. Your messages, the project's source files and
   any pictures you attach are sent to that service and the model you pick.
   Requests to OpenRouter name Smallwright as the app, so its use shows in

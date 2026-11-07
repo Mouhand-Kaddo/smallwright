@@ -1,6 +1,6 @@
 # Status
 
-Updated 2026-11-02 Dubai. The full history up to 2026-10-25 is in
+Updated 2026-11-07 Dubai. The full history up to 2026-10-25 is in
 [STATUS-2026-10-25.md](STATUS-2026-10-25.md) and, before that,
 [STATUS-2026-10-02.md](STATUS-2026-10-02.md). Execution boundaries are in
 [AGENTS.md](../AGENTS.md); standing approvals in
@@ -28,6 +28,11 @@ Updated 2026-11-02 Dubai. The full history up to 2026-10-25 is in
 - No GitHub issues are open (all six closed 2026-11-02 with reasons).
 
 ## Latest verification
+
+- 2026-11-07, A33, release 0.1.2: a new water tracker built from a chat with
+  DeepSeek V4.1 Flash, installed through Android's prompt and Play Protect's
+  scan, and opened; recorded for the README GIF, the site video and the store
+  screenshots. [Record](validation/demo-recording-a33-20261107.md).
 
 - 2026-11-03, A33: OpenRouter sign-in by a pasted one-time code
   ([ADR 0010](adr/0010-openrouter-sign-in-by-pasted-code.md)). The user signed

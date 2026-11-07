@@ -5,21 +5,27 @@ chat; a cloud model writes plain Java and XML; the phone compiles, signs and
 installs it. Only the model runs in the cloud. Source files, the compiler,
 builds and the finished apps stay on the phone.
 
-Alpha. Tested on one phone, a Samsung Galaxy A33 5G on Android 16.
+Alpha, tested on real phones.
 
-## How it works
+<p align="center">
+  <img src="docs/media/demo.gif" width="300" alt="Asking the builder for a water tracker: it plans, compiles on the phone, and Android installs the app">
+</p>
 
-- **Builder** (`dev.smallwright.controller`) holds your projects, your model key
-  and the chat. It asks before new apps, plans, edits in steps until the model
-  is done, and can run in the background.
-- **Worker** (`dev.smallwright.worker`) compiles each project with ECJ, D8 and
-  AAPT2. It is a separate app with its own Android user and no Internet
-  permission, and it accepts only the builder signed with the same key.
-- Each project gets its own signing key. Installing an app goes through
-  Android's own confirmation screen. Generated code never runs inside the
-  builder.
-- On first start the builder shows Google's Android SDK terms and, once you
-  accept them, downloads Google's Android platform files to the phone.
+## Screens
+
+<p>
+  <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/1-builder-chat.png" width="180" alt="A new chat in the builder">
+  <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/2-plan.png" width="180" alt="The builder planning a water tracker">
+  <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/3-build.png" width="180" alt="The builder compiling the app on the phone">
+  <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/4-install.png" width="180" alt="Android's prompt to install the built app">
+</p>
+
+<p>
+  <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/5-water-tracker.png" width="180" alt="A water tracker the phone built">
+  <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/6-checklist.png" width="180" alt="A checklist the phone built">
+  <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/7-notes.png" width="180" alt="A notes app the phone built">
+  <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/8-builder-projects.png" width="180" alt="The builder's projects and chats">
+</p>
 
 ## Requirements
 
@@ -40,6 +46,23 @@ and install it. The builder
 carries the worker: tap **Install the build worker** on its main screen and
 confirm Android's prompt. After a builder update, tap **Update the build
 worker** the same way.
+
+To get updates, add `https://github.com/Mouhand-Kaddo/smallwright` in
+[Obtainium](https://github.com/ImranR98/Obtainium).
+
+## How it works
+
+- **Builder** (`dev.smallwright.controller`) holds your projects, your model key
+  and the chat. It asks before new apps, plans, edits in steps until the model
+  is done, and can run in the background.
+- **Worker** (`dev.smallwright.worker`) compiles each project with ECJ, D8 and
+  AAPT2. It is a separate app with its own Android user and no Internet
+  permission, and it accepts only the builder signed with the same key.
+- Each project gets its own signing key. Installing an app goes through
+  Android's own confirmation screen. Generated code never runs inside the
+  builder.
+- On first start the builder shows Google's Android SDK terms and, once you
+  accept them, downloads Google's Android platform files to the phone.
 
 ## Build from source
 

@@ -1,0 +1,11 @@
+Smallwright builds Android apps on your phone. You describe an app in a chat; a cloud model writes plain Java and XML; the phone compiles, signs and installs it. Only the model runs in the cloud. Source files, the compiler, builds, signing keys and the finished apps stay on the phone.
+
+The builder asks before it starts a new app, plans, edits in steps until the model is done, and can run in the background. It can read crash reports, look at the running app and undo its last change.
+
+A separate worker app with its own Android user and no Internet permission compiles each project with ECJ, D8 and AAPT2. Each project gets its own signing key, and installing an app goes through Android's own confirmation screen. Generated code never runs inside the builder.
+
+On first start the builder shows Google's Android SDK terms and, once you accept them, downloads Google's Android platform files to the phone.
+
+You need an OpenRouter account or an API key for any OpenAI-compatible service. You pay that service for each request; the app sets no spending limit for you. Your messages, the project's source files and any pictures you attach are sent to that service. Web search, app icons and pictures, attached pictures, cost totals and the spending limit need OpenRouter.
+
+Alpha. Needs Android 12 or newer on a 64-bit ARM phone.

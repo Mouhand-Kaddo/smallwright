@@ -1,0 +1,57 @@
+name: Bug report
+description: Something failed on your phone
+labels: ["bug", "needs-triage"]
+body:
+  - type: input
+    id: phone
+    attributes:
+      label: Phone model
+      placeholder: Pixel 8, Galaxy A54, ...
+    validations:
+      required: true
+  - type: input
+    id: android
+    attributes:
+      label: Android version
+      placeholder: "15"
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Smallwright version
+      description: Shown in the builder's settings, or the release you downloaded.
+      placeholder: 0.1.2
+    validations:
+      required: true
+  - type: input
+    id: model
+    attributes:
+      label: Model service and model
+      description: Never paste your API key.
+      placeholder: OpenRouter, deepseek/deepseek-v4.1-flash
+    validations:
+      required: true
+  - type: dropdown
+    id: step
+    attributes:
+      label: Step that failed
+      options:
+        - Installing the builder
+        - Downloading Google's Android platform files
+        - Installing or updating the build worker
+        - Signing in or adding a key
+        - The chat or the model's reply
+        - Compiling the app
+        - Installing the built app
+        - Running the built app
+        - Something else
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: What you asked for, what you expected, and the message or screenshot you got.
+    validations:
+      required: true

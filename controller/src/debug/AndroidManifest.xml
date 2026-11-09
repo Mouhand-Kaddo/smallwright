@@ -1,5 +1,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
     <application>
         <activity android:name=".ProjectBindingProbeActivity" android:exported="false" />
+        <activity
+            android:name=".UiFixtureActivity"
+            android:exported="true"
+            android:theme="@style/Terminal" />
     </application>
 </manifest>

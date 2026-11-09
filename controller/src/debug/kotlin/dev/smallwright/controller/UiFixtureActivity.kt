@@ -75,7 +75,11 @@ private fun demo(): UiState =
                     Step(StepKind.CALLED, "Wrote MainActivity.java", "62 lines"),
                     Step(StepKind.DONE, "Built the app", "4.1 s"),
                 ),
-                Turn("assistant", 1, "Done. The app counts glasses.\n- Tap + to add one\n- Long press to reset"),
+                Turn(
+                    "assistant",
+                    1,
+                    "Done. The app counts glasses.\n- Tap + to add one\n- Long press to reset",
+                ),
                 Turn("user", 2, "Make the buttons bigger"),
             )
         live =
@@ -84,7 +88,11 @@ private fun demo(): UiState =
                 null,
                 listOf(
                     Step(StepKind.DONE, "Read MainActivity.java"),
-                    Step(StepKind.THINKING, "Thinking", trace = "The buttons are 48dp; make them 72dp"),
+                    Step(
+                        StepKind.THINKING,
+                        "Thinking",
+                        trace = "The buttons are 48dp; make them 72dp",
+                    ),
                 ),
             )
         stop.isEnabled = true
@@ -142,7 +150,11 @@ private fun worst(): UiState =
                         },
                     ),
                     *Array(38) {
-                        Step(StepKind.CALLED, "Wrote app/src/main/java/ChoreRotation$it.java", "${it * 7} lines")
+                        Step(
+                            StepKind.CALLED,
+                            "Wrote app/src/main/java/ChoreRotation$it.java",
+                            "${it * 7} lines",
+                        )
                     },
                     Step(
                         StepKind.FAILED,
@@ -159,7 +171,11 @@ private fun worst(): UiState =
                     "The build failed in dev.smallwright.generated.familychorechart." +
                         "AllowanceSummaryViewModelFactory.\n1. Rename the class\n2. Build again",
                 ),
-                Turn("user", 2, "اجعل الأزرار أكبر وأضف وضعاً ليلياً 🌙 مع حفظ العدد بعد إعادة تشغيل الهاتف"),
+                Turn(
+                    "user",
+                    2,
+                    "اجعل الأزرار أكبر وأضف وضعاً ليلياً 🌙 مع حفظ العدد بعد إعادة تشغيل الهاتف",
+                ),
                 Turn("assistant", 2, "👍"),
                 Turn(ChatStore.QUESTION, 2, QUESTIONS),
             )
@@ -189,7 +205,8 @@ private fun huge(): UiState =
         chats(149, *Array(150) { "Chat ${it + 1}: fix the layout on small phones" })
         transcript =
             List(120) {
-                if (it % 2 == 0) Turn("user", it, "Change number ${it / 2 + 1}: make the counter red")
+                if (it % 2 == 0)
+                    Turn("user", it, "Change number ${it / 2 + 1}: make the counter red")
                 else Turn("assistant", it, "Done. The counter is red now and the build passed.")
             }
     }

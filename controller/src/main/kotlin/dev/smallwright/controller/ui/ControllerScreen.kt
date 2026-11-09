@@ -1,6 +1,5 @@
 package dev.smallwright.controller.ui
 
-import android.provider.Settings
 import androidx.activity.compose.BackHandler
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.core.LinearEasing
@@ -50,7 +49,7 @@ import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.asImageBitmap
-import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.semantics.clearAndSetSemantics
 import androidx.compose.ui.semantics.contentDescription
@@ -415,18 +414,8 @@ fun TerminalField(
 /** The idle prompt's block cursor. It blinks unless the phone has animations turned off. */
 @Composable
 private fun BlockCursor(blink: Boolean) {
-    val context = LocalContext.current
-    val animate =
-        blink &&
-            remember {
-                Settings.Global.getFloat(
-                    context.contentResolver,
-                    Settings.Global.ANIMATOR_DURATION_SCALE,
-                    1f,
-                ) > 0f
-            }
     val alpha =
-        if (animate) {
+        if (blink && animationsOn()) {
             rememberInfiniteTransition(label = "cursor")
                 .animateFloat(
                     1f,
@@ -434,12 +423,11 @@ private fun BlockCursor(blink: Boolean) {
                     infiniteRepeatable(tween(530, easing = LinearEasing), RepeatMode.Reverse),
                     label = "blink",
                 )
-                .value
-        } else 1f
+        } else null
     Box(
         Modifier.padding(start = 2.dp, top = 3.dp)
             .size(9.dp, 18.dp)
-            .alpha(alpha)
+            .graphicsLayer { this.alpha = alpha?.value ?: 1f }
             .background(Ink.prompt),
     )
 }

@@ -3,7 +3,7 @@ package dev.smallwright.controller.ui
 import android.graphics.Bitmap
 import android.provider.Settings
 import androidx.compose.animation.AnimatedVisibility
-import androidx.compose.animation.core.LinearEasing
+import androidx.compose.animation.core.FastOutSlowInEasing
 import androidx.compose.animation.core.RepeatMode
 import androidx.compose.animation.core.animateFloat
 import androidx.compose.animation.core.infiniteRepeatable
@@ -46,6 +46,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.clipToBounds
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.asImageBitmap
+import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalDensity
@@ -305,10 +306,7 @@ private fun StepRow(step: Step) {
                     .clickable(role = Role.Button) { full = !full }
             else Modifier,
         ) {
-            Row {
-                BasicText(step.text, style = Type.body.copy(color = Ink.text))
-                if (working) BasicText(movingDots(), style = Type.body.copy(color = Ink.dim))
-            }
+            BasicText(step.text, style = Type.body.copy(color = Ink.text))
             if (step.detail.isNotEmpty()) {
                 BasicText(
                     "└ " + step.detail,
@@ -426,16 +424,18 @@ private fun Marked(tone: Color, pulse: Boolean = false, content: @Composable () 
                 .animateFloat(
                     1f,
                     0.3f,
-                    infiniteRepeatable(tween(700, easing = LinearEasing), RepeatMode.Reverse),
+                    infiniteRepeatable(
+                        tween(700, easing = FastOutSlowInEasing),
+                        RepeatMode.Reverse,
+                    ),
                     label = "dot",
                 )
-                .value
-        } else 1f
+        } else null
     Row(Modifier.fillMaxWidth()) {
         Box(
             Modifier.padding(top = 7.dp, end = 12.dp)
                 .size(8.dp)
-                .alpha(alpha)
+                .graphicsLayer { this.alpha = alpha?.value ?: 1f }
                 .clip(CircleShape)
                 .background(tone),
         )

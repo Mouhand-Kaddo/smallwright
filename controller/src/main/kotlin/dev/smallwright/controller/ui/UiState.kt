@@ -116,7 +116,7 @@ constructor(
 )
 
 enum class StepKind {
-    /** Waiting for the model; drawn with moving dots. */
+    /** Waiting for the model; its dot pulses. */
     THINKING,
     /** A local step under way, such as a build. */
     RUNNING,

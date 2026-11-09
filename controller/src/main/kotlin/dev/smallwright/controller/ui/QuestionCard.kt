@@ -24,7 +24,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.drawBehind
-import androidx.compose.ui.geometry.Size
+import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.semantics.clearAndSetSemantics
@@ -150,7 +150,10 @@ private fun AnsweredRound(round: QuestionRound) {
 private fun Ruled(tone: Color, content: @Composable () -> Unit) {
     Column(
         Modifier.fillMaxWidth()
-            .drawBehind { drawRect(tone, size = Size(2.dp.toPx(), size.height)) }
+            .drawBehind {
+                val x = fromStart(1.dp.toPx())
+                drawLine(tone, Offset(x, 0f), Offset(x, size.height), 2.dp.toPx())
+            }
             .padding(start = 16.dp),
         verticalArrangement = Arrangement.spacedBy(16.dp),
     ) {

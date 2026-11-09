@@ -41,7 +41,6 @@ import androidx.compose.runtime.setValue
 import androidx.compose.runtime.withFrameNanos
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.clipToBounds
 import androidx.compose.ui.graphics.Color
@@ -253,7 +252,7 @@ private fun StepGroup(steps: List<Step>, ended: Boolean) {
                 .padding(horizontal = 12.dp, vertical = 14.dp),
         ) {
             BasicText(
-                if (open) "▾" else "▸",
+                if (open) "▾" else foldedMark(),
                 Modifier.width(20.dp).clearAndSetSemantics {},
                 style = Type.body.copy(color = Ink.dim),
             )

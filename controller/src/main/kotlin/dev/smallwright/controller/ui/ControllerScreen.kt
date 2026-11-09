@@ -49,7 +49,9 @@ import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.asImageBitmap
+import androidx.compose.ui.graphics.drawscope.DrawScope
 import androidx.compose.ui.graphics.graphicsLayer
+import androidx.compose.ui.platform.LocalLayoutDirection
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.semantics.clearAndSetSemantics
 import androidx.compose.ui.semantics.contentDescription
@@ -57,6 +59,7 @@ import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
+import androidx.compose.ui.unit.LayoutDirection
 import androidx.compose.ui.unit.dp
 import dev.smallwright.agent.ReasoningLevel
 
@@ -198,6 +201,17 @@ private fun PlatformNeeded(ui: UiState) {
 internal fun Rule() {
     Box(Modifier.fillMaxWidth().height(1.dp).background(Ink.rule))
 }
+
+/**
+ * [x] from the start edge: from the left, or from the right when the screen reads right to left.
+ */
+internal fun DrawScope.fromStart(x: Float) =
+    if (layoutDirection == LayoutDirection.Rtl) size.width - x else x
+
+/** The mark of a folded row, pointing the way the screen reads: right, or left in Arabic. */
+@Composable
+internal fun foldedMark(): String =
+    if (LocalLayoutDirection.current == LayoutDirection.Rtl) "◂" else "▸"
 
 /**
  * The prompt. The pictures attached so far, a blue chevron and the person's words, then one row of

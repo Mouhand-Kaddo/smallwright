@@ -126,6 +126,22 @@ public final class SidebarTest {
     }
 
     @Test
+    public void aSlowReleasePastHalfwayClosesTheMenuAndShortOfItKeepsItOpen() {
+        assertTrue(SidebarKt.closesOnRelease(-560f, 0f, 1000f));
+        assertFalse(SidebarKt.closesOnRelease(-440f, 0f, 1000f));
+    }
+
+    @Test
+    public void aFlickTowardTheEdgeClosesTheMenuFromBarelyMoved() {
+        assertTrue(SidebarKt.closesOnRelease(-60f, -1500f, 1000f));
+    }
+
+    @Test
+    public void aFlickBackOpenKeepsTheMenuEvenWhenMostlyClosed() {
+        assertFalse(SidebarKt.closesOnRelease(-800f, 2000f, 1000f));
+    }
+
+    @Test
     public void installStaysOnProjectToolsBecauseAnInstalledUntestedAppShowsItWorksInstead() {
         UiState ui = new UiState();
         ui.getInstall().setEnabled(true);

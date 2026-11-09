@@ -59,7 +59,7 @@ internal fun PlanChecklist(steps: List<Step>) {
             verticalAlignment = Alignment.CenterVertically,
         ) {
             BasicText(
-                if (open) "▾" else "▸",
+                if (open) "▾" else foldedMark(),
                 Modifier.width(20.dp).clearAndSetSemantics {},
                 style = Type.body.copy(color = Ink.dim),
             )

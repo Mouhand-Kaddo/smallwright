@@ -84,6 +84,9 @@ object Type {
 /** Fast at the start, so motion answers the touch at once. For things arriving or leaving. */
 internal val EaseOut = CubicBezierEasing(0.23f, 1f, 0.32f, 1f)
 
+/** Steep then settling, like a sheet sliding in from a screen edge. */
+internal val EaseDrawer = CubicBezierEasing(0.32f, 0.72f, 0f, 1f)
+
 /** How a folded list opens under the row that was tapped, and folds back into it. */
 internal val Reveal =
     expandVertically(tween(200, easing = EaseOut), Alignment.Top) +

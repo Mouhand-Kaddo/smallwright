@@ -2,7 +2,9 @@ package dev.smallwright.controller.ui
 
 import androidx.activity.compose.BackHandler
 import androidx.compose.animation.core.Animatable
-import androidx.compose.animation.core.FastOutSlowInEasing
+import androidx.compose.animation.core.AnimationSpec
+import androidx.compose.animation.core.Spring
+import androidx.compose.animation.core.spring
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -37,8 +39,11 @@ import androidx.compose.foundation.text.BasicText
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.drawBehind
@@ -47,6 +52,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.platform.LocalFocusManager
+import androidx.compose.ui.platform.LocalLayoutDirection
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.semantics.clearAndSetSemantics
 import androidx.compose.ui.semantics.contentDescription
@@ -59,6 +65,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.IntOffset
+import androidx.compose.ui.unit.LayoutDirection
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.min
 import kotlin.math.roundToInt
@@ -91,14 +98,29 @@ internal fun projectTree(projects: Picker, chats: Picker, opening: Boolean): Lis
         }
     }
 
-private val slide = tween<Float>(200, easing = FastOutSlowInEasing)
+private val slideIn = tween<Float>(260, easing = EaseDrawer)
+private val slideOut = tween<Float>(200, easing = EaseDrawer)
+private val settle = spring<Float>(Spring.DampingRatioNoBouncy, Spring.StiffnessMediumLow)
 private val treeX = 24.dp
+
+/**
+ * Whether a drag let go at [offset] (0 open, -[width] shut) moving at [velocity] px/s closes the
+ * menu: where the fling would come to rest, by Apple's projection at scroll-like deceleration, is
+ * past halfway. A quick flick closes it, and one back toward open keeps it.
+ */
+internal fun closesOnRelease(offset: Float, velocity: Float, width: Float): Boolean {
+    val deceleration = 0.998f
+    val travel = velocity / 1000f * deceleration / (1f - deceleration)
+    return offset + travel < -width / 2
+}
+
 private val disabled = Ink.dim.copy(alpha = 0.5f)
 
 /**
- * The menu: a panel that slides in from the left over the chat, which stays in sight behind a
+ * The menu: a panel that slides in from the start edge over the chat, which stays in sight behind a
  * scrim. Projects are folders and the current one is open with its chats. A tap outside, Back, the
- * close key or a drag to the left closes it.
+ * close key or a drag toward the edge closes it. The panel follows the finger; let go, it carries
+ * the finger's speed to open or shut, and it can be caught again while it moves.
  */
 @Composable
 internal fun Sidebar(ui: UiState) {
@@ -109,22 +131,26 @@ internal fun Sidebar(ui: UiState) {
     BoxWithConstraints(Modifier.fillMaxSize()) {
         val width = min(maxWidth * 0.86f, 360.dp)
         val widthPx = with(LocalDensity.current) { width.toPx() }
-        val offset = remember { Animatable(if (animate) -widthPx else 0f) }
+        val offset = remember {
+            Animatable(if (animate) -widthPx else 0f).apply { updateBounds(-widthPx, 0f) }
+        }
         LaunchedEffect(Unit) {
             ui.menuClosing = false
-            offset.animateTo(0f, slide)
+            offset.animateTo(0f, slideIn)
         }
-        val close: () -> Unit = {
+        var held by remember { mutableStateOf(false) }
+        val shut: (AnimationSpec<Float>, Float) -> Unit = { spec, velocity ->
             if (startClosing(ui))
                 scope.launch {
                     try {
-                        if (animate) offset.animateTo(-widthPx, slide)
+                        if (animate) offset.animateTo(-widthPx, spec, velocity)
                     } finally {
-                        ui.menuOpen = false
+                        if (!held) ui.menuOpen = false
                         ui.menuClosing = false
                     }
                 }
         }
+        val close = { shut(slideOut, 0f) }
         val leave: () -> Unit = { ui.menuOpen = false }
         BackHandler(onBack = close)
         Box(
@@ -147,19 +173,21 @@ internal fun Sidebar(ui: UiState) {
                 .fillMaxHeight()
                 .background(Ink.background)
                 .drawBehind {
-                    val x = size.width - 0.5.dp.toPx()
+                    val x = fromStart(size.width - 0.5.dp.toPx())
                     drawLine(Ink.rule, Offset(x, 0f), Offset(x, size.height), 1.dp.toPx())
                 }
                 .draggable(
                     rememberDraggableState { delta ->
-                        scope.launch {
-                            offset.snapTo((offset.value + delta).coerceIn(-widthPx, 0f))
-                        }
+                        scope.launch { offset.snapTo(offset.value + delta) }
                     },
                     Orientation.Horizontal,
+                    reverseDirection = LocalLayoutDirection.current == LayoutDirection.Rtl,
+                    onDragStarted = { held = true },
                     onDragStopped = { velocity ->
-                        if (offset.value < -widthPx / 3 || velocity < -1000f) close()
-                        else if (animate) offset.animateTo(0f, slide) else offset.snapTo(0f)
+                        held = false
+                        if (closesOnRelease(offset.value, velocity, widthPx)) shut(settle, velocity)
+                        else if (animate) offset.animateTo(0f, settle, velocity)
+                        else offset.snapTo(0f)
                     },
                 )
                 .windowInsetsPadding(
@@ -301,7 +329,7 @@ private fun ProjectLine(
         if (line.current)
             Modifier.drawBehind {
                 if (!stem) return@drawBehind
-                val x = treeX.toPx()
+                val x = fromStart(treeX.toPx())
                 drawLine(
                     Ink.rule,
                     Offset(x, size.height / 2 + 10.dp.toPx()),
@@ -326,7 +354,7 @@ private fun ProjectLine(
             else Modifier.weight(1f),
             verticalAlignment = Alignment.CenterVertically,
         ) {
-            Glyph(if (line.current) "▾" else "▸", ink)
+            Glyph(if (line.current) "▾" else foldedMark(), ink)
             Name(line.name, ink, weight = FontWeight.SemiBold)
         }
         if (line.current) MoreKey(onTools)
@@ -391,11 +419,12 @@ private fun Branch(
             .fillMaxWidth()
             .then(if (current) Modifier.background(Ink.prompt) else Modifier)
             .drawBehind {
-                val x = treeX.toPx()
+                val x = fromStart(treeX.toPx())
                 val middle = size.height / 2
                 val stroke = 1.dp.toPx()
                 drawLine(lines, Offset(x, 0f), Offset(x, if (last) middle else size.height), stroke)
-                drawLine(lines, Offset(x, middle), Offset(x + 12.dp.toPx(), middle), stroke)
+                val twig = fromStart((treeX + 12.dp).toPx())
+                drawLine(lines, Offset(x, middle), Offset(twig, middle), stroke)
             }
             .heightIn(min = 48.dp)
             .padding(start = treeX + 20.dp, end = 20.dp),

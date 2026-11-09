@@ -1,12 +1,19 @@
 package dev.smallwright.controller.ui
 
+import androidx.compose.animation.core.animateFloatAsState
+import androidx.compose.animation.core.tween
 import androidx.compose.foundation.Canvas
+import androidx.compose.foundation.LocalIndication
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.interaction.MutableInteractionSource
+import androidx.compose.foundation.interaction.collectIsPressedAsState
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.size
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
@@ -17,6 +24,7 @@ import androidx.compose.ui.graphics.StrokeCap
 import androidx.compose.ui.graphics.StrokeJoin
 import androidx.compose.ui.graphics.drawscope.DrawScope
 import androidx.compose.ui.graphics.drawscope.Stroke
+import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
@@ -24,7 +32,10 @@ import androidx.compose.ui.unit.dp
 import dev.smallwright.agent.ReasoningLevel
 import kotlin.math.floor
 
-/** A square key read out as its control's label: solid like the cursor when it is the next step. */
+/**
+ * A square key read out as its control's label: solid like the cursor when it is the next step. It
+ * gives a little under the finger.
+ */
 @Composable
 internal fun BlockKey(
     control: Control,
@@ -34,14 +45,33 @@ internal fun BlockKey(
 ) {
     Rendered(control)
     val color = if (control.isEnabled) tone else Ink.dim.copy(alpha = 0.5f)
+    val presses = remember { MutableInteractionSource() }
+    val pressed by presses.collectIsPressedAsState()
+    val scale by
+        animateFloatAsState(
+            if (pressed) 0.95f else 1f,
+            tween(120, easing = EaseOut),
+            label = "press",
+        )
     Box(
         Modifier.size(48.dp)
-            .clickable(enabled = control.isEnabled, role = Role.Button) { control.onClick.run() }
+            .clickable(
+                presses,
+                LocalIndication.current,
+                enabled = control.isEnabled,
+                role = Role.Button,
+            ) {
+                control.onClick.run()
+            }
             .semantics { contentDescription = control.label },
         contentAlignment = Alignment.Center,
     ) {
         Canvas(
             Modifier.size(36.dp)
+                .graphicsLayer {
+                    scaleX = scale
+                    scaleY = scale
+                }
                 .then(if (solid) Modifier.background(color) else Modifier.border(1.dp, color)),
         ) {
             mark(if (solid) Ink.background else color)

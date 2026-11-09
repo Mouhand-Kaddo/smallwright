@@ -45,7 +45,6 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.asImageBitmap
@@ -247,18 +246,7 @@ private fun PromptLine(ui: UiState) {
             ) {
                 ThinkingMeter(ui.reasoning, Ink.prompt)
             }
-        BasicText(
-            ui.model.nameMarkedFree(),
-            Modifier.weight(1f)
-                .clickable(role = Role.Button, onClickLabel = "Change model") {
-                    ui.modelPageOpen = true
-                }
-                .heightIn(min = 48.dp)
-                .padding(horizontal = 8.dp, vertical = 15.dp),
-            style = Type.small.copy(color = Ink.dim),
-            maxLines = 1,
-            overflow = TextOverflow.Ellipsis,
-        )
+        ModelKey(ui, Modifier.weight(1f))
         if (ui.stop.isEnabled) BlockKey(ui.stop, Ink.failed, solid = false, mark = StopSquare)
         else
             BlockKey(
@@ -270,6 +258,34 @@ private fun PromptLine(ui: UiState) {
     }
     AnimatedVisibility(ui.reasoningOpen && ui.model.reasoning, enter = Reveal, exit = Fold) {
         ThinkingChoice(ui)
+    }
+}
+
+/**
+ * The model that will answer. A long name is cut short, but never the mark that says it is free,
+ * which tells it from a paid model of the same name. The name and its mark keep their English order
+ * when the screen reads right to left.
+ */
+@Composable
+private fun ModelKey(ui: UiState, modifier: Modifier) {
+    val style = Type.small.copy(color = Ink.dim)
+    Row(
+        modifier
+            .clickable(role = Role.Button, onClickLabel = "Change model") {
+                ui.modelPageOpen = true
+            }
+            .heightIn(min = 48.dp)
+            .padding(horizontal = 8.dp, vertical = 15.dp),
+        horizontalArrangement = Arrangement.Absolute.Left,
+    ) {
+        BasicText(
+            ui.model.shortName(),
+            Modifier.weight(1f, fill = false),
+            style = style,
+            maxLines = 1,
+            overflow = TextOverflow.Ellipsis,
+        )
+        if (ui.model.isFree()) BasicText(" (free)", style = style, maxLines = 1)
     }
 }
 

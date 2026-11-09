@@ -27,6 +27,7 @@ import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontVariation
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextDirection
 import androidx.compose.ui.unit.sp
 import dev.smallwright.controller.R
 import kotlinx.coroutines.launch
@@ -54,31 +55,18 @@ private fun mono(weight: FontWeight) =
 
 val Mono = FontFamily(mono(FontWeight.Normal), mono(FontWeight.SemiBold), mono(FontWeight.Bold))
 
-/** One monospace family at five sizes; line height about 1.5 for reading, 1.2 for display. */
+/**
+ * One monospace family at five sizes; line height about 1.5 for reading, 1.2 for display. Each
+ * paragraph takes its direction from its first letters, so English reads left to right and Arabic
+ * right to left whichever way the phone lays out the screen.
+ */
 object Type {
-    val small = TextStyle(fontFamily = Mono, fontSize = 11.sp, lineHeight = 16.sp)
-    val body = TextStyle(fontFamily = Mono, fontSize = 13.sp, lineHeight = 20.sp)
-    val action =
-        TextStyle(
-            fontFamily = Mono,
-            fontSize = 14.sp,
-            lineHeight = 20.sp,
-            fontWeight = FontWeight.SemiBold,
-        )
-    val title =
-        TextStyle(
-            fontFamily = Mono,
-            fontSize = 18.sp,
-            lineHeight = 24.sp,
-            fontWeight = FontWeight.SemiBold,
-        )
-    val display =
-        TextStyle(
-            fontFamily = Mono,
-            fontSize = 24.sp,
-            lineHeight = 29.sp,
-            fontWeight = FontWeight.Bold,
-        )
+    private val mono = TextStyle(fontFamily = Mono, textDirection = TextDirection.Content)
+    val small = mono.copy(fontSize = 11.sp, lineHeight = 16.sp)
+    val body = mono.copy(fontSize = 13.sp, lineHeight = 20.sp)
+    val action = mono.copy(fontSize = 14.sp, lineHeight = 20.sp, fontWeight = FontWeight.SemiBold)
+    val title = mono.copy(fontSize = 18.sp, lineHeight = 24.sp, fontWeight = FontWeight.SemiBold)
+    val display = mono.copy(fontSize = 24.sp, lineHeight = 29.sp, fontWeight = FontWeight.Bold)
 }
 
 /** Fast at the start, so motion answers the touch at once. For things arriving or leaving. */

@@ -1,5 +1,6 @@
 package dev.smallwright.controller.ui
 
+import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -77,7 +78,7 @@ internal fun PlanChecklist(steps: List<Step>) {
                 style = Type.body,
             )
         }
-        if (open) {
+        AnimatedVisibility(open, enter = Reveal, exit = Fold) {
             Column(
                 Modifier.padding(start = 20.dp, bottom = 8.dp),
                 verticalArrangement = Arrangement.spacedBy(6.dp),

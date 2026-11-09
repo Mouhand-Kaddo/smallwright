@@ -3,6 +3,10 @@ package dev.smallwright.controller.ui
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.CubicBezierEasing
 import androidx.compose.animation.core.tween
+import androidx.compose.animation.expandVertically
+import androidx.compose.animation.fadeIn
+import androidx.compose.animation.fadeOut
+import androidx.compose.animation.shrinkVertically
 import androidx.compose.foundation.IndicationNodeFactory
 import androidx.compose.foundation.LocalIndication
 import androidx.compose.foundation.interaction.FocusInteraction
@@ -12,6 +16,7 @@ import androidx.compose.foundation.interaction.InteractionSource
 import androidx.compose.foundation.interaction.PressInteraction
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.drawscope.ContentDrawScope
@@ -78,6 +83,14 @@ object Type {
 
 /** Fast at the start, so motion answers the touch at once. For things arriving or leaving. */
 internal val EaseOut = CubicBezierEasing(0.23f, 1f, 0.32f, 1f)
+
+/** How a folded list opens under the row that was tapped, and folds back into it. */
+internal val Reveal =
+    expandVertically(tween(200, easing = EaseOut), Alignment.Top) +
+        fadeIn(tween(200, easing = EaseOut))
+internal val Fold =
+    shrinkVertically(tween(150, easing = EaseOut), Alignment.Top) +
+        fadeOut(tween(150, easing = EaseOut))
 
 @Composable
 fun TerminalTheme(content: @Composable () -> Unit) =

@@ -2,6 +2,7 @@ package dev.smallwright.controller.ui
 
 import android.provider.Settings
 import androidx.activity.compose.BackHandler
+import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.core.LinearEasing
 import androidx.compose.animation.core.RepeatMode
 import androidx.compose.animation.core.animateFloat
@@ -254,7 +255,9 @@ private fun PromptLine(ui: UiState) {
                 mark = ArrowUp,
             )
     }
-    if (ui.reasoningOpen && ui.model.reasoning) ThinkingChoice(ui)
+    AnimatedVisibility(ui.reasoningOpen && ui.model.reasoning, enter = Reveal, exit = Fold) {
+        ThinkingChoice(ui)
+    }
 }
 
 /** The four thinking levels in a row; picking one keeps it for the next Send. */

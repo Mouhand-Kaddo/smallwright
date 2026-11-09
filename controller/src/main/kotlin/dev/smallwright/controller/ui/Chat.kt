@@ -2,6 +2,7 @@ package dev.smallwright.controller.ui
 
 import android.graphics.Bitmap
 import android.provider.Settings
+import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.core.LinearEasing
 import androidx.compose.animation.core.RepeatMode
 import androidx.compose.animation.core.animateFloat
@@ -264,16 +265,17 @@ private fun StepGroup(steps: List<Step>, ended: Boolean) {
                 style = Type.body.copy(color = Ink.text),
             )
         }
-        if (open) {
+        AnimatedVisibility(open, enter = Reveal, exit = Fold) {
             Column(
                 Modifier.padding(start = 12.dp, top = 12.dp),
                 verticalArrangement = Arrangement.spacedBy(8.dp),
             ) {
                 steps.forEach { StepRow(it) }
             }
-        } else {
-            steps.lastOrNull { it.picture != null }?.picture?.let { LookPicture(it) }
         }
+        val picture = steps.lastOrNull { it.picture != null }?.picture
+        if (picture != null)
+            AnimatedVisibility(!open, enter = Reveal, exit = Fold) { LookPicture(picture) }
     }
 }
 

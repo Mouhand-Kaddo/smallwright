@@ -55,6 +55,17 @@ Updated 2026-11-02. The app is renamed Smallwright (`dev.smallwright.*`).
 - On the A33 it installed over the sign-in test build, updated the worker from
   its main screen, built the starter app and kept the signed-in key.
 
+## 0.1.3, 2026-11-09
+
+- `v0.1.3` is GitHub's latest release, with `smallwright-0.1.3.apk`
+  (`684ae665…`, version code 6) and `SHA256SUMS`, signed with the same key.
+  It polishes the builder's feel: presses show, folded steps open in place,
+  the menu follows the finger, and right-to-left phones lay it out correctly
+  ([record](validation/ui-polish-a33-20261109.md)).
+- On the A33 it installed over 0.1.2 and kept the chats, updated the worker
+  from its main screen through Android's prompt and Play Protect's scan, and
+  the builder reported the worker ready. No app was built with it.
+
 ## Known gaps
 
 - The exact AAPT2 build was a manual configure; its record is
